@@ -5,7 +5,7 @@ import { siteConfig, team } from "../lib/site";
 export const metadata = buildMetadata({
   title: "Nosotros: equipo y forma de trabajo",
   description:
-    "Conoce a los fundadores de DukeCrea y cómo combinamos desarrollo, automatización, datos y marketing para construir sistemas útiles.",
+    "Conoce a los fundadores de CodigoFresco y cómo combinamos desarrollo, automatización, datos y marketing para construir sistemas útiles.",
   path: "/nosotros",
 });
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Nosotros", href: "/nosotros" }]} />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Equipo DukeCrea</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Equipo CodigoFresco</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">Tecnología con dirección cercana y responsabilidad técnica</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">
                 Los fundadores participan en el diagnóstico y la dirección de cada proyecto. Sumamos especialistas según el reto y documentamos decisiones para que la solución pueda mantenerse y evolucionar.

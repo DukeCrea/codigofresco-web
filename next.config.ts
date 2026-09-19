@@ -77,13 +77,33 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
-        destination: "https://dukecrea.com/:path*",
+        destination: "https://codigofresco.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.codigofresco.com" }],
+        destination: "https://codigofresco.com/:path*",
+        permanent: true,
+      },
+      /**
+       * Dominio anterior a la marca CodigoFresco. Se redirige ruta por ruta
+       * (`/servicios/x` cae en `/servicios/x`, no en la portada) porque una
+       * redirección a la portada le dice a Google que la página vieja
+       * desapareció y tira a la basura el posicionamiento que ya tenía.
+       * Mantener estas dos reglas mientras dukecrea.com siga apuntando al
+       * proyecto: son las que traspasan la autoridad al dominio nuevo.
+       */
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "dukecrea.com" }],
+        destination: "https://codigofresco.com/:path*",
         permanent: true,
       },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.dukecrea.com" }],
-        destination: "https://dukecrea.com/:path*",
+        destination: "https://codigofresco.com/:path*",
         permanent: true,
       },
     ];

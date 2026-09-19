@@ -34,7 +34,7 @@ function getConfig() {
     // El dominio remitente debe estar verificado en Resend. Mientras tanto,
     // `onboarding@resend.dev` funciona sin verificar y solo entrega al correo
     // dueño de la cuenta, que es justo lo que se necesita para avisos internos.
-    from: (process.env.LEADS_EMAIL_FROM || "DukeCrea <onboarding@resend.dev>").trim(),
+    from: (process.env.LEADS_EMAIL_FROM || "CodigoFresco <onboarding@resend.dev>").trim(),
   };
 }
 
@@ -81,7 +81,7 @@ export async function sendLeadEmail(lead: LeadEmailPayload): Promise<boolean> {
        </p>`;
 
   const html = `<div style="font-family:system-ui,-apple-system,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;padding:24px;">
-      <p style="margin:0 0 4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#65a30d;font-weight:700;">DukeCrea</p>
+      <p style="margin:0 0 4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#65a30d;font-weight:700;">CodigoFresco</p>
       <h1 style="margin:0 0 20px;font-size:22px;color:#111827;">Nuevo lead: ${escapeHtml(lead.name)}</h1>
       ${alerta}
       <table style="border-collapse:collapse;width:100%;">

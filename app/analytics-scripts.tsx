@@ -11,7 +11,7 @@ import { AnalyticsEvent, track } from "./lib/analytics";
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
 const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
-const consentStorageKey = "dukecrea_analytics_consent_v1";
+const consentStorageKey = "codigofresco_analytics_consent_v1";
 
 type ConsentStatus = "accepted" | "rejected";
 

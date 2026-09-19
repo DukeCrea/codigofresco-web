@@ -223,7 +223,7 @@ export default async function IndustriaPage({ params }: Props) {
               className="mt-8 inline-flex items-center gap-2 rounded-lg bg-gray-950 px-8 py-3 font-bold text-white transition hover:bg-gray-800"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Hablar con DukeCrea
+              Hablar con CodigoFresco
             </a>
           </div>
         </section>

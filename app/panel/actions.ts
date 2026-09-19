@@ -20,18 +20,26 @@ import {
   updateTrabajo,
 } from "../lib/trabajos";
 
-const cookieName = "dukecrea_panel";
+const cookieName = "codigofresco_panel";
 
+/**
+ * La variable se llamaba `DUKECREA_PANEL_PASSWORD` antes del cambio de marca.
+ * Se sigue aceptando el nombre viejo para que el panel no se quede bloqueado
+ * entre el despliegue y el momento en que se cree la variable nueva en Vercel.
+ * Una vez creada `CODIGOFRESCO_PANEL_PASSWORD`, la vieja se puede borrar.
+ */
 function getPanelPassword() {
-  const configured = process.env.DUKECREA_PANEL_PASSWORD?.trim();
+  const configured = (
+    process.env.CODIGOFRESCO_PANEL_PASSWORD || process.env.DUKECREA_PANEL_PASSWORD
+  )?.trim();
   if (configured) return configured;
-  return process.env.NODE_ENV === "production" ? "" : "dukecrea-local";
+  return process.env.NODE_ENV === "production" ? "" : "codigofresco-local";
 }
 
 function getSessionValue() {
   const password = getPanelPassword();
   if (!password) return "";
-  return createHash("sha256").update(`dukecrea-panel:${password}`).digest("hex");
+  return createHash("sha256").update(`codigofresco-panel:${password}`).digest("hex");
 }
 
 export async function panelPasswordConfigured() {

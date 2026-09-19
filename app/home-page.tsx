@@ -25,7 +25,6 @@ import {
   premiumStack,
   processSteps,
   serviceCategoryMap,
-  siteConfig,
   team,
   technologies,
   workflowSteps,
@@ -212,9 +211,9 @@ function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-gray-900 bg-black/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="DukeCrea inicio">
+        <Link href="/" className="flex items-center gap-2" aria-label="CodigoFresco inicio">
           <Logo className="h-8 w-8 rounded-lg shadow-lg shadow-lime-400/50" />
-          <span className="text-lg font-bold text-white">DukeCrea</span>
+          <span className="text-lg font-bold text-white">CodigoFresco</span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
@@ -380,7 +379,7 @@ function TechTicker() {
   }, [reduceMotion]);
 
   return (
-    <section className="overflow-hidden border-t border-gray-900 bg-gray-950 py-6" aria-label="Stack tecnológico DukeCrea">
+    <section className="overflow-hidden border-t border-gray-900 bg-gray-950 py-6" aria-label="Stack tecnológico CodigoFresco">
       <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-lime-300">
         Stack tecnológico para ecosistemas B2B
       </div>
@@ -660,14 +659,6 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
               >
                 Leer casos completos
               </Link>
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-lg border-2 border-gray-700 px-8 py-3 font-medium text-white transition hover:border-lime-400 hover:text-lime-400"
-              >
-                Ver más en GitHub
-              </a>
             </div>
           </div>
         </Reveal>
@@ -677,7 +668,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
             <SectionHeading
               eyebrow="Equipo"
               title="Fundadores al frente y especialistas según el reto"
-              description="DukeCrea combina dirección cercana, desarrollo senior y especialistas que se integran según cada proyecto."
+              description="CodigoFresco combina dirección cercana, desarrollo senior y especialistas que se integran según cada proyecto."
             />
             <div className="grid gap-6 sm:grid-cols-3">
               {team.map((member) => (
@@ -765,7 +756,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                     ))}
                   </ul>
                   <a
-                    href={getWhatsAppUrl(`Hola DukeCrea, quiero una cotización para ${plan.name}.`)}
+                    href={getWhatsAppUrl(`Hola CodigoFresco, quiero una cotización para ${plan.name}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full rounded-lg px-6 py-3 text-center font-bold transition ${

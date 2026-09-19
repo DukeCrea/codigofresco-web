@@ -17,7 +17,7 @@ import { PanelHeader } from "../../panel-header";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Seguimiento de lead | Panel DukeCrea",
+  title: "Seguimiento de lead | Panel CodigoFresco",
   description: "Ficha de seguimiento de una oportunidad comercial.",
   robots: { index: false, follow: false, nocache: true },
 };

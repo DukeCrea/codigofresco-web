@@ -4,7 +4,7 @@ import { buildMetadata } from "../lib/seo";
 
 export const metadata = buildMetadata({
   title: "Política de cookies",
-  description: "Cookies y tecnologías de analítica utilizadas por DukeCrea y cómo cambiar tus preferencias.",
+  description: "Cookies y tecnologías de analítica utilizadas por CodigoFresco y cómo cambiar tus preferencias.",
   path: "/cookies",
   index: false,
 });

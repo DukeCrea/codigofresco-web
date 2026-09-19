@@ -15,9 +15,9 @@ export function PanelHeader({ activo }: PanelHeaderProps) {
   return (
     <header className="border-b border-gray-900 bg-gray-950 px-6 py-4 md:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="DukeCrea inicio">
+        <Link href="/" className="flex items-center gap-2" aria-label="CodigoFresco inicio">
           <div className="h-8 w-8 rounded-lg bg-lime-400 shadow-lg shadow-lime-400/50" />
-          <span className="text-lg font-bold text-white">DukeCrea</span>
+          <span className="text-lg font-bold text-white">CodigoFresco</span>
           <span className="rounded-full border border-gray-700 px-2 py-0.5 text-xs text-gray-400">
             Panel
           </span>

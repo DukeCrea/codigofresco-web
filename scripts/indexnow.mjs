@@ -16,7 +16,7 @@
 
 import { readdir } from "node:fs/promises";
 
-const HOST = "dukecrea.com";
+const HOST = "codigofresco.com";
 const ORIGIN = `https://${HOST}`;
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 

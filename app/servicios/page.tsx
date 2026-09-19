@@ -8,7 +8,7 @@ import { serviceCategoryMap, siteConfig } from "../lib/site";
 export const metadata = buildMetadata({
   title: "Soluciones de software, automatización y marketing",
   description:
-    "Explora desarrollo web, WordPress, Shopify, software a medida, automatizaciones, SEO/GEO, Ads, contenido y analítica de DukeCrea.",
+    "Explora desarrollo web, WordPress, Shopify, software a medida, automatizaciones, SEO/GEO, Ads, contenido y analítica de CodigoFresco.",
   path: "/servicios",
 });
 
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       {
         "@type": "CollectionPage",
         "@id": `${siteConfig.url}/servicios#page`,
-        name: "Soluciones DukeCrea",
+        name: "Soluciones CodigoFresco",
         description: metadata.description,
         url: `${siteConfig.url}/servicios`,
         isPartOf: { "@id": `${siteConfig.url}/#website` },
@@ -41,7 +41,7 @@ export default function ServicesPage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Soluciones", href: "/servicios" }]} />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Ecosistema DukeCrea</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Ecosistema CodigoFresco</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
                 Soluciones conectadas con la operación y el crecimiento
               </h1>

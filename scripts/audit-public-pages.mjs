@@ -1,5 +1,5 @@
 const baseUrl = (process.env.AUDIT_BASE_URL || "http://127.0.0.1:3000").replace(/\/$/, "");
-const productionUrl = "https://dukecrea.com";
+const productionUrl = "https://codigofresco.com";
 const mojibakePattern = /(?:Ã.|Â.|â€|â€“|â€”|â€˜|â€™|â€œ|â€�|�)/;
 
 function matches(html, pattern) {
@@ -36,8 +36,8 @@ for (const path of paths) {
   if (count(html, /<h1(?:\s|>)/gi) !== 1) pageFailures.push("cantidad de H1 distinta de 1");
   if (!matches(html, /<title>[^<]{10,}<\/title>/i)) pageFailures.push("title ausente o demasiado corto");
   if (!matches(html, /<meta\s+name="description"\s+content="[^"]{40,}"/i)) pageFailures.push("description ausente o demasiado corta");
-  if (!matches(html, /<link\s+rel="canonical"\s+href="https:\/\/dukecrea\.com/i)) pageFailures.push("canonical ausente");
-  if (!matches(html, /<meta\s+property="og:image"\s+content="https:\/\/dukecrea\.com\/og\.jpg"/i)) pageFailures.push("og:image ausente");
+  if (!matches(html, /<link\s+rel="canonical"\s+href="https:\/\/codigofresco\.com/i)) pageFailures.push("canonical ausente");
+  if (!matches(html, /<meta\s+property="og:image"\s+content="https:\/\/codigofresco\.com\/og\.jpg"/i)) pageFailures.push("og:image ausente");
   if (matches(html, /<meta\s+name="robots"\s+content="[^"]*noindex/i)) pageFailures.push("URL del sitemap marcada noindex");
   if (mojibakePattern.test(html)) pageFailures.push("posible mojibake");
 

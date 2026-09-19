@@ -20,7 +20,7 @@ export const solutionHubs: SolutionHub[] = [
     metaDescription:
       "Desarrollo web, WordPress, Shopify, e-commerce, software a medida y paneles para empresas en Panamá y Venezuela.",
     answer:
-      "DukeCrea diseña y desarrolla sitios corporativos, tiendas, landing pages, sistemas internos y paneles. Elegimos Next.js, WordPress, Shopify o una arquitectura a medida según la operación, el tiempo de salida y el nivel de control que necesita la empresa.",
+      "CodigoFresco diseña y desarrolla sitios corporativos, tiendas, landing pages, sistemas internos y paneles. Elegimos Next.js, WordPress, Shopify o una arquitectura a medida según la operación, el tiempo de salida y el nivel de control que necesita la empresa.",
     problems: [
       "La web no genera oportunidades ni explica bien la oferta.",
       "La operación depende de hojas de cálculo y tareas repetitivas.",

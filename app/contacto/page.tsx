@@ -6,7 +6,7 @@ import { siteConfig } from "../lib/site";
 export const metadata = buildMetadata({
   title: "Contacto y diagnóstico de proyecto",
   description:
-    "Cuéntanos qué necesitas construir, automatizar o mejorar. DukeCrea prepara un diagnóstico inicial para empresas en Panamá y Venezuela.",
+    "Cuéntanos qué necesitas construir, automatizar o mejorar. CodigoFresco prepara un diagnóstico inicial para empresas en Panamá y Venezuela.",
   path: "/contacto",
 });
 
@@ -14,7 +14,7 @@ export default function ContactPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "ContactPage", name: "Contacto DukeCrea", url: `${siteConfig.url}/contacto` },
+      { "@type": "ContactPage", name: "Contacto CodigoFresco", url: `${siteConfig.url}/contacto` },
       breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Contacto", path: "/contacto" }]),
     ],
   };

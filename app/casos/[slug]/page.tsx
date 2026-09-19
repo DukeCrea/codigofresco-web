@@ -55,7 +55,7 @@ export default async function CasePage({ params }: Props) {
   return (
     <div className="min-h-screen bg-black text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
-      <MarketingHeader whatsappMessage={`Hola DukeCrea, vi el caso ${item.client} y quiero conversar sobre un proyecto similar.`} />
+      <MarketingHeader whatsappMessage={`Hola CodigoFresco, vi el caso ${item.client} y quiero conversar sobre un proyecto similar.`} />
       <main>
         <article>
           <header className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">

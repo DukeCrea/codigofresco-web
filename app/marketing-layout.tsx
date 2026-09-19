@@ -15,9 +15,9 @@ export function MarketingHeader({
   return (
     <header className="border-b border-gray-900 bg-black/95">
       <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4 md:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="DukeCrea inicio">
+        <Link href="/" className="flex items-center gap-2" aria-label="CodigoFresco inicio">
           <Logo className="h-8 w-8 rounded-lg shadow-lg shadow-lime-400/40" />
-          <span className="text-lg font-bold text-white">DukeCrea</span>
+          <span className="text-lg font-bold text-white">CodigoFresco</span>
         </Link>
         <nav className="flex flex-wrap items-center gap-4 text-sm" aria-label="Navegación principal">
           <Link href="/servicios" className="font-medium text-gray-300 transition hover:text-lime-300">
@@ -104,7 +104,7 @@ export function SiteFooter() {
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-2">
               <Logo className="h-7 w-7 rounded-lg" />
-              <span className="font-bold text-white">DukeCrea</span>
+              <span className="font-bold text-white">CodigoFresco</span>
             </div>
             <p className="text-sm leading-6">Infraestructura digital para vender, operar y escalar.</p>
             <p className="mt-3 text-sm leading-6">
@@ -173,7 +173,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
-          <p>© {new Date().getFullYear()} DukeCrea. Software y crecimiento digital con trazabilidad.</p>
+          <p>© {new Date().getFullYear()} CodigoFresco. Software y crecimiento digital con trazabilidad.</p>
         </div>
       </div>
     </footer>

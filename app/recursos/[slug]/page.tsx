@@ -69,11 +69,11 @@ export default async function ResourcePage({ params }: Props) {
           <header className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">
             <div className="mx-auto max-w-4xl">
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Recursos", href: "/recursos" }, { label: article.title, href: path }]} />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Guía DukeCrea · {article.readingTime}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Guía CodigoFresco · {article.readingTime}</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{article.title}</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">{article.excerpt}</p>
               <p className="mt-5 text-sm text-gray-300">
-                Publicado y revisado el <time dateTime={article.updatedAt}>17 de agosto de 2026</time> por el equipo de DukeCrea.
+                Publicado y revisado el <time dateTime={article.updatedAt}>17 de agosto de 2026</time> por el equipo de CodigoFresco.
               </p>
             </div>
           </header>

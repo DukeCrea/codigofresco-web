@@ -8,7 +8,7 @@ import { siteConfig } from "../lib/site";
 export const metadata = buildMetadata({
   title: "Recursos sobre software, automatización y crecimiento",
   description:
-    "Guías prácticas de DukeCrea sobre plataformas web, automatización de leads, e-commerce, Ads, datos y ROI.",
+    "Guías prácticas de CodigoFresco sobre plataformas web, automatización de leads, e-commerce, Ads, datos y ROI.",
   path: "/recursos",
 });
 
@@ -19,7 +19,7 @@ export default function ResourcesPage() {
       {
         "@type": "CollectionPage",
         "@id": `${siteConfig.url}/recursos#page`,
-        name: "Recursos DukeCrea",
+        name: "Recursos CodigoFresco",
         url: `${siteConfig.url}/recursos`,
         description: "Guías prácticas sobre software, automatización, comercio electrónico, publicidad y datos.",
         about: { "@id": organizationId },

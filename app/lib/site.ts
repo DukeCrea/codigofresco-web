@@ -1,12 +1,16 @@
 export const siteConfig = {
-  name: "DukeCrea",
-  url: "https://dukecrea.com",
-  email: "duque629@gmail.com",
+  name: "CodigoFresco",
+  url: "https://codigofresco.com",
+  email: "hola@codigofresco.com",
+  // La cuenta de GitHub sigue llamándose DukeCrea: renombrarla rompería la URL
+  // de todos los repos. Ya no se enlaza desde ninguna página visible; se
+  // conserva solo dentro de `sameAs` del JSON-LD, donde le sirve a Google para
+  // asociar el dominio nuevo con un perfil real y ganar confianza más rápido.
   github: "https://github.com/DukeCrea",
-  instagram: "https://www.instagram.com/dukecrea",
+  instagram: "https://www.instagram.com/codigofresco",
   whatsappNumber: "50763006579",
   defaultWhatsAppMessage:
-    "Hola DukeCrea, quiero digitalizar mi negocio. ¿Podemos hablar?",
+    "Hola CodigoFresco, quiero digitalizar mi negocio. ¿Podemos hablar?",
 };
 
 export function getWhatsAppUrl(message = siteConfig.defaultWhatsAppMessage) {

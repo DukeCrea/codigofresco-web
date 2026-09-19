@@ -45,7 +45,7 @@ export default async function ServicePage({ params }: Props) {
     .filter((related): related is NonNullable<typeof related> => Boolean(related));
 
   const serviceUrl = `${siteConfig.url}/servicios/${service.slug}`;
-  const whatsappUrl = getWhatsAppUrl(`Hola DukeCrea, quiero información sobre ${service.title}.`);
+  const whatsappUrl = getWhatsAppUrl(`Hola CodigoFresco, quiero información sobre ${service.title}.`);
 
   const jsonLd = [
     {
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
-      <MarketingHeader whatsappMessage={`Hola DukeCrea, quiero información sobre ${service.title}.`} />
+      <MarketingHeader whatsappMessage={`Hola CodigoFresco, quiero información sobre ${service.title}.`} />
 
       <main>
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-20 md:px-8">
@@ -282,7 +282,7 @@ export default async function ServicePage({ params }: Props) {
               className="mt-8 inline-flex items-center gap-2 rounded-lg bg-gray-950 px-8 py-3 font-bold text-white transition hover:bg-gray-800"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Hablar con DukeCrea
+              Hablar con CodigoFresco
             </a>
           </div>
         </section>

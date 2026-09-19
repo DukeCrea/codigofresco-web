@@ -23,7 +23,7 @@ import { PanelHeader } from "../panel-header";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Trabajos | Panel DukeCrea",
+  title: "Trabajos | Panel CodigoFresco",
   description: "Control de trabajos en curso, entregados y cobrados.",
   robots: { index: false, follow: false, nocache: true },
 };

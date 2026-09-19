@@ -163,7 +163,7 @@ function pushLeadFormEvent(event: string, payload: Record<string, unknown> = {})
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event,
-    form: "dukecrea_lead_intake",
+    form: "codigofresco_lead_intake",
     ...payload,
   });
 
@@ -173,7 +173,7 @@ function pushLeadFormEvent(event: string, payload: Record<string, unknown> = {})
     ...(Object.fromEntries(
       Object.entries(payload).map(([key, value]) => [key, String(value)]),
     ) as Record<string, string>),
-    form: "dukecrea_lead_intake",
+    form: "codigofresco_lead_intake",
   });
 }
 
@@ -192,7 +192,7 @@ export function LeadIntakeSection() {
   const whatsappUrl = useMemo(
     () =>
       getWhatsAppUrl(
-        "Hola DukeCrea, completé el formulario de la web y quiero avanzar con mi diagnóstico.",
+        "Hola CodigoFresco, completé el formulario de la web y quiero avanzar con mi diagnóstico.",
       ),
     [],
   );
@@ -565,7 +565,7 @@ export function LeadIntakeSection() {
                         className="mt-1 h-4 w-4 shrink-0 accent-lime-400"
                       />
                       <span>
-                        Acepto que DukeCrea use estos datos para responder mi solicitud, de acuerdo
+                        Acepto que CodigoFresco use estos datos para responder mi solicitud, de acuerdo
                         con la{" "}
                         <Link href="/privacidad" className="font-bold text-lime-300 underline underline-offset-4">
                           política de privacidad

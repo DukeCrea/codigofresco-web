@@ -10,7 +10,7 @@ export const defaultSocialImage = {
   url: "/og.jpg",
   width: 1200,
   height: 630,
-  alt: "DukeCrea: software, automatización, marketing y datos para empresas",
+  alt: "CodigoFresco: software, automatización, marketing y datos para empresas",
 };
 
 export function buildMetadata({

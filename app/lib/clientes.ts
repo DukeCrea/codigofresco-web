@@ -45,7 +45,7 @@ export const clientes: Cliente[] = [
     pais: "Panamá",
     alta: "Agosto 2026",
     estado: "demo",
-    demo: "https://baretecpanama.dukecrea.com",
+    demo: "https://baretecpanama.codigofresco.com",
     produccion: "",
 
     comercial: [
@@ -69,8 +69,8 @@ export const clientes: Cliente[] = [
     infra: [
       ["Dominio", "baretecpanama.com"],
       ["Registrador", "GoDaddy — renueva 4 ago 2027, $22.99/año"],
-      ["Subdominio del demo", "baretecpanama.dukecrea.com"],
-      ["DNS del demo", "Cloudflare (zona dukecrea.com) · A → 76.76.21.21 · nube gris, DNS only"],
+      ["Subdominio del demo", "baretecpanama.codigofresco.com"],
+      ["DNS del demo", "Cloudflare (zona codigofresco.com) · A → 76.76.21.21 · nube gris, DNS only"],
       ["Hosting final", "EasyWP"],
       ["Correos", "Google Workspace — 3 usuarios pagados + 4 alias/grupo"],
     ],
@@ -83,7 +83,7 @@ export const clientes: Cliente[] = [
     ],
 
     notas:
-      "El DNS de dukecrea.com vive en Cloudflare, no en Vercel: el registro del subdominio debe quedar en DNS only (nube gris) o Vercel no emite el certificado SSL. Contenido fuente: documento «BARETEC Panamá — Contenido del sitio web (ES) v6.5». Se maquetó la Opción A (con retrato de la fundadora); si el campo se deja vacío en el Customizer, el bloque degrada solo a la Opción B.",
+      "El DNS de codigofresco.com vive en Cloudflare, no en Vercel: el registro del subdominio debe quedar en DNS only (nube gris) o Vercel no emite el certificado SSL. Contenido fuente: documento «BARETEC Panamá — Contenido del sitio web (ES) v6.5». Se maquetó la Opción A (con retrato de la fundadora); si el campo se deja vacío en el Customizer, el bloque degrada solo a la Opción B.",
   },
 
   {
@@ -192,7 +192,7 @@ export const clientes: Cliente[] = [
     pendientes: [
       "Que el cliente elija una de las tres opciones",
       "Cerrar cotización y forma de pago",
-      "Mover el demo elegido a un subdominio de dukecrea.com",
+      "Mover el demo elegido a un subdominio de codigofresco.com",
     ],
 
     notas: "",
@@ -202,10 +202,10 @@ export const clientes: Cliente[] = [
     slug: "eventos-qr",
     nombre: "Eventos QR",
     corto: "Eventos QR",
-    sector: "Producto propio DukeCrea",
+    sector: "Producto propio CodigoFresco",
     resumen:
       "Producto propio de la agencia: gestión de eventos con acreditación por código QR. No es un encargo de cliente.",
-    contacto: "DukeCrea",
+    contacto: "CodigoFresco",
     pais: "Panamá",
     alta: "",
     estado: "interno",
@@ -225,7 +225,7 @@ export const clientes: Cliente[] = [
       ["Hosting", "Vercel"],
     ],
 
-    pendientes: ["Mover a un subdominio de dukecrea.com"],
+    pendientes: ["Mover a un subdominio de codigofresco.com"],
     notas: "",
   },
 ];

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "Agencia de software e IA en Panamá y Venezuela | DukeCrea",
-    template: "%s | DukeCrea",
+    default: "Agencia de software e IA en Panamá y Venezuela | CodigoFresco",
+    template: "%s | CodigoFresco",
   },
   description:
     "Agencia de software, e-commerce, automatización con IA y Ads para empresas en Panamá y Venezuela. Infraestructura digital B2B con operación multi-país.",
   keywords: [
-    "DukeCrea",
+    "CodigoFresco",
     "desarrollo de software",
     "páginas web corporativas",
     "WordPress",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     locale: "es_PA",
     url: "/",
     siteName: siteConfig.name,
-    title: "DukeCrea - Software, automatización e IA para negocios",
+    title: "CodigoFresco - Software, automatización e IA para negocios",
     description:
       "Infraestructura web, e-commerce, WordPress, Shopify, software a medida, automatizaciones, SEO/GEO, Ads y paneles inteligentes.",
     images: [defaultSocialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DukeCrea - Software, automatización e IA para negocios",
+    title: "CodigoFresco - Software, automatización e IA para negocios",
     description:
       "Digitaliza tu negocio con sistemas, automatizaciones, Ads, SEO/GEO y marketing con IA.",
     images: ["/og.jpg"],
@@ -117,7 +117,7 @@ const jsonLd = {
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Soluciones DukeCrea",
+        name: "Soluciones CodigoFresco",
         itemListElement: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {

@@ -26,8 +26,8 @@ import { PanelHeader } from "./panel-header";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Panel interno | DukeCrea",
-  description: "Panel privado de oportunidades comerciales de DukeCrea.",
+  title: "Panel interno | CodigoFresco",
+  description: "Panel privado de oportunidades comerciales de CodigoFresco.",
   robots: {
     index: false,
     follow: false,
@@ -104,15 +104,15 @@ function LoginPanel({ error, configured }: { error?: string; configured: boolean
   const messages: Record<string, string> = {
     invalid: "La contraseña no es correcta.",
     session: "Inicia sesión nuevamente para continuar.",
-    config: "Configura DUKECREA_PANEL_PASSWORD en producción antes de usar el panel.",
+    config: "Configura CODIGOFRESCO_PANEL_PASSWORD en producción antes de usar el panel.",
   };
 
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-white md:px-8">
       <div className="mx-auto max-w-md rounded-xl border border-gray-800 bg-gray-950 p-8">
-        <Link href="/" className="mb-8 flex items-center gap-2" aria-label="DukeCrea inicio">
+        <Link href="/" className="mb-8 flex items-center gap-2" aria-label="CodigoFresco inicio">
           <div className="h-8 w-8 rounded-lg bg-lime-400 shadow-lg shadow-lime-400/50" />
-          <span className="text-lg font-bold text-white">DukeCrea</span>
+          <span className="text-lg font-bold text-white">CodigoFresco</span>
           <span className="rounded-full border border-gray-700 px-2 py-0.5 text-xs text-gray-400">
             Panel
           </span>

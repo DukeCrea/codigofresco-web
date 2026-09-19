@@ -9,7 +9,7 @@ import { siteConfig } from "../lib/site";
 export const metadata = buildMetadata({
   title: "Casos de software, WordPress y e-commerce",
   description:
-    "Casos reales de DukeCrea en automatización comercial, WordPress, e-commerce multi-país y tiendas educativas.",
+    "Casos reales de CodigoFresco en automatización comercial, WordPress, e-commerce multi-país y tiendas educativas.",
   path: "/casos",
 });
 
@@ -20,7 +20,7 @@ export default function CasesPage() {
       {
         "@type": "CollectionPage",
         "@id": `${siteConfig.url}/casos#page`,
-        name: "Casos DukeCrea",
+        name: "Casos CodigoFresco",
         description: metadata.description,
         url: `${siteConfig.url}/casos`,
         about: { "@id": organizationId },

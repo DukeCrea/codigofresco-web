@@ -4,7 +4,7 @@
 This project targets Next.js 16. APIs, conventions, routing behavior, and build defaults may differ from older Next.js versions. Before writing application code, install dependencies with `npm ci` and read the relevant guide in `node_modules/next/dist/docs/`. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# DukeCrea Project Protocol
+# CodigoFresco Project Protocol
 
 ## Git Flow
 
@@ -44,7 +44,7 @@ This project targets Next.js 16. APIs, conventions, routing behavior, and build 
 
 ## Frontend Standards
 
-- Preserve the existing DukeCrea dark visual identity and improve incrementally instead of rebuilding from scratch.
+- Preserve the existing CodigoFresco dark visual identity and improve incrementally instead of rebuilding from scratch.
 - Keep Spanish copy polished, readable, and free of mojibake.
 - Prefer Server Components by default. Move browser APIs, state, effects, and Motion interactions into focused Client Components.
 - Use Tailwind CSS v4 patterns already present in the project.

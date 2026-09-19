@@ -58,7 +58,7 @@ export default async function SolutionHubPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-black text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
-      <MarketingHeader whatsappMessage={`Hola DukeCrea, quiero conversar sobre ${hub.eyebrow}.`} />
+      <MarketingHeader whatsappMessage={`Hola CodigoFresco, quiero conversar sobre ${hub.eyebrow}.`} />
       <main>
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">

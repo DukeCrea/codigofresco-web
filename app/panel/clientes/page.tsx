@@ -8,8 +8,8 @@ import { PanelHeader } from "../panel-header";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Clientes | Panel DukeCrea",
-  description: "Directorio interno de clientes y demos de DukeCrea.",
+  title: "Clientes | Panel CodigoFresco",
+  description: "Directorio interno de clientes y demos de CodigoFresco.",
   robots: {
     index: false,
     follow: false,

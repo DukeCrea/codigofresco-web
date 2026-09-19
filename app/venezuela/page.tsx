@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 const whatsappUrl = getWhatsAppUrl(
-  "Hola DukeCrea, tengo una empresa en Venezuela y quiero digitalizarla. ¿Podemos hablar?",
+  "Hola CodigoFresco, tengo una empresa en Venezuela y quiero digitalizarla. ¿Podemos hablar?",
 );
 
 const casos = [
@@ -115,7 +115,7 @@ export default function VenezuelaPage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
-      <MarketingHeader whatsappMessage="Hola DukeCrea, tengo una empresa en Venezuela y quiero digitalizarla. ¿Podemos hablar?" />
+      <MarketingHeader whatsappMessage="Hola CodigoFresco, tengo una empresa en Venezuela y quiero digitalizarla. ¿Podemos hablar?" />
 
       <main>
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-20 md:px-8">
@@ -240,7 +240,7 @@ export default function VenezuelaPage() {
               className="mt-8 inline-flex items-center gap-2 rounded-lg bg-gray-950 px-8 py-3 font-bold text-white transition hover:bg-gray-800"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Hablar con DukeCrea
+              Hablar con CodigoFresco
             </a>
           </div>
         </section>

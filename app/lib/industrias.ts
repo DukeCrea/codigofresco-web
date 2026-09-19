@@ -97,7 +97,7 @@ export const industrias: Industria[] = [
       "chatbot-whatsapp-redes-sociales-ia",
     ],
     whatsapp:
-      "Hola DukeCrea, tengo un concesionario de autos y quiero automatizar contratos y cotizaciones. ¿Podemos hablar?",
+      "Hola CodigoFresco, tengo un concesionario de autos y quiero automatizar contratos y cotizaciones. ¿Podemos hablar?",
   },
   {
     slug: "tiendas-multi-pais",
@@ -167,7 +167,7 @@ export const industrias: Industria[] = [
     ],
     serviciosRelacionados: ["e-commerce", "desarrollo-de-software", "panel-monitor-administrativo-inteligente"],
     whatsapp:
-      "Hola DukeCrea, quiero vender en varios países con una sola tienda. ¿Podemos hablar?",
+      "Hola CodigoFresco, quiero vender en varios países con una sola tienda. ¿Podemos hablar?",
   },
 ];
 

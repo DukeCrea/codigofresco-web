@@ -1,4 +1,4 @@
-# Auditoría web DukeCrea — Arquitectura, copy y técnicas
+# Auditoría web CodigoFresco — Arquitectura, copy y técnicas
 
 > Objetivo: pasar de una **home-catálogo** (todo en una página) a un **sistema de páginas** enfocado, con copy que cierra y dirige al público correcto. Documento guía para implementar por fases.
 
