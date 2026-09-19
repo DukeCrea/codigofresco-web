@@ -103,7 +103,7 @@ const jsonLd = {
         { "@type": "Country", name: "Panamá" },
         { "@type": "Country", name: "Venezuela" },
       ],
-      sameAs: [siteConfig.github, siteConfig.instagram],
+      sameAs: [siteConfig.instagram],
       knowsAbout: [
         "Desarrollo web",
         "WordPress",
