@@ -15,27 +15,21 @@ import {
   ZapIcon,
 } from "./icons";
 import {
-  benefits,
-  cases,
-  faqs,
   getWhatsAppUrl,
-  megaMenuColumns,
-  navLinks,
-  plans,
   premiumStack,
-  processSteps,
-  serviceCategoryMap,
-  team,
   technologies,
-  workflowSteps,
   type Service,
 } from "./lib/site";
+import type { Locale } from "./lib/i18n/config";
+import { getContent, getServiceCategoryMap } from "./lib/i18n";
+import { getHome } from "./lib/i18n/home";
 import { LeadIntakeSection } from "./lead-intake-section";
 import { AutoVideo } from "./auto-video";
 import { Logo } from "./logo";
 import { ProcesoScroll } from "./proceso-scroll";
 import { CountUp } from "./count-up";
-import { SiteFooter } from "./marketing-layout";
+import { LanguageSwitch, SiteFooter } from "./marketing-layout";
+import { getUi } from "./lib/i18n/ui";
 
 const iconMap = {
   bot: BotIcon,
@@ -178,13 +172,17 @@ function SectionHeading({
   );
 }
 
-function Header() {
+function Header({ lang }: { lang: Locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const reduceMotion = usePrefersReducedMotion();
   const whatsappUrl = getWhatsAppUrl();
-  const secondaryLinks = navLinks.filter((link) => link.label !== "Soluciones");
+  const t = getHome(lang);
+  const ui = getUi(lang);
+  const { navLinks, megaMenuColumns } = getContent(lang);
+  // El primer enlace ya está representado por el botón del mega menú.
+  const secondaryLinks = navLinks.filter((link) => link.label !== ui.nav.solutions);
 
   useEffect(() => {
     if (!megaOpen || !panelRef.current || reduceMotion) return;
@@ -211,12 +209,12 @@ function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-gray-900 bg-black/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="CodigoFresco inicio">
+        <Link href={ui.homeHref} className="flex items-center gap-2" aria-label={ui.aria.home}>
           <Logo className="h-8 w-8 rounded-lg shadow-lg shadow-lime-400/50" />
           <span className="text-lg font-bold text-white">CodigoFresco</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
+        <nav className="hidden items-center gap-7 md:flex" aria-label={ui.aria.mainNav}>
           <div className="relative" onMouseEnter={() => setMegaOpen(true)}>
             <button
               type="button"
@@ -226,7 +224,7 @@ function Header() {
               aria-expanded={megaOpen}
               aria-haspopup="true"
             >
-              Soluciones
+              {ui.nav.solutions}
             </button>
           </div>
           {secondaryLinks.map((link) => (
@@ -241,6 +239,7 @@ function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitch lang={lang} />
           <a
             href={whatsappUrl}
             target="_blank"
@@ -248,13 +247,13 @@ function Header() {
             className="hidden items-center gap-2 rounded-lg bg-lime-400 px-6 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-300 sm:flex"
           >
             <WhatsAppIcon className="h-4 w-4" />
-            Hablemos
+            {ui.nav.talk}
           </a>
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             className="rounded-lg p-2 text-gray-300 transition hover:bg-gray-900 hover:text-white md:hidden"
-            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={menuOpen ? t.menu.close : t.menu.open}
             aria-expanded={menuOpen}
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
@@ -299,7 +298,7 @@ function Header() {
       )}
 
       {menuOpen && (
-        <nav className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-900 bg-black px-6 py-4 md:hidden" aria-label="Navegación móvil">
+        <nav className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-gray-900 bg-black px-6 py-4 md:hidden" aria-label={t.menu.mobileNavAria}>
           <div className="space-y-5">
             {megaMenuColumns.map((column) => (
               <div key={column.title}>
@@ -337,7 +336,7 @@ function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="rounded-lg bg-lime-400 px-6 py-2.5 text-center text-sm font-bold text-gray-950 transition hover:bg-lime-300"
               >
-                Hablemos por WhatsApp
+                {t.menu.whatsappMobile}
               </a>
             </div>
           </div>
@@ -347,7 +346,8 @@ function Header() {
   );
 }
 
-function TechTicker() {
+function TechTicker({ lang }: { lang: Locale }) {
+  const t = getHome(lang).ticker;
   const trackRef = useRef<HTMLDivElement>(null);
   const reduceMotion = usePrefersReducedMotion();
   const tickerItems = [...premiumStack, ...premiumStack];
@@ -379,9 +379,9 @@ function TechTicker() {
   }, [reduceMotion]);
 
   return (
-    <section className="overflow-hidden border-t border-gray-900 bg-gray-950 py-6" aria-label="Stack tecnológico CodigoFresco">
+    <section className="overflow-hidden border-t border-gray-900 bg-gray-950 py-6" aria-label={t.aria}>
       <div className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-lime-300">
-        Stack tecnológico para ecosistemas B2B
+        {t.eyebrow}
       </div>
       <div className="relative mx-auto max-w-7xl overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-gray-950 to-transparent" />
@@ -401,7 +401,9 @@ function TechTicker() {
   );
 }
 
-function WorkflowAutomation() {
+function WorkflowAutomation({ lang }: { lang: Locale }) {
+  const t = getHome(lang).workflow;
+  const { workflowSteps } = getContent(lang);
   const containerRef = useRef<HTMLElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const reduceMotion = usePrefersReducedMotion();
@@ -466,14 +468,10 @@ function WorkflowAutomation() {
       <AutoVideo src="/grid.mp4" poster="/grid.jpg" className="pointer-events-none absolute inset-0 opacity-30" />
       <div className="pointer-events-none absolute inset-0 bg-black/70" />
       <div className="relative z-10 mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Automatización B2B"
-          title="Del anuncio al CRM sin perder trazabilidad"
-          description="Un flujo diseñado para reducir costos operativos, recuperar leads a tiempo y proteger datos relacionales con seguimiento comercial claro."
-        />
+        <SectionHeading eyebrow={t.eyebrow} title={t.title} description={t.description} />
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div className="relative min-h-[320px] rounded-xl border border-gray-800 bg-gray-950 p-6">
-            <svg viewBox="0 0 620 320" className="h-full min-h-[280px] w-full" role="img" aria-label="Flujo desde anuncio hasta CRM y panel de ROI">
+            <svg viewBox="0 0 620 320" className="h-full min-h-[280px] w-full" role="img" aria-label={t.diagramAria}>
               <defs>
                 <filter id="workflowGlow">
                   <feGaussianBlur stdDeviation="4" result="coloredBlur" />
@@ -525,22 +523,27 @@ function WorkflowAutomation() {
   );
 }
 
-export default function HomePage({ hero }: { hero: React.ReactNode }) {
+export default function HomePage({
+  hero,
+  lang = "es",
+}: {
+  hero: React.ReactNode;
+  lang?: Locale;
+}) {
+  const t = getHome(lang);
+  const { cases, team, processSteps, plans, faqs, benefits } = getContent(lang);
+  const serviceCategoryMap = getServiceCategoryMap(lang);
+
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
+      <Header lang={lang} />
 
       <main>
         {hero}
 
         <section className="border-t border-gray-900 bg-black px-6 py-12 md:px-8">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 text-center md:grid-cols-4">
-            {[
-              { value: "15+", label: "Proyectos entregados" },
-              { value: "16", label: "Soluciones digitales" },
-              { value: "5+", label: "Años de experiencia" },
-              { value: "100%", label: "A medida de tu negocio" },
-            ].map((stat) => (
+            {t.stats.map((stat) => (
               <div key={stat.label}>
                 <div className="mb-2 text-4xl font-bold text-lime-400">
                   <CountUp value={stat.value} />
@@ -551,14 +554,14 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
           </div>
         </section>
 
-        <TechTicker />
+        <TechTicker lang={lang} />
 
         <Reveal id="servicios" className="scroll-mt-16 border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading
-              eyebrow="Soluciones"
-              title="Infraestructura digital para cada punto crítico del negocio"
-              description="Cada línea conecta páginas, comercio, automatización, datos y contenido para que la inversión digital tenga lectura de negocio."
+              eyebrow={t.services.eyebrow}
+              title={t.services.title}
+              description={t.services.description}
             />
             <div className="space-y-12">
               {serviceCategoryMap.map((category) => (
@@ -576,7 +579,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                       return (
                         <Link
                           key={service.slug}
-                          href={`/servicios/${service.slug}`}
+                          href={`${t.services.basePath}/${service.slug}`}
                           className="group rounded-xl border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70 hover:shadow-lg hover:shadow-lime-400/10"
                         >
                           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg border border-lime-400/30 bg-lime-400/10 text-lime-400">
@@ -586,7 +589,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                             {service.title}
                           </h4>
                           <p className="mb-4 text-sm leading-6 text-gray-400">{service.summary}</p>
-                          <span className="text-sm font-bold text-lime-300">Ver solución</span>
+                          <span className="text-sm font-bold text-lime-300">{t.services.cardCta}</span>
                         </Link>
                       );
                     })}
@@ -601,14 +604,13 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
-                Beneficios
+                {t.benefits.eyebrow}
               </p>
               <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
-                Un ecosistema digital, no piezas sueltas
+                {t.benefits.title}
               </h2>
               <p className="mt-4 leading-7 text-gray-400">
-                Sumamos infraestructura web, automatizaciones, datos y marketing alrededor de lo que ya existe en tu negocio.
-                La meta no es tener más herramientas: es recuperar oportunidades, reducir fricción y operar con continuidad.
+                {t.benefits.description}
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -622,14 +624,14 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
           </div>
         </Reveal>
 
-        <WorkflowAutomation />
+        <WorkflowAutomation lang={lang} />
 
         <Reveal id="casos" className="scroll-mt-16 border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionHeading
-              eyebrow="Casos"
-              title="Negocios y productos que ya digitalizamos"
-              description="Proyectos reales de software, e-commerce, automatización, contabilidad, eventos y marketing con IA."
+              eyebrow={t.cases.eyebrow}
+              title={t.cases.title}
+              description={t.cases.description}
             />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {cases.map((caseItem) => (
@@ -654,10 +656,10 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
             </div>
             <div className="mt-12 flex flex-wrap justify-center gap-3 text-center">
               <Link
-                href="/casos"
+                href={t.cases.ctaHref}
                 className="inline-block rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 transition hover:bg-lime-300"
               >
-                Leer casos completos
+                {t.cases.cta}
               </Link>
             </div>
           </div>
@@ -666,9 +668,9 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
         <Reveal id="equipo" className="scroll-mt-16 border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-5xl">
             <SectionHeading
-              eyebrow="Equipo"
-              title="Fundadores al frente y especialistas según el reto"
-              description="CodigoFresco combina dirección cercana, desarrollo senior y especialistas que se integran según cada proyecto."
+              eyebrow={t.team.eyebrow}
+              title={t.team.title}
+              description={t.team.description}
             />
             <div className="grid gap-6 sm:grid-cols-3">
               {team.map((member) => (
@@ -689,11 +691,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
         </Reveal>
 
         <section id="proceso" className="scroll-mt-16 border-t border-gray-900 bg-black">
-          <ProcesoScroll
-            steps={processSteps}
-            title="Cómo trabajamos"
-            description="Un proceso claro para pasar de idea o problema operativo a solución funcionando."
-          />
+          <ProcesoScroll steps={processSteps} title={t.process.title} description={t.process.description} />
         </section>
 
         <div className="relative h-24 w-full overflow-hidden border-t border-gray-900 bg-black md:h-32" aria-hidden="true">
@@ -702,11 +700,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
 
         <Reveal className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading
-              eyebrow="Stack"
-              title="Tecnologías y herramientas que usamos"
-              description="Elegimos tecnología según el modelo operativo: a medida cuando hace falta control, WordPress o Shopify cuando conviene velocidad y administración."
-            />
+            <SectionHeading eyebrow={t.stack.eyebrow} title={t.stack.title} description={t.stack.description} />
             <div className="flex flex-wrap justify-center gap-3">
               {technologies.map((tech) => (
                 <span key={tech} className="rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-2 text-sm font-medium text-lime-200">
@@ -719,11 +713,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
 
         <Reveal id="planes" className="scroll-mt-16 border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-6xl">
-            <SectionHeading
-              eyebrow="Planes"
-              title="Planes para cada etapa"
-              description="Precios de referencia para orientarte. El presupuesto final se define tras el diagnóstico inicial."
-            />
+            <SectionHeading eyebrow={t.plans.eyebrow} title={t.plans.title} description={t.plans.description} />
             <div className="grid gap-8 md:grid-cols-3">
               {plans.map((plan) => (
                 <div
@@ -737,7 +727,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                   {plan.featured && (
                     <div className="mb-4 inline-flex items-center gap-1.5 self-start rounded-full bg-lime-400 px-3 py-1 text-xs font-bold text-gray-950">
                       <StarIcon className="h-3.5 w-3.5" />
-                      Más elegido
+                      {t.plans.badge}
                     </div>
                   )}
                   <h3 className="mb-1 text-2xl font-bold text-white">{plan.name}</h3>
@@ -756,7 +746,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                     ))}
                   </ul>
                   <a
-                    href={getWhatsAppUrl(`Hola CodigoFresco, quiero una cotización para ${plan.name}.`)}
+                    href={getWhatsAppUrl(t.plans.quoteMessage(plan.name))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full rounded-lg px-6 py-3 text-center font-bold transition ${
@@ -765,7 +755,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
                         : "border-2 border-gray-700 text-white hover:border-lime-400 hover:text-lime-400"
                     }`}
                   >
-                    Solicitar cotización
+                    {t.plans.cta}
                   </a>
                 </div>
               ))}
@@ -775,7 +765,7 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
 
         <Reveal id="faq" className="scroll-mt-16 border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl">
-            <SectionHeading title="Preguntas frecuentes" />
+            <SectionHeading title={t.faq.title} />
             <div className="space-y-4">
               {faqs.map((faq) => (
                 <details key={faq.q} className="rounded-lg border border-gray-800 bg-gray-950 p-6 transition hover:border-gray-700">
@@ -791,30 +781,29 @@ export default function HomePage({ hero }: { hero: React.ReactNode }) {
           <AutoVideo
             src="/hero-loop.mp4"
             poster="/hero-loop-poster.jpg"
-            label="De procesos manuales a inteligencia artificial"
+            label={t.closing.videoLabel}
             className="absolute inset-0"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
           <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-7xl items-center px-6 py-24 md:px-8">
             <div className="max-w-xl">
               <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-lime-400">
-                De lo manual a la IA
+                {t.closing.eyebrow}
               </p>
               <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">
-                Del caos operativo a flujos inteligentes
+                {t.closing.title}
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
-                Ordenamos tu operación con automatización, datos y software a medida — para que tu
-                negocio venda, opere y escale.
+                {t.closing.description}
               </p>
             </div>
           </div>
         </section>
 
-        <LeadIntakeSection />
+        <LeadIntakeSection lang={lang} />
       </main>
 
-      <SiteFooter />
+      <SiteFooter lang={lang} />
     </div>
   );
 }

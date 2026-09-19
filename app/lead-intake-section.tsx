@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 import Link from "next/link";
 import {
   BotIcon,
@@ -13,134 +13,21 @@ import {
   ZapIcon,
 } from "./icons";
 import { getWhatsAppUrl, siteConfig } from "./lib/site";
+import type { Locale } from "./lib/i18n/config";
+import { getForm, type ProjectId } from "./lib/i18n/form";
 import { AnalyticsEvent, tagSession, track } from "./lib/analytics";
 
 type IconComponent = (props: { className?: string }) => React.ReactNode;
 
-type Option = {
-  label: string;
-  description: string;
-  icon: IconComponent;
+
+const iconByProject: Record<ProjectId, IconComponent> = {
+  web: PhoneIcon,
+  ecommerce: CartIcon,
+  automation: ZapIcon,
+  software: PackageIcon,
+  data: ChartIcon,
+  audit: BotIcon,
 };
-
-type ProjectId = "web" | "ecommerce" | "automation" | "software" | "data" | "audit";
-
-type ProjectOption = Option & {
-  id: ProjectId;
-  shortLabel: string;
-};
-
-const projectOptions: ProjectOption[] = [
-  {
-    id: "web",
-    label: "Página web, WordPress o rediseño",
-    shortLabel: "tu web",
-    description: "Sitios corporativos, landings y presencia digital administrable.",
-    icon: PhoneIcon,
-  },
-  {
-    id: "ecommerce",
-    label: "E-commerce o Shopify",
-    shortLabel: "tu tienda online",
-    description: "Tiendas online, catálogos, pagos, inventario y ventas medibles.",
-    icon: CartIcon,
-  },
-  {
-    id: "automation",
-    label: "Automatización de procesos",
-    shortLabel: "tu automatización",
-    description: "WhatsApp, CRM, formularios, notificaciones, APIs y tareas repetitivas.",
-    icon: ZapIcon,
-  },
-  {
-    id: "software",
-    label: "Software o app a medida",
-    shortLabel: "tu sistema",
-    description: "Sistemas internos, SaaS, portales, paneles y flujos operativos.",
-    icon: PackageIcon,
-  },
-  {
-    id: "data",
-    label: "Panel de datos, Ads o ROI",
-    shortLabel: "tus datos",
-    description: "Métricas, leads, campañas, inversión, dashboards y toma de decisiones.",
-    icon: ChartIcon,
-  },
-  {
-    id: "audit",
-    label: "Auditoría de ecosistema digital",
-    shortLabel: "tu ecosistema digital",
-    description: "Evaluamos web, redes, contenido, pauta y oportunidades de mejora.",
-    icon: BotIcon,
-  },
-];
-
-const needOptionsByProject: Record<ProjectId, string[]> = {
-  web: [
-    "Crear una web corporativa desde cero",
-    "Rediseñar una web que ya no convierte",
-    "Trabajar con WordPress y poder editar contenido",
-    "Mejorar velocidad, SEO y estructura",
-    "Captar leads con formularios o WhatsApp",
-    "Migrar o integrar una web existente",
-  ],
-  ecommerce: [
-    "Lanzar una tienda online nueva",
-    "Trabajar con Shopify",
-    "Mejorar conversión y checkout",
-    "Ordenar productos, inventario y pagos",
-    "Integrar envíos, CRM o automatizaciones",
-    "Medir ventas, ROAS y recuperación de carritos",
-  ],
-  automation: [
-    "Capturar leads desde WhatsApp, web o redes",
-    "Responder mensajes o comentarios automáticamente",
-    "Conectar formularios, CRM, Sheets o email",
-    "Asignar tareas y seguimiento comercial",
-    "Reducir trabajo manual del equipo",
-    "Crear un agente con IA para atención",
-  ],
-  software: [
-    "Crear un sistema interno a medida",
-    "Automatizar un proceso operativo completo",
-    "Construir app web, portal o SaaS",
-    "Integrar roles, permisos y base de datos",
-    "Reemplazar hojas de cálculo o herramientas sueltas",
-    "Escalar o mantener un software existente",
-  ],
-  data: [
-    "Centralizar métricas de leads, ventas o Ads",
-    "Crear un dashboard administrativo",
-    "Medir ROI, ROAS y pipeline comercial",
-    "Conectar Google Ads, Meta Ads o CRM",
-    "Recibir alertas y reportes automáticos",
-    "Limpiar y ordenar bases de datos",
-  ],
-  audit: [
-    "Auditar web, SEO/GEO y conversión",
-    "Evaluar redes sociales y contenido",
-    "Revisar inversión en Ads y estrategia",
-    "Detectar fugas de leads y seguimiento",
-    "Priorizar mejoras de alto impacto",
-    "Necesito un diagnóstico completo del ecosistema",
-  ],
-};
-
-const budgetOptions = [
-  "Menos de USD 1,000",
-  "USD 1,000 a 3,000",
-  "USD 3,000 a 5,000",
-  "USD 5,000 a 10,000",
-  "Más de USD 10,000",
-  "Prefiero definirlo en el diagnóstico",
-];
-
-const timelineOptions = [
-  "Lo necesito este mes",
-  "En 30 a 60 días",
-  "En 2 a 3 meses",
-  "Estoy explorando opciones",
-];
 
 const initialForm = {
   name: "",
@@ -177,7 +64,12 @@ function pushLeadFormEvent(event: string, payload: Record<string, unknown> = {})
   });
 }
 
-export function LeadIntakeSection() {
+export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
+  const t = getForm(lang);
+  const projectOptions = t.projects.map((project) => ({ ...project, icon: iconByProject[project.id] }));
+  const needOptionsByProject = t.needs;
+  const budgetOptions = t.budgets;
+  const timelineOptions = t.timelines;
   const [step, setStep] = useState(0);
   const [projectId, setProjectId] = useState<ProjectId | "">("");
   const [projectType, setProjectType] = useState("");
@@ -189,13 +81,7 @@ export function LeadIntakeSection() {
   const [error, setError] = useState("");
   const selectedProject = projectOptions.find((option) => option.id === projectId);
   const currentNeedOptions = projectId ? needOptionsByProject[projectId] : [];
-  const whatsappUrl = useMemo(
-    () =>
-      getWhatsAppUrl(
-        "Hola CodigoFresco, completé el formulario de la web y quiero avanzar con mi diagnóstico.",
-      ),
-    [],
-  );
+  const whatsappUrl = getWhatsAppUrl(t.whatsappMessage);
 
   const progress = status === "success" ? 3 : step + 1;
 
@@ -208,17 +94,17 @@ export function LeadIntakeSection() {
     setError("");
 
     if (!projectId || !projectType || !need) {
-      setError("Selecciona el tipo de proyecto y la necesidad principal.");
+      setError(t.errors.step1);
       return;
     }
 
     if (!form.name.trim() || !form.phone.trim()) {
-      setError("Indica tu nombre y WhatsApp para poder contactarte.");
+      setError(t.errors.step3);
       return;
     }
 
     if (!privacyAccepted) {
-      setError("Debes aceptar la política de privacidad para enviar la solicitud.");
+      setError(t.errors.privacy);
       return;
     }
 
@@ -246,7 +132,7 @@ export function LeadIntakeSection() {
       const payload = (await response.json()) as { ok?: boolean; message?: string };
 
       if (!response.ok || !payload.ok) {
-        throw new Error(payload.message || "No pudimos registrar la solicitud.");
+        throw new Error(payload.message || t.errors.generic);
       }
 
       setStatus("success");
@@ -276,7 +162,7 @@ export function LeadIntakeSection() {
       const message =
         submitError instanceof Error
           ? submitError.message
-          : "No pudimos registrar la solicitud. Inténtalo nuevamente.";
+          : t.errors.retry;
       setError(message);
       // Sin esto, un fallo del backend se ve igual que "nadie llenó el
       // formulario": tráfico que llega, cero leads y ninguna pista del porqué.
@@ -289,12 +175,11 @@ export function LeadIntakeSection() {
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-gray-800">
-            Diagnóstico gratuito
+            {t.eyebrow}
           </p>
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Cuéntanos tu proyecto</h2>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">{t.title}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-900">
-            Responde unas preguntas rápidas y te decimos cómo convertir tu idea, operación o
-            embudo comercial en infraestructura digital medible.
+            {t.subtitle}
           </p>
         </div>
 
@@ -302,11 +187,11 @@ export function LeadIntakeSection() {
           <div
             className="mb-8 grid grid-cols-3 gap-3"
             role="progressbar"
-            aria-label="Progreso del formulario"
+            aria-label={t.progressAria}
             aria-valuemin={1}
             aria-valuemax={3}
             aria-valuenow={progress}
-            aria-valuetext={`Paso ${progress} de 3`}
+            aria-valuetext={t.progressText(progress, 3)}
           >
             {[1, 2, 3].map((item) => (
               <div
@@ -324,10 +209,9 @@ export function LeadIntakeSection() {
               <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-lime-400 text-gray-950">
                 <CheckIcon className="h-7 w-7" />
               </div>
-              <h3 className="text-2xl font-bold">Recibimos tu solicitud</h3>
+              <h3 className="text-2xl font-bold">{t.success.title}</h3>
               <p className="mx-auto mt-3 max-w-xl leading-7 text-gray-300">
-                Tu oportunidad quedó registrada en el panel interno. Revisaremos tus respuestas y te
-                contactaremos para darte una ruta clara de implementación.
+                {t.success.body}
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <a
@@ -337,7 +221,7 @@ export function LeadIntakeSection() {
                   className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-6 py-3 font-bold text-gray-950 transition hover:bg-lime-300"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  Continuar por WhatsApp
+                  {t.success.whatsapp}
                 </a>
                 <button
                   type="button"
@@ -352,7 +236,7 @@ export function LeadIntakeSection() {
                   }}
                   className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-300"
                 >
-                  Registrar otro proyecto
+                  {t.success.again}
                 </button>
               </div>
             </div>
@@ -360,7 +244,7 @@ export function LeadIntakeSection() {
             <form onSubmit={submitLead}>
               <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
                 <label>
-                  Sitio web
+                  {t.honeypotLabel}
                   <input
                     tabIndex={-1}
                     autoComplete="off"
@@ -373,9 +257,9 @@ export function LeadIntakeSection() {
 
               {step === 0 && (
                 <div>
-                  <h3 className="text-2xl font-bold">¿Qué quieres construir o mejorar?</h3>
+                  <h3 className="text-2xl font-bold">{t.step1.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-gray-400">
-                    Elige el punto de partida para orientar el diagnóstico.
+                    {t.step1.hint}
                   </p>
                   <div className="mt-7 grid gap-3 md:grid-cols-2">
                     {projectOptions.map((option) => {
@@ -426,11 +310,11 @@ export function LeadIntakeSection() {
               {step === 1 && (
                 <div>
                   <h3 className="text-2xl font-bold">
-                    ¿Qué necesitas resolver primero
-                    {selectedProject ? ` en ${selectedProject.shortLabel}` : ""}?
+                    {t.step2.title}
+                    {selectedProject ? ` ${lang === "en" ? "for" : "en"} ${selectedProject.shortLabel}` : ""}?
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-gray-400">
-                    Esto nos ayuda a estimar impacto, prioridad y ruta de implementación.
+                    {t.step2.hint}
                   </p>
                   <div className="mt-7 grid gap-3 md:grid-cols-2">
                     {currentNeedOptions.map((option) => {
@@ -465,50 +349,50 @@ export function LeadIntakeSection() {
                     onClick={() => setStep(0)}
                     className="mt-6 text-sm font-bold text-gray-400 transition hover:text-lime-300"
                   >
-                    Volver al tipo de proyecto
+                    {t.step2.back}
                   </button>
                 </div>
               )}
 
               {step === 2 && (
                 <div>
-                  <h3 className="text-2xl font-bold">Datos para preparar tu diagnóstico</h3>
+                  <h3 className="text-2xl font-bold">{t.step3.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-gray-400">
-                    La solicitud llega al panel interno como una nueva oportunidad comercial.
+                    {t.step3.hint}
                   </p>
 
                   <div className="mt-7 grid gap-4 md:grid-cols-2">
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      Nombre completo
+                      {t.step3.name}
                       <input
                         required
                         value={form.name}
                         onChange={(event) => updateField("name", event.target.value)}
                         className="rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
-                        placeholder="Tu nombre"
+                        placeholder={t.step3.namePlaceholder}
                       />
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      WhatsApp o teléfono
+                      {t.step3.phone}
                       <input
                         required
                         value={form.phone}
                         onChange={(event) => updateField("phone", event.target.value)}
                         className="rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
-                        placeholder="+507 0000 0000"
+                        placeholder={t.step3.phonePlaceholder}
                       />
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      Empresa
+                      {t.step3.company}
                       <input
                         value={form.company}
                         onChange={(event) => updateField("company", event.target.value)}
                         className="rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
-                        placeholder="Nombre de tu empresa"
+                        placeholder={t.step3.companyPlaceholder}
                       />
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      Correo
+                      {t.step3.email}
                       <input
                         type="email"
                         value={form.email}
@@ -518,13 +402,13 @@ export function LeadIntakeSection() {
                       />
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      Inversión estimada
+                      {t.step3.budget}
                       <select
                         value={form.budget}
                         onChange={(event) => updateField("budget", event.target.value)}
                         className="rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
                       >
-                        <option value="">Seleccionar rango</option>
+                        <option value="">{t.step3.budgetPlaceholder}</option>
                         {budgetOptions.map((option) => (
                           <option key={option} value={option}>
                             {option}
@@ -533,13 +417,13 @@ export function LeadIntakeSection() {
                       </select>
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300">
-                      Tiempo ideal
+                      {t.step3.timeline}
                       <select
                         value={form.timeline}
                         onChange={(event) => updateField("timeline", event.target.value)}
                         className="rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
                       >
-                        <option value="">Seleccionar tiempo</option>
+                        <option value="">{t.step3.timelinePlaceholder}</option>
                         {timelineOptions.map((option) => (
                           <option key={option} value={option}>
                             {option}
@@ -548,12 +432,12 @@ export function LeadIntakeSection() {
                       </select>
                     </label>
                     <label className="grid gap-2 text-sm font-semibold text-gray-300 md:col-span-2">
-                      Cuéntanos el contexto
+                      {t.step3.message}
                       <textarea
                         value={form.message}
                         onChange={(event) => updateField("message", event.target.value)}
                         className="min-h-28 rounded-lg border border-gray-800 bg-black px-4 py-3 text-white outline-none transition focus:border-lime-400"
-                        placeholder="Qué tienes hoy, qué necesitas mejorar y qué resultado esperas."
+                        placeholder={t.step3.messagePlaceholder}
                       />
                     </label>
                     <label className="flex items-start gap-3 text-sm leading-6 text-gray-300 md:col-span-2">
@@ -565,10 +449,9 @@ export function LeadIntakeSection() {
                         className="mt-1 h-4 w-4 shrink-0 accent-lime-400"
                       />
                       <span>
-                        Acepto que CodigoFresco use estos datos para responder mi solicitud, de acuerdo
-                        con la{" "}
-                        <Link href="/privacidad" className="font-bold text-lime-300 underline underline-offset-4">
-                          política de privacidad
+                        {t.step3.privacyLead}{lang === "en" ? " " : " con la "}
+                        <Link href={t.step3.privacyHref} className="font-bold text-lime-300 underline underline-offset-4">
+                          {t.step3.privacyLink}
                         </Link>
                         .
                       </span>
@@ -587,14 +470,14 @@ export function LeadIntakeSection() {
                       onClick={() => setStep(1)}
                       className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-300"
                     >
-                      Volver
+                      {t.step3.back}
                     </button>
                     <button
                       type="submit"
                       disabled={status === "submitting"}
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-lime-400 px-7 py-3 font-bold text-gray-950 transition hover:bg-lime-300 disabled:cursor-not-allowed disabled:opacity-70"
                     >
-                      {status === "submitting" ? "Registrando..." : "Enviar diagnóstico"}
+                      {status === "submitting" ? t.step3.submitting : t.step3.submit}
                     </button>
                   </div>
                 </div>
@@ -604,9 +487,9 @@ export function LeadIntakeSection() {
         </div>
 
         <p className="mt-7 text-center text-sm text-gray-900">
-          ¿Prefieres escribir directo?{" "}
+          {t.emailPrompt}{" "}
           <a href={`mailto:${siteConfig.email}`} className="font-bold underline underline-offset-4">
-            Envíanos un email
+            {t.emailFallback}
           </a>
         </p>
       </div>

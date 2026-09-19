@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import type { Locale } from "./lib/i18n/config";
+import { getUi } from "./lib/i18n/ui";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
@@ -96,7 +98,8 @@ function ClickTracker() {
   return null;
 }
 
-export function AnalyticsScripts() {
+export function AnalyticsScripts({ lang = "es" }: { lang?: Locale }) {
+  const t = getUi(lang).consent;
   const [consent, setConsent] = useState<ConsentStatus | null>(null);
   const [ready, setReady] = useState(false);
   const [gaReady, setGaReady] = useState(false);
@@ -176,16 +179,15 @@ export function AnalyticsScripts() {
       {ready && consent === null ? (
         <div
           role="dialog"
-          aria-label="Preferencias de analítica"
+          aria-label={t.dialogAria}
           className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-lg border border-gray-700 bg-gray-950 p-5 text-white shadow-2xl shadow-black/60 sm:flex sm:items-center sm:justify-between sm:gap-6"
         >
           <div>
-            <p className="font-bold">Tu privacidad importa</p>
+            <p className="font-bold">{t.title}</p>
             <p className="mt-1 text-sm leading-6 text-gray-300">
-              Usamos analítica opcional para entender qué contenido ayuda y mejorar la web. No
-              cargamos Google Analytics ni Clarity hasta que aceptes. Consulta la{" "}
-              <Link href="/cookies" className="underline underline-offset-4 hover:text-lime-300">
-                política de cookies
+              {t.bodyLead}{" "}
+              <Link href={t.policyHref} className="underline underline-offset-4 hover:text-lime-300">
+                {t.policyLink}
               </Link>
               .
             </p>
@@ -196,14 +198,14 @@ export function AnalyticsScripts() {
               onClick={() => chooseConsent("rejected")}
               className="rounded-lg border border-gray-600 px-4 py-2 text-sm font-bold text-white transition hover:border-gray-400"
             >
-              Rechazar
+              {t.reject}
             </button>
             <button
               type="button"
               onClick={() => chooseConsent("accepted")}
               className="rounded-lg bg-lime-400 px-4 py-2 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
             >
-              Aceptar
+              {t.accept}
             </button>
           </div>
         </div>
@@ -212,7 +214,9 @@ export function AnalyticsScripts() {
   );
 }
 
-export function CookiePreferencesButton() {
+export function CookiePreferencesButton({ lang = "es" }: { lang?: Locale }) {
+  const t = getUi(lang).consent;
+
   return (
     <button
       type="button"
@@ -222,7 +226,7 @@ export function CookiePreferencesButton() {
       }}
       className="rounded-lg border border-lime-400 px-5 py-2.5 font-bold text-lime-300 transition hover:bg-lime-400 hover:text-gray-950"
     >
-      Cambiar preferencias de analítica
+      {t.changePreferences}
     </button>
   );
 }
