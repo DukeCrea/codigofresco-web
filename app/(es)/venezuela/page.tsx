@@ -18,13 +18,10 @@ const baseMetadata = buildMetadata({
 
 export const metadata: Metadata = {
   ...baseMetadata,
+  // Página propia para Venezuela, no una traducción de la portada: lleva su
+  // canonical y ningún hreflang (no tiene equivalente en otro idioma).
   alternates: {
     canonical: "/venezuela",
-    languages: {
-      "es-PA": "/",
-      "es-VE": "/venezuela",
-      "x-default": "/",
-    },
   },
 };
 
@@ -75,7 +72,7 @@ const faq = [
   },
   {
     q: "¿Cómo empiezo?",
-    a: "Escríbenos por WhatsApp y agendamos un diagnóstico inicial sin costo. Revisamos tu operación actual y te proponemos una ruta concreta, con alcance y orden de prioridades.",
+    a: "Escríbeme por WhatsApp y revisamos juntos el punto de partida. Analizo tu operación actual y propongo una ruta concreta, con alcance y orden de prioridades.",
   },
 ];
 
@@ -117,7 +114,7 @@ export default function VenezuelaPage() {
 
       <MarketingHeader whatsappMessage="Hola CodigoFresco, tengo una empresa en Venezuela y quiero digitalizarla. ¿Podemos hablar?" />
 
-      <main>
+      <main id="contenido">
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
@@ -126,7 +123,7 @@ export default function VenezuelaPage() {
               <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">Software, automatización e IA para empresas en <span className="text-lime-400">Venezuela</span></h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">Desarrollamos webs, tiendas online, software a medida y automatizaciones con inteligencia artificial para empresas venezolanas. Tenemos sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Solicitar diagnóstico gratis</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
                 <Link href="/servicios" className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400">Ver todas las soluciones</Link>
               </div>
             </div>

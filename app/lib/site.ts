@@ -1,5 +1,7 @@
+import { portfolioServicesEs } from "./portfolio/services";
+
 export const siteConfig = {
-  name: "CodigoFresco",
+  name: "Código Fresco",
   url: "https://codigofresco.com",
   email: "hola@codigofresco.com",
   instagram: "https://www.instagram.com/codigofresco",
@@ -81,6 +83,7 @@ export const serviceCategories: Array<{
 ];
 
 export const services: Service[] = [
+  ...portfolioServicesEs,
   {
     slug: "paginas-web-corporativas",
     category: "dev",
@@ -115,7 +118,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿En cuánto tiempo puede estar lista?",
-        a: "Una web corporativa enfocada suele tomar entre 1 y 3 semanas según cantidad de secciones y contenido.",
+        a: "Depende de las secciones, del contenido disponible y de las integraciones. El plazo se define en la propuesta, después de revisar el alcance.",
       },
       {
         q: "¿Puedo pedir cambios luego del lanzamiento?",

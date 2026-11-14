@@ -64,7 +64,7 @@ export default async function ResourcePage({ params }: Props) {
     <div className="min-h-screen bg-black text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <MarketingHeader />
-      <main>
+      <main id="contenido">
         <article>
           <header className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">
             <div className="mx-auto max-w-4xl">

@@ -1,4 +1,5 @@
 import type { Service, ServiceCategory } from "../../site";
+import { portfolioServicesEn } from "../../portfolio/services";
 
 /**
  * Catálogo de servicios en inglés.
@@ -43,6 +44,7 @@ export const enServiceCategories: Array<{
 ];
 
 export const enServices: Service[] = [
+  ...portfolioServicesEn,
   {
     slug: "corporate-websites",
     category: "dev",
@@ -77,7 +79,7 @@ export const enServices: Service[] = [
     faq: [
       {
         q: "How long does it take?",
-        a: "A focused corporate site usually takes one to three weeks, depending on how many sections and how much content are involved.",
+        a: "It depends on the sections, the available content and the integrations. The timeline is set in the proposal, after reviewing the scope.",
       },
       {
         q: "Can I request changes after launch?",

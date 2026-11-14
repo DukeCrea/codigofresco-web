@@ -7,12 +7,47 @@ import { siteConfig } from "./site";
 export const CONTENT_LAST_UPDATED = "2026-08-17";
 export const organizationId = `${siteConfig.url}/#organization`;
 export const websiteId = `${siteConfig.url}/#website`;
+export const personId = `${siteConfig.url}/nosotros#antonio-duque`;
+
+/**
+ * Entidad de Antonio Duque. Todo lo que dice debe estar visible en "Sobre mí":
+ * Google pide que los datos estructurados coincidan con el contenido.
+ */
+export function personJsonLd(lang: Locale = "es") {
+  return {
+    "@type": "Person",
+    "@id": personId,
+    name: "Antonio Duque",
+    url: `${siteConfig.url}${lang === "es" ? "/nosotros" : "/en/about"}`,
+    jobTitle:
+      lang === "es"
+        ? "Estratega de marketing y creador de sistemas comerciales"
+        : "Marketing strategist and builder of sales systems",
+    description:
+      lang === "es"
+        ? "Trabaja en marketing y procesos comerciales desde 2016. Creador de ZoDesk. Conecta marketing, ventas y operación con estrategia, CRM, automatización y productos digitales."
+        : "Working in marketing and sales processes since 2016. Creator of ZoDesk. Connects marketing, sales and operations through strategy, CRM, automation and digital products.",
+    worksFor: { "@id": organizationId },
+    knowsAbout: [
+      "Estrategia de marketing",
+      "CRM",
+      "Zoho CRM",
+      "Automatización de marketing",
+      "Captación y cualificación de leads",
+      "Integración de e-commerce con ERP",
+      "SAINT",
+      "Paneles y reporting",
+      "Marketing para concesionarios",
+    ],
+    knowsLanguage: [{ "@type": "Language", name: "Spanish", alternateName: "es" }],
+  };
+}
 
 export const defaultSocialImage = {
   url: "/og.jpg",
   width: 1200,
   height: 630,
-  alt: "CodigoFresco: software, automatización, marketing y datos para empresas",
+  alt: "Código Fresco · Antonio Duque: estrategias y sistemas que conectan marketing, ventas y operación",
 };
 
 export function buildMetadata({

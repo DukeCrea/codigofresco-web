@@ -55,7 +55,7 @@ export type FormDictionary = {
 
 export const form: Record<Locale, FormDictionary> = {
   es: {
-    eyebrow: "Diagnóstico gratuito",
+    eyebrow: "Diagnóstico inicial",
     title: "Cuéntanos tu proyecto",
     subtitle:
       "Responde unas preguntas rápidas y te decimos cómo convertir tu idea, operación o embudo comercial en infraestructura digital medible.",
@@ -180,7 +180,7 @@ export const form: Record<Locale, FormDictionary> = {
     timelines: ["Lo necesito este mes", "En 30 a 60 días", "En 2 a 3 meses", "Estoy explorando opciones"],
   },
   en: {
-    eyebrow: "Free assessment",
+    eyebrow: "Initial assessment",
     title: "Tell us about your project",
     subtitle:
       "Answer a few quick questions and we'll tell you how to turn your idea, your operation or your sales funnel into digital infrastructure you can measure.",

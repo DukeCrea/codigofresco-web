@@ -1,0 +1,169 @@
+import type { Locale } from "../i18n/config";
+import type { ArchiveGroup, Discipline, PieceStatus } from "./types";
+
+/** Fecha de la última revisión del portafolio contra código y documentación. */
+export const PORTFOLIO_REVIEWED = "2026-11-14";
+
+export const portfolioUi = {
+  es: {
+    skip: "Saltar al contenido",
+    nav: [
+      { label: "Casos", href: "/casos" },
+      { label: "Servicios", href: "/servicios" },
+      { label: "Proyectos", href: "/proyectos" },
+      { label: "Sobre mí", href: "/nosotros" },
+    ],
+    contact: { label: "Contacto", href: "/contacto" },
+    menu: "Menú",
+    mainNav: "Navegación principal",
+    home: "Código Fresco, inicio",
+    langLabel: "EN",
+    langAria: "Ver esta página en inglés",
+    breadcrumbs: "Migas de pan",
+    breadcrumbHome: "Inicio",
+    disciplines: {
+      marketing: "Marketing",
+      crm: "CRM",
+      automation: "Automatización",
+      product: "Productos",
+      operations: "Operaciones",
+    } satisfies Record<Discipline, string>,
+    allFilter: "Todo",
+    filterAria: "Filtrar por disciplina",
+    status: {
+      production: "En producción",
+      connected: "Conectado",
+      tested: "Construido y probado",
+      built: "Construido",
+      progress: "En desarrollo",
+      pending: "Pendiente",
+      proposal: "Propuesta",
+    } satisfies Record<PieceStatus, string>,
+    statusLegend:
+      "“En producción” solo se usa cuando la documentación del proyecto lo confirma. “Construido y probado” significa que hay pruebas automatizadas, no que esté en uso. “Propuesta” es una idea documentada, no algo construido.",
+    groups: {
+      client: "Proyectos con clientes",
+      product: "Productos propios",
+      tool: "Herramientas y automatizaciones",
+      lab: "Experimentos y documentación secundaria",
+    } satisfies Record<ArchiveGroup, string>,
+    sections: {
+      need: "Contexto y necesidad",
+      responsibility: "Mi responsabilidad",
+      strategy: "Estrategia y decisiones",
+      built: "Qué construí",
+      flow: "Cómo funciona",
+      tools: "Herramientas y su función",
+      evidence: "Evidencias disponibles",
+      status: "Estado actual",
+      next: "Próximos pasos",
+      learnings: "Aprendizajes",
+      collaboration: "Trabajo en equipo",
+      caveats: "Para leer este caso con precisión",
+      demo: "Demostración",
+      services: "Servicios relacionados",
+      related: "Casos conectados",
+    },
+    piece: "Pieza",
+    state: "Estado",
+    note: "Nota",
+    reviewed: "Revisado contra el código y la documentación el",
+    author: "Por Antonio Duque",
+    readCase: "Leer el caso",
+    zoom: "Ampliar imagen",
+    close: "Cerrar",
+    demoData: "Datos de demostración",
+    fictitious: "Información ficticia",
+    caseLabel: "Caso",
+    talkProject: "Hablemos de un proyecto",
+    hireMe: "Contratarme",
+  },
+  en: {
+    skip: "Skip to content",
+    nav: [
+      { label: "Work", href: "/en/cases" },
+      { label: "Services", href: "/en/services" },
+      { label: "Projects", href: "/en/projects" },
+      { label: "About", href: "/en/about" },
+    ],
+    contact: { label: "Contact", href: "/en/contact" },
+    menu: "Menu",
+    mainNav: "Main navigation",
+    home: "Código Fresco, home",
+    langLabel: "ES",
+    langAria: "Ver esta página en español",
+    breadcrumbs: "Breadcrumb",
+    breadcrumbHome: "Home",
+    disciplines: {
+      marketing: "Marketing",
+      crm: "CRM",
+      automation: "Automation",
+      product: "Products",
+      operations: "Operations",
+    } satisfies Record<Discipline, string>,
+    allFilter: "All",
+    filterAria: "Filter by discipline",
+    status: {
+      production: "In production",
+      connected: "Connected",
+      tested: "Built and tested",
+      built: "Built",
+      progress: "In progress",
+      pending: "Pending",
+      proposal: "Proposal",
+    } satisfies Record<PieceStatus, string>,
+    statusLegend:
+      "“In production” is only used when the project’s documentation confirms it. “Built and tested” means automated tests exist, not that it is in use. “Proposal” is a documented idea, not something built.",
+    groups: {
+      client: "Client projects",
+      product: "Own products",
+      tool: "Tools and automations",
+      lab: "Experiments and secondary documentation",
+    } satisfies Record<ArchiveGroup, string>,
+    sections: {
+      need: "Context and need",
+      responsibility: "My responsibility",
+      strategy: "Strategy and decisions",
+      built: "What I built",
+      flow: "How it works",
+      tools: "Tools and what they do",
+      evidence: "Available evidence",
+      status: "Current status",
+      next: "Next steps",
+      learnings: "Lessons learned",
+      collaboration: "Teamwork",
+      caveats: "How to read this case accurately",
+      demo: "Demo",
+      services: "Related services",
+      related: "Connected cases",
+    },
+    piece: "Component",
+    state: "Status",
+    note: "Note",
+    reviewed: "Reviewed against the code and documentation on",
+    author: "By Antonio Duque",
+    readCase: "Read the case",
+    zoom: "Enlarge image",
+    close: "Close",
+    demoData: "Demo data",
+    fictitious: "Fictitious data",
+    caseLabel: "Case",
+    talkProject: "Discuss a project",
+    hireMe: "Hire me",
+  },
+} as const;
+
+export type PortfolioUi = (typeof portfolioUi)[Locale];
+
+export function getPortfolioUi(lang: Locale): PortfolioUi {
+  return portfolioUi[lang];
+}
+
+export function formatReviewDate(iso: string, lang: Locale) {
+  return new Intl.DateTimeFormat(lang === "es" ? "es-PA" : "en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${iso}T12:00:00Z`));
+}

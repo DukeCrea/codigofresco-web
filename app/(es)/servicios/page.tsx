@@ -36,7 +36,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-black text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <MarketingHeader />
-      <main>
+      <main id="contenido">
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>

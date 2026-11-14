@@ -19,7 +19,6 @@ import { enServiceCategories, enServices, getEnServiceBySlug } from "./en/servic
 
 export * from "./config";
 export { getUi } from "./ui";
-export { getHome } from "./home";
 
 /**
  * Devuelve el contenido del idioma pedido.

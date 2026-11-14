@@ -13,6 +13,8 @@
  * selector de idioma lleve a la página equivalente en vez de a la portada.
  */
 
+import { portfolioCaseSlugPairs } from "../portfolio";
+
 export const locales = ["es", "en"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "es";
@@ -23,6 +25,7 @@ export const segmentMap: Record<string, string> = {
   casos: "cases",
   nosotros: "about",
   contacto: "contact",
+  proyectos: "projects",
 };
 
 /** Slug de cada servicio: español -> inglés. */
@@ -45,13 +48,16 @@ export const serviceSlugMap: Record<string, string> = {
   "evaluacion-inversion-ads": "ad-spend-audit",
   "calculo-roi-publicitario": "advertising-roi",
   "software-automatizado-publicaciones-redes-sociales": "social-publishing-automation",
+  "implementacion-crm-seguimiento-comercial": "crm-implementation-sales-follow-up",
+  "automatizacion-marketing-procesos-comerciales": "marketing-sales-process-automation",
+  "integracion-ecommerce-erp": "ecommerce-erp-integration",
+  "sistemas-concesionarios-talleres": "dealership-workshop-systems",
 };
 
 /** Slug de cada caso de éxito: español -> inglés. */
 export const caseSlugMap: Record<string, string> = {
-  "champion-motors-automatizacion-concesionario": "car-dealership-automation",
+  ...portfolioCaseSlugPairs,
   "baretec-wordpress-corporativo": "corporate-wordpress-site",
-  "camsmark-ecommerce-multipais": "multi-country-ecommerce",
   "mili-molo-ecommerce-educativo": "educational-ecommerce",
 };
 
@@ -90,6 +96,7 @@ export function alternatePaths(esPath: string): { es: string; en: string | null 
     "/casos": "/en/cases",
     "/nosotros": "/en/about",
     "/contacto": "/en/contact",
+    "/proyectos": "/en/projects",
     "/privacidad": "/en/privacy",
     "/cookies": "/en/cookies",
     "/terminos": "/en/terms",
@@ -106,10 +113,41 @@ export function englishPaths(): string[] {
     ...Object.values(serviceSlugMap).map((slug) => `/en/services/${slug}`),
     "/en/cases",
     ...Object.values(caseSlugMap).map((slug) => `/en/cases/${slug}`),
+    "/en/projects",
     "/en/about",
     "/en/contact",
     "/en/privacy",
     "/en/cookies",
     "/en/terms",
   ];
+}
+
+/**
+ * Inverso de `alternatePaths`: ruta española equivalente a una inglesa, o
+ * null si no existe. Lo usa el selector de idioma de las páginas que no le
+ * pasan su equivalente de forma explícita.
+ */
+export function esPathFromEn(enPath: string): string | null {
+  if (enPath === "/en" || enPath === "/en/") return "/";
+  const service = enPath.match(/^\/en\/services\/(.+)$/);
+  if (service) {
+    const es = serviceSlugMapReverse[service[1]];
+    return es ? `/servicios/${es}` : null;
+  }
+  const kase = enPath.match(/^\/en\/cases\/(.+)$/);
+  if (kase) {
+    const es = caseSlugMapReverse[kase[1]];
+    return es ? `/casos/${es}` : null;
+  }
+  const simple: Record<string, string> = {
+    "/en/services": "/servicios",
+    "/en/cases": "/casos",
+    "/en/projects": "/proyectos",
+    "/en/about": "/nosotros",
+    "/en/contact": "/contacto",
+    "/en/privacy": "/privacidad",
+    "/en/cookies": "/cookies",
+    "/en/terms": "/terminos",
+  };
+  return simple[enPath] ?? null;
 }

@@ -106,6 +106,31 @@ const nextConfig: NextConfig = {
         destination: "https://codigofresco.com/:path*",
         permanent: true,
       },
+      /**
+       * Casos anteriores al portafolio que ahora tienen una versión ampliada.
+       * Se redirige a su equivalente directo (no al índice) para conservar lo
+       * que ya hubiera ganado cada URL.
+       */
+      {
+        source: "/casos/champion-motors-automatizacion-concesionario",
+        destination: "/casos/zodesk-ecosistema-full-funnel",
+        permanent: true,
+      },
+      {
+        source: "/casos/camsmark-ecommerce-multipais",
+        destination: "/casos/integracion-erp-saint-ecommerce-venezuela",
+        permanent: true,
+      },
+      {
+        source: "/en/cases/car-dealership-automation",
+        destination: "/en/cases/zodesk-full-funnel-ecosystem",
+        permanent: true,
+      },
+      {
+        source: "/en/cases/multi-country-ecommerce",
+        destination: "/en/cases/saint-erp-ecommerce-integration",
+        permanent: true,
+      },
     ];
   },
   async headers() {

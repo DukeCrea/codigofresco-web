@@ -224,23 +224,6 @@ export const enBenefits = [
 
 export const enCaseStudies: CaseStudy[] = [
   {
-    slug: "car-dealership-automation",
-    client: "Champion Motors",
-    sector: "Car dealership",
-    metaTitle: "Case Study: Car Dealership Automation",
-    metaDescription:
-      "Website, documents, OCR, messaging, Zoho CRM and Google Drive connected to support a dealership's commercial operation.",
-    challenge:
-      "The sales operation had to produce quotes and contracts, read customer documents, organize files and keep follow-up alive, all through disconnected manual tasks.",
-    solution:
-      "We built the dealership website and an operations layer that uses a messaging bot as the interface, OCR to read ID documents, Zoho CRM for sales management and Google Drive to organize paperwork.",
-    result:
-      "The team now has one connected path to generate documents, look up information and send balance reminders, from tools that were already part of their day.",
-    capabilities: ["Data capture and lookup", "Contract and quote generation", "ID document OCR", "Sales reminders"],
-    stack: ["Laravel", "Python", "Telegram", "Zoho CRM", "Google Drive"],
-    relatedServices: ["custom-software-development", "lead-management", "intelligent-admin-dashboard"],
-  },
-  {
     slug: "corporate-wordpress-site",
     client: "BARETEC Panama",
     sector: "International trade",
@@ -256,23 +239,6 @@ export const enCaseStudies: CaseStudy[] = [
     capabilities: ["Content architecture", "Custom WordPress theme", "Editable admin", "Responsive design"],
     stack: ["WordPress", "PHP", "Custom theme"],
     relatedServices: ["corporate-websites", "wordpress-development", "seo-and-geo"],
-  },
-  {
-    slug: "multi-country-ecommerce",
-    client: "Camsmark",
-    sector: "Multi-country e-commerce",
-    metaTitle: "Case Study: Multi-Country E-commerce",
-    metaDescription:
-      "An online store with pricing, currency, inventory and payments separated per country, run from a single operation.",
-    challenge:
-      "The store had to serve two markets with different rules without duplicating catalogs, administration or internal processes.",
-    solution:
-      "We built an e-commerce platform that separates price, currency, inventory and checkout per country, with one central admin panel.",
-    result:
-      "The company runs both markets from a single platform while keeping the commercial differences each country requires.",
-    capabilities: ["Multi-country catalog", "Inventory per market", "Local currency and pricing", "Admin panel"],
-    stack: ["Laravel", "Filament", "MySQL"],
-    relatedServices: ["e-commerce", "intelligent-admin-dashboard", "custom-software-development"],
   },
   {
     slug: "educational-ecommerce",

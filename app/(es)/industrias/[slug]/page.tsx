@@ -47,7 +47,9 @@ export default async function IndustriaPage({ params }: Props) {
   const relacionados = industria.serviciosRelacionados
     .map((serviceSlug) => getServiceBySlug(serviceSlug))
     .filter((service) => service !== undefined);
-  const relatedCase = caseStudies.find((item) => item.client === industria.caso.client);
+  const relatedCase = industria.caso.slug
+    ? { slug: industria.caso.slug }
+    : caseStudies.find((item) => item.client === industria.caso.client);
 
   const jsonLd = [
     {
@@ -90,7 +92,7 @@ export default async function IndustriaPage({ params }: Props) {
 
       <MarketingHeader whatsappMessage={industria.whatsapp} />
 
-      <main>
+      <main id="contenido">
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
@@ -99,7 +101,7 @@ export default async function IndustriaPage({ params }: Props) {
               <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">{industria.heroTitle}</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">{industria.intro}</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Solicitar diagnóstico gratis</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
                 <Link href="/casos" className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400">Ver casos reales</Link>
               </div>
             </div>

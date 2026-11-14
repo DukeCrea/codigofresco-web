@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCases } from "../../../../lib/portfolio";
 import { notFound } from "next/navigation";
 import { CheckIcon, WhatsAppIcon } from "../../../../icons";
 import { Breadcrumbs, MarketingHeader, SiteFooter, SystemVisual } from "../../../../marketing-layout";
@@ -44,6 +45,7 @@ export default async function EnglishServicePage({ params }: Props) {
 
   if (!service) notFound();
 
+  const relatedCases = getCases("en").filter((item) => item.services.includes(service.slug));
   const relatedServices = service.related
     .map((relatedSlug) => getEnServiceBySlug(relatedSlug))
     .filter((related): related is NonNullable<typeof related> => Boolean(related));
@@ -92,7 +94,7 @@ export default async function EnglishServicePage({ params }: Props) {
 
       <MarketingHeader lang="en" whatsappMessage={whatsappMessage} />
 
-      <main>
+      <main id="contenido">
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
@@ -224,6 +226,24 @@ export default async function EnglishServicePage({ params }: Props) {
             </div>
           </div>
         </section>
+
+        {relatedCases.length > 0 && (
+          <section className="border-t border-gray-900 px-6 py-20 md:px-8">
+            <div className="mx-auto max-w-7xl">
+              <h2 className="font-display text-4xl text-white">Cases where I applied it</h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
+                {relatedCases.map((item) => (
+                  <Link key={item.id} href={`/en/cases/${item.slug}`} className="rounded-2xl border border-gray-800 bg-gray-950 p-6 transition hover:border-lime-400/70">
+                    <p className="text-sm text-gray-500">{item.context}</p>
+                    <h3 className="font-display mt-2 text-2xl text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-gray-400">{item.hook}</p>
+                    <span className="mt-4 inline-block text-sm font-semibold text-lime-300">Read the case →</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {relatedServices.length > 0 && (
           <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">

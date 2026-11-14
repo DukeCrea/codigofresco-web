@@ -20,7 +20,7 @@ export function LegalPage({
   return (
     <div className="min-h-screen bg-black text-white">
       <MarketingHeader lang={lang} />
-      <main>
+      <main id="contenido">
         <header className="border-b border-gray-900 bg-gray-950 px-6 py-14 md:px-8">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs lang={lang} items={[{ label: ui.breadcrumbHome, href: ui.homeHref }, { label: title, href: "#" }]} />

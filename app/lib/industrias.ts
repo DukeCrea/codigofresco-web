@@ -19,7 +19,7 @@ export type Industria = {
   intro: string;
   problemas: string[];
   construimos: Array<{ title: string; desc: string }>;
-  caso: { client: string; desc: string; detalles: string[] };
+  caso: { client: string; desc: string; detalles: string[]; slug?: string };
   faq: Array<{ q: string; a: string }>;
   serviciosRelacionados: string[];
   whatsapp: string;
@@ -59,28 +59,29 @@ export const industrias: Industria[] = [
         desc: "El sistema avisa de los abonos por cobrar antes de que se conviertan en un problema de caja.",
       },
       {
-        title: "Operación desde el teléfono",
-        desc: "Todo el flujo funciona desde un bot de mensajería, así que el vendedor lo usa en el piso de ventas y no atado a un escritorio.",
+        title: "Leads con origen y dueño",
+        desc: "Los contactos de la web y las campañas llegan con su origen, se reparten por reglas y avisan si nadie los atiende a tiempo.",
       },
     ],
     caso: {
       client: "Champion Motors",
-      desc: "Concesionario de autos para el que construimos la web y ChampionDesk, el sistema que hoy maneja su operación documental.",
+      desc: "Concesionario de autos usados en Panamá. Su operación comercial y documental funciona hoy sobre ZoDesk, el producto que nació de ese trabajo.",
       detalles: [
-        "Bot de Telegram que genera contratos y cotizaciones",
-        "Lectura de cédulas con OCR",
-        "Integración con Zoho CRM y Google Drive",
-        "Recordatorios automáticos de saldos",
+        "Bandeja de leads con origen, reparto y avisos",
+        "Contratos y cotizaciones con Google Docs y Drive",
+        "Lectura de documentos con visión por IA",
+        "Cobros, caja y seguimiento de saldos",
       ],
+      slug: "zodesk-ecosistema-full-funnel",
     },
     faq: [
       {
         q: "¿Sirve si ya uso un CRM?",
-        a: "Sí, es lo habitual. El sistema se conecta con el CRM que ya usas en vez de reemplazarlo. En el caso de Champion Motors la integración es con Zoho CRM.",
+        a: "Sí. Se puede conectar con el CRM que ya usas o reemplazar partes cuando conviene. En Champion Motors convivió con Zoho CRM mientras ZoDesk asumía la bandeja de leads y los documentos.",
       },
       {
         q: "¿Mis vendedores tienen que aprender un programa nuevo?",
-        a: "No necesariamente. La operación puede vivir dentro de una app de mensajería que ya usan a diario, con preguntas guiadas. Esa fue la decisión de diseño en Champion Motors y por eso se adoptó rápido.",
+        a: "Se diseña alrededor de su trabajo diario: pantallas por rol, pocos pasos y avisos en el teléfono. Lo nuevo se introduce por etapas, empezando por lo que más tiempo les quita.",
       },
       {
         q: "¿Puede adaptarse a mis formatos de contrato?",
@@ -88,7 +89,7 @@ export const industrias: Industria[] = [
       },
       {
         q: "¿Cuánto toma implementarlo?",
-        a: "Depende del volumen de documentos y de las integraciones. Lo definimos en el diagnóstico inicial, que no tiene costo, y lo entregamos por etapas para que empieces a usar lo primero sin esperar a que esté todo.",
+        a: "Depende del volumen de documentos y de las integraciones. Se define después de revisar el proceso y se entrega por etapas, para empezar a usar lo primero sin esperar a que esté todo.",
       },
     ],
     serviciosRelacionados: [
@@ -139,13 +140,14 @@ export const industrias: Industria[] = [
     ],
     caso: {
       client: "Camsmark",
-      desc: "Tienda online única con dos mercados, construida para administrar ventas sin duplicar la operación.",
+      desc: "Tienda online con dos mercados, Panamá y Venezuela, conectada al ERP SAINT de cada sede mediante un agente propio.",
       detalles: [
-        "Precio y moneda separados por país",
-        "Inventario y proceso de pago independientes",
+        "Precio, moneda y stock separados por tienda",
+        "Agente en Go que lee SAINT y publica el inventario",
         "Catálogo y administración unificados",
         "Construida sobre Laravel y Filament",
       ],
+      slug: "integracion-erp-saint-ecommerce-venezuela",
     },
     faq: [
       {

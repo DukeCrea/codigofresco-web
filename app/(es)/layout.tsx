@@ -1,44 +1,40 @@
 import type { Metadata, Viewport } from "next";
 import { services, siteConfig } from "../lib/site";
 import { AnalyticsScripts } from "../analytics-scripts";
-import { defaultSocialImage, organizationId, serializeJsonLd, websiteId } from "../lib/seo";
+import { defaultSocialImage, organizationId, personId, serializeJsonLd, websiteId } from "../lib/seo";
+import { fontVariables } from "../fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "Agencia de software e IA en Panamá y Venezuela | CodigoFresco",
-    template: "%s | CodigoFresco",
+    default: "Antonio Duque | Estrategias y sistemas para marketing, ventas y operación",
+    template: "%s | Código Fresco",
   },
   description:
-    "Agencia de software, e-commerce, automatización con IA y Ads para empresas en Panamá y Venezuela. Infraestructura digital B2B con operación multi-país.",
+    "Portafolio de Antonio Duque, creador de ZoDesk: estrategia de marketing, CRM, automatización e integraciones que conectan captación, ventas y operación. Trabajo remoto con Panamá, Venezuela y España.",
   keywords: [
-    "CodigoFresco",
-    "desarrollo de software",
-    "páginas web corporativas",
-    "WordPress",
-    "Shopify",
-    "e-commerce",
-    "landing pages",
-    "automatización con IA",
-    "chatbot WhatsApp",
-    "SEO GEO",
-    "Google Ads",
-    "Meta Ads",
-    "análisis de datos",
+    "Antonio Duque",
+    "ZoDesk",
+    "implementación CRM",
+    "Zoho CRM",
+    "automatización de marketing",
+    "procesos comerciales",
+    "integración SAINT e-commerce",
+    "software para concesionarios",
+    "software para talleres",
+    "reporting automatizado",
   ],
-  authors: [{ name: "Antonio Duque" }, { name: "Noe Rivas" }],
-  creator: siteConfig.name,
+  authors: [{ name: "Antonio Duque", url: `${siteConfig.url}/nosotros` }],
+  creator: "Antonio Duque",
   publisher: siteConfig.name,
   alternates: {
     canonical: "/",
     languages: {
-      "es-PA": "/",
-      "es-VE": "/venezuela",
       // Google solo hace caso al hreflang cuando las dos páginas se señalan
-      // entre sí. Si el inglés apunta aquí y aquí no se le devuelve el gesto,
-      // la anotación se descarta y los dos idiomas compiten entre ellos.
+      // entre sí: la portada inglesa devuelve exactamente este mismo par.
+      es: "/",
       en: "/en",
       "x-default": "/",
     },
@@ -48,16 +44,15 @@ export const metadata: Metadata = {
     locale: "es_PA",
     url: "/",
     siteName: siteConfig.name,
-    title: "CodigoFresco - Software, automatización e IA para negocios",
+    title: "Antonio Duque: estrategias y sistemas que conectan marketing, ventas y operación",
     description:
-      "Infraestructura web, e-commerce, WordPress, Shopify, software a medida, automatizaciones, SEO/GEO, Ads y paneles inteligentes.",
+      "Casos reales de marketing dinámico, chatform de financiamiento, paneles, reportes automatizados, integración con SAINT y ZoDesk, con el estado verificado de cada pieza.",
     images: [defaultSocialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CodigoFresco - Software, automatización e IA para negocios",
-    description:
-      "Digitaliza tu negocio con sistemas, automatizaciones, Ads, SEO/GEO y marketing con IA.",
+    title: "Antonio Duque: estrategias y sistemas para marketing, ventas y operación",
+    description: "Creo la estrategia y también la herramienta. Casos con su estado real.",
     images: ["/og.jpg"],
   },
   robots: {
@@ -79,11 +74,16 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/**
+ * Entidad del sitio. Sin dirección física ni rango de precios: el trabajo es
+ * remoto y no se publican tarifas. Las áreas de servicio son mercados donde
+ * hay experiencia real, no oficinas.
+ */
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
+      "@type": ["ProfessionalService", "Organization"],
       "@id": organizationId,
       name: siteConfig.name,
       url: siteConfig.url,
@@ -91,37 +91,30 @@ const jsonLd = {
       image: `${siteConfig.url}/og.jpg`,
       email: siteConfig.email,
       telephone: `+${siteConfig.whatsappNumber}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Ciudad de Panamá",
-        addressCountry: "PA",
-      },
-      priceRange: "$$",
       description:
-        "Firma tecnológica de infraestructura digital: desarrollo web, WordPress, Shopify, software a medida, automatización, Ads, SEO/GEO, paneles e IA.",
+        "Estrategia de marketing, CRM, automatización e integraciones para conectar captación, ventas y operación. Servicio remoto.",
       founders: [
-        { "@type": "Person", "@id": `${siteConfig.url}/nosotros#antonio-duque`, name: "Antonio Duque" },
+        { "@type": "Person", "@id": personId, name: "Antonio Duque" },
         { "@type": "Person", "@id": `${siteConfig.url}/nosotros#noe-rivas`, name: "Noe Rivas" },
       ],
       areaServed: [
         { "@type": "Country", name: "Panamá" },
         { "@type": "Country", name: "Venezuela" },
+        { "@type": "Country", name: "España" },
       ],
       sameAs: [siteConfig.instagram],
       knowsAbout: [
+        "Implementación de CRM",
+        "Zoho CRM",
+        "Automatización de marketing y procesos comerciales",
+        "Integración de e-commerce con ERP",
+        "Software para concesionarios y talleres",
+        "Paneles y reporting",
         "Desarrollo web",
-        "WordPress",
-        "Shopify",
-        "Desarrollo de software",
-        "Automatización con inteligencia artificial",
-        "SEO y GEO",
-        "Google Ads",
-        "Meta Ads",
-        "Análisis de datos",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Soluciones CodigoFresco",
+        name: "Servicios de Código Fresco",
         itemListElement: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
@@ -153,7 +146,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className="h-full antialiased"
+      className={`h-full antialiased ${fontVariables}`}
     >
       <body className="min-h-full flex flex-col">
         <script

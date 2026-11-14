@@ -100,23 +100,6 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "champion-motors-automatizacion-concesionario",
-    client: "Champion Motors",
-    sector: "Concesionario de autos",
-    metaTitle: "Caso Champion Motors: automatización para concesionario",
-    metaDescription:
-      "Web, documentos, OCR, Telegram, Zoho CRM y Google Drive conectados para apoyar la operación comercial de Champion Motors.",
-    challenge:
-      "La operación comercial necesitaba producir cotizaciones y contratos, leer documentos, organizar archivos y mantener seguimiento sin depender de tareas desconectadas.",
-    solution:
-      "Desarrollamos la web del concesionario y ChampionDesk, un flujo que usa Telegram como interfaz operativa, OCR para leer cédulas, Zoho CRM para la gestión comercial y Google Drive para organizar documentos.",
-    result:
-      "El equipo dispone de un recorrido conectado para generar documentos, consultar información y emitir recordatorios de saldos desde herramientas que ya forman parte de su trabajo diario.",
-    capabilities: ["Captura y consulta de datos", "Generación de contratos y cotizaciones", "OCR de cédulas", "Recordatorios comerciales"],
-    stack: ["Laravel", "Python", "Telegram", "Zoho CRM", "Google Drive"],
-    relatedServices: ["desarrollo-de-software", "control-gestion-atencion-leads", "panel-monitor-administrativo-inteligente"],
-  },
-  {
     slug: "baretec-wordpress-corporativo",
     client: "BARETEC Panamá",
     sector: "Comercio internacional",
@@ -132,23 +115,6 @@ export const caseStudies: CaseStudy[] = [
     capabilities: ["Arquitectura de contenido", "Tema WordPress a medida", "Panel administrable", "Diseño responsive"],
     stack: ["WordPress", "PHP", "Tema a medida"],
     relatedServices: ["paginas-web-corporativas", "desarrollo-wordpress", "seo-y-geo"],
-  },
-  {
-    slug: "camsmark-ecommerce-multipais",
-    client: "Camsmark",
-    sector: "E-commerce multi-país",
-    metaTitle: "Caso Camsmark: e-commerce multi-país",
-    metaDescription:
-      "Tienda online con precios, moneda, inventario y pagos separados por país, administrada desde una sola operación.",
-    challenge:
-      "La tienda debía atender dos mercados con reglas diferentes sin duplicar catálogos, administración ni procesos internos.",
-    solution:
-      "Creamos un e-commerce con separación de precio, moneda, inventario y proceso de pago por país, más un panel administrativo central.",
-    result:
-      "La empresa puede operar ambos mercados desde una misma plataforma y conservar las diferencias comerciales de cada país.",
-    capabilities: ["Catálogo multi-país", "Inventario por mercado", "Moneda y precios locales", "Panel administrativo"],
-    stack: ["Laravel", "Filament", "MySQL"],
-    relatedServices: ["e-commerce", "panel-monitor-administrativo-inteligente", "desarrollo-de-software"],
   },
   {
     slug: "mili-molo-ecommerce-educativo",

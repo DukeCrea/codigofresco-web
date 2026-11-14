@@ -3,6 +3,7 @@ import { AnalyticsScripts } from "../analytics-scripts";
 import { enServices } from "../lib/i18n/en/services";
 import { defaultSocialImage, organizationId, serializeJsonLd, websiteId } from "../lib/seo";
 import { siteConfig } from "../lib/site";
+import { fontVariables } from "../fonts";
 import "../globals.css";
 
 /**
@@ -22,48 +23,43 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: "Software, Automation and AI Agency | CodigoFresco",
-    template: "%s | CodigoFresco",
+    default: "Antonio Duque | Strategies and Systems for Marketing, Sales and Operations",
+    template: "%s | Código Fresco",
   },
   description:
-    "Software, e-commerce, AI automation and paid media for growing companies. A remote senior team building B2B digital infrastructure across US time zones.",
+    "Portfolio of Antonio Duque, creator of ZoDesk: marketing strategy, CRM, automation and integrations that connect lead generation, sales and operations. Remote work.",
   keywords: [
-    "CodigoFresco",
-    "software development agency",
-    "custom software development",
-    "WordPress development",
-    "Shopify development",
-    "e-commerce development",
-    "landing pages",
-    "AI automation",
-    "AI chatbot",
-    "SEO and GEO",
-    "Google Ads management",
-    "Meta Ads management",
-    "data dashboards",
+    "Antonio Duque",
+    "ZoDesk",
+    "CRM implementation",
+    "Zoho CRM",
+    "marketing automation",
+    "sales process automation",
+    "SAINT ERP e-commerce integration",
+    "car dealership software",
+    "automated reporting",
   ],
-  authors: [{ name: "Antonio Duque" }, { name: "Noe Rivas" }],
-  creator: siteConfig.name,
+  authors: [{ name: "Antonio Duque", url: `${siteConfig.url}/en/about` }],
+  creator: "Antonio Duque",
   publisher: siteConfig.name,
   alternates: {
     canonical: "/en",
-    languages: { en: "/en", es: "/", "x-default": "/" },
+    languages: { es: "/", en: "/en", "x-default": "/" },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/en",
     siteName: siteConfig.name,
-    title: "CodigoFresco - Software, automation and AI for business",
+    title: "Antonio Duque: strategies and systems that connect marketing, sales and operations",
     description:
-      "Web infrastructure, e-commerce, WordPress, Shopify, custom software, automation, SEO/GEO, ads and intelligent dashboards.",
+      "Real cases: dynamic marketing, a financing chatform, dashboards, automated reports, SAINT ERP integration and ZoDesk, with each piece's verified status.",
     images: [defaultSocialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CodigoFresco - Software, automation and AI for business",
-    description:
-      "Digitize your business with systems, automation, ads, SEO/GEO and AI-assisted marketing.",
+    title: "Antonio Duque: strategies and systems for marketing, sales and operations",
+    description: "I create the strategy and also the tool. Case studies with their real status.",
     images: ["/og.jpg"],
   },
   robots: {
@@ -91,7 +87,7 @@ const jsonLd = {
     {
       // Mismo @id que el grafo español a propósito: es la MISMA empresa. Dos
       // identificadores distintos le dirían a Google que son dos negocios.
-      "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
+      "@type": ["ProfessionalService", "Organization"],
       "@id": organizationId,
       name: siteConfig.name,
       url: `${siteConfig.url}/en`,
@@ -99,22 +95,21 @@ const jsonLd = {
       image: `${siteConfig.url}/og.jpg`,
       email: siteConfig.email,
       telephone: `+${siteConfig.whatsappNumber}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Panama City",
-        addressCountry: "PA",
-      },
-      priceRange: "$$",
       description:
-        "A technology firm for digital infrastructure: web development, WordPress, Shopify, custom software, automation, ads, SEO/GEO, dashboards and AI.",
+        "Marketing strategy, CRM, automation and integrations that connect lead generation, sales and operations. Remote service.",
       founders: [
         { "@type": "Person", "@id": `${siteConfig.url}/nosotros#antonio-duque`, name: "Antonio Duque" },
         { "@type": "Person", "@id": `${siteConfig.url}/nosotros#noe-rivas`, name: "Noe Rivas" },
       ],
+      areaServed: [
+        { "@type": "Country", name: "Panama" },
+        { "@type": "Country", name: "Venezuela" },
+        { "@type": "Country", name: "Spain" },
+      ],
       sameAs: [siteConfig.instagram],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "CodigoFresco solutions",
+        name: "Código Fresco services",
         itemListElement: enServices.map((service) => ({
           "@type": "Offer",
           itemOffered: {
@@ -143,7 +138,7 @@ export default function EnglishRootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
+    <html lang="en" data-scroll-behavior="smooth" className={`h-full antialiased ${fontVariables}`}>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

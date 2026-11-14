@@ -32,7 +32,7 @@ export default function ResourcesPage() {
     <div className="min-h-screen bg-black text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <MarketingHeader />
-      <main>
+      <main id="contenido">
         <section className="border-b border-gray-900 bg-gray-950 px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto max-w-5xl">
             <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Recursos", href: "/recursos" }]} />
