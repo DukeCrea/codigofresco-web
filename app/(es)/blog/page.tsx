@@ -43,7 +43,7 @@ export default function BlogIndexPage() {
       <section className="border-b border-white/10 px-4 pb-14 pt-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Crumbs lang="es" items={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog" }]} />
-          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-[#C9ED87]">Blog</p>
+          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">Blog</p>
           <h1 className="font-display mt-3 max-w-4xl text-5xl leading-[1.02] text-white sm:text-6xl">
             Lo que voy creando, contado desde adentro
           </h1>
@@ -58,9 +58,9 @@ export default function BlogIndexPage() {
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d0b] transition hover:border-[#C9ED87]/50"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d0b] transition hover:border-lime-400/50"
             >
-              <div className="aspect-video overflow-hidden bg-[#071E17]">
+              <div className="aspect-video overflow-hidden bg-[#0e100c]">
                 <Image
                   src={post.cover.src}
                   alt={post.cover.alt}
@@ -83,7 +83,7 @@ export default function BlogIndexPage() {
                   </Link>
                 </h2>
                 <p className="mt-3 flex-1 leading-7 text-gray-300">{post.excerpt}</p>
-                <p className="mt-5 text-sm font-semibold text-[#C9ED87]">Leer artículo →</p>
+                <p className="mt-5 text-sm font-semibold text-lime-400">Leer artículo →</p>
               </div>
             </article>
           ))}

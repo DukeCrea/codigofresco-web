@@ -21,7 +21,7 @@ export type BlogBlock =
   | { type: "video"; video: BlogVideo };
 
 export type BlogVideo = {
-  /** MP4 sin audio, servido desde /public. */
+  /** MP4 servido desde /public; si trae audio, se marca con `sonido`. */
   src: string;
   /** Imagen que se ve antes de reproducir y cuando se pide menos movimiento. */
   poster: string;

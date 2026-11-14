@@ -45,7 +45,7 @@ export function ArticleVideo({ video, title }: { video: BlogVideo; title: string
 
   return (
     <figure className={`mx-auto w-full ${horizontal ? "max-w-4xl" : "max-w-md"}`}>
-      <div className="overflow-hidden rounded-2xl border border-[#C9ED87]/25 bg-[#071E17] shadow-2xl shadow-black/60">
+      <div className="overflow-hidden rounded-2xl border border-lime-400/25 bg-[#0e100c] shadow-2xl shadow-black/60">
         <video
           ref={ref}
           className="block h-auto w-full"
@@ -69,8 +69,7 @@ export function ArticleVideo({ video, title }: { video: BlogVideo; title: string
         <button
           type="button"
           onClick={toggle}
-          aria-pressed={!playing}
-          className="rounded-full border border-[#C9ED87]/40 px-4 py-2 text-sm font-semibold text-[#C9ED87] transition hover:border-[#C9ED87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9ED87]"
+          className="rounded-full border border-lime-400/40 px-4 py-2 text-sm font-semibold text-lime-400 transition hover:border-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-400"
         >
           {playing ? "Pausar video" : "Reproducir video"}
         </button>
@@ -78,8 +77,7 @@ export function ArticleVideo({ video, title }: { video: BlogVideo; title: string
           <button
             type="button"
             onClick={toggleSound}
-            aria-pressed={!muted}
-            className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-[#C9ED87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9ED87]"
+            className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-400"
           >
             {muted ? "Activar sonido" : "Silenciar"}
           </button>
