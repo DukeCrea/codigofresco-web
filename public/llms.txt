@@ -20,6 +20,11 @@ Cada caso del portafolio separa lo que está en producción, lo construido, lo p
 - [Agentes de integración con SAINT](https://codigofresco.com/casos/integracion-erp-saint-ecommerce-venezuela): agente en Go que lee el ERP SAINT en Panamá y Venezuela y publica precio y stock en la web por conexión saliente. Lectura y publicación en producción; recepción de pedidos no operativa; escritura de descargos pendiente de autorización.
 - [ZoDesk, ecosistema full funnel](https://codigofresco.com/casos/zodesk-ecosistema-full-funnel): captación, cualificación, CRM, contratos, ventas, operación y medición; en producción con un concesionario.
 
+## Blog
+
+- [La gestación de una oportunidad](https://codigofresco.com/blog/la-gestacion-de-una-oportunidad): metáfora visual del recorrido de los leads (primera visita y remarketing dinámico) conectada al chatform, el CRM y el monitor de ZoDesk. Demo ilustrativa, sin datos de clientes.
+- [Todos los artículos](https://codigofresco.com/blog)
+
 ## Servicios
 
 - [Consultoría e implementación de CRM](https://codigofresco.com/servicios/implementacion-crm-seguimiento-comercial), incluida la integración de Zoho CRM.

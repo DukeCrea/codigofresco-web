@@ -1,0 +1,78 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+import type { BlogVideo } from "../../lib/blog";
+
+/**
+ * Video del artículo: en bucle y sin sonido, con controles y un botón visible
+ * para pausar. Si la persona pidió menos movimiento, no arranca solo: se ve
+ * la portada y se reproduce cuando ella lo decide.
+ */
+export function ArticleVideo({ video, title }: { video: BlogVideo; title: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce) {
+      el.play().catch(() => setPlaying(false));
+    }
+  }, []);
+
+  function toggle() {
+    const el = ref.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play().catch(() => setPlaying(false));
+    } else {
+      el.pause();
+    }
+  }
+
+  return (
+    <figure className="mx-auto w-full max-w-md">
+      <div className="overflow-hidden rounded-2xl border border-[#C9ED87]/25 bg-[#071E17] shadow-2xl shadow-black/60">
+        <video
+          ref={ref}
+          className="block h-auto w-full"
+          width={video.width}
+          height={video.height}
+          poster={video.poster}
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
+          aria-label={`${title}: animación de ${video.durationSeconds} segundos, sin sonido`}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+        >
+          <source src={video.src} type="video/mp4" />
+        </video>
+      </div>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={toggle}
+          aria-pressed={!playing}
+          className="rounded-full border border-[#C9ED87]/40 px-4 py-2 text-sm font-semibold text-[#C9ED87] transition hover:border-[#C9ED87] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9ED87]"
+        >
+          {playing ? "Pausar animación" : "Reproducir animación"}
+        </button>
+        {video.gif ? (
+          <a
+            href={video.gif}
+            download
+            className="text-sm text-gray-300 underline decoration-white/30 underline-offset-4 hover:text-white"
+          >
+            Descargar como GIF
+          </a>
+        ) : null}
+      </div>
+      <figcaption className="mt-4 text-sm leading-6 text-gray-400">{video.description}</figcaption>
+    </figure>
+  );
+}

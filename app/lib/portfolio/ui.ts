@@ -11,6 +11,7 @@ export const portfolioUi = {
       { label: "Casos", href: "/casos" },
       { label: "Servicios", href: "/servicios" },
       { label: "Proyectos", href: "/proyectos" },
+      { label: "Blog", href: "/blog" },
       { label: "Sobre mí", href: "/nosotros" },
     ],
     contact: { label: "Contacto", href: "/contacto" },

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getBlogPosts } from "./lib/blog";
 import { caseStudies, resourceArticles, solutionHubs } from "./lib/content";
 import { industrias } from "./lib/industrias";
 import { alternatePaths } from "./lib/i18n/config";
@@ -30,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/casos", 0.95, "monthly", PORTFOLIO_REVIEWED),
     entry("/proyectos", 0.8, "monthly", PORTFOLIO_REVIEWED),
     entry("/recursos", 0.9, "weekly"),
+    entry("/blog", 0.9, "weekly", getBlogPosts()[0]?.updatedAt ?? CONTENT_LAST_UPDATED),
     entry("/nosotros", 0.85, "monthly", PORTFOLIO_REVIEWED),
     entry("/contacto", 0.85, "monthly", PORTFOLIO_REVIEWED),
     entry("/venezuela", 0.95),
@@ -39,6 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getCases("es").map((item) => entry(`/casos/${item.slug}`, 0.9, "monthly", item.reviewed)),
     ...caseStudies.map((item) => entry(`/casos/${item.slug}`, 0.7, "yearly")),
     ...resourceArticles.map((article) => entry(`/recursos/${article.slug}`, 0.88, "monthly", article.updatedAt)),
+    ...getBlogPosts().map((post) => ({
+      ...entry(`/blog/${post.slug}`, 0.88, "monthly", post.updatedAt),
+      images: [`${siteConfig.url}${post.shareImage.src}`],
+      ...(post.video ? { videos: [{ title: post.title, thumbnail_loc: `${siteConfig.url}${post.video.poster}`, description: post.video.description, content_loc: `${siteConfig.url}${post.video.src}` }] } : {}),
+    })),
 
     // Árbol inglés. Va en el mismo sitemap a propósito: son el mismo sitio y
     // Google empareja los idiomas por el hreflang de cada página, no por tener
