@@ -155,11 +155,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Ahí termina este primer capítulo. Cuando la oportunidad llega a la conversión, empieza la gestación: el trabajo con el cliente para que la venta se cierre.",
+        text: "Ahí termina este primer capítulo. La conversión es la fecundación. Después viene la gestación: cuidar esa oportunidad con el cliente, con seguimiento, citas y conversaciones. Y cuando nace, es la venta.",
       },
       {
         type: "flow",
-        steps: ["Asignación", "Seguimiento", "Cita", "Venta"],
+        steps: ["Fecundación (conversión)", "Gestación (seguimiento y citas)", "Nacimiento (la venta)"],
       },
       {
         type: "p",
@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Esta historia continuará" },
       {
         type: "p",
-        text: "La conversión no es el final: es el momento en que la oportunidad se fecunda. Lo que viene después es la gestación, ese tiempo de trabajo con el cliente, con seguimiento, citas y conversaciones, hasta que la venta nace. De eso trata el próximo capítulo.",
+        text: "La conversión no es el final: es el momento en que la oportunidad se fecunda. Después viene el cuidado de esa fecundación, la gestación: asignar a quien la va a atender, darle seguimiento, agendar la cita, sostener la conversación. Muchas oportunidades fecundadas no llegan a término si nadie las cuida. Y cuando nace, nace la venta. De eso trata el próximo capítulo.",
       },
       { type: "h2", text: "¿Qué opinas?" },
       {
