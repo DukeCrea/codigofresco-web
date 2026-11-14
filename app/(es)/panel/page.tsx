@@ -26,7 +26,7 @@ import { PanelHeader } from "./panel-header";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Panel interno | CodigoFresco",
+  title: "Panel interno",
   description: "Panel privado de oportunidades comerciales de CodigoFresco.",
   robots: {
     index: false,
