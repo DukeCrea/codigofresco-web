@@ -3,7 +3,6 @@ import { AnalyticsScripts } from "../analytics-scripts";
 import { enServices } from "../lib/i18n/en/services";
 import { defaultSocialImage, organizationId, serializeJsonLd, websiteId } from "../lib/seo";
 import { siteConfig } from "../lib/site";
-import { fontVariables } from "../fonts";
 import "../globals.css";
 
 /**
@@ -138,7 +137,7 @@ export default function EnglishRootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`h-full antialiased ${fontVariables}`}>
+    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

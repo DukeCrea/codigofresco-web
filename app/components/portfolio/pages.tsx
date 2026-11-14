@@ -49,29 +49,61 @@ function PageHeader({
   );
 }
 
-/** Retrato de Antonio en el Web Summit de Lisboa, con el tratamiento visual del sitio. */
+/** Fotos de Antonio en el Web Summit de Lisboa (noviembre de 2026), sin metadatos de ubicación. */
+const webSummitPhotos = [
+  {
+    src: "/portafolio/antonio-duque-web-summit.jpg",
+    es: "Antonio Duque sonriendo en el auditorio principal del Web Summit de Lisboa, con el escenario detrás.",
+    en: "Antonio Duque smiling in the main auditorium of Web Summit Lisbon, with the stage behind him.",
+  },
+  {
+    src: "/portafolio/antonio-duque-web-summit-letras.jpg",
+    es: "Antonio Duque de pie frente a las letras gigantes de Web Summit en Lisboa.",
+    en: "Antonio Duque standing in front of the giant Web Summit letters in Lisbon.",
+  },
+  {
+    src: "/portafolio/antonio-duque-web-summit-llegada.jpg",
+    es: "Antonio Duque con gafas de sol señalando el cartel de Web Summit a su llegada al recinto.",
+    en: "Antonio Duque in sunglasses pointing at the Web Summit sign as he arrives at the venue.",
+  },
+];
+
+/** Collage del Web Summit con el tratamiento visual del sitio. */
 function WebSummitPortrait({ lang }: { lang: Locale }) {
   const es = lang === "es";
+  const [main, ...rest] = webSummitPhotos;
   return (
-    <figure className="relative mx-auto w-full max-w-md lg:ml-auto lg:mr-0">
+    <figure className="relative mx-auto w-full max-w-xl lg:ml-auto lg:mr-0">
       <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] bg-lime-300/15 blur-2xl" />
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d0b] shadow-2xl shadow-black">
-        <Image
-          src="/portafolio/antonio-duque-web-summit.jpg"
-          alt={
-            es
-              ? "Antonio Duque sonriendo en el auditorio principal del Web Summit de Lisboa, con el escenario detrás."
-              : "Antonio Duque smiling in the main auditorium of Web Summit Lisbon, with the stage behind him."
-          }
-          width={1050}
-          height={1400}
-          priority
-          sizes="(min-width: 1024px) 28rem, 90vw"
-          className="h-auto w-full"
-        />
-        <span className="absolute left-4 top-4 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-200 ring-1 ring-lime-300/40 backdrop-blur">
-          Web Summit · Lisboa 2026
-        </span>
+      <div className="relative grid grid-cols-[2fr_1fr] gap-3">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d0b] shadow-2xl shadow-black">
+          <Image
+            src={main.src}
+            alt={es ? main.es : main.en}
+            width={1050}
+            height={1400}
+            priority
+            sizes="(min-width: 1024px) 24rem, 62vw"
+            className="h-full w-full object-cover"
+          />
+          <span className="absolute left-3 top-3 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-200 ring-1 ring-lime-300/40 backdrop-blur">
+            Web Summit · Lisboa 2026
+          </span>
+        </div>
+        <div className="grid gap-3">
+          {rest.map((photo) => (
+            <div key={photo.src} className="overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d0b]">
+              <Image
+                src={photo.src}
+                alt={es ? photo.es : photo.en}
+                width={1050}
+                height={1400}
+                sizes="(min-width: 1024px) 12rem, 31vw"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <figcaption className="relative mt-4 text-sm leading-6 text-gray-400">
         {es
@@ -324,7 +356,7 @@ export function AboutBody({ lang }: { lang: Locale }) {
         mainEntity: { "@id": personId },
       },
       // La foto solo se declara aquí, donde se ve: el schema debe coincidir con lo visible.
-      { ...personJsonLd(lang), image: `${siteConfig.url}/portafolio/antonio-duque-web-summit.jpg` },
+      { ...personJsonLd(lang), image: webSummitPhotos.map((photo) => `${siteConfig.url}${photo.src}`) },
       breadcrumbJsonLd([
         { name: t.breadcrumbHome, path: home },
         { name: lang === "es" ? "Sobre mí" : "About", path },

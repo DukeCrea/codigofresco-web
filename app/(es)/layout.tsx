@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { services, siteConfig } from "../lib/site";
 import { AnalyticsScripts } from "../analytics-scripts";
 import { defaultSocialImage, organizationId, personId, serializeJsonLd, websiteId } from "../lib/seo";
-import { fontVariables } from "../fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -146,7 +145,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={`h-full antialiased ${fontVariables}`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col">
         <script
