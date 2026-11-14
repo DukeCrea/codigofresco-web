@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Locale } from "../../lib/i18n/config";
 import { caseHref, getCases } from "../../lib/portfolio";
 import { getPortfolioUi } from "../../lib/portfolio/ui";
+import { LeadLights } from "./demos/lead-lights";
 import { CaseGrid } from "./filters";
 
 const copy = {
@@ -202,6 +203,28 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="luces" className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-lime-400/80">{lang === "en" ? "Seeing the data" : "Ver la data"}</p>
+          <h2 id="luces" className="font-display mt-2 text-4xl text-white sm:text-5xl">
+            {lang === "en" ? "Each light is a lead" : "Cada luz es un lead"}
+          </h2>
+          <p className="mt-4 max-w-2xl leading-7 text-gray-400">
+            {lang === "en"
+              ? "I designed this view for ZoDesk's lead monitor so the sales team can see in seconds where leads get stuck: they move left to right, and at each gate those who don't pass drop below with their reason. Pick a channel to compare."
+              : "Diseñé esta vista para el monitor de leads de ZoDesk, para que el equipo vea en segundos dónde se quedan los leads: avanzan de izquierda a derecha y, en cada puerta, los que no pasan caen debajo con su porqué. Elige un canal para comparar."}
+          </p>
+          <div className="mt-8">
+            <LeadLights lang={lang} compact />
+          </div>
+          {byId["paneles"] ? (
+            <Link href={caseHref(lang, byId["paneles"])} className="mt-6 inline-flex text-sm font-semibold text-lime-400 hover:text-lime-400/80">
+              {lang === "en" ? "See the dashboards case →" : "Ver el caso de paneles →"}
+            </Link>
+          ) : null}
         </div>
       </section>
 

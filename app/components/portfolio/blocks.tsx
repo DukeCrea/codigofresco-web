@@ -1,4 +1,5 @@
 import type { Locale } from "../../lib/i18n/config";
+import type { FlowActor } from "../../lib/portfolio/flow-actors";
 import type { FlowStep, PieceStatus, StatusRow } from "../../lib/portfolio/types";
 import { getPortfolioUi } from "../../lib/portfolio/ui";
 
@@ -42,23 +43,101 @@ export function StatusTable({ rows, lang }: { rows: StatusRow[]; lang: Locale })
   );
 }
 
-/**
- * Diagrama de flujo como lista ordenada: se lee igual con lector de pantalla,
- * en móvil (vertical) y en escritorio (rejilla numerada).
- */
-export function FlowDiagram({ steps, label }: { steps: FlowStep[]; label: string }) {
+const actorLabel: Record<Locale, Record<FlowActor, string>> = {
+  es: { person: "Cliente", system: "Sistema", team: "Equipo" },
+  en: { person: "Customer", system: "System", team: "Team" },
+};
+
+function ActorIcon({ actor }: { actor: FlowActor }) {
+  const common = { width: 16, height: 16, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
+  if (actor === "person")
+    return (
+      <svg {...common}>
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+      </svg>
+    );
+  if (actor === "team")
+    return (
+      <svg {...common}>
+        <circle cx="9" cy="8" r="3.5" />
+        <circle cx="17" cy="9" r="2.5" />
+        <path d="M2.5 20c0-3.5 3-5.5 6.5-5.5s6.5 2 6.5 5.5M16 14.5c3 0 5.5 1.5 5.5 4.5" />
+      </svg>
+    );
   return (
-    <ol aria-label={label} className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {steps.map((step, index) => (
-        <li key={step.title} className="relative rounded-2xl border border-white/10 bg-[#0c0d0b] p-5">
-          <span className="font-display text-4xl leading-none text-lime-400/90" aria-hidden="true">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <p className="mt-3 font-semibold text-white">{step.title}</p>
-          <p className="mt-2 text-sm leading-6 text-gray-400">{step.detail}</p>
-        </li>
-      ))}
-    </ol>
+    <svg {...common}>
+      <rect x="4" y="4" width="16" height="16" rx="3" />
+      <path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" />
+    </svg>
+  );
+}
+
+const actorTone: Record<FlowActor, string> = {
+  system: "border-lime-400/40 bg-lime-400/[0.06]",
+  person: "border-white/25 bg-white/[0.03]",
+  team: "border-white/25 border-dashed bg-white/[0.02]",
+};
+
+function Arrow({ className }: { className: string }) {
+  return (
+    <span aria-hidden="true" className={`flex shrink-0 items-center justify-center text-lime-400 ${className}`}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="rotate-90">
+        <path d="M4 12h15M13 6l6 6-6 6" />
+      </svg>
+    </span>
+  );
+}
+
+/**
+ * Flujograma vertical: nodos conectados con flechas hacia abajo y quién actúa
+ * en cada paso (cliente, sistema o equipo). En pantallas anchas cada nodo es
+ * una fila: número y actor, título, detalle. Es una lista ordenada, así que se
+ * lee en orden con lector de pantalla.
+ */
+export function FlowDiagram({ steps, label, actors, lang }: { steps: FlowStep[]; label: string; actors?: FlowActor[]; lang: Locale }) {
+  const who = steps.map((_, i) => actors?.[i] ?? "system");
+  const mixed = new Set(who).size > 1;
+  const names = actorLabel[lang];
+
+  return (
+    <div>
+      {mixed ? (
+        <ul className="mb-5 flex flex-wrap gap-2 text-xs text-gray-300" aria-label={lang === "en" ? "Who acts" : "Quién actúa"}>
+          {(["person", "system", "team"] as FlowActor[])
+            .filter((a) => who.includes(a))
+            .map((a) => (
+              <li key={a} className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 ${actorTone[a]}`}>
+                <span className={a === "system" ? "text-lime-400" : "text-gray-200"}><ActorIcon actor={a} /></span>
+                {names[a]}
+              </li>
+            ))}
+        </ul>
+      ) : null}
+
+      <ol aria-label={label} className="flex max-w-4xl flex-col">
+        {steps.map((step, index) => (
+          <li key={step.title} className="flex flex-col items-stretch">
+            <div className={`rounded-2xl border p-4 sm:grid sm:grid-cols-[8.5rem_minmax(0,11rem)_minmax(0,1fr)] sm:items-center sm:gap-5 ${actorTone[who[index]]}`}>
+              <div className="flex items-center gap-2">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-lime-400 text-sm font-bold text-black" aria-hidden="true">
+                  {index + 1}
+                </span>
+                {mixed ? (
+                  <span className={`inline-flex items-center gap-1 text-xs ${who[index] === "system" ? "text-lime-400" : "text-gray-300"}`}>
+                    <ActorIcon actor={who[index]} />
+                    <span>{names[who[index]]}</span>
+                  </span>
+                ) : null}
+              </div>
+              <p className="mt-3 font-semibold leading-snug text-white sm:mt-0">{step.title}</p>
+              <p className="mt-1.5 text-sm leading-6 text-gray-400 sm:mt-0">{step.detail}</p>
+            </div>
+            {index < steps.length - 1 ? <Arrow className="h-7" /> : null}
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 

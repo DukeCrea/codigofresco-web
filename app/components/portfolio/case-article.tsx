@@ -3,11 +3,14 @@ import Link from "next/link";
 import type { Locale } from "../../lib/i18n/config";
 import { getContent } from "../../lib/i18n";
 import { caseHref, getCaseById, getWorkshopVariant } from "../../lib/portfolio";
+import { flowActors } from "../../lib/portfolio/flow-actors";
+import { getCaseShots } from "../../lib/portfolio/shots";
 import type { PortfolioCase } from "../../lib/portfolio/types";
 import { formatReviewDate, getPortfolioUi } from "../../lib/portfolio/ui";
 import { BulletList, FlowDiagram, SectionHeading, StatusTable } from "./blocks";
 import { Crumbs } from "./chrome";
 import { ChatformDemo } from "./demos/chatform-demo";
+import { LeadLights } from "./demos/lead-lights";
 import { PanelDemo } from "./demos/panel-demo";
 import { ContentLoop, EmailSegments, FunnelMap, InventoryLayers, ReportDemo, SaintDiagram } from "./demos/static-demos";
 import { ZoomImage } from "./zoom-image";
@@ -17,7 +20,19 @@ function Demo({ item, lang }: { item: PortfolioCase; lang: Locale }) {
     case "chatform":
       return <ChatformDemo lang={lang} />;
     case "panel":
-      return <PanelDemo lang={lang} />;
+      return (
+        <div className="space-y-8">
+          <div>
+            <p className="mb-4 max-w-3xl leading-7 text-gray-300">
+              {lang === "en"
+                ? "This is how the ZoDesk lead monitor shows the funnel: each light is a lead moving left to right. At every gate, those who don't pass drop below it, with their number and the reason. You see where the money leaks without reading a table."
+                : "Así muestra el embudo el monitor de leads de ZoDesk: cada luz es un lead que avanza de izquierda a derecha. En cada puerta, los que no pasan caen debajo, con su número y su porqué. Se ve dónde se escapa la plata sin leer una tabla."}
+            </p>
+            <LeadLights lang={lang} />
+          </div>
+          <PanelDemo lang={lang} />
+        </div>
+      );
     case "report":
       return <ReportDemo lang={lang} />;
     case "saint":
@@ -54,6 +69,7 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
   const base = lang === "es" ? "/casos" : "/en/cases";
   const serviceBase = lang === "es" ? "/servicios" : "/en/services";
   const workshop = item.id === "zodesk" ? getWorkshopVariant(lang) : null;
+  const shots = getCaseShots(item.id);
 
   const toc: Array<[string, string]> = [
     ["necesidad", t.sections.need],
@@ -146,11 +162,33 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
                 <ZoomImage {...item.image} zoomLabel={t.zoom} closeLabel={t.close} badge={t.demoData} />
               </div>
             ) : null}
+            {shots.length ? (
+              <div className="mt-10">
+                <h3 className="text-lg font-semibold text-white">{t.realScreens}</h3>
+                <p className="mt-1 max-w-3xl text-sm leading-6 text-gray-400">{t.realScreensNote}</p>
+                <div className={`mt-5 grid items-start gap-6 ${shots.length > 1 ? "md:grid-cols-2" : ""}`}>
+                  {shots.map((shot) => (
+                    <div key={shot.src} className={shot.height > shot.width * 1.5 ? "mx-auto w-full max-w-[300px]" : ""}>
+                      <ZoomImage
+                        src={shot.src}
+                        width={shot.width}
+                        height={shot.height}
+                        alt={shot.alt[lang]}
+                        caption={shot.caption[lang]}
+                        zoomLabel={t.zoom}
+                        closeLabel={t.close}
+                        badge={shot.source === "live" ? t.liveSite : t.demoData}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </section>
 
           <section aria-labelledby="flujo">
             <SectionHeading id="flujo" eyebrow="05">{t.sections.flow}</SectionHeading>
-            <FlowDiagram steps={item.flow} label={t.sections.flow} />
+            <FlowDiagram steps={item.flow} label={t.sections.flow} actors={flowActors[item.id]} lang={lang} />
           </section>
 
           {item.demo ? (

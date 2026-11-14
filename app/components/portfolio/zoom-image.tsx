@@ -45,7 +45,7 @@ export function ZoomImage({
           className="h-auto w-full transition duration-300 group-hover:scale-[1.01]"
         />
         {badge ? (
-          <span className="absolute left-3 top-3 rounded-full bg-black/80 px-3 py-1 text-xs font-semibold text-lime-400 ring-1 ring-lime-400/40">
+          <span className="absolute bottom-3 left-3 rounded-full bg-black/80 px-3 py-1 text-xs font-semibold text-lime-400 ring-1 ring-lime-400/40">
             {badge}
           </span>
         ) : null}
