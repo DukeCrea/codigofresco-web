@@ -70,7 +70,7 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
   return (
     <article>
       <header className="relative overflow-hidden border-b border-white/10 px-4 pb-14 pt-10 sm:px-6 lg:px-8 lg:pb-20">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-lime-300/10 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-lime-400/10 blur-3xl" />
         <div className="relative mx-auto max-w-5xl">
           <Crumbs
             lang={lang}
@@ -80,7 +80,7 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
               { label: item.title, href: caseHref(lang, item) },
             ]}
           />
-          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-300/80">
+          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-400/80">
             {t.caseLabel} {String(item.order).padStart(2, "0")} · {item.disciplines.map((d) => t.disciplines[d]).join(" · ")}
           </p>
           <h1 className="font-display mt-4 text-[2.6rem] leading-[1.02] text-white sm:text-6xl lg:text-7xl">{item.headline}</h1>
@@ -131,7 +131,7 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
             <ol className="grid gap-3 md:grid-cols-2">
               {item.strategy.map((s, i) => (
                 <li key={s} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 leading-7 text-gray-200">
-                  <span className="mr-2 font-display text-xl text-lime-300" aria-hidden="true">{i + 1}.</span>
+                  <span className="mr-2 font-display text-xl text-lime-400" aria-hidden="true">{i + 1}.</span>
                   {s}
                 </li>
               ))}
@@ -203,7 +203,7 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
             <SectionHeading id="aprendizajes" eyebrow="08">{t.sections.learnings}</SectionHeading>
             <div className="grid gap-3 md:grid-cols-3">
               {item.learnings.map((l) => (
-                <blockquote key={l} className="rounded-2xl border border-lime-300/20 bg-lime-300/[0.04] p-5 font-display text-xl leading-snug text-gray-100">
+                <blockquote key={l} className="rounded-2xl border border-lime-400/20 bg-lime-400/[0.04] p-5 font-display text-xl leading-snug text-gray-100">
                   {l}
                 </blockquote>
               ))}
@@ -223,9 +223,9 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
               <SectionHeading id="servicios">{t.sections.services}</SectionHeading>
               <div className="grid gap-3 md:grid-cols-3">
                 {services.map((s) => (
-                  <Link key={s.slug} href={`${serviceBase}/${s.slug}`} className="group rounded-2xl border border-white/10 p-5 transition hover:border-lime-300/60">
+                  <Link key={s.slug} href={`${serviceBase}/${s.slug}`} className="group rounded-2xl border border-white/10 p-5 transition hover:border-lime-400/60">
                     <p className="text-xs uppercase tracking-[0.18em] text-gray-500">{s.eyebrow}</p>
-                    <p className="mt-2 font-semibold text-white group-hover:text-lime-100">{s.title}</p>
+                    <p className="mt-2 font-semibold text-white group-hover:text-lime-400">{s.title}</p>
                     <p className="mt-2 text-sm leading-6 text-gray-400">{s.summary}</p>
                   </Link>
                 ))}
@@ -237,17 +237,17 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
             <SectionHeading id="relacionados">{t.sections.related}</SectionHeading>
             <div className="grid gap-3 md:grid-cols-3">
               {related.map((c) => (
-                <Link key={c.id} href={caseHref(lang, c)} className="group rounded-2xl border border-white/10 p-5 transition hover:border-lime-300/60">
-                  <p className="font-display text-2xl text-white group-hover:text-lime-100">{c.title}</p>
+                <Link key={c.id} href={caseHref(lang, c)} className="group rounded-2xl border border-white/10 p-5 transition hover:border-lime-400/60">
+                  <p className="font-display text-2xl text-white group-hover:text-lime-400">{c.title}</p>
                   <p className="mt-2 text-sm leading-6 text-gray-400">{c.hook}</p>
                 </Link>
               ))}
             </div>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link href={lang === "es" ? "/contacto#proyecto" : "/en/contact#project"} className="rounded-full bg-lime-300 px-5 py-2.5 font-semibold text-black hover:bg-lime-200">
+              <Link href={lang === "es" ? "/contacto#proyecto" : "/en/contact#project"} className="rounded-full bg-lime-400 px-5 py-2.5 font-semibold text-black hover:bg-lime-400/85">
                 {t.talkProject}
               </Link>
-              <Link href={lang === "es" ? "/contacto#empleo" : "/en/contact#hiring"} className="rounded-full border border-white/20 px-5 py-2.5 text-gray-100 hover:border-lime-300">
+              <Link href={lang === "es" ? "/contacto#empleo" : "/en/contact#hiring"} className="rounded-full border border-white/20 px-5 py-2.5 text-gray-100 hover:border-lime-400">
                 {t.hireMe}
               </Link>
             </div>

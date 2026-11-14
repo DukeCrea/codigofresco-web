@@ -53,7 +53,7 @@ export default async function ClientesPage() {
                 </span>
 
                 <h2 className="mt-4 text-xl font-bold text-white">
-                  <Link href={`/panel/clientes/${cliente.slug}`} className="transition hover:text-lime-300">
+                  <Link href={`/panel/clientes/${cliente.slug}`} className="transition hover:text-lime-400">
                     {cliente.corto}
                   </Link>
                 </h2>
@@ -63,7 +63,7 @@ export default async function ClientesPage() {
                 <div className="mt-6 flex flex-wrap gap-2 pt-2">
                   <Link
                     href={`/panel/clientes/${cliente.slug}`}
-                    className="rounded-lg border border-gray-800 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-300"
+                    className="rounded-lg border border-gray-800 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-400"
                   >
                     Ficha técnica
                   </Link>
@@ -72,7 +72,7 @@ export default async function ClientesPage() {
                       href={enlaceVivo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-lg bg-lime-400 px-4 py-2 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
+                      className="rounded-lg bg-lime-400 px-4 py-2 text-sm font-bold text-gray-950 transition hover:bg-lime-400/85"
                     >
                       {cliente.produccion ? "Sitio en vivo" : "Ver demo"}
                     </a>

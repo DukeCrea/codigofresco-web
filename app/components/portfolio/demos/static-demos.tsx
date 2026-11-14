@@ -117,7 +117,7 @@ export function SaintDiagram({ lang }: { lang: Locale }) {
     <DemoFrame lang={lang} tone="diagram" label={en ? "Four flows, four different states" : "Cuatro flujos, cuatro estados distintos"}>
       <div className="mb-5 grid gap-3 text-center text-xs sm:grid-cols-3">
         <div className="rounded-2xl border border-white/10 p-3"><p className="font-semibold text-white">{en ? "Client site (Windows)" : "Sede del cliente (Windows)"}</p><p className="mt-1 text-gray-400">SAINT + SQL Server · {en ? "Go agent as a service" : "agente Go como servicio"} · {en ? "SQLite queue" : "cola SQLite"}</p></div>
-        <div className="flex items-center justify-center rounded-2xl border border-dashed border-lime-300/40 p-3 text-lime-200">
+        <div className="flex items-center justify-center rounded-2xl border border-dashed border-lime-400/40 p-3 text-lime-400">
           {en ? "Outbound HTTPS only →" : "Solo HTTPS saliente →"}
           <br />
           {en ? "token per site · retries" : "token por sede · reintentos"}
@@ -127,7 +127,7 @@ export function SaintDiagram({ lang }: { lang: Locale }) {
       <ul className="space-y-2">
         {lanes.map((lane, i) => (
           <li key={lane.title.es} className="grid gap-2 rounded-2xl border border-white/10 bg-black/20 p-4 sm:grid-cols-[2rem_minmax(0,1fr)_minmax(0,1.4fr)_auto] sm:items-center">
-            <span className="font-display text-2xl text-lime-300" aria-hidden="true">{i + 1}</span>
+            <span className="font-display text-2xl text-lime-400" aria-hidden="true">{i + 1}</span>
             <span className="font-semibold text-white">{pick(lane.title, lang)}</span>
             <span className="text-sm text-gray-400">{pick(lane.from, lang)} → {pick(lane.to, lang)}</span>
             <StatusBadge status={lane.status} lang={lang} />
@@ -154,7 +154,7 @@ export function FunnelMap({ lang }: { lang: Locale }) {
     other: { es: "Otro proyecto", en: "Other project" },
   };
   const kindTone: Record<Kind, string> = {
-    core: "border-lime-300/50 text-lime-200",
+    core: "border-lime-400/50 text-lime-400",
     integration: "border-sky-300/40 text-sky-200",
     other: "border-white/20 text-gray-300",
   };
@@ -195,7 +195,7 @@ export function FunnelMap({ lang }: { lang: Locale }) {
       <ol className="space-y-3">
         {stages.map((s, i) => (
           <li key={s.stage.es} className="grid gap-3 rounded-2xl border border-white/10 bg-black/20 p-4 md:grid-cols-[13rem_minmax(0,1fr)]">
-            <p className="font-semibold text-white"><span className="mr-2 font-display text-xl text-lime-300" aria-hidden="true">{i + 1}</span>{pick(s.stage, lang)}</p>
+            <p className="font-semibold text-white"><span className="mr-2 font-display text-xl text-lime-400" aria-hidden="true">{i + 1}</span>{pick(s.stage, lang)}</p>
             <ul className="space-y-2">
               {s.pieces.map((p) => (
                 <li key={p.name.es} className="flex flex-wrap items-center gap-2 text-sm text-gray-200">
@@ -231,7 +231,7 @@ export function ContentLoop({ lang }: { lang: Locale }) {
   const tone = {
     hypothesis: "border-fuchsia-300/40 text-fuchsia-200",
     test: "border-amber-300/40 text-amber-200",
-    result: "border-lime-300/50 text-lime-200",
+    result: "border-lime-400/50 text-lime-400",
   };
   return (
     <DemoFrame lang={lang} tone="diagram" label={en ? "Hypothesis, test and result are not the same thing" : "Hipótesis, prueba y resultado no son lo mismo"}>
@@ -326,7 +326,7 @@ export function EmailSegments({ lang }: { lang: Locale }) {
             <p className="font-semibold text-white">{pick(f.title, lang)}</p>
             <ul className="mt-3 space-y-2 text-sm leading-6 text-gray-300">
               {f.items.map((i) => (
-                <li key={i.es} className="flex gap-2"><span aria-hidden="true" className="text-lime-300">·</span>{pick(i, lang)}</li>
+                <li key={i.es} className="flex gap-2"><span aria-hidden="true" className="text-lime-400">·</span>{pick(i, lang)}</li>
               ))}
             </ul>
           </div>

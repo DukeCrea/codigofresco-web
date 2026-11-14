@@ -3,8 +3,8 @@ import type { FlowStep, PieceStatus, StatusRow } from "../../lib/portfolio/types
 import { getPortfolioUi } from "../../lib/portfolio/ui";
 
 const statusTone: Record<PieceStatus, string> = {
-  production: "border-lime-300/50 bg-lime-300/15 text-lime-200",
-  connected: "border-emerald-300/40 bg-emerald-300/10 text-emerald-200",
+  production: "border-lime-400/50 bg-lime-400/15 text-lime-400",
+  connected: "border-indigo-300/40 bg-indigo-300/10 text-indigo-200",
   tested: "border-sky-300/40 bg-sky-300/10 text-sky-200",
   built: "border-white/20 bg-white/5 text-gray-200",
   progress: "border-amber-300/40 bg-amber-300/10 text-amber-200",
@@ -51,7 +51,7 @@ export function FlowDiagram({ steps, label }: { steps: FlowStep[]; label: string
     <ol aria-label={label} className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {steps.map((step, index) => (
         <li key={step.title} className="relative rounded-2xl border border-white/10 bg-[#0c0d0b] p-5">
-          <span className="font-display text-4xl leading-none text-lime-300/90" aria-hidden="true">
+          <span className="font-display text-4xl leading-none text-lime-400/90" aria-hidden="true">
             {String(index + 1).padStart(2, "0")}
           </span>
           <p className="mt-3 font-semibold text-white">{step.title}</p>
@@ -65,7 +65,7 @@ export function FlowDiagram({ steps, label }: { steps: FlowStep[]; label: string
 export function SectionHeading({ id, eyebrow, children }: { id?: string; eyebrow?: string; children: React.ReactNode }) {
   return (
     <div className="mb-6">
-      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.22em] text-lime-300/80">{eyebrow}</p> : null}
+      {eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.22em] text-lime-400/80">{eyebrow}</p> : null}
       <h2 id={id} className="font-display mt-2 text-3xl leading-tight text-white sm:text-4xl">
         {children}
       </h2>
@@ -78,7 +78,7 @@ export function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-3">
       {items.map((item) => (
         <li key={item} className="flex gap-3 leading-7 text-gray-300">
-          <span aria-hidden="true" className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-lime-300" />
+          <span aria-hidden="true" className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400" />
           <span>{item}</span>
         </li>
       ))}

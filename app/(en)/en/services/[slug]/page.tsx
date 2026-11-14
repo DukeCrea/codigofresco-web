@@ -106,7 +106,7 @@ export default async function EnglishServicePage({ params }: Props) {
                   { label: service.title, href: `/en/services/${service.slug}` },
                 ]}
               />
-              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-300">
+              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-400">
                 {service.categoryLabel} · {service.eyebrow}
               </div>
               <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
@@ -118,7 +118,7 @@ export default async function EnglishServicePage({ params }: Props) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"
+                  className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-400/85"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   {t.serviceDetail.ctaPrimary}
@@ -150,7 +150,7 @@ export default async function EnglishServicePage({ params }: Props) {
 
         <section className="border-b border-gray-900 bg-black px-6 py-10 md:px-8">
           <div className="mx-auto max-w-4xl rounded-lg border border-lime-400/30 bg-lime-400/10 p-6">
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-lime-300">Straight answer</p>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-lime-400">Straight answer</p>
             <h2 className="mt-3 text-2xl font-bold text-white">{t.serviceDetail.solves(service.shortTitle)}</h2>
             <p className="mt-3 leading-7 text-gray-200">
               {service.summary} Scope gets defined after we review your current process, the
@@ -162,7 +162,7 @@ export default async function EnglishServicePage({ params }: Props) {
         <section className="px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
                 {t.serviceDetail.deliverablesEyebrow}
               </p>
               <h2 className="text-3xl font-bold text-white">{t.serviceDetail.deliverablesTitle}</h2>
@@ -179,7 +179,7 @@ export default async function EnglishServicePage({ params }: Props) {
               <h3 className="text-lg font-bold text-white">{t.serviceDetail.stackTitle}</h3>
               <div className="mt-5 flex flex-wrap gap-2">
                 {service.stack.map((item) => (
-                  <span key={item} className="rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1 text-xs font-medium text-lime-200">
+                  <span key={item} className="rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1 text-xs font-medium text-lime-400">
                     {item}
                   </span>
                 ))}
@@ -190,7 +190,7 @@ export default async function EnglishServicePage({ params }: Props) {
 
         <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               {t.serviceDetail.processEyebrow}
             </p>
             <h2 className="text-center text-3xl font-bold text-white">{t.serviceDetail.processTitle}</h2>
@@ -210,7 +210,7 @@ export default async function EnglishServicePage({ params }: Props) {
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
                 {t.serviceDetail.faqEyebrow}
               </p>
               <h2 className="text-3xl font-bold text-white">{t.serviceDetail.faqTitle}</h2>
@@ -237,7 +237,7 @@ export default async function EnglishServicePage({ params }: Props) {
                     <p className="text-sm text-gray-500">{item.context}</p>
                     <h3 className="font-display mt-2 text-2xl text-white">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-gray-400">{item.hook}</p>
-                    <span className="mt-4 inline-block text-sm font-semibold text-lime-300">Read the case →</span>
+                    <span className="mt-4 inline-block text-sm font-semibold text-lime-400">Read the case →</span>
                   </Link>
                 ))}
               </div>
@@ -256,7 +256,7 @@ export default async function EnglishServicePage({ params }: Props) {
                     href={`/en/services/${related.slug}`}
                     className="rounded-xl border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70"
                   >
-                    <p className="text-sm font-semibold text-lime-300">{related.categoryLabel}</p>
+                    <p className="text-sm font-semibold text-lime-400">{related.categoryLabel}</p>
                     <h3 className="mt-2 text-lg font-bold text-white">{related.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-gray-400">{related.summary}</p>
                   </Link>
@@ -266,7 +266,7 @@ export default async function EnglishServicePage({ params }: Props) {
           </section>
         )}
 
-        <section className="bg-gradient-to-r from-lime-400 to-lime-500 px-6 py-20 md:px-8">
+        <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-4xl font-bold text-gray-950">{t.serviceDetail.closingTitle}</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">{t.serviceDetail.closingBody}</p>

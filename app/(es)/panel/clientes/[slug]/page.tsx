@@ -64,7 +64,7 @@ export default async function FichaClientePage({ params }: FichaProps) {
       <section className="mx-auto max-w-4xl px-6 py-10 md:px-8">
         <Link
           href="/panel/clientes"
-          className="text-sm text-gray-500 transition hover:text-lime-300"
+          className="text-sm text-gray-500 transition hover:text-lime-400"
         >
           ← Todos los clientes
         </Link>
@@ -83,7 +83,7 @@ export default async function FichaClientePage({ params }: FichaProps) {
                 href={cliente.produccion}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
+                className="rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-400/85"
               >
                 Sitio en vivo
               </a>
@@ -95,8 +95,8 @@ export default async function FichaClientePage({ params }: FichaProps) {
                 rel="noopener noreferrer"
                 className={
                   cliente.produccion
-                    ? "rounded-lg border border-gray-800 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-300"
-                    : "rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
+                    ? "rounded-lg border border-gray-800 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-400"
+                    : "rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-400/85"
                 }
               >
                 Ver demo
@@ -133,7 +133,7 @@ export default async function FichaClientePage({ params }: FichaProps) {
                     href={opcion.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block rounded-lg border border-gray-800 px-4 py-2 text-xs font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-300"
+                    className="mt-4 inline-block rounded-lg border border-gray-800 px-4 py-2 text-xs font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-400"
                   >
                     Ver
                   </a>

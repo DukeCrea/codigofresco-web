@@ -89,7 +89,7 @@ export function PanelDemo({ lang }: { lang: Locale }) {
           <li key={g.es} className="grid grid-cols-[8.5rem_1fr_2.5rem] items-center gap-3 text-sm sm:grid-cols-[11rem_1fr_3rem]">
             <span className="text-gray-300">{g[lang]}</span>
             <span className="h-3 overflow-hidden rounded-full bg-white/5">
-              <span className="block h-full rounded-full bg-lime-300/80" style={{ width: `${(g.value / max) * 100}%` }} />
+              <span className="block h-full rounded-full bg-lime-400/80" style={{ width: `${(g.value / max) * 100}%` }} />
             </span>
             <span className="text-right tabular-nums text-gray-100">{g.value}</span>
           </li>
@@ -106,7 +106,7 @@ export function PanelDemo({ lang }: { lang: Locale }) {
               aria-checked={selected === r.id}
               onClick={() => setSelected(r.id)}
               className={`flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left text-sm transition ${
-                selected === r.id ? "border-lime-300/60 bg-lime-300/10 text-white" : "border-white/10 text-gray-300 hover:border-white/30"
+                selected === r.id ? "border-lime-400/60 bg-lime-400/10 text-white" : "border-white/10 text-gray-300 hover:border-white/30"
               }`}
             >
               <span>{r.indicator[lang]}</span>
@@ -121,11 +121,11 @@ export function PanelDemo({ lang }: { lang: Locale }) {
           <dl className="space-y-3 text-sm">
             <div><dt className="text-xs uppercase tracking-[0.18em] text-gray-500">{lang === "en" ? "Observed" : "Observado"}</dt><dd className="mt-1 text-gray-100">{rule.observed[lang]}</dd></div>
             <div><dt className="text-xs uppercase tracking-[0.18em] text-gray-500">{lang === "en" ? "Threshold" : "Umbral"}</dt><dd className="mt-1 text-gray-100">{rule.threshold[lang]}</dd></div>
-            <div><dt className="text-xs uppercase tracking-[0.18em] text-gray-500">{lang === "en" ? "Suggested action" : "Acción sugerida"}</dt><dd className="mt-1 text-lime-100">{rule.fires ? rule.action[lang] : lang === "en" ? "Nothing to do: the rule stays quiet when the indicator is in range." : "Nada que hacer: la regla calla cuando el indicador está en rango."}</dd></div>
+            <div><dt className="text-xs uppercase tracking-[0.18em] text-gray-500">{lang === "en" ? "Suggested action" : "Acción sugerida"}</dt><dd className="mt-1 text-lime-400">{rule.fires ? rule.action[lang] : lang === "en" ? "Nothing to do: the rule stays quiet when the indicator is in range." : "Nada que hacer: la regla calla cuando el indicador está en rango."}</dd></div>
           </dl>
           {rule.fires ? (
             <div className="mt-5 flex flex-wrap items-center gap-2">
-              <button type="button" onClick={() => setDecisions((d) => ({ ...d, [rule.id]: "ok" }))} className="rounded-full bg-lime-300 px-4 py-1.5 text-sm font-semibold text-black hover:bg-lime-200">
+              <button type="button" onClick={() => setDecisions((d) => ({ ...d, [rule.id]: "ok" }))} className="rounded-full bg-lime-400 px-4 py-1.5 text-sm font-semibold text-black hover:bg-lime-400/85">
                 {lang === "en" ? "Accept" : "Aceptar"}
               </button>
               <button type="button" onClick={() => setDecisions((d) => ({ ...d, [rule.id]: "no" }))} className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-gray-200 hover:border-white/50">

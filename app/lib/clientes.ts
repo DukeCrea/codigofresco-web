@@ -231,7 +231,7 @@ export const clientes: Cliente[] = [
 ];
 
 export const estadosCliente: Record<EstadoCliente, { texto: string; clases: string }> = {
-  demo: { texto: "Demo publicado", clases: "border-lime-400/40 bg-lime-500/10 text-lime-200" },
+  demo: { texto: "Demo publicado", clases: "border-lime-400/40 bg-lime-400/10 text-lime-400" },
   opciones: { texto: "Esperando elección", clases: "border-amber-400/40 bg-amber-500/10 text-amber-200" },
   produccion: { texto: "En producción", clases: "border-cyan-400/40 bg-cyan-500/10 text-cyan-200" },
   interno: { texto: "Interno", clases: "border-gray-700 bg-gray-900 text-gray-300" },

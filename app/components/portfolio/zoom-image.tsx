@@ -45,7 +45,7 @@ export function ZoomImage({
           className="h-auto w-full transition duration-300 group-hover:scale-[1.01]"
         />
         {badge ? (
-          <span className="absolute left-3 top-3 rounded-full bg-black/80 px-3 py-1 text-xs font-semibold text-lime-200 ring-1 ring-lime-300/40">
+          <span className="absolute left-3 top-3 rounded-full bg-black/80 px-3 py-1 text-xs font-semibold text-lime-400 ring-1 ring-lime-400/40">
             {badge}
           </span>
         ) : null}
@@ -67,7 +67,7 @@ export function ZoomImage({
           <button
             type="button"
             onClick={() => dialogRef.current?.close()}
-            className="rounded-full border border-white/20 px-3 py-1 text-sm hover:border-lime-300"
+            className="rounded-full border border-white/20 px-3 py-1 text-sm hover:border-lime-400"
             autoFocus
           >
             {closeLabel}

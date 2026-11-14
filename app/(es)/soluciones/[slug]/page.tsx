@@ -64,7 +64,7 @@ export default async function SolutionHubPage({ params }: Props) {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Soluciones", href: "/servicios" }, { label: hub.eyebrow, href: path }]} />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">{hub.eyebrow}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">{hub.eyebrow}</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{hub.title}</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">{hub.answer}</p>
             </div>
@@ -75,7 +75,7 @@ export default async function SolutionHubPage({ params }: Props) {
         <section className="px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Señales de prioridad</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Señales de prioridad</p>
               <h2 className="mt-3 text-3xl font-bold">Problemas que resolvemos</h2>
               <ul className="mt-7 space-y-4">
                 {hub.problems.map((problem) => (
@@ -86,12 +86,12 @@ export default async function SolutionHubPage({ params }: Props) {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Método</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Método</p>
               <h2 className="mt-3 text-3xl font-bold">Cómo lo abordamos</h2>
               <ol className="mt-7 space-y-4">
                 {hub.method.map((step, index) => (
                   <li key={step} className="flex gap-4 rounded-lg border border-gray-800 bg-gray-950 p-5 text-gray-300">
-                    <span className="font-bold text-lime-300">{String(index + 1).padStart(2, "0")}</span>{step}
+                    <span className="font-bold text-lime-400">{String(index + 1).padStart(2, "0")}</span>{step}
                   </li>
                 ))}
               </ol>
@@ -105,7 +105,7 @@ export default async function SolutionHubPage({ params }: Props) {
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {hubServices.map((service) => (
                 <Link key={service.slug} href={`/servicios/${service.slug}`} className="rounded-lg border border-gray-800 bg-black p-6 transition hover:border-lime-400/70">
-                  <p className="text-sm font-semibold text-lime-300">{service.eyebrow}</p>
+                  <p className="text-sm font-semibold text-lime-400">{service.eyebrow}</p>
                   <h3 className="mt-2 text-lg font-bold">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-gray-300">{service.summary}</p>
                 </Link>

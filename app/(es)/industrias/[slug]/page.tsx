@@ -97,11 +97,11 @@ export default async function IndustriaPage({ params }: Props) {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Soluciones", href: "/servicios" }, { label: industria.eyebrow, href: `/industrias/${industria.slug}` }]} />
-              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-300">{industria.eyebrow}</div>
+              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-400">{industria.eyebrow}</div>
               <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">{industria.heroTitle}</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">{industria.intro}</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-400/85"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
                 <Link href="/casos" className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400">Ver casos reales</Link>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default async function IndustriaPage({ params }: Props) {
 
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-4xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               El problema
             </p>
             <h2 className="text-3xl font-bold text-white">Lo que suele estar pasando</h2>
@@ -130,7 +130,7 @@ export default async function IndustriaPage({ params }: Props) {
 
         <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               La solución
             </p>
             <h2 className="text-3xl font-bold text-white">Qué construimos</h2>
@@ -148,7 +148,7 @@ export default async function IndustriaPage({ params }: Props) {
 
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-4xl rounded-xl border border-gray-800 bg-gray-950 p-8">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Caso real
             </p>
             <h2 className="text-3xl font-bold text-white">{industria.caso.client}</h2>
@@ -162,7 +162,7 @@ export default async function IndustriaPage({ params }: Props) {
               ))}
             </div>
             {relatedCase ? (
-              <Link href={`/casos/${relatedCase.slug}`} className="mt-7 inline-flex font-bold text-lime-300 underline underline-offset-4 hover:text-lime-200">
+              <Link href={`/casos/${relatedCase.slug}`} className="mt-7 inline-flex font-bold text-lime-400 underline underline-offset-4 hover:text-lime-400">
                 Leer el caso completo
               </Link>
             ) : null}
@@ -172,7 +172,7 @@ export default async function IndustriaPage({ params }: Props) {
         <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
                 Preguntas
               </p>
               <h2 className="text-3xl font-bold text-white">Dudas frecuentes</h2>
@@ -201,7 +201,7 @@ export default async function IndustriaPage({ params }: Props) {
                     href={`/servicios/${service.slug}`}
                     className="rounded-xl border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70"
                   >
-                    <p className="text-sm font-semibold text-lime-300">{service.categoryLabel}</p>
+                    <p className="text-sm font-semibold text-lime-400">{service.categoryLabel}</p>
                     <h3 className="mt-2 text-lg font-bold text-white">{service.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-gray-400">{service.summary}</p>
                   </Link>
@@ -211,7 +211,7 @@ export default async function IndustriaPage({ params }: Props) {
           </section>
         )}
 
-        <section className="bg-gradient-to-r from-lime-400 to-lime-500 px-6 py-20 md:px-8">
+        <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-4xl font-bold text-gray-950">¿Lo montamos para tu empresa?</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">

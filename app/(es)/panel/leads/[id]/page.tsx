@@ -79,7 +79,7 @@ export default async function LeadPage({ params, searchParams }: Props) {
       <PanelHeader activo="leads" />
 
       <section className="mx-auto max-w-5xl px-6 py-10 md:px-8">
-        <Link href="/panel" className="text-sm text-gray-500 transition hover:text-lime-300">
+        <Link href="/panel" className="text-sm text-gray-500 transition hover:text-lime-400">
           ← Todos los leads
         </Link>
 
@@ -98,13 +98,13 @@ export default async function LeadPage({ params, searchParams }: Props) {
               href={phoneHref(lead.phone)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-bold text-lime-400 transition hover:text-lime-300"
+              className="inline-flex items-center gap-1.5 font-bold text-lime-400 transition hover:text-lime-400"
             >
               <WhatsAppIcon className="h-4 w-4" />
               {lead.phone}
             </a>
             {lead.email && (
-              <a href={`mailto:${lead.email}`} className="text-gray-300 transition hover:text-lime-300">
+              <a href={`mailto:${lead.email}`} className="text-gray-300 transition hover:text-lime-400">
                 {lead.email}
               </a>
             )}
@@ -195,7 +195,7 @@ export default async function LeadPage({ params, searchParams }: Props) {
                   </div>
                   <Link
                     href="/panel/trabajos"
-                    className="text-xs font-semibold text-gray-400 transition hover:text-lime-300"
+                    className="text-xs font-semibold text-gray-400 transition hover:text-lime-400"
                   >
                     Editar →
                   </Link>
@@ -205,7 +205,7 @@ export default async function LeadPage({ params, searchParams }: Props) {
           )}
 
           <details className="mt-4 rounded-lg border border-gray-800 bg-gray-950">
-            <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-300">
+            <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-400">
               + Convertir en trabajo
             </summary>
             <form action={crearTrabajo} className="grid gap-4 border-t border-gray-900 p-5">

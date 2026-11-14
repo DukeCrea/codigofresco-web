@@ -31,7 +31,7 @@ function FilterBar({
           aria-pressed={value === o}
           onClick={() => onChange(o)}
           className={`rounded-full border px-4 py-1.5 text-sm transition ${
-            value === o ? "border-lime-300 bg-lime-300 font-semibold text-black" : "border-white/15 text-gray-300 hover:border-white/40"
+            value === o ? "border-lime-400 bg-lime-400 font-semibold text-black" : "border-white/15 text-gray-300 hover:border-white/40"
           }`}
         >
           {o === "all" ? t.allFilter : t.disciplines[o]} <span className="opacity-60">{counts[o]}</span>
@@ -74,16 +74,16 @@ export function CaseGrid({ lang, cases }: { lang: Locale; cases: CaseCardData[] 
           <li key={c.id}>
             <Link
               href={c.href}
-              className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-0.5 hover:border-lime-300/60 hover:bg-white/[0.04] sm:p-7"
+              className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.02] p-6 transition hover:-translate-y-0.5 hover:border-lime-400/60 hover:bg-white/[0.04] sm:p-7"
             >
               <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-[0.2em] text-gray-500">
                 <span>{t.caseLabel} {String(c.order).padStart(2, "0")}</span>
                 <span className="text-right">{c.disciplines.map((d) => t.disciplines[d]).join(" · ")}</span>
               </div>
-              <h3 className="font-display mt-6 text-3xl leading-tight text-white group-hover:text-lime-100 sm:text-4xl">{c.title}</h3>
+              <h3 className="font-display mt-6 text-3xl leading-tight text-white group-hover:text-lime-400 sm:text-4xl">{c.title}</h3>
               <p className="mt-2 text-sm text-gray-500">{c.context}</p>
               <p className="mt-4 flex-1 leading-7 text-gray-300">{c.hook}</p>
-              <span className="mt-6 text-sm font-semibold text-lime-200">{t.readCase} →</span>
+              <span className="mt-6 text-sm font-semibold text-lime-400">{t.readCase} →</span>
             </Link>
           </li>
         ))}
@@ -125,7 +125,7 @@ export function ArchiveBrowser({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={lang === "es" ? "Buscar: Laravel, WhatsApp, CRM…" : "Search: Laravel, WhatsApp, CRM…"}
-            className="w-full rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm text-white placeholder:text-gray-500 focus:border-lime-300 focus:outline-none"
+            className="w-full rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm text-white placeholder:text-gray-500 focus:border-lime-400 focus:outline-none"
           />
         </label>
       </div>
@@ -154,7 +154,7 @@ export function ArchiveBrowser({
                   <p className="mt-3 text-sm text-amber-100/80">{p.status}</p>
                   <div className="mt-3 flex flex-wrap gap-4 text-sm">
                     {p.caseId && caseHrefs[p.caseId] ? (
-                      <Link href={caseHrefs[p.caseId]} className="text-lime-200 hover:text-lime-100">{t.readCase} →</Link>
+                      <Link href={caseHrefs[p.caseId]} className="text-lime-400 hover:text-lime-400">{t.readCase} →</Link>
                     ) : null}
                     {p.url ? (
                       <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-gray-300 underline decoration-white/20 underline-offset-4 hover:text-white">

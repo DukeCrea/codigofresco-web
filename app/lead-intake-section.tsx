@@ -183,7 +183,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
           </p>
         </div>
 
-        <div className="mx-auto max-w-4xl rounded-xl border border-lime-300/30 bg-gray-950 p-5 text-white shadow-2xl shadow-black/30 sm:p-8">
+        <div className="mx-auto max-w-4xl rounded-xl border border-lime-400/30 bg-gray-950 p-5 text-white shadow-2xl shadow-black/30 sm:p-8">
           <div
             className="mb-8 grid grid-cols-3 gap-3"
             role="progressbar"
@@ -218,7 +218,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-6 py-3 font-bold text-gray-950 transition hover:bg-lime-300"
+                  className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-6 py-3 font-bold text-gray-950 transition hover:bg-lime-400/85"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
                   {t.success.whatsapp}
@@ -234,7 +234,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                     setStep(0);
                     setStatus("idle");
                   }}
-                  className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-300"
+                  className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400"
                 >
                   {t.success.again}
                 </button>
@@ -292,7 +292,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                               <Icon className="h-5 w-5" />
                             </span>
                             <span>
-                              <span className="block font-bold text-white group-hover:text-lime-200">
+                              <span className="block font-bold text-white group-hover:text-lime-400">
                                 {option.label}
                               </span>
                               <span className="mt-1 block text-sm leading-6 text-gray-400">
@@ -335,7 +335,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                           }}
                           className={`rounded-lg border px-4 py-4 text-left font-semibold transition hover:-translate-y-0.5 hover:border-lime-400 ${
                             selected
-                              ? "border-lime-400 bg-lime-400/10 text-lime-200"
+                              ? "border-lime-400 bg-lime-400/10 text-lime-400"
                               : "border-gray-800 bg-black text-white"
                           }`}
                         >
@@ -347,7 +347,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                   <button
                     type="button"
                     onClick={() => setStep(0)}
-                    className="mt-6 text-sm font-bold text-gray-400 transition hover:text-lime-300"
+                    className="mt-6 text-sm font-bold text-gray-400 transition hover:text-lime-400"
                   >
                     {t.step2.back}
                   </button>
@@ -450,7 +450,7 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                       />
                       <span>
                         {t.step3.privacyLead}{lang === "en" ? " " : " con la "}
-                        <Link href={t.step3.privacyHref} className="font-bold text-lime-300 underline underline-offset-4">
+                        <Link href={t.step3.privacyHref} className="font-bold text-lime-400 underline underline-offset-4">
                           {t.step3.privacyLink}
                         </Link>
                         .
@@ -468,14 +468,14 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
                     <button
                       type="button"
                       onClick={() => setStep(1)}
-                      className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-300"
+                      className="rounded-lg border border-gray-700 px-6 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400"
                     >
                       {t.step3.back}
                     </button>
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-lime-400 px-7 py-3 font-bold text-gray-950 transition hover:bg-lime-300 disabled:cursor-not-allowed disabled:opacity-70"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-lime-400 px-7 py-3 font-bold text-gray-950 transition hover:bg-lime-400/85 disabled:cursor-not-allowed disabled:opacity-70"
                     >
                       {status === "submitting" ? t.step3.submitting : t.step3.submit}
                     </button>

@@ -33,12 +33,12 @@ function PageHeader({
 }) {
   return (
     <header className="relative overflow-hidden border-b border-white/10 px-4 pb-14 pt-10 sm:px-6 lg:px-8">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-lime-300/10 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-lime-400/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl">
         <Crumbs lang={lang} items={crumbs} />
         <div className={media ? "grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center" : undefined}>
           <div>
-            {eyebrow ? <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-300/80">{eyebrow}</p> : <div className="mt-10" />}
+            {eyebrow ? <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-400/80">{eyebrow}</p> : <div className="mt-10" />}
             <h1 className="font-display mt-3 max-w-5xl text-5xl leading-[1.02] text-white sm:text-7xl">{title}</h1>
             {intro ? <div className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">{intro}</div> : null}
           </div>
@@ -74,7 +74,7 @@ function WebSummitPortrait({ lang }: { lang: Locale }) {
   const [main, ...rest] = webSummitPhotos;
   return (
     <figure className="relative mx-auto w-full max-w-xl lg:ml-auto lg:mr-0">
-      <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] bg-lime-300/15 blur-2xl" />
+      <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] bg-lime-400/15 blur-2xl" />
       <div className="relative grid grid-cols-[2fr_1fr] gap-3">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d0b] shadow-2xl shadow-black">
           <Image
@@ -86,7 +86,7 @@ function WebSummitPortrait({ lang }: { lang: Locale }) {
             sizes="(min-width: 1024px) 24rem, 62vw"
             className="h-full w-full object-cover"
           />
-          <span className="absolute left-3 top-3 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-200 ring-1 ring-lime-300/40 backdrop-blur">
+          <span className="absolute left-3 top-3 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-400 ring-1 ring-lime-400/40 backdrop-blur">
             Web Summit · Lisboa 2026
           </span>
         </div>
@@ -184,7 +184,7 @@ export function CasesIndexBody({ lang }: { lang: Locale }) {
         lang={lang}
         crumbs={[{ label: t.breadcrumbHome, href: home }, { label: lang === "es" ? "Casos" : "Work", href: path }]}
         eyebrow={lang === "es" ? "Portafolio" : "Portfolio"}
-        title={lang === "es" ? <>Casos con <em className="text-lime-200">estrategia</em> y herramientas</> : <>Cases with <em className="text-lime-200">strategy</em> and tools</>}
+        title={lang === "es" ? <>Casos con <em className="text-lime-400">estrategia</em> y herramientas</> : <>Cases with <em className="text-lime-400">strategy</em> and tools</>}
         intro={
           <p>
             {lang === "es"
@@ -204,7 +204,7 @@ export function CasesIndexBody({ lang }: { lang: Locale }) {
           <ul className="mt-6 grid gap-3 md:grid-cols-2">
             {caseStudies.map((item) => (
               <li key={item.slug}>
-                <Link href={`${path}/${item.slug}`} className="block rounded-2xl border border-white/10 p-5 hover:border-lime-300/60">
+                <Link href={`${path}/${item.slug}`} className="block rounded-2xl border border-white/10 p-5 hover:border-lime-400/60">
                   <p className="font-semibold text-white">{item.client}</p>
                   <p className="mt-1 text-sm text-gray-400">{item.sector}</p>
                 </Link>
@@ -213,7 +213,7 @@ export function CasesIndexBody({ lang }: { lang: Locale }) {
           </ul>
           <p className="mt-6 text-sm text-gray-400">
             {lang === "es" ? "El resto del trabajo revisado está en el " : "The rest of the reviewed work is in the "}
-            <Link href={lang === "es" ? "/proyectos" : "/en/projects"} className="text-lime-200 underline underline-offset-4">
+            <Link href={lang === "es" ? "/proyectos" : "/en/projects"} className="text-lime-400 underline underline-offset-4">
               {lang === "es" ? "archivo de proyectos" : "project archive"}
             </Link>
             .
@@ -256,7 +256,7 @@ export function ArchiveBody({ lang }: { lang: Locale }) {
         lang={lang}
         crumbs={[{ label: t.breadcrumbHome, href: home }, { label: lang === "es" ? "Proyectos" : "Projects", href: path }]}
         eyebrow={lang === "es" ? "Archivo" : "Archive"}
-        title={lang === "es" ? <>Más allá de <em className="text-lime-200">los destacados</em></> : <>Beyond <em className="text-lime-200">the highlights</em></>}
+        title={lang === "es" ? <>Más allá de <em className="text-lime-400">los destacados</em></> : <>Beyond <em className="text-lime-400">the highlights</em></>}
         intro={
           <p>
             {lang === "es"
@@ -278,7 +278,7 @@ export function ArchiveBody({ lang }: { lang: Locale }) {
 
 const aboutCopy = {
   es: {
-    title: <>Marketing de origen. <em className="text-lime-200">Constructor</em> por necesidad.</>,
+    title: <>Marketing de origen. <em className="text-lime-400">Constructor</em> por necesidad.</>,
     paragraphs: [
       "Soy Antonio Duque. Trabajo en marketing y procesos comerciales desde 2016, sobre todo en Champion Motors, un concesionario de autos usados en Panamá. Ahí mi trabajo pasó de las campañas a preguntas más incómodas: cómo llega un cliente, quién lo atiende, qué pasa después y por qué una venta no se puede leer en el reporte de anuncios.",
       "Aprendí que las oportunidades rara vez se pierden en el anuncio. Se pierden en los saltos: del formulario al vendedor, del vendedor al contrato, del contrato al cobro. De esa observación nació ZoDesk, la plataforma que creé para que el contexto viaje con la oportunidad.",
@@ -305,7 +305,7 @@ const aboutCopy = {
     cta: "Ver cómo contactarme",
   },
   en: {
-    title: <>A marketer by background. A <em className="text-lime-200">builder</em> by necessity.</>,
+    title: <>A marketer by background. A <em className="text-lime-400">builder</em> by necessity.</>,
     paragraphs: [
       "I'm Antonio Duque. I have worked in marketing and sales processes since 2016, mostly at Champion Motors, a used-car dealership in Panama. There my work moved from campaigns to harder questions: how a customer arrives, who attends them, what happens next, and why a sale can't be read in the ads report.",
       "I learned that opportunities are rarely lost in the ad. They are lost in the hand-offs: from the form to the salesperson, from the salesperson to the contract, from the contract to payment. That observation led to ZoDesk, the platform I created so context travels with the opportunity.",
@@ -379,7 +379,7 @@ export function AboutBody({ lang }: { lang: Locale }) {
             {c.paragraphs.slice(1).map((p) => <p key={p}>{p}</p>)}
             {zodesk ? (
               <p>
-                <Link href={caseHref(lang, zodesk)} className="text-lime-200 underline underline-offset-4">{zodesk.title}</Link>
+                <Link href={caseHref(lang, zodesk)} className="text-lime-400 underline underline-offset-4">{zodesk.title}</Link>
               </p>
             ) : null}
           </div>
@@ -418,7 +418,7 @@ export function AboutBody({ lang }: { lang: Locale }) {
               <li key={tool} className="rounded-full border border-white/15 px-3 py-1 text-sm text-gray-200">{tool}</li>
             ))}
           </ul>
-          <Link href={lang === "es" ? "/contacto" : "/en/contact"} className="mt-10 inline-block rounded-full bg-lime-300 px-5 py-2.5 font-semibold text-black hover:bg-lime-200">
+          <Link href={lang === "es" ? "/contacto" : "/en/contact"} className="mt-10 inline-block rounded-full bg-lime-400 px-5 py-2.5 font-semibold text-black hover:bg-lime-400/85">
             {c.cta}
           </Link>
         </div>
@@ -464,7 +464,7 @@ export function ContactBody({ lang }: { lang: Locale }) {
         lang={lang}
         crumbs={[{ label: t.breadcrumbHome, href: home }, { label: es ? "Contacto" : "Contact", href: path }]}
         eyebrow={es ? "Contacto" : "Contact"}
-        title={es ? <>Dos caminos, <em className="text-lime-200">una conversación</em></> : <>Two paths, <em className="text-lime-200">one conversation</em></>}
+        title={es ? <>Dos caminos, <em className="text-lime-400">una conversación</em></> : <>Two paths, <em className="text-lime-400">one conversation</em></>}
         intro={
           <p>
             {es
@@ -476,7 +476,7 @@ export function ContactBody({ lang }: { lang: Locale }) {
       <section className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-2">
           <div id={es ? "empleo" : "hiring"} className="scroll-mt-24 rounded-3xl border border-white/10 p-7 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300/80">{es ? "Empresas" : "Companies"}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{es ? "Empresas" : "Companies"}</p>
             <h2 className="font-display mt-3 text-4xl text-white">{es ? "Quiero contratarte" : "I want to hire you"}</h2>
             <p className="mt-4 leading-7 text-gray-300">
               {es
@@ -487,13 +487,13 @@ export function ContactBody({ lang }: { lang: Locale }) {
               <li>· {es ? "Cuéntame el rol, la modalidad y el idioma de trabajo." : "Tell me the role, the setup and the working language."}</li>
               <li>· {es ? "Si quieres, indica qué caso te interesa más para empezar por ahí." : "If you like, mention which case interests you most so we can start there."}</li>
             </ul>
-            <a href={`mailto:${siteConfig.email}?subject=${hireSubject}&body=${hireBody}`} className="mt-7 inline-block rounded-full bg-lime-300 px-5 py-2.5 font-semibold text-black hover:bg-lime-200">
+            <a href={`mailto:${siteConfig.email}?subject=${hireSubject}&body=${hireBody}`} className="mt-7 inline-block rounded-full bg-lime-400 px-5 py-2.5 font-semibold text-black hover:bg-lime-400/85">
               {es ? "Escribir por correo" : "Write by email"}
             </a>
             <p className="mt-3 break-all text-sm text-gray-500">{siteConfig.email}</p>
           </div>
           <div className="rounded-3xl border border-white/10 p-7 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300/80">{es ? "Clientes" : "Clients"}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{es ? "Clientes" : "Clients"}</p>
             <h2 className="font-display mt-3 text-4xl text-white">{es ? "Tengo un proyecto" : "I have a project"}</h2>
             <p className="mt-4 leading-7 text-gray-300">
               {es
@@ -501,12 +501,12 @@ export function ContactBody({ lang }: { lang: Locale }) {
                 : "If you need to connect acquisition, sales follow-up and operations, tell me about the challenge with the form below or on WhatsApp."}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href={es ? "#proyecto" : "#project"} className="rounded-full bg-lime-300 px-5 py-2.5 font-semibold text-black hover:bg-lime-200">{es ? "Ir al formulario" : "Go to the form"}</a>
+              <a href={es ? "#proyecto" : "#project"} className="rounded-full bg-lime-400 px-5 py-2.5 font-semibold text-black hover:bg-lime-400/85">{es ? "Ir al formulario" : "Go to the form"}</a>
               <a
                 href={getWhatsAppUrl(es ? "Hola Antonio, vi tu portafolio y quiero conversar sobre un proyecto." : "Hi Antonio, I saw your portfolio and would like to talk about a project.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-5 py-2.5 text-gray-100 hover:border-lime-300"
+                className="rounded-full border border-white/20 px-5 py-2.5 text-gray-100 hover:border-lime-400"
               >
                 WhatsApp
               </a>

@@ -20,7 +20,7 @@ export function LanguageSwitch({ lang = "es" as Locale }: { lang?: Locale }) {
       href={otherLocale.code === "en" ? "/en" : "/"}
       hrefLang={otherLocale.code}
       aria-label={otherLocale.ariaLabel}
-      className="rounded-lg border border-gray-700 px-2.5 py-1.5 text-xs font-bold text-gray-300 transition hover:border-lime-400 hover:text-lime-300"
+      className="rounded-lg border border-gray-700 px-2.5 py-1.5 text-xs font-bold text-gray-300 transition hover:border-lime-400 hover:text-lime-400"
     >
       {otherLocale.label}
     </Link>
@@ -55,7 +55,7 @@ export function Breadcrumbs({
             {index === items.length - 1 ? (
               <span aria-current="page" className="text-gray-200">{item.label}</span>
             ) : (
-              <Link href={item.href} className="underline decoration-gray-600 underline-offset-4 hover:text-lime-300">
+              <Link href={item.href} className="underline decoration-gray-600 underline-offset-4 hover:text-lime-400">
                 {item.label}
               </Link>
             )}

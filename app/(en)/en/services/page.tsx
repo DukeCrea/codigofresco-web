@@ -53,7 +53,7 @@ export default function EnglishServicesPage() {
                   { label: t.servicesIndex.label, href: "/en/services" },
                 ]}
               />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">{t.servicesIndex.eyebrow}</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">{t.servicesIndex.eyebrow}</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{t.servicesIndex.h1}</h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">{t.servicesIndex.intro}</p>
             </div>
@@ -67,7 +67,7 @@ export default function EnglishServicesPage() {
               <section key={category.id} aria-labelledby={`category-${category.id}`}>
                 <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
                   <div>
-                    <p className="text-sm font-semibold text-lime-300">{category.label}</p>
+                    <p className="text-sm font-semibold text-lime-400">{category.label}</p>
                     <h2 id={`category-${category.id}`} className="mt-2 text-3xl font-bold text-white">
                       {category.headline}
                     </h2>
@@ -82,7 +82,7 @@ export default function EnglishServicesPage() {
                       className="group rounded-lg border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70"
                     >
                       <CheckIcon className="mb-4 h-5 w-5 text-lime-400" />
-                      <h3 className="text-lg font-bold text-white group-hover:text-lime-300">{service.title}</h3>
+                      <h3 className="text-lg font-bold text-white group-hover:text-lime-400">{service.title}</h3>
                       <p className="mt-3 text-sm leading-6 text-gray-300">{service.summary}</p>
                     </Link>
                   ))}

@@ -121,11 +121,11 @@ export default function VenezuelaPage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Empresas en Venezuela", href: "/venezuela" }]} />
-              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-300">Venezuela · Trabajo 100% remoto</div>
+              <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-400">Venezuela · Trabajo 100% remoto</div>
               <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">Software, automatización e IA para empresas en <span className="text-lime-400">Venezuela</span></h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">Desarrollamos webs, tiendas online, software a medida y automatizaciones con inteligencia artificial para empresas venezolanas. Tenemos sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.</p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-300"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-400/85"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
                 <Link href="/servicios" className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400">Ver todas las soluciones</Link>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function VenezuelaPage() {
 
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Cómo trabajamos
             </p>
             <h2 className="text-3xl font-bold text-white">
@@ -155,7 +155,7 @@ export default function VenezuelaPage() {
 
         <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Casos multi-país
             </p>
             <h2 className="text-3xl font-bold text-white">
@@ -164,11 +164,11 @@ export default function VenezuelaPage() {
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {casos.map((caso) => (
                 <div key={caso.client} className="rounded-xl border border-gray-800 bg-gray-950 p-6">
-                  <p className="text-sm font-semibold text-lime-300">{caso.sector}</p>
+                  <p className="text-sm font-semibold text-lime-400">{caso.sector}</p>
                   <h3 className="mt-2 text-xl font-bold text-white">{caso.client}</h3>
                   <p className="mt-3 leading-7 text-gray-400">{caso.desc}</p>
                   {caso.href ? (
-                    <Link href={caso.href} className="mt-4 inline-block font-semibold text-lime-300 underline underline-offset-4 hover:text-lime-200">
+                    <Link href={caso.href} className="mt-4 inline-block font-semibold text-lime-400 underline underline-offset-4 hover:text-lime-400">
                       Leer el caso completo
                     </Link>
                   ) : null}
@@ -180,7 +180,7 @@ export default function VenezuelaPage() {
 
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Soluciones
             </p>
             <h2 className="text-3xl font-bold text-white">Qué podemos construir para tu empresa</h2>
@@ -195,7 +195,7 @@ export default function VenezuelaPage() {
                   href={`/servicios/${service.slug}`}
                   className="rounded-xl border border-gray-800 bg-gray-950 p-5 transition hover:-translate-y-1 hover:border-lime-400/70"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wide text-lime-300">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-lime-400">
                     {service.categoryLabel}
                   </p>
                   <h3 className="mt-2 font-bold text-white">{service.title}</h3>
@@ -209,7 +209,7 @@ export default function VenezuelaPage() {
         <section className="border-t border-gray-900 bg-black px-6 py-20 md:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-300">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
                 Preguntas
               </p>
               <h2 className="text-3xl font-bold text-white">Dudas frecuentes</h2>
@@ -230,7 +230,7 @@ export default function VenezuelaPage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-r from-lime-400 to-lime-500 px-6 py-20 md:px-8">
+        <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-4xl font-bold text-gray-950">¿Empezamos con tu empresa?</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">

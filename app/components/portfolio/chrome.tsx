@@ -24,7 +24,7 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
     <>
       <a
         href="#contenido"
-        className="sr-only z-50 rounded bg-lime-300 px-4 py-2 font-semibold text-black focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        className="sr-only z-50 rounded bg-lime-400 px-4 py-2 font-semibold text-black focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
         {t.skip}
       </a>
@@ -49,7 +49,7 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
                 href={alternateHref ?? otherHome}
                 hrefLang={otherLang}
                 aria-label={t.langAria}
-                className="rounded-md border border-white/15 px-2 py-1 text-xs font-semibold text-gray-300 transition hover:border-lime-300 hover:text-lime-200"
+                className="rounded-md border border-white/15 px-2 py-1 text-xs font-semibold text-gray-300 transition hover:border-lime-400 hover:text-lime-400"
               >
                 {t.langLabel}
               </Link>
@@ -57,14 +57,14 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
               <LangLink
                 lang={lang}
                 ariaLabel={t.langAria}
-                className="rounded-md border border-white/15 px-2 py-1 text-xs font-semibold text-gray-300 transition hover:border-lime-300 hover:text-lime-200"
+                className="rounded-md border border-white/15 px-2 py-1 text-xs font-semibold text-gray-300 transition hover:border-lime-400 hover:text-lime-400"
               >
                 {t.langLabel}
               </LangLink>
             )}
             <Link
               href={t.contact.href}
-              className="rounded-full bg-lime-300 px-4 py-2 font-semibold text-black transition hover:bg-lime-200"
+              className="rounded-full bg-lime-400 px-4 py-2 font-semibold text-black transition hover:bg-lime-400/85"
             >
               {t.contact.label}
             </Link>
@@ -90,12 +90,12 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
                   href={alternateHref ?? otherHome}
                   hrefLang={otherLang}
                   aria-label={t.langAria}
-                  className="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-sm text-lime-200"
+                  className="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-sm text-lime-400"
                 >
                   {lang === "es" ? "English version" : "Versión en español"}
                 </Link>
               ) : (
-                <LangLink lang={lang} ariaLabel={t.langAria} className="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-sm text-lime-200">
+                <LangLink lang={lang} ariaLabel={t.langAria} className="mt-1 block rounded-xl border-t border-white/10 px-4 py-3 text-sm text-lime-400">
                   {lang === "es" ? "English version" : "Versión en español"}
                 </LangLink>
               )}

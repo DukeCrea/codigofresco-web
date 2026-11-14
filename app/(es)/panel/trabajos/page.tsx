@@ -36,7 +36,7 @@ const estilosEstado: Record<string, string> = {
   Propuesta: "border-amber-400/40 bg-amber-500/10 text-amber-200",
   "En curso": "border-blue-400/40 bg-blue-500/10 text-blue-200",
   Entregado: "border-cyan-400/40 bg-cyan-500/10 text-cyan-200",
-  Cobrado: "border-lime-400/40 bg-lime-500/10 text-lime-200",
+  Cobrado: "border-lime-400/40 bg-lime-400/10 text-lime-400",
   Cancelado: "border-gray-700 bg-gray-900 text-gray-400",
 };
 
@@ -171,7 +171,7 @@ function Tareas({ trabajo }: { trabajo: Trabajo }) {
         />
         <button
           type="submit"
-          className="rounded-lg border border-gray-800 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-300"
+          className="rounded-lg border border-gray-800 px-4 py-2 text-sm font-semibold text-gray-200 transition hover:border-lime-400 hover:text-lime-400"
         >
           Añadir
         </button>
@@ -327,7 +327,7 @@ export default async function TrabajosPage({ searchParams }: Props) {
         </div>
 
         <details className="mt-8 rounded-lg border border-gray-800 bg-gray-950">
-          <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-300">
+          <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-400">
             + Nuevo trabajo
           </summary>
           <form action={crearTrabajo} className="grid gap-4 border-t border-gray-900 p-5">

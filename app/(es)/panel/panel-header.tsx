@@ -32,7 +32,7 @@ export function PanelHeader({ activo }: PanelHeaderProps) {
               className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${
                 activo === pestana.id
                   ? "bg-lime-400 text-gray-950"
-                  : "text-gray-300 hover:text-lime-300"
+                  : "text-gray-300 hover:text-lime-400"
               }`}
             >
               {pestana.etiqueta}
@@ -41,7 +41,7 @@ export function PanelHeader({ activo }: PanelHeaderProps) {
         </nav>
 
         <form action={logoutPanel} className="ml-auto">
-          <button type="submit" className="font-semibold text-gray-300 transition hover:text-lime-300">
+          <button type="submit" className="font-semibold text-gray-300 transition hover:text-lime-400">
             Salir
           </button>
         </form>

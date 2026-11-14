@@ -73,7 +73,7 @@ export function LegacyCase({ slug }: { slug: string }) {
                 { label: item.client, href: path },
               ]}
             />
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">{item.sector}</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">{item.sector}</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{item.client}</h1>
           </div>
         </section>
@@ -106,7 +106,7 @@ export function LegacyCase({ slug }: { slug: string }) {
               <h2 className="text-3xl font-bold">{t.caseDetail.stack}</h2>
               <div className="mt-5 flex flex-wrap gap-2">
                 {item.stack.map((tech) => (
-                  <span key={tech} className="rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1 text-xs font-medium text-lime-200">
+                  <span key={tech} className="rounded-full border border-lime-400/20 bg-lime-400/10 px-3 py-1 text-xs font-medium text-lime-400">
                     {tech}
                   </span>
                 ))}
@@ -126,7 +126,7 @@ export function LegacyCase({ slug }: { slug: string }) {
                     href={`/en/services/${service.slug}`}
                     className="rounded-xl border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70"
                   >
-                    <p className="text-sm font-semibold text-lime-300">{service.categoryLabel}</p>
+                    <p className="text-sm font-semibold text-lime-400">{service.categoryLabel}</p>
                     <h3 className="mt-2 text-lg font-bold text-white">{service.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-gray-400">{service.summary}</p>
                   </Link>

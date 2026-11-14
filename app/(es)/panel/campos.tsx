@@ -95,7 +95,7 @@ export function BotonPrimario({ children }: { children: React.ReactNode }) {
   return (
     <button
       type="submit"
-      className="rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
+      className="rounded-lg bg-lime-400 px-5 py-2.5 text-sm font-bold text-gray-950 transition hover:bg-lime-400/85"
     >
       {children}
     </button>

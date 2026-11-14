@@ -47,7 +47,7 @@ const statusStyles: Record<string, string> = {
   Nuevo: "border-blue-400/40 bg-blue-500/10 text-blue-200",
   Contactado: "border-cyan-400/40 bg-cyan-500/10 text-cyan-200",
   Propuesta: "border-amber-400/40 bg-amber-500/10 text-amber-200",
-  Ganado: "border-lime-400/40 bg-lime-500/10 text-lime-200",
+  Ganado: "border-lime-400/40 bg-lime-400/10 text-lime-400",
   Perdido: "border-red-400/40 bg-red-500/10 text-red-200",
 };
 
@@ -147,7 +147,7 @@ function LoginPanel({ error, configured }: { error?: string; configured: boolean
           </label>
           <button
             type="submit"
-            className="rounded-lg bg-lime-400 px-6 py-3 font-bold text-gray-950 transition hover:bg-lime-300"
+            className="rounded-lg bg-lime-400 px-6 py-3 font-bold text-gray-950 transition hover:bg-lime-400/85"
           >
             Entrar
           </button>
@@ -161,7 +161,7 @@ function LeadRow({ lead }: { lead: LeadRecord }) {
   return (
     <tr className="border-t border-gray-900 align-top">
       <td className="px-4 py-4">
-        <Link href={`/panel/leads/${lead.id}`} className="font-bold text-white hover:text-lime-300">
+        <Link href={`/panel/leads/${lead.id}`} className="font-bold text-white hover:text-lime-400">
           {lead.name}
         </Link>
         {lead.company && <p className="text-xs text-gray-500">{lead.company}</p>}
@@ -196,7 +196,7 @@ function LeadRow({ lead }: { lead: LeadRecord }) {
           </select>
           <button
             type="submit"
-            className="rounded-full border border-gray-700 px-3 py-1 text-xs font-bold text-gray-300 transition hover:border-lime-400 hover:text-lime-300"
+            className="rounded-full border border-gray-700 px-3 py-1 text-xs font-bold text-gray-300 transition hover:border-lime-400 hover:text-lime-400"
           >
             Guardar
           </button>
@@ -208,14 +208,14 @@ function LeadRow({ lead }: { lead: LeadRecord }) {
           href={phoneHref(lead.phone)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-bold text-lime-400 transition hover:text-lime-300"
+          className="inline-flex items-center gap-1.5 font-bold text-lime-400 transition hover:text-lime-400"
         >
           <WhatsAppIcon className="h-4 w-4" />
           {lead.phone}
         </a>
         <Link
           href={`/panel/leads/${lead.id}`}
-          className="mt-2 block text-xs text-gray-400 transition hover:text-lime-300"
+          className="mt-2 block text-xs text-gray-400 transition hover:text-lime-400"
         >
           Seguimiento →
         </Link>
@@ -227,7 +227,7 @@ function LeadRow({ lead }: { lead: LeadRecord }) {
 function FormularioNuevoLead() {
   return (
     <details className="mt-8 rounded-lg border border-gray-800 bg-gray-950">
-      <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-300">
+      <summary className="cursor-pointer list-none px-5 py-4 text-sm font-bold text-lime-400 transition hover:text-lime-400">
         + Cargar un lead a mano
       </summary>
 
@@ -343,7 +343,7 @@ export default async function PanelPage({ searchParams }: PanelPageProps) {
               className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
                 selectedStatus === status
                   ? "bg-lime-400 text-gray-950"
-                  : "border border-gray-800 bg-gray-950 text-gray-300 hover:border-lime-400 hover:text-lime-300"
+                  : "border border-gray-800 bg-gray-950 text-gray-300 hover:border-lime-400 hover:text-lime-400"
               }`}
             >
               {status}

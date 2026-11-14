@@ -186,7 +186,7 @@ export function AnalyticsScripts({ lang = "es" }: { lang?: Locale }) {
             <p className="font-bold">{t.title}</p>
             <p className="mt-1 text-sm leading-6 text-gray-300">
               {t.bodyLead}{" "}
-              <Link href={t.policyHref} className="underline underline-offset-4 hover:text-lime-300">
+              <Link href={t.policyHref} className="underline underline-offset-4 hover:text-lime-400">
                 {t.policyLink}
               </Link>
               .
@@ -203,7 +203,7 @@ export function AnalyticsScripts({ lang = "es" }: { lang?: Locale }) {
             <button
               type="button"
               onClick={() => chooseConsent("accepted")}
-              className="rounded-lg bg-lime-400 px-4 py-2 text-sm font-bold text-gray-950 transition hover:bg-lime-300"
+              className="rounded-lg bg-lime-400 px-4 py-2 text-sm font-bold text-gray-950 transition hover:bg-lime-400/85"
             >
               {t.accept}
             </button>
@@ -224,7 +224,7 @@ export function CookiePreferencesButton({ lang = "es" }: { lang?: Locale }) {
         window.localStorage.removeItem(consentStorageKey);
         window.location.reload();
       }}
-      className="rounded-lg border border-lime-400 px-5 py-2.5 font-bold text-lime-300 transition hover:bg-lime-400 hover:text-gray-950"
+      className="rounded-lg border border-lime-400 px-5 py-2.5 font-bold text-lime-400 transition hover:bg-lime-400/85 hover:text-gray-950"
     >
       {t.changePreferences}
     </button>

@@ -31,7 +31,7 @@ export function LegalPage({
             </p>
           </div>
         </header>
-        <div className="mx-auto max-w-4xl space-y-10 px-6 py-16 text-gray-300 md:px-8 [&_a]:text-lime-300 [&_a]:underline [&_a]:underline-offset-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-white [&_li]:leading-7 [&_p]:leading-8 [&_ul]:space-y-2">
+        <div className="mx-auto max-w-4xl space-y-10 px-6 py-16 text-gray-300 md:px-8 [&_a]:text-lime-400 [&_a]:underline [&_a]:underline-offset-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-white [&_li]:leading-7 [&_p]:leading-8 [&_ul]:space-y-2">
           {children}
         </div>
       </main>

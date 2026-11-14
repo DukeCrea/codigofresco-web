@@ -413,7 +413,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
             <p className="text-sm font-semibold text-white">{en ? "Financing advisor" : "Asesor de financiamiento"}</p>
             <p className="text-xs text-gray-400">{en ? "Demo · fictitious cars, rates and answers" : "Demo · autos, tasas y respuestas ficticios"}</p>
           </div>
-          <button type="button" onClick={restart} className="rounded-full border border-white/15 px-3 py-1 text-xs text-gray-200 hover:border-lime-300">
+          <button type="button" onClick={restart} className="rounded-full border border-white/15 px-3 py-1 text-xs text-gray-200 hover:border-lime-400">
             {en ? "Start over" : "Empezar de nuevo"}
           </button>
         </div>
@@ -425,7 +425,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
               className={
                 m.from === "bot"
                   ? "max-w-[85%] rounded-2xl rounded-tl-sm bg-white/[0.06] px-4 py-2.5 text-sm leading-6 text-gray-100"
-                  : "ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-lime-300 px-4 py-2.5 text-sm font-medium leading-6 text-black"
+                  : "ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-lime-400 px-4 py-2.5 text-sm font-medium leading-6 text-black"
               }
             >
               <span className="sr-only">{m.from === "bot" ? (en ? "Advisor: " : "Asesor: ") : en ? "You: " : "Tú: "}</span>
@@ -438,7 +438,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
           ) : null}
 
           {result ? (
-            <div className="max-w-[92%] space-y-2 rounded-2xl rounded-tl-sm border border-lime-300/30 bg-lime-300/[0.06] px-4 py-3 text-sm leading-6 text-gray-100">
+            <div className="max-w-[92%] space-y-2 rounded-2xl rounded-tl-sm border border-lime-400/30 bg-lime-400/[0.06] px-4 py-3 text-sm leading-6 text-gray-100">
               {result.route === "none" ? (
                 <>
                   <p>{en ? "Thanks for trusting us. With what you told me, I can't put together financing right now." : "Gracias por la confianza. Con lo que me contaste, ahorita no te puedo armar un financiamiento."}</p>
@@ -446,7 +446,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
                 </>
               ) : (
                 <>
-                  <p className="font-semibold text-lime-100">
+                  <p className="font-semibold text-lime-400">
                     {en ? `Good news! Your profile has a possible ${routeLabel(result.route)} route.` : `¡Buenas noticias! Tu perfil tiene camino por ${routeLabel(result.route)}.`}
                   </p>
                   <p className="text-gray-300">
@@ -487,7 +487,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
                   key={option.value}
                   type="button"
                   onClick={() => answer(current, option)}
-                  className="rounded-full border border-lime-300/40 bg-lime-300/10 px-4 py-2 text-sm text-lime-100 transition hover:bg-lime-300 hover:text-black"
+                  className="rounded-full border border-lime-400/40 bg-lime-400/10 px-4 py-2 text-sm text-lime-400 transition hover:bg-lime-400/85 hover:text-black"
                 >
                   {option.label}
                 </button>
@@ -496,16 +496,16 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
           ) : !closing ? (
             <div className="flex flex-wrap gap-2">
               {result && result.route !== "none" ? (
-                <button type="button" onClick={() => close("cita")} className="rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-black hover:bg-lime-200">
+                <button type="button" onClick={() => close("cita")} className="rounded-full bg-lime-400 px-4 py-2 text-sm font-semibold text-black hover:bg-lime-400/85">
                   {en ? "Book a visit" : "Agendar visita"}
                 </button>
               ) : null}
-              <button type="button" onClick={() => close("whatsapp")} className="rounded-full border border-white/20 px-4 py-2 text-sm text-gray-100 hover:border-lime-300">
+              <button type="button" onClick={() => close("whatsapp")} className="rounded-full border border-white/20 px-4 py-2 text-sm text-gray-100 hover:border-lime-400">
                 {result?.route === "none" ? (en ? "Have someone call me" : "Que me llamen") : en ? "Continue on WhatsApp" : "Seguir por WhatsApp"}
               </button>
             </div>
           ) : (
-            <button type="button" onClick={restart} className="rounded-full border border-white/20 px-4 py-2 text-sm text-gray-100 hover:border-lime-300">
+            <button type="button" onClick={restart} className="rounded-full border border-white/20 px-4 py-2 text-sm text-gray-100 hover:border-lime-400">
               {en ? "Try another profile" : "Probar otro perfil"}
             </button>
           )}
@@ -515,7 +515,7 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
       {/* Lo que ve el equipo */}
       <div className="space-y-4">
         <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300/80">{en ? "What the salesperson receives" : "Lo que recibe el asesor"}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{en ? "What the salesperson receives" : "Lo que recibe el asesor"}</p>
           <dl className="mt-4 space-y-2.5 text-sm">
             <div className="flex justify-between gap-3"><dt className="text-gray-400">{en ? "Source" : "Origen"}</dt><dd className="text-right text-gray-100">utm_source=demo · utm_campaign=portafolio</dd></div>
             <div className="flex justify-between gap-3">
@@ -546,11 +546,11 @@ export function ChatformDemo({ lang }: { lang: Locale }) {
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300/80">{en ? "Funnel events" : "Eventos del embudo"}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-400/80">{en ? "Funnel events" : "Eventos del embudo"}</p>
           <ol className="mt-3 max-h-56 space-y-1 overflow-y-auto font-mono text-xs text-gray-300">
             {events.map((e, i) => (
               <li key={i}>
-                <span className="text-lime-200">{e.name}</span>
+                <span className="text-lime-400">{e.name}</span>
                 {e.detail ? <span className="text-gray-500"> · {e.detail}</span> : null}
               </li>
             ))}

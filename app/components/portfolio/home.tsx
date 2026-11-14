@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { Locale } from "../../lib/i18n/config";
@@ -110,21 +111,22 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
     <>
       <section className="relative overflow-hidden px-4 pb-20 pt-14 sm:px-6 lg:px-8 lg:pb-28 lg:pt-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_top_left,black_20%,transparent_70%)]" />
-        <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-lime-300/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-lime-400/10 blur-3xl" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,0.75fr)] lg:items-center">
+          <div>
           <p className="max-w-2xl text-sm text-gray-400">{c.eyebrow}</p>
-          <h1 className="font-display mt-6 text-[3.1rem] leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-[7.5rem]">
+          <h1 className="font-display mt-6 text-[3.1rem] leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-[5.6rem] xl:text-[6.2rem]">
             {c.title1}
             <br />
-            <em className="text-lime-200">{c.title2}</em>
+            <em className="text-lime-400">{c.title2}</em>
             <br />
             {c.title3}
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-300 sm:text-xl">{c.intro}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href={casesIndex} className="rounded-full bg-lime-300 px-6 py-3 font-semibold text-black transition hover:bg-lime-200">{c.ctaCases}</Link>
-            <Link href={`${contact}${lang === "es" ? "#empleo" : "#hiring"}`} className="rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-lime-300">{c.ctaHire}</Link>
-            <Link href={`${contact}${lang === "es" ? "#proyecto" : "#project"}`} className="rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-lime-300">{c.ctaProject}</Link>
+            <Link href={casesIndex} className="rounded-full bg-lime-400 px-6 py-3 font-semibold text-black transition hover:bg-lime-400/85">{c.ctaCases}</Link>
+            <Link href={`${contact}${lang === "es" ? "#empleo" : "#hiring"}`} className="rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-lime-400">{c.ctaHire}</Link>
+            <Link href={`${contact}${lang === "es" ? "#proyecto" : "#project"}`} className="rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-lime-400">{c.ctaProject}</Link>
           </div>
           <dl className="mt-14 grid max-w-3xl gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
             {c.facts.map(([n, label]) => (
@@ -137,6 +139,41 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
               </div>
             ))}
           </dl>
+          </div>
+
+          {/* Retrato del Web Summit: lleva a "Sobre mí". */}
+          <Link
+            href={lang === "es" ? "/nosotros" : "/en/about"}
+            className="group relative mx-auto block w-full max-w-sm lg:mx-0 lg:max-w-none"
+            aria-label={lang === "es" ? "Conoce a Antonio Duque" : "Meet Antonio Duque"}
+          >
+            <span aria-hidden="true" className="absolute -inset-4 rounded-[2rem] bg-lime-400/15 blur-2xl transition group-hover:bg-lime-400/850/25" />
+            <span className="relative block overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d0b] shadow-2xl shadow-black transition group-hover:border-lime-400/60">
+              <Image
+                src="/portafolio/antonio-duque-web-summit.jpg"
+                alt={
+                  lang === "es"
+                    ? "Antonio Duque sonriendo en el auditorio principal del Web Summit de Lisboa, con el escenario detrás."
+                    : "Antonio Duque smiling in the main auditorium of Web Summit Lisbon, with the stage behind him."
+                }
+                width={1050}
+                height={1400}
+                priority
+                sizes="(min-width: 1024px) 26rem, 90vw"
+                className="h-auto w-full transition duration-500 group-hover:scale-[1.02]"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-400 ring-1 ring-lime-400/40 backdrop-blur">
+                Web Summit · Lisboa 2026
+              </span>
+              <span className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-2xl bg-black/75 px-4 py-3 backdrop-blur">
+                <span>
+                  <span className="block font-semibold text-white">Antonio Duque</span>
+                  <span className="block text-xs text-gray-300">{lang === "es" ? "Creador de ZoDesk" : "Creator of ZoDesk"}</span>
+                </span>
+                <span className="text-sm font-semibold text-lime-400">{lang === "es" ? "Conóceme →" : "Meet me →"}</span>
+              </span>
+            </span>
+          </Link>
         </div>
       </section>
 
@@ -154,12 +191,12 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
                       <p className="text-xs uppercase tracking-[0.2em] text-gray-500">{c.strategy}</p>
                       <p className="font-display mt-1 text-2xl leading-snug text-white sm:text-3xl">{decision}</p>
                     </div>
-                    <span aria-hidden="true" className="hidden text-2xl text-lime-300 md:block">→</span>
+                    <span aria-hidden="true" className="hidden text-2xl text-lime-400 md:block">→</span>
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-gray-500">{c.tool}</p>
                       <p className="mt-1 leading-7 text-gray-300">{tool}</p>
                     </div>
-                    <span className="text-sm font-semibold text-lime-200 md:text-right">{item?.title ?? ""} →</span>
+                    <span className="text-sm font-semibold text-lime-400 md:text-right">{item?.title ?? ""} →</span>
                   </Link>
                 </li>
               );
@@ -185,7 +222,7 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
           <ol className="mt-10 grid gap-4 md:grid-cols-5">
             {c.method.map(([title, body], i) => (
               <li key={title} className="rounded-2xl border border-white/10 p-5">
-                <span className="font-display text-3xl text-lime-300" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-3xl text-lime-400" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                 <p className="mt-3 font-semibold text-white">{title}</p>
                 <p className="mt-2 text-sm leading-6 text-gray-400">{body}</p>
               </li>
@@ -195,12 +232,12 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
       </section>
 
       <section aria-labelledby="zodesk" className="px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 rounded-3xl border border-lime-300/20 bg-gradient-to-br from-lime-300/[0.08] to-transparent p-8 md:grid-cols-[1.2fr_1fr] md:items-center md:p-12">
+        <div className="mx-auto grid max-w-7xl gap-8 rounded-3xl border border-lime-400/20 bg-gradient-to-br from-lime-400/[0.08] to-transparent p-8 md:grid-cols-[1.2fr_1fr] md:items-center md:p-12">
           <div>
             <h2 id="zodesk" className="font-display text-4xl text-white sm:text-5xl">{c.zodeskTitle}</h2>
             <p className="mt-4 max-w-xl leading-7 text-gray-300">{c.zodeskBody}</p>
             {byId.zodesk ? (
-              <Link href={caseHref(lang, byId.zodesk)} className="mt-6 inline-block rounded-full bg-lime-300 px-5 py-2.5 font-semibold text-black hover:bg-lime-200">{c.zodeskCta}</Link>
+              <Link href={caseHref(lang, byId.zodesk)} className="mt-6 inline-block rounded-full bg-lime-400 px-5 py-2.5 font-semibold text-black hover:bg-lime-400/85">{c.zodeskCta}</Link>
             ) : null}
           </div>
           <ol className="grid grid-cols-2 gap-2 text-sm sm:grid-cols-4 md:grid-cols-2">
@@ -209,7 +246,7 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
               : ["Acquisition", "Qualification", "CRM", "Assignment", "Documents", "Sales", "Operations", "Measurement"]
             ).map((s, i) => (
               <li key={s} className="rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-gray-200">
-                <span className="mr-2 text-lime-300" aria-hidden="true">{i + 1}</span>{s}
+                <span className="mr-2 text-lime-400" aria-hidden="true">{i + 1}</span>{s}
               </li>
             ))}
           </ol>
@@ -220,15 +257,15 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
         <div className="mx-auto max-w-7xl">
           <h2 id="contacto" className="font-display text-4xl text-white sm:text-5xl">{c.contactTitle}</h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            <Link href={`${contact}${lang === "es" ? "#empleo" : "#hiring"}`} className="group rounded-3xl border border-white/10 p-8 transition hover:border-lime-300/60">
-              <p className="font-display text-3xl text-white group-hover:text-lime-100">{c.hireTitle}</p>
+            <Link href={`${contact}${lang === "es" ? "#empleo" : "#hiring"}`} className="group rounded-3xl border border-white/10 p-8 transition hover:border-lime-400/60">
+              <p className="font-display text-3xl text-white group-hover:text-lime-400">{c.hireTitle}</p>
               <p className="mt-3 leading-7 text-gray-400">{c.hireBody}</p>
-              <span className="mt-6 inline-block text-sm font-semibold text-lime-200">{t.hireMe} →</span>
+              <span className="mt-6 inline-block text-sm font-semibold text-lime-400">{t.hireMe} →</span>
             </Link>
-            <Link href={`${contact}${lang === "es" ? "#proyecto" : "#project"}`} className="group rounded-3xl border border-white/10 p-8 transition hover:border-lime-300/60">
-              <p className="font-display text-3xl text-white group-hover:text-lime-100">{c.projectTitle}</p>
+            <Link href={`${contact}${lang === "es" ? "#proyecto" : "#project"}`} className="group rounded-3xl border border-white/10 p-8 transition hover:border-lime-400/60">
+              <p className="font-display text-3xl text-white group-hover:text-lime-400">{c.projectTitle}</p>
               <p className="mt-3 leading-7 text-gray-400">{c.projectBody}</p>
-              <span className="mt-6 inline-block text-sm font-semibold text-lime-200">{t.talkProject} →</span>
+              <span className="mt-6 inline-block text-sm font-semibold text-lime-400">{t.talkProject} →</span>
             </Link>
           </div>
         </div>

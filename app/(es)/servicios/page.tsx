@@ -41,7 +41,7 @@ export default function ServicesPage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Soluciones", href: "/servicios" }]} />
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-300">Ecosistema CodigoFresco</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Ecosistema CodigoFresco</p>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">
                 Soluciones conectadas con la operación y el crecimiento
               </h1>
@@ -61,12 +61,12 @@ export default function ServicesPage() {
               <section key={category.id} aria-labelledby={`category-${category.id}`}>
                 <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
                   <div>
-                    <p className="text-sm font-semibold text-lime-300">{category.label}</p>
+                    <p className="text-sm font-semibold text-lime-400">{category.label}</p>
                     <h2 id={`category-${category.id}`} className="mt-2 text-3xl font-bold text-white">
                       {category.headline}
                     </h2>
                   </div>
-                  <Link href={`/soluciones/${category.id}`} className="font-bold text-lime-300 underline underline-offset-4 hover:text-lime-200">
+                  <Link href={`/soluciones/${category.id}`} className="font-bold text-lime-400 underline underline-offset-4 hover:text-lime-400">
                     Ver ecosistema completo
                   </Link>
                 </div>
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                       className="group rounded-lg border border-gray-800 bg-gray-950 p-6 transition hover:-translate-y-1 hover:border-lime-400/70"
                     >
                       <CheckIcon className="mb-4 h-5 w-5 text-lime-400" />
-                      <h3 className="text-lg font-bold text-white group-hover:text-lime-300">{service.title}</h3>
+                      <h3 className="text-lg font-bold text-white group-hover:text-lime-400">{service.title}</h3>
                       <p className="mt-3 text-sm leading-6 text-gray-300">{service.summary}</p>
                     </Link>
                   ))}
