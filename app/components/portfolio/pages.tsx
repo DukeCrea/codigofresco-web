@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { LeadIntakeSection } from "../../lead-intake-section";
@@ -20,23 +21,64 @@ function PageHeader({
   eyebrow,
   title,
   intro,
+  media,
 }: {
   lang: Locale;
   crumbs: Array<{ label: string; href: string }>;
   eyebrow?: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
+  /** Imagen opcional a la derecha (por ejemplo, el retrato de "Sobre mí"). */
+  media?: React.ReactNode;
 }) {
   return (
     <header className="relative overflow-hidden border-b border-white/10 px-4 pb-14 pt-10 sm:px-6 lg:px-8">
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-lime-300/10 blur-3xl" />
       <div className="relative mx-auto max-w-7xl">
         <Crumbs lang={lang} items={crumbs} />
-        {eyebrow ? <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-300/80">{eyebrow}</p> : <div className="mt-10" />}
-        <h1 className="font-display mt-3 max-w-5xl text-5xl leading-[1.02] text-white sm:text-7xl">{title}</h1>
-        {intro ? <div className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">{intro}</div> : null}
+        <div className={media ? "grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center" : undefined}>
+          <div>
+            {eyebrow ? <p className="mt-10 text-xs font-semibold uppercase tracking-[0.22em] text-lime-300/80">{eyebrow}</p> : <div className="mt-10" />}
+            <h1 className="font-display mt-3 max-w-5xl text-5xl leading-[1.02] text-white sm:text-7xl">{title}</h1>
+            {intro ? <div className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">{intro}</div> : null}
+          </div>
+          {media ? <div className="mt-2 lg:mt-10">{media}</div> : null}
+        </div>
       </div>
     </header>
+  );
+}
+
+/** Retrato de Antonio en el Web Summit de Lisboa, con el tratamiento visual del sitio. */
+function WebSummitPortrait({ lang }: { lang: Locale }) {
+  const es = lang === "es";
+  return (
+    <figure className="relative mx-auto w-full max-w-md lg:ml-auto lg:mr-0">
+      <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] bg-lime-300/15 blur-2xl" />
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d0b] shadow-2xl shadow-black">
+        <Image
+          src="/portafolio/antonio-duque-web-summit.jpg"
+          alt={
+            es
+              ? "Antonio Duque sonriendo en el auditorio principal del Web Summit de Lisboa, con el escenario detrás."
+              : "Antonio Duque smiling in the main auditorium of Web Summit Lisbon, with the stage behind him."
+          }
+          width={1050}
+          height={1400}
+          priority
+          sizes="(min-width: 1024px) 28rem, 90vw"
+          className="h-auto w-full"
+        />
+        <span className="absolute left-4 top-4 rounded-full bg-black/75 px-3 py-1 text-xs font-semibold text-lime-200 ring-1 ring-lime-300/40 backdrop-blur">
+          Web Summit · Lisboa 2026
+        </span>
+      </div>
+      <figcaption className="relative mt-4 text-sm leading-6 text-gray-400">
+        {es
+          ? "En el Web Summit de Lisboa, en noviembre de 2026: aprender de quienes construyen producto y llevar ideas a lo que hago cada día."
+          : "At Web Summit in Lisbon, November 2026: learning from people who build products and bringing ideas back to my daily work."}
+      </figcaption>
+    </figure>
   );
 }
 
@@ -281,7 +323,8 @@ export function AboutBody({ lang }: { lang: Locale }) {
         dateModified: PORTFOLIO_REVIEWED,
         mainEntity: { "@id": personId },
       },
-      personJsonLd(lang),
+      // La foto solo se declara aquí, donde se ve: el schema debe coincidir con lo visible.
+      { ...personJsonLd(lang), image: `${siteConfig.url}/portafolio/antonio-duque-web-summit.jpg` },
       breadcrumbJsonLd([
         { name: t.breadcrumbHome, path: home },
         { name: lang === "es" ? "Sobre mí" : "About", path },
@@ -295,11 +338,13 @@ export function AboutBody({ lang }: { lang: Locale }) {
         crumbs={[{ label: t.breadcrumbHome, href: home }, { label: lang === "es" ? "Sobre mí" : "About", href: path }]}
         eyebrow="Antonio Duque"
         title={c.title}
+        intro={<p>{c.paragraphs[0]}</p>}
+        media={<WebSummitPortrait lang={lang} />}
       />
       <section className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
           <div id="antonio-duque" className="space-y-5 text-[17px] leading-8 text-gray-300">
-            {c.paragraphs.map((p) => <p key={p}>{p}</p>)}
+            {c.paragraphs.slice(1).map((p) => <p key={p}>{p}</p>)}
             {zodesk ? (
               <p>
                 <Link href={caseHref(lang, zodesk)} className="text-lime-200 underline underline-offset-4">{zodesk.title}</Link>
