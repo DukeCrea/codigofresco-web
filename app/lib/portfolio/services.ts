@@ -18,7 +18,7 @@ export const portfolioServicesEs: Service[] = [
     shortTitle: "Implementación CRM",
     metaTitle: "Consultoría e implementación de CRM y Zoho CRM",
     metaDescription:
-      "Implementación de CRM y seguimiento comercial: etapas, reparto de leads, avisos de atención, integración de Zoho CRM con la web y reportes, a partir de casos reales.",
+      "Implementación de CRM y Zoho CRM: etapas, reparto de leads, avisos de atención, integración con la web y reportes, a partir de casos reales.",
     eyebrow: "CRM y seguimiento comercial",
     heroTitle: "Un CRM que el equipo usa porque le dice qué hacer a continuación",
     summary:
@@ -65,7 +65,7 @@ export const portfolioServicesEs: Service[] = [
     shortTitle: "Automatización comercial",
     metaTitle: "Automatización de marketing y procesos comerciales",
     metaDescription:
-      "Automatización de marketing y ventas conectada a datos reales: catálogos desde el inventario, seguimiento segmentado, alertas, reportes por correo y medición del origen a la venta.",
+      "Automatización de marketing y ventas con datos reales: catálogos desde inventario, seguimiento segmentado, alertas y reportes por correo.",
     eyebrow: "Marketing conectado con datos y operación",
     heroTitle: "Automatizar lo repetitivo y medir lo que de verdad decide",
     summary:
@@ -112,7 +112,7 @@ export const portfolioServicesEs: Service[] = [
     shortTitle: "E-commerce + ERP",
     metaTitle: "Integración de e-commerce con ERP: SAINT y otros sistemas",
     metaDescription:
-      "Integración de tiendas online con ERP locales como SAINT: agente saliente, precio y stock por mercado, cola local, reintentos y prevención de duplicados. Experiencia en Panamá y Venezuela.",
+      "Integración de tiendas online con ERP locales como SAINT: agente saliente, precio y stock por mercado, cola local y prevención de duplicados.",
     eyebrow: "E-commerce conectado al ERP",
     heroTitle: "Tu tienda online con el inventario real del ERP, sin exponerlo a internet",
     summary:
@@ -163,7 +163,7 @@ export const portfolioServicesEs: Service[] = [
     shortTitle: "Concesionarios y talleres",
     metaTitle: "Software para concesionarios y talleres: CRM y operación",
     metaDescription:
-      "ZoDesk para concesionarios y talleres: leads con origen y reparto, chat de financiamiento, contratos, crédito, cobros, órdenes de trabajo, estaciones, materiales y cotizaciones.",
+      "ZoDesk para concesionarios y talleres: leads con reparto, chat de financiamiento, contratos, crédito, cobros, órdenes de trabajo y cotizaciones.",
     eyebrow: "Automoción",
     heroTitle: "Del lead al contrato y del taller al cobro, en un mismo sistema",
     summary:
@@ -213,7 +213,7 @@ export const portfolioServicesEn: Service[] = [
     shortTitle: "CRM implementation",
     metaTitle: "CRM and Zoho CRM Consulting and Implementation",
     metaDescription:
-      "CRM implementation and sales follow-up: stages, lead assignment, response alerts, Zoho CRM integration with your website and reporting, based on real cases.",
+      "CRM and Zoho CRM implementation: stages, lead assignment, response alerts, website integration and reporting, based on real cases.",
     eyebrow: "CRM and sales follow-up",
     heroTitle: "A CRM the team uses because it tells them what to do next",
     summary:
@@ -260,7 +260,7 @@ export const portfolioServicesEn: Service[] = [
     shortTitle: "Sales automation",
     metaTitle: "Marketing and Sales Process Automation",
     metaDescription:
-      "Marketing and sales automation built on real data: inventory-driven catalogs, segmented follow-up, alerts, email reports and measurement from source to sale.",
+      "Marketing and sales automation built on real data: inventory-driven catalogs, segmented follow-up, alerts and email reports.",
     eyebrow: "Marketing connected to data and operations",
     heroTitle: "Automate the repetitive work and measure what actually drives decisions",
     summary:
@@ -307,7 +307,7 @@ export const portfolioServicesEn: Service[] = [
     shortTitle: "E-commerce + ERP",
     metaTitle: "E-commerce and ERP Integration: SAINT and Other Systems",
     metaDescription:
-      "Integrating online stores with on-premise ERPs such as SAINT: outbound agent, per-market price and stock, local queue, retries and duplicate prevention. Experience in Panama and Venezuela.",
+      "Integrating online stores with on-premise ERPs such as SAINT: outbound agent, per-market price and stock, local queue and duplicate prevention.",
     eyebrow: "E-commerce connected to the ERP",
     heroTitle: "Your online store with real ERP inventory, without exposing it to the internet",
     summary:
@@ -358,7 +358,7 @@ export const portfolioServicesEn: Service[] = [
     shortTitle: "Dealerships and workshops",
     metaTitle: "Car Dealership and Workshop Software: CRM and Operations",
     metaDescription:
-      "ZoDesk for dealerships and workshops: leads with source and assignment, financing chat, contracts, credit, collections, work orders, workstations, materials and quotes.",
+      "ZoDesk for dealerships and workshops: lead assignment, financing chat, contracts, credit, collections, work orders and quotes.",
     eyebrow: "Automotive",
     heroTitle: "From lead to contract and from workshop to payment, in one system",
     summary:

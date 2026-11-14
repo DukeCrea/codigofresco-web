@@ -21,9 +21,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Marketing dinámico desde el inventario",
     context: "Champion Motors · concesionario de autos usados en Panamá",
     hook: "El inventario como fuente única de catálogos, contenido, señales de conversión y decisiones de pauta.",
-    metaTitle: "Marketing dinámico y remarketing con inventario de vehículos",
+    metaTitle: "Marketing dinámico y remarketing con inventario",
     metaDescription:
-      "Caso de Antonio Duque: catálogos y feeds desde el inventario de un concesionario, contenido por vehículo, trazabilidad hasta el CRM y estado real del remarketing dinámico.",
+      "Catálogos y feeds desde el inventario de un concesionario, contenido por vehículo, trazabilidad hasta el CRM y el estado real del remarketing dinámico.",
     headline: "Que cada auto disponible tenga su anuncio, y que ningún auto vendido lo siga teniendo.",
     lead:
       "En un concesionario de usados el inventario cambia cada semana. Conecté ese inventario con los catálogos publicitarios, el contenido, la medición y el seguimiento comercial para que la pauta hable de lo que realmente hay en el patio y para que las ventas vuelvan a las plataformas como señal.",
@@ -110,9 +110,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Chatform de financiamiento",
     context: "Concesionario de autos en Panamá · ahora módulo de ZoDesk",
     hook: "Un formulario de crédito convertido en conversación: una pregunta a la vez, con orientación y contexto para el asesor.",
-    metaTitle: "Chatform de financiamiento de vehículos: precalificación conversacional",
+    metaTitle: "Chatform de financiamiento de vehículos",
     metaDescription:
-      "Cómo diseñé un formulario conversacional de financiamiento: preguntas con ramificaciones, reglas de precalificación orientativa, interés por vehículo, entrega al asesor y medición de abandonos.",
+      "Formulario conversacional de financiamiento: preguntas con ramificaciones, precalificación orientativa, contexto para el asesor y medición de abandonos.",
     headline: "Un formulario largo pierde gente. Una conversación bien hecha la orienta.",
     lead:
       "El chat de financiamiento cambia un formulario de crédito por una conversación guiada: pregunta solo lo necesario según el perfil, estima una letra aproximada, propone autos que encajan, agenda la visita y entrega al asesor el caso completo para no repetir preguntas.",
@@ -195,9 +195,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Correo: seguimiento, envíos segmentados y operación",
     context: "Concesionario de autos, ZoDesk, taller mecánico y tienda educativa",
     hook: "Correos que salen de datos reales, con segmentos, validación humana, anti-duplicados y medición de entrega.",
-    metaTitle: "Email marketing y envíos segmentados conectados al CRM",
+    metaTitle: "Email marketing y envíos segmentados con CRM",
     metaDescription:
-      "Sistemas de correo de Antonio Duque: segmentos de seguimiento comercial, campañas de cobro con validación humana, correos operativos y medición de entregas, con el estado real de cada pieza.",
+      "Seguimiento comercial segmentado, campañas de cobro con validación humana y correos operativos medidos por eventos de entrega, con su estado real.",
     headline: "El correo masivo que habla de dinero necesita una persona que valide antes de enviar.",
     lead:
       "Mi trabajo con correo está más cerca de la operación comercial que del boletín: segmentos de seguimiento sobre clientes que no compraron, campañas de cobro con validación humana, avisos operativos y una plantilla única medida por eventos de entrega. Aquí separo lo construido de lo enviado.",
@@ -277,9 +277,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Guiones y contenido basados en métricas",
     context: "Concesionario de autos en Panamá · contenido orgánico, asesores y chat",
     hook: "De la métrica a la hipótesis, de la hipótesis al guion, y de vuelta a los datos.",
-    metaTitle: "Guiones y contenido basados en métricas para ventas",
+    metaTitle: "Guiones y contenido basados en métricas",
     metaDescription:
-      "El proceso de Antonio Duque para crear guiones y contenido desde los datos: métricas de contenido, preguntas reales de clientes, hipótesis, ideas de video para asesores y revisión, sin confundir hipótesis con resultados.",
+      "Cómo paso de métricas y preguntas reales de clientes a hipótesis, guiones e ideas de video, sin confundir una hipótesis con un resultado.",
     headline: "Escribo el guion después de mirar qué pregunta la gente y qué está mirando.",
     lead:
       "El contenido de un concesionario puede decidirse por gusto o por evidencia. Armé un circuito que lleva métricas de contenido, preguntas de clientes y señales de interés a guiones concretos, y que distingue con claridad lo que es una hipótesis, lo que está en prueba y lo que ya está demostrado.",
@@ -353,9 +353,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Paneles de monitoreo y acción",
     context: "ZoDesk · concesionario de autos en Panamá",
     hook: "Paneles que no se quedan en el número: cada indicador fuera de rango propone una acción concreta.",
-    metaTitle: "Paneles de monitoreo de leads y ventas con acciones sugeridas",
+    metaTitle: "Paneles de leads y ventas con acciones",
     metaDescription:
-      "Paneles creados por Antonio Duque para ver entrada de leads, cualificación, atención, abandono del chat, duplicados y relación lead-venta, con reglas que convierten indicadores en acciones.",
+      "Paneles de entrada de leads, atención, abandono del chat, duplicados y relación lead-venta, con reglas que convierten indicadores en acciones.",
     headline: "Un panel útil termina en una acción, no en un gráfico.",
     lead:
       "Estoy construyendo en ZoDesk los paneles que responden qué está pasando con las oportunidades y qué hacer al respecto: de dónde llegan, si alguien las atiende, dónde se caen y si terminan en venta. Cada regla tiene un umbral, una acción y un registro de lo que decidió el equipo.",
@@ -429,9 +429,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Reportes y alertas automáticas por correo",
     context: "Concesionario de autos, ZoDesk, e-commerce multipaís y CRM de servicios",
     hook: "Reportes que llegan solos, calculados en vivo, escritos para quien los lee y con el siguiente paso claro.",
-    metaTitle: "Reporting automatizado por correo para dirección, ventas y operación",
+    metaTitle: "Reportes automatizados por correo",
     metaDescription:
-      "Reportes y alertas por correo diseñados por Antonio Duque: gasto de pauta, ROI por vehículo, cierres, demanda no encontrada, cobranza y salud de integraciones, con validaciones y frecuencia definidas.",
+      "Reportes y alertas por correo para dirección, ventas y operación: gasto de pauta, ROI por vehículo, cierres, demanda y salud de integraciones.",
     headline: "Cada reporte responde una pregunta de una persona concreta, en su idioma.",
     lead:
       "En lugar de un tablero que alguien debe abrir, diseñé reportes y alertas que llegan por correo en el momento útil: calculados en vivo, con fuentes declaradas, sin cifras que se contradigan y con una acción al final. La regla de oro de las alertas es callar cuando todo está bien.",
@@ -506,9 +506,9 @@ export const casesEs: PortfolioCase[] = [
     title: "Agentes de integración con SAINT",
     context: "Camsmark · e-commerce con tiendas en Panamá y Venezuela",
     hook: "Un agente en Go que lee el ERP de cada sede y publica precio y stock en la web, sin abrir puertos a internet.",
-    metaTitle: "Integración de SAINT con e-commerce: agente en Go para Panamá y Venezuela",
+    metaTitle: "Integración de SAINT con e-commerce en Venezuela",
     metaDescription:
-      "Caso de integración del ERP SAINT con un catálogo web multipaís: agente en Go, lectura de SQL Server, comunicación saliente, separación por mercado, anti-duplicados y estado real de cada flujo.",
+      "Agente en Go que lee SAINT en cada sede y publica precio y stock en la web por conexión saliente. Estado real de lectura, pedidos y descargos.",
     headline: "Conectar un ERP local con la web sin exponerlo, y sin escribir en él hasta tener autorización.",
     lead:
       "Camsmark vende material eléctrico e industrial con una tienda para Panamá y otra para Venezuela. Cada sede usa SAINT en un equipo Windows local con SQL Server. Construimos un agente que lee el inventario de cada sede y lo publica en la web por una conexión saliente, con reintentos, cola local y protecciones contra duplicados.",
@@ -593,9 +593,9 @@ export const casesEs: PortfolioCase[] = [
     title: "ZoDesk, ecosistema full funnel",
     context: "Producto propio · concesionarios y talleres",
     hook: "Del primer contacto al contrato, el cobro y la operación: el sistema que conecta las piezas de los otros casos.",
-    metaTitle: "ZoDesk: CRM y operación full funnel para concesionarios y talleres",
+    metaTitle: "ZoDesk: CRM y operación para concesionarios",
     metaDescription:
-      "ZoDesk, el producto que creó Antonio Duque: captación, cualificación, CRM, asignación, contratos, ventas, operación y medición para concesionarios, con su variante para talleres y el estado de cada pieza.",
+      "ZoDesk: captación, cualificación, CRM, contratos, ventas, operación y medición para concesionarios, con variante para talleres y estado por pieza.",
     headline: "Un negocio conectado de punta a punta, empezando por donde se pierde el contexto.",
     lead:
       "ZoDesk nació de ver cómo una oportunidad pierde contexto al pasar de marketing a ventas y de ventas a la operación. Es la plataforma que creé para concesionarios: recibe los leads, los reparte, genera contratos, controla cobros y caja, y mide el recorrido. Tiene una variante para talleres.",

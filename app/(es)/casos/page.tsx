@@ -4,7 +4,7 @@ import { buildMetadata } from "../../lib/seo";
 export const metadata = buildMetadata({
   title: "Casos: marketing, CRM, automatización e integraciones",
   description:
-    "Ocho casos de Antonio Duque con su estado verificado: marketing dinámico, chatform de financiamiento, correo segmentado, contenido con métricas, paneles, reportes, integración con SAINT y ZoDesk.",
+    "Ocho casos de Antonio Duque con estado verificado: marketing dinámico, chatform, correo, contenido, paneles, reportes, SAINT y ZoDesk.",
   path: "/casos",
 });
 

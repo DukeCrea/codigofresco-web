@@ -33,12 +33,14 @@ const casos = [
   {
     client: "Camsmark",
     sector: "E-commerce multi-país",
-    desc: "Tienda online única con dos mercados: precio, moneda, inventario y proceso de pago separados por país. Construida para administrar ventas sin duplicar operación.",
+    desc: "Tienda online con mercados en Panamá y Venezuela: precio, moneda y stock separados por tienda, con un catálogo único.",
+    href: null,
   },
   {
-    client: "LIBRO",
-    sector: "Contabilidad fiscal",
-    desc: "Sistema contable multi-país con partida doble, estados financieros y reportería fiscal para Panamá y Venezuela.",
+    client: "Agentes de integración con SAINT",
+    sector: "ERP local conectado con la web",
+    desc: "Un agente en Go lee SAINT en el equipo de cada sede y publica precio y stock en la tienda por conexión saliente, sin abrir puertos. Funciona también sobre enlace satelital.",
+    href: "/casos/integracion-erp-saint-ecommerce-venezuela",
   },
 ];
 
@@ -64,7 +66,7 @@ const faq = [
   },
   {
     q: "¿Pueden manejar una operación en dos países a la vez?",
-    a: "Es justamente lo que hicimos en Camsmark y en LIBRO: precio, moneda, inventario, facturación y reportes separados por país, administrados desde un solo panel, sin montar dos sistemas paralelos.",
+    a: "Sí. En Camsmark cada país tiene su tienda con precio, moneda y stock propios, alimentados desde el ERP SAINT de cada sede, y se administran desde un solo panel. El cobro en línea y la escritura de pedidos en el ERP siguen pendientes de activación.",
   },
   {
     q: "¿Qué servicios aplican para una empresa venezolana?",
@@ -165,6 +167,11 @@ export default function VenezuelaPage() {
                   <p className="text-sm font-semibold text-lime-300">{caso.sector}</p>
                   <h3 className="mt-2 text-xl font-bold text-white">{caso.client}</h3>
                   <p className="mt-3 leading-7 text-gray-400">{caso.desc}</p>
+                  {caso.href ? (
+                    <Link href={caso.href} className="mt-4 inline-block font-semibold text-lime-300 underline underline-offset-4 hover:text-lime-200">
+                      Leer el caso completo
+                    </Link>
+                  ) : null}
                 </div>
               ))}
             </div>

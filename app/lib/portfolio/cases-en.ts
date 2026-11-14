@@ -16,9 +16,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Inventory-driven dynamic marketing",
     context: "Champion Motors · used-car dealership in Panama",
     hook: "Inventory as the single source for catalogs, content, conversion signals and ad decisions.",
-    metaTitle: "Dynamic Marketing and Remarketing from Vehicle Inventory",
+    metaTitle: "Dynamic Marketing from Vehicle Inventory",
     metaDescription:
-      "Antonio Duque case study: catalogs and feeds built from a dealership's inventory, per-vehicle content, tracking through to the CRM, and the real status of dynamic remarketing.",
+      "Catalogs and feeds built from a dealership's inventory, per-vehicle content, tracking through to the CRM, and the real status of dynamic remarketing.",
     headline: "Every available car should have its ad, and no sold car should keep one.",
     lead:
       "A used-car dealership's inventory changes every week. I connected that inventory to ad catalogs, content, measurement and sales follow-up, so the ads talk about what is actually on the lot and sales go back to the platforms as a signal.",
@@ -105,9 +105,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Financing chatform",
     context: "Car dealership in Panama · now a ZoDesk module",
     hook: "A credit form turned into a conversation: one question at a time, with guidance and context for the salesperson.",
-    metaTitle: "Vehicle Financing Chatform: Conversational Pre-qualification",
+    metaTitle: "Vehicle Financing Chatform",
     metaDescription:
-      "How I designed a conversational financing form: branching questions, indicative pre-qualification rules, vehicle interest, hand-off to sales and drop-off measurement.",
+      "A conversational financing form: branching questions, indicative pre-qualification, context for the salesperson and drop-off measurement.",
     headline: "A long form loses people. A well-built conversation guides them.",
     lead:
       "The financing chat replaces a credit form with a guided conversation: it only asks what applies to the profile, estimates an approximate payment, suggests cars that fit, books the visit and hands the full case to the salesperson so nobody repeats questions.",
@@ -190,9 +190,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Email: follow-up, segmented sends and operations",
     context: "Car dealership, ZoDesk, auto repair shop and educational store",
     hook: "Emails built on real data, with segments, human validation, duplicate protection and delivery tracking.",
-    metaTitle: "Segmented Email Marketing Connected to the CRM",
+    metaTitle: "Segmented Email Marketing with a CRM",
     metaDescription:
-      "Antonio Duque's email systems: sales follow-up segments, collections campaigns with human validation, operational emails and delivery tracking, with the real status of each piece.",
+      "Segmented sales follow-up, collections campaigns with human validation and operational emails tracked by delivery events, with their real status.",
     headline: "A mass email about money needs a person to validate it before it goes out.",
     lead:
       "My email work sits closer to sales operations than to newsletters: follow-up segments for people who didn't buy, collections campaigns with human validation, operational notices and a single template measured by delivery events. Here I separate what is built from what has been sent.",
@@ -270,9 +270,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Data-driven scripts and content",
     context: "Car dealership in Panama · organic content, salespeople and chat",
     hook: "From metric to hypothesis, from hypothesis to script, and back to the data.",
-    metaTitle: "Data-Driven Scripts and Content for Sales",
+    metaTitle: "Data-Driven Scripts and Content",
     metaDescription:
-      "Antonio Duque's process for creating scripts and content from data: content metrics, real customer questions, hypotheses, video ideas for salespeople and review, without confusing hypotheses with results.",
+      "How I turn metrics and real customer questions into hypotheses, scripts and video ideas, without confusing a hypothesis with a result.",
     headline: "I write the script after looking at what people ask and what they are looking at.",
     lead:
       "A dealership's content can be decided by taste or by evidence. I set up a loop that turns content metrics, customer questions and interest signals into concrete scripts, and that clearly separates a hypothesis, a test in progress and a proven result.",
@@ -346,9 +346,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Monitoring and action dashboards",
     context: "ZoDesk · car dealership in Panama",
     hook: "Dashboards that don't stop at the number: every out-of-range indicator suggests a concrete action.",
-    metaTitle: "Lead and Sales Monitoring Dashboards with Suggested Actions",
+    metaTitle: "Lead and Sales Dashboards with Actions",
     metaDescription:
-      "Dashboards built by Antonio Duque to track lead intake, qualification, response, chat drop-off, duplicates and lead-to-sale matching, with rules that turn indicators into actions.",
+      "Dashboards for lead intake, response, chat drop-off, duplicates and lead-to-sale matching, with rules that turn indicators into actions.",
     headline: "A useful dashboard ends in an action, not a chart.",
     lead:
       "I am building ZoDesk dashboards that answer what is happening with opportunities and what to do about it: where they come from, whether anyone attends them, where they drop and whether they end in a sale. Every rule has a threshold, an action and a record of what the team decided.",
@@ -422,9 +422,9 @@ export const casesEn: PortfolioCase[] = [
     title: "Automated email reports and alerts",
     context: "Car dealership, ZoDesk, multi-country e-commerce and a service CRM",
     hook: "Reports that arrive on their own, calculated live, written for their reader, with a clear next step.",
-    metaTitle: "Automated Email Reporting for Leadership, Sales and Operations",
+    metaTitle: "Automated Email Reporting",
     metaDescription:
-      "Email reports and alerts designed by Antonio Duque: ad spend, ROI per vehicle, closes, unmet demand, collections and integration health, with defined validation and frequency.",
+      "Email reports and alerts for leadership, sales and operations: ad spend, ROI per vehicle, closes, unmet demand and integration health.",
     headline: "Every report answers one specific person's question, in their own words.",
     lead:
       "Instead of a dashboard someone has to open, I designed reports and alerts that arrive by email at the useful moment: calculated live, with declared sources, without contradictory figures and with an action at the end. The golden rule for alerts is to stay quiet when everything is fine.",
@@ -499,9 +499,9 @@ export const casesEn: PortfolioCase[] = [
     title: "SAINT ERP integration agents",
     context: "Camsmark · e-commerce with stores in Panama and Venezuela",
     hook: "A Go agent that reads each site's ERP and publishes price and stock online, without opening ports to the internet.",
-    metaTitle: "SAINT ERP and E-commerce Integration: a Go Agent for Panama and Venezuela",
+    metaTitle: "SAINT ERP and E-commerce Integration",
     metaDescription:
-      "Case study integrating the SAINT ERP with a multi-country web catalog: Go agent, SQL Server reads, outbound-only communication, per-market separation, duplicate protection and the real status of each flow.",
+      "A Go agent that reads SAINT at each site and publishes price and stock online over outbound connections. Real status of reads, orders and postings.",
     headline: "Connect a local ERP to the web without exposing it, and without writing to it until authorized.",
     lead:
       "Camsmark sells electrical and industrial supplies with one store for Panama and another for Venezuela. Each site runs SAINT on a local Windows machine with SQL Server. We built an agent that reads each site's inventory and publishes it online through an outbound connection, with retries, a local queue and duplicate protection.",
@@ -586,9 +586,9 @@ export const casesEn: PortfolioCase[] = [
     title: "ZoDesk, a full-funnel ecosystem",
     context: "My own product · dealerships and workshops",
     hook: "From first contact to contract, collections and operations: the system that connects the pieces of the other cases.",
-    metaTitle: "ZoDesk: Full-Funnel CRM and Operations for Dealerships and Workshops",
+    metaTitle: "ZoDesk: CRM and Operations for Dealerships",
     metaDescription:
-      "ZoDesk, the product created by Antonio Duque: lead capture, qualification, CRM, assignment, contracts, sales, operations and measurement for car dealerships, with a workshop variant and the status of each piece.",
+      "ZoDesk: acquisition, qualification, CRM, contracts, sales, operations and measurement for car dealerships, with a workshop variant.",
     headline: "A business connected end to end, starting where context gets lost.",
     lead:
       "ZoDesk came from watching an opportunity lose context as it moves from marketing to sales and from sales to operations. It is the platform I created for car dealerships: it receives leads, assigns them, generates contracts, tracks collections and cash, and measures the journey. It has a variant for workshops.",

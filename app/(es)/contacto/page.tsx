@@ -4,7 +4,7 @@ import { buildMetadata } from "../../lib/seo";
 export const metadata = buildMetadata({
   title: "Contacto: empleo o proyectos",
   description:
-    "Dos caminos para hablar con Antonio Duque: empresas que buscan contratarlo para un rol remoto y clientes con un proyecto de marketing, CRM, automatización o integración.",
+    "Dos caminos para hablar con Antonio Duque: empresas que buscan contratarlo para un rol remoto y clientes con un proyecto concreto.",
   path: "/contacto",
 });
 

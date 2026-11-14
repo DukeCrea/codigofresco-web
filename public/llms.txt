@@ -1,79 +1,37 @@
-# CodigoFresco
+# Código Fresco · Antonio Duque
 
-> Agencia de software, automatización e inteligencia artificial para negocios en Panamá y Venezuela. Digital agency building websites, e-commerce, custom software, AI automation and performance marketing for businesses in Panama and Venezuela.
+> Portafolio de Antonio Duque, creador de ZoDesk. Crea estrategias y los sistemas que las hacen funcionar: conecta marketing, ventas y operación con estrategia de marketing, CRM, automatización, integraciones y productos digitales. Trabajo remoto con Panamá, Venezuela y España.
 
-CodigoFresco es una firma tecnológica de infraestructura digital fundada por Antonio Duque y Noe Rivas. Construye la capa completa que un negocio necesita para vender en internet: páginas web y tiendas online, software a medida, automatización con IA (chatbots, gestión de leads, paneles administrativos) y adquisición de clientes con Google Ads, Meta Ads y SEO. Trabaja de forma remota para toda Hispanoamérica, con foco en Panamá y Venezuela y experiencia en operaciones multi-país.
+Antonio Duque trabaja en marketing y procesos comerciales desde 2016, principalmente en Champion Motors, un concesionario de autos usados en Panamá. De ese trabajo nació ZoDesk, su plataforma de CRM y operación para concesionarios, con una variante para talleres. Construye con agentes de IA bajo su dirección y revisa cada entrega. Idiomas: español nativo, inglés B1. Código Fresco es la marca con la que trabaja junto a Noe Rivas.
 
-- Mercados: Panamá y Venezuela (servicio remoto para toda Hispanoamérica)
-- Fundadores: Antonio Duque y Noe Rivas
+Cada caso del portafolio separa lo que está en producción, lo construido, lo probado, lo pendiente y lo que es solo una propuesta. No se publican cifras comerciales de clientes ni tarifas.
+
 - Contacto: hola@codigofresco.com · WhatsApp +507 6300-6579
-- Idioma del sitio: español
+- Versión en inglés: https://codigofresco.com/en
 
-## Soluciones
+## Casos
 
-Tres áreas que se integran entre sí:
-
-- [Desarrollo web y software](https://codigofresco.com/soluciones/dev): páginas corporativas, e-commerce, WordPress, Shopify y software a medida.
-- [Automatización e IA](https://codigofresco.com/soluciones/automation): chatbots, control de leads, paneles administrativos y respuestas automatizadas.
-- [Marketing y adquisición](https://codigofresco.com/soluciones/marketing): Ads, SEO/GEO, contenido, video y medición de ROI.
+- [Marketing dinámico desde el inventario](https://codigofresco.com/casos/marketing-dinamico-inventario-remarketing): catálogo de Meta sincronizado con el inventario de un concesionario, feeds, captura de origen y conversiones. El remarketing dinámico por vehículo visto sigue pendiente.
+- [Chatform de financiamiento](https://codigofresco.com/casos/chatform-financiamiento-vehiculos): formulario conversacional con preguntas condicionales y precalificación orientativa (no aprueba créditos), entrega al asesor y medición de abandonos. Incluye demostración con datos ficticios.
+- [Correo: seguimiento y envíos segmentados](https://codigofresco.com/casos/email-marketing-envios-segmentados): segmentos de seguimiento comercial, campaña de cobro con validación humana y medición de entregas. Sistemas construidos; no se publican volúmenes.
+- [Guiones y contenido basados en métricas](https://codigofresco.com/casos/guiones-contenido-basado-en-metricas): proceso de métrica, hipótesis, guion y revisión. Sin A/B tests ni resultados demostrados sobre calidad de leads.
+- [Paneles de monitoreo y acción](https://codigofresco.com/casos/paneles-monitoreo-leads-ventas): embudo del chat, recorrido del lead y reglas que convierten indicadores en acciones dentro de ZoDesk.
+- [Reportes y alertas automáticas por correo](https://codigofresco.com/casos/reportes-automatizados-por-correo): gasto de pauta, ROI por vehículo, cierres, demanda no encontrada y alertas de salud de datos.
+- [Agentes de integración con SAINT](https://codigofresco.com/casos/integracion-erp-saint-ecommerce-venezuela): agente en Go que lee el ERP SAINT en Panamá y Venezuela y publica precio y stock en la web por conexión saliente. Lectura y publicación en producción; recepción de pedidos no operativa; escritura de descargos pendiente de autorización.
+- [ZoDesk, ecosistema full funnel](https://codigofresco.com/casos/zodesk-ecosistema-full-funnel): captación, cualificación, CRM, contratos, ventas, operación y medición; en producción con un concesionario.
 
 ## Servicios
 
-- [Páginas web corporativas](https://codigofresco.com/servicios/paginas-web-corporativas): sitios que presentan y venden, no solo presencia.
-- [E-commerce](https://codigofresco.com/servicios/e-commerce): tiendas online completas, incluyendo operaciones multi-país.
-- [Desarrollo y optimización WordPress](https://codigofresco.com/servicios/desarrollo-wordpress): temas a medida, WooCommerce y rescate de sitios existentes.
-- [Desarrollo y optimización Shopify](https://codigofresco.com/servicios/desarrollo-shopify): montaje, personalización y optimización de tiendas Shopify.
-- [Landing pages](https://codigofresco.com/servicios/landing-pages): páginas de aterrizaje orientadas a conversión para campañas.
-- [Desarrollo de software](https://codigofresco.com/servicios/desarrollo-de-software): aplicaciones y sistemas a medida cuando la herramienta genérica no alcanza.
-- [SEO y GEO](https://codigofresco.com/servicios/seo-y-geo): posicionamiento en buscadores y en motores generativos (ChatGPT, Gemini, Claude).
-- [Gestión y control de Ads](https://codigofresco.com/servicios/gestion-control-ads): campañas en Google y Meta con control real del gasto.
-- [Panel — monitor administrativo inteligente](https://codigofresco.com/servicios/panel-monitor-administrativo-inteligente): tableros que unen ventas, leads y operación en un solo lugar.
-- [Chatbot para WhatsApp o redes sociales con IA](https://codigofresco.com/servicios/chatbot-whatsapp-redes-sociales-ia): atención automática que califica y responde 24/7.
-- [Control, gestión y atención de leads](https://codigofresco.com/servicios/control-gestion-atencion-leads): que ningún prospecto se pierda entre el clic y la venta.
-- [Respuestas automatizadas en redes sociales](https://codigofresco.com/servicios/respuestas-automatizadas-comentarios-redes-sociales): comentarios y mensajes atendidos al instante.
-- [Auditoría de contenido para tu empresa](https://codigofresco.com/servicios/evaluacion-contenido-empresa): qué publicar y por qué, con base en datos.
-- [Creación y edición de videos](https://codigofresco.com/servicios/creacion-edicion-videos): producción audiovisual orientada a conversión.
-- [Auditoría de redes sociales y estrategia digital](https://codigofresco.com/servicios/evaluacion-redes-sociales-estrategia-digital-publicidad): diagnóstico completo del ecosistema digital.
-- [Auditoría de inversión en Ads](https://codigofresco.com/servicios/evaluacion-inversion-ads): revisión de campañas activas y fugas de presupuesto.
-- [Cálculo de ROI publicitario](https://codigofresco.com/servicios/calculo-roi-publicitario): cuánto devuelve realmente cada dólar invertido.
-- [Software automatizado para publicaciones en redes](https://codigofresco.com/servicios/software-automatizado-publicaciones-redes-sociales): programación y publicación automática de contenido.
-
-## Industrias
-
-- [Concesionarios de autos](https://codigofresco.com/industrias/concesionarios-de-autos): automatización de leads y operación para venta de vehículos (caso Champion Motors).
-- [Tiendas multi-país](https://codigofresco.com/industrias/tiendas-multi-pais): e-commerce operando en Panamá y Venezuela a la vez (caso Camsmark).
-
-## Casos de éxito
-
-- [Champion Motors — automatización de concesionario](https://codigofresco.com/casos/champion-motors-automatizacion-concesionario)
-- [BARETEC — WordPress corporativo](https://codigofresco.com/casos/baretec-wordpress-corporativo)
-- [Camsmark — e-commerce multi-país](https://codigofresco.com/casos/camsmark-ecommerce-multipais)
-- [Mili & Molo — e-commerce educativo](https://codigofresco.com/casos/mili-molo-ecommerce-educativo)
-
-## Recursos
-
-- [¿WordPress, Shopify o desarrollo a medida?](https://codigofresco.com/recursos/wordpress-shopify-o-desarrollo-a-medida)
-- [Cómo medir el ROI publicitario](https://codigofresco.com/recursos/como-medir-roi-publicitario)
-- [Automatizar leads de WhatsApp a un CRM](https://codigofresco.com/recursos/automatizar-leads-whatsapp-crm)
-
-## Preguntas frecuentes
-
-- **¿Dónde trabaja CodigoFresco?** En Panamá y Venezuela, y de forma remota para cualquier país de habla hispana.
-- **¿Qué diferencia a CodigoFresco de una agencia de marketing?** Construye la infraestructura completa (web, software, automatización) además de las campañas, así la inversión en Ads cae sobre un sistema que convierte.
-- **¿Hacen proyectos multi-país?** Sí; han montado e-commerce y operaciones que funcionan en Panamá y Venezuela simultáneamente.
-- **¿Cómo se empieza?** Con un diagnóstico gratuito desde el formulario de [contacto](https://codigofresco.com/contacto) o por WhatsApp (+507 6300-6579).
-
-## Temas
-
-- Desarrollo web y e-commerce en Panamá y Venezuela
-- Software a medida para pymes
-- Automatización con inteligencia artificial (chatbots, leads, paneles)
-- SEO, GEO y posicionamiento en motores generativos
-- Google Ads, Meta Ads y medición de ROI
+- [Consultoría e implementación de CRM](https://codigofresco.com/servicios/implementacion-crm-seguimiento-comercial), incluida la integración de Zoho CRM.
+- [Automatización de marketing y procesos comerciales](https://codigofresco.com/servicios/automatizacion-marketing-procesos-comerciales)
+- [Integración de e-commerce con ERP](https://codigofresco.com/servicios/integracion-ecommerce-erp), con experiencia en SAINT.
+- [Sistemas para concesionarios y talleres](https://codigofresco.com/servicios/sistemas-concesionarios-talleres)
+- [Todos los servicios](https://codigofresco.com/servicios)
 
 ## Más
 
-- [Página principal](https://codigofresco.com/)
-- [Venezuela](https://codigofresco.com/venezuela): soluciones para negocios venezolanos y multi-país.
-- [Nosotros](https://codigofresco.com/nosotros)
+- [Sobre mí](https://codigofresco.com/nosotros)
+- [Archivo de proyectos](https://codigofresco.com/proyectos): proyectos con clientes, productos propios, herramientas y experimentos con su estado documentado.
+- [Contacto](https://codigofresco.com/contacto): empleo remoto o proyectos.
+- [Empresas en Venezuela](https://codigofresco.com/venezuela)
 - [Sitemap XML](https://codigofresco.com/sitemap.xml)

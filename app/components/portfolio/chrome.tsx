@@ -28,8 +28,8 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
       >
         {t.skip}
       </a>
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#050505]/90 backdrop-blur supports-[backdrop-filter]:bg-[#050505]/75">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#050505]/90 px-4 backdrop-blur supports-[backdrop-filter]:bg-[#050505]/75 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
           <Link href={homeHref} className="flex items-center gap-2.5" aria-label={t.home}>
             <Logo className="h-7 w-7 rounded-md" />
             <span className="text-[15px] font-semibold tracking-tight text-white">

@@ -4,7 +4,7 @@ import { buildMetadata } from "../../../lib/seo";
 export const metadata = buildMetadata({
   title: "Work: Marketing, CRM, Automation and Integrations",
   description:
-    "Eight case studies by Antonio Duque with verified status: dynamic marketing, a financing chatform, segmented email, data-driven content, dashboards, reports, SAINT ERP integration and ZoDesk.",
+    "Eight case studies by Antonio Duque with verified status: dynamic marketing, chatform, email, content, dashboards, reports, SAINT and ZoDesk.",
   path: "/en/cases",
   lang: "en",
   esPath: "/casos",

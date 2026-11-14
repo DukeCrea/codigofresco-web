@@ -66,8 +66,8 @@ function abonoOptions(a: Answers, en: boolean): Option[] {
   if (a.intent === "prestan") {
     return [
       { value: "usd:1500", label: en ? "Under $2,000" : "Menos de $2.000" },
-      { value: "usd:3500", label: "$2.000 – $5.000" },
-      { value: "usd:7000", label: "$5.000 – $10.000" },
+      { value: "usd:3500", label: en ? "$2,000 – $5,000" : "$2.000 – $5.000" },
+      { value: "usd:7000", label: en ? "$5,000 – $10,000" : "$5.000 – $10.000" },
       { value: "usd:11000", label: en ? "Over $10,000" : "Más de $10.000" },
     ];
   }
@@ -258,7 +258,7 @@ function buildQuestions(en: boolean): Question[] {
       options: () => [
         { value: "b1", label: en ? "Under $650" : "Menos de $650" },
         { value: "b2", label: "$650 – $749" },
-        { value: "b3", label: "$750 – $1.499" },
+        { value: "b3", label: en ? "$750 – $1,499" : "$750 – $1.499" },
         { value: "b4", label: en ? "$1,500 or more" : "$1.500 o más" },
       ],
     },

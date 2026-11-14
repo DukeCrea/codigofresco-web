@@ -4,7 +4,7 @@ import { buildMetadata } from "../../lib/seo";
 export const metadata = buildMetadata({
   title: "Antonio Duque: Strategy and Sales Systems",
   description:
-    "Portfolio of Antonio Duque, creator of ZoDesk: marketing strategy, CRM, automation and integrations that connect lead generation, sales and operations. Cases with their real status.",
+    "Portfolio of Antonio Duque, creator of ZoDesk: marketing strategy, CRM, automation and integrations connecting lead generation, sales and operations.",
   path: "/en",
   lang: "en",
   esPath: "/",
