@@ -17,7 +17,8 @@ export type BlogBlock =
   | { type: "h2"; text: string }
   | { type: "list"; items: Array<{ label?: string; text: string }> }
   | { type: "flow"; steps: string[] }
-  | { type: "note"; text: string };
+  | { type: "note"; text: string }
+  | { type: "video"; video: BlogVideo };
 
 export type BlogVideo = {
   /** MP4 sin audio, servido desde /public. */
@@ -29,6 +30,8 @@ export type BlogVideo = {
   width: number;
   height: number;
   durationSeconds: number;
+  /** Tiene sonido: arranca en silencio y se ofrece «Activar sonido». */
+  sonido?: boolean;
   /** Descripción de lo que muestra, para lectores de pantalla y buscadores. */
   description: string;
 };
@@ -77,26 +80,27 @@ export const blogPosts: BlogPost[] = [
       src: `${GESTACION}/compartir.jpg`,
       width: 1200,
       height: 630,
-      alt: "La gestación de una oportunidad. Una metáfora visual para marketing y ventas.",
+      alt: "La gestación de una oportunidad. Del primer clic a la conversión: dónde se quedan los leads y por qué.",
     },
     cover: {
-      src: `${GESTACION}/portada.jpg`,
-      width: 1080,
-      height: 1350,
-      alt: "Portada de «La gestación de una oportunidad»: un monitor del recorrido con las etapas visita, responde, resultado, contacto, asignación, seguimiento, cita y conversión.",
+      src: `${GESTACION}/fecundacion-poster.jpg`,
+      width: 1920,
+      height: 1080,
+      alt: "Un espermatozoide con doble halo entra al óvulo y lo enciende: la conversión.",
     },
     video: {
-      src: `${GESTACION}/gestacion-oportunidad.mp4`,
-      poster: `${GESTACION}/portada.jpg`,
-      gif: `${GESTACION}/gestacion-oportunidad.gif`,
-      width: 1080,
-      height: 1350,
-      durationSeconds: 20,
+      src: `${GESTACION}/fecundacion.mp4`,
+      poster: `${GESTACION}/fecundacion-poster.jpg`,
+      gif: `${GESTACION}/fecundacion.gif`,
+      width: 1920,
+      height: 1080,
+      durationSeconds: 15,
+      sonido: true,
       description:
-        "Animación verde: formas abstractas que avanzan por las etapas de un monitor hacia la conversión. Las primeras visitas llevan una cola ondulante y los leads de remarketing dinámico, un doble halo y una estela luminosa. Ambos atraviesan el mismo proceso, con pausas y retornos.",
+        "De izquierda a derecha, un enjambre verde avanza hacia el óvulo. Algunos se cansan y se quedan abajo, en la zona ámbar. Uno con doble halo, el que vuelve por remarketing, empuja la membrana, la atraviesa y el óvulo se enciende: la conversión.",
     },
     disclaimer:
-      "Demo ilustrativa: no contiene cifras ni datos de clientes. El halo representa contexto previo, no una garantía de conversión.",
+      "Metáfora visual: no contiene cifras ni datos de clientes. El halo representa contexto previo, no una garantía de conversión.",
     body: [
       { type: "p", text: "Estoy creando una forma de visualizar los leads que llamo **la gestación de una oportunidad**." },
       {
@@ -118,7 +122,7 @@ export const blogPosts: BlogPost[] = [
             text: "la misma forma, con un doble halo y una estela más luminosa. Es mi manera de representar ese impulso y contexto previo.",
           },
           { label: "Pausas o salidas", text: "zonas ámbar donde el recorrido se detiene." },
-          { label: "Conversión", text: "el punto de encuentro hacia el que se mueve todo el recorrido." },
+          { label: "Conversión", text: "el óvulo. Cuando uno logra entrar, la oportunidad se fecunda." },
         ],
       },
       {
@@ -132,7 +136,30 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "flow",
-        steps: ["Visita", "Respuestas", "Resultado orientativo", "Contacto", "Asignación", "Seguimiento", "Cita", "Conversión"],
+        steps: ["Visita", "Respuestas", "Resultado orientativo", "Contacto", "Conversión"],
+      },
+      {
+        type: "p",
+        text: "Así se ve hoy en el monitor de ZoDesk: cada luz cruza las etapas de izquierda a derecha, las que se quedan caen al pozo de su etapa con el motivo, y las que vuelven por remarketing dinámico entran por su carril.",
+      },
+      {
+        type: "video",
+        video: {
+          src: `${GESTACION}/como-avanzan-zodesk.mp4`,
+          poster: `${GESTACION}/como-avanzan-poster.jpg`,
+          width: 1920,
+          height: 996,
+          durationSeconds: 23,
+          description: "El panel «Cómo avanzan» de ZoDesk en su modo demo, con datos ficticios: de cuántos abren el chat a cuántos dejan sus datos, y dónde se queda el resto.",
+        },
+      },
+      {
+        type: "p",
+        text: "Ahí termina este primer capítulo. Cuando la oportunidad llega a la conversión, empieza la gestación: el trabajo con el cliente para que la venta se cierre.",
+      },
+      {
+        type: "flow",
+        steps: ["Asignación", "Seguimiento", "Cita", "Venta"],
       },
       {
         type: "p",
@@ -175,6 +202,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "La interfaz debe hacer visibles también sus límites: una fuente sin conectar, una etapa que comenzó a medirse recientemente o una conversión cuyo origen todavía no puede reconstruirse.",
+      },
+      { type: "h2", text: "Esta historia continuará" },
+      {
+        type: "p",
+        text: "La conversión no es el final: es el momento en que la oportunidad se fecunda. Lo que viene después es la gestación, ese tiempo de trabajo con el cliente, con seguimiento, citas y conversaciones, hasta que la venta nace. De eso trata el próximo capítulo.",
       },
       { type: "h2", text: "¿Qué opinas?" },
       {

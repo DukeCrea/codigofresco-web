@@ -86,6 +86,12 @@ function Bloque({ block }: { block: BlogBlock }) {
           ))}
         </ol>
       );
+    case "video":
+      return (
+        <div className="mt-8">
+          <ArticleVideo video={block.video} title={block.video.description} />
+        </div>
+      );
     case "note":
       return (
         <p className="mt-6 rounded-xl border border-[#E6BD72]/30 bg-[#E6BD72]/[0.07] p-5 leading-7 text-gray-300">
@@ -170,10 +176,10 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         {post.video ? (
-          <section className="border-b border-white/10 bg-[#071E17]/40 px-4 py-12 sm:px-6 lg:px-8" aria-label="Animación">
+          <section className="border-b border-white/10 bg-[#071E17]/40 px-4 py-12 sm:px-6 lg:px-8" aria-label="Video">
             <ArticleVideo video={post.video} title={post.title} />
             {post.disclaimer ? (
-              <p className="mx-auto mt-6 max-w-md text-sm leading-6 text-[#C9ED87]/90">{post.disclaimer}</p>
+              <p className="mx-auto mt-6 max-w-4xl text-sm leading-6 text-[#C9ED87]/90">{post.disclaimer}</p>
             ) : null}
           </section>
         ) : null}

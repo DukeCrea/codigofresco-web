@@ -60,7 +60,7 @@ export default function BlogIndexPage() {
               key={post.slug}
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d0b] transition hover:border-[#C9ED87]/50"
             >
-              <div className="aspect-[4/5] overflow-hidden bg-[#071E17]">
+              <div className="aspect-video overflow-hidden bg-[#071E17]">
                 <Image
                   src={post.cover.src}
                   alt={post.cover.alt}
