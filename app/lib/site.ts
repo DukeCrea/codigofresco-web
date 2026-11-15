@@ -125,7 +125,7 @@ export const services: Service[] = [
         a: "Sí. Puedo dejar una fase de ajustes y luego un plan de mantenimiento mensual.",
       },
       {
-        q: "¿Trabajan con WordPress o Shopify?",
+        q: "¿Trabajas con WordPress o Shopify?",
         a: "Sí. Puedo desarrollar, optimizar o migrar sitios en WordPress y Shopify cuando conviene tener una base administrable o una tienda con operación rápida.",
       },
     ],
@@ -211,15 +211,15 @@ export const services: Service[] = [
     stack: ["WordPress", "PHP", "WooCommerce", "ACF", "SEO técnico", "Analítica"],
     faq: [
       {
-        q: "¿Trabajan sobre una web WordPress existente?",
+        q: "¿Trabajas sobre una web WordPress existente?",
         a: "Sí. Primero audito tema, plugins, hosting, contenido y rendimiento para decidir qué conviene conservar, corregir o reconstruir.",
       },
       {
-        q: "¿Usan plantillas prediseñadas?",
+        q: "¿Usas plantillas prediseñadas?",
         a: "Puedo partir de una base probada si el presupuesto lo requiere, pero evito acumular componentes innecesarios. Para proyectos con identidad y operación propias prefiero un tema a medida.",
       },
       {
-        q: "¿Incluyen mantenimiento?",
+        q: "¿Incluyes mantenimiento?",
         a: "Puedo incluir actualizaciones, copias de seguridad, monitoreo y mejoras continuas después del lanzamiento.",
       },
     ],
@@ -258,7 +258,7 @@ export const services: Service[] = [
     stack: ["Shopify", "Liquid", "JavaScript", "Shopify Analytics", "GA4", "Meta Ads"],
     faq: [
       {
-        q: "¿Pueden mejorar una tienda Shopify que ya existe?",
+        q: "¿Puedes mejorar una tienda Shopify que ya existe?",
         a: "Sí. Audito navegación, tema, aplicaciones, velocidad, catálogo, medición y conversión antes de priorizar cambios.",
       },
       {
@@ -346,7 +346,7 @@ export const services: Service[] = [
     stack: ["Next.js", "TypeScript", "Python", "Laravel", "Supabase", "PostgreSQL"],
     faq: [
       {
-        q: "¿Primero hacen un producto mínimo viable?",
+        q: "¿Primero haces un producto mínimo viable?",
         a: "Sí. Recomiendo empezar por el flujo con más impacto y luego ampliar módulos.",
       },
       {
@@ -392,7 +392,7 @@ export const services: Service[] = [
         a: "Es optimización para motores generativos: contenido claro, estructurado y fácil de citar o resumir por asistentes de IA.",
       },
       {
-        q: "¿Prometen primera posición?",
+        q: "¿Prometes primera posición?",
         a: "No prometo rankings artificiales. Mejoro fundamentos técnicos, contenido e intención para competir mejor.",
       },
     ],
@@ -430,7 +430,7 @@ export const services: Service[] = [
     stack: ["Google Ads", "Meta Ads", "GA4", "Tag Manager", "Looker Studio"],
     faq: [
       {
-        q: "¿Manejan Google y Meta?",
+        q: "¿Manejas Google y Meta?",
         a: "Sí. Puedo trabajar con Google Ads, Meta Ads o ambos según el tipo de oferta y audiencia.",
       },
       {

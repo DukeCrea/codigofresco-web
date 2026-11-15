@@ -5,7 +5,11 @@
   },
   "app/(en)/en/cases/[slug]/legacy.tsx": {
     "published": "2026-09-19",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
+  },
+  "app/(en)/en/cases/[slug]/opengraph-image.tsx": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
   },
   "app/(en)/en/cases/[slug]/page.tsx": {
     "published": "2026-09-19",
@@ -49,19 +53,23 @@
   },
   "app/(en)/layout.tsx": {
     "published": "2026-09-19",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/blog/[slug]/page.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/blog/page.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/casos/[slug]/legacy.tsx": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
+  },
+  "app/(es)/casos/[slug]/opengraph-image.tsx": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
   },
   "app/(es)/casos/[slug]/page.tsx": {
     "published": "2026-08-17",
@@ -81,11 +89,11 @@
   },
   "app/(es)/industrias/[slug]/page.tsx": {
     "published": "2026-08-10",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/layout.tsx": {
     "published": "2026-06-29",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/nosotros/page.tsx": {
     "published": "2026-08-17",
@@ -137,23 +145,23 @@
   },
   "app/(es)/recursos/[slug]/page.tsx": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/recursos/page.tsx": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/servicios/[slug]/page.tsx": {
     "published": "2026-07-02",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/servicios/page.tsx": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/soluciones/[slug]/page.tsx": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/(es)/terminos/page.tsx": {
     "published": "2026-08-17",
@@ -161,7 +169,7 @@
   },
   "app/(es)/venezuela/page.tsx": {
     "published": "2026-08-10",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/analytics-scripts.tsx": {
     "published": "2026-07-31",
@@ -185,11 +193,15 @@
   },
   "app/components/portfolio/case-article.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
+  },
+  "app/components/portfolio/case-og.tsx": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
   },
   "app/components/portfolio/case-page.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/components/portfolio/chrome.tsx": {
     "published": "2026-11-14",
@@ -225,7 +237,7 @@
   },
   "app/components/portfolio/pages.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/components/portfolio/zoom-image.tsx": {
     "published": "2026-11-14",
@@ -243,6 +255,10 @@
     "published": "2026-08-17",
     "modified": "2026-11-14"
   },
+  "app/lib/about.ts": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
+  },
   "app/lib/analytics.ts": {
     "published": "2026-07-31",
     "modified": "2026-07-31"
@@ -255,9 +271,17 @@
     "published": "2026-08-06",
     "modified": "2026-11-14"
   },
+  "app/lib/content-dates.ts": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
+  },
   "app/lib/content.ts": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
+  },
+  "app/lib/entities.ts": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
   },
   "app/lib/i18n/config.ts": {
     "published": "2026-09-19",
@@ -289,7 +313,7 @@
   },
   "app/lib/industrias.ts": {
     "published": "2026-08-10",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/lead-email.ts": {
     "published": "2026-07-31",
@@ -305,11 +329,11 @@
   },
   "app/lib/portfolio/cases-en.ts": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/portfolio/cases-es.ts": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/portfolio/flow-actors.ts": {
     "published": "2026-11-14",
@@ -329,7 +353,7 @@
   },
   "app/lib/portfolio/types.ts": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/portfolio/ui.ts": {
     "published": "2026-11-14",
@@ -337,19 +361,27 @@
   },
   "app/lib/seo.ts": {
     "published": "2026-08-17",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/site.ts": {
     "published": "2026-07-02",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   },
   "app/lib/trabajos.ts": {
     "published": "2026-08-06",
     "modified": "2026-08-06"
   },
+  "app/llms-full.txt/route.ts": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
+  },
   "app/logo.tsx": {
     "published": "2026-07-06",
     "modified": "2026-09-19"
+  },
+  "app/manifest.ts": {
+    "published": "2026-11-15",
+    "modified": "2026-11-15"
   },
   "app/marketing-layout.tsx": {
     "published": "2026-08-17",
@@ -361,6 +393,6 @@
   },
   "app/sitemap.ts": {
     "published": "2026-07-01",
-    "modified": "2026-11-14"
+    "modified": "2026-11-15"
   }
 }
