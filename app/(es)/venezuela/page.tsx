@@ -7,7 +7,7 @@ import { getWhatsAppUrl, services, siteConfig } from "../../lib/site";
 
 const metaTitle = "Software e IA para empresas en Venezuela";
 const metaDescription =
-  "Desarrollo de software, e-commerce, automatización con IA y Ads para empresas en Venezuela. Trabajamos en remoto y con operación multi-país Panamá-Venezuela.";
+  "Desarrollo de software, e-commerce, automatización con IA y Ads para empresas en Venezuela. Trabajo en remoto y con operación multi-país Panamá-Venezuela.";
 
 const baseMetadata = buildMetadata({
   title: metaTitle,
@@ -47,30 +47,30 @@ const casos = [
 const comoTrabajamos = [
   {
     title: "Todo el proceso es remoto",
-    desc: "Levantamiento, avances y entregas por WhatsApp y videollamada. No hace falta que estés en Panamá ni que nosotros viajemos a Venezuela.",
+    desc: "Levantamiento, avances y entregas por WhatsApp y videollamada. No hace falta que estés en Panamá ni que yo viaje a Venezuela.",
   },
   {
-    title: "Entregamos en la nube",
+    title: "Entrego en la nube",
     desc: "Tu web, tienda o sistema queda desplegado en infraestructura internacional, accesible desde cualquier país y sin depender de un servidor local.",
   },
   {
     title: "Pensado para operar en dos países",
-    desc: "Si vendes o facturas en Venezuela y en Panamá, construimos el sistema para manejar precios, monedas, inventario y reportes separados desde una sola administración.",
+    desc: "Si vendes o facturas en Venezuela y en Panamá, construyo el sistema para manejar precios, monedas, inventario y reportes separados desde una sola administración.",
   },
 ];
 
 const faq = [
   {
-    q: "¿Trabajan con empresas que están en Venezuela?",
-    a: "Sí. El trabajo es remoto de principio a fin: reuniones por videollamada, seguimiento por WhatsApp y entrega en la nube. Ya tenemos sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.",
+    q: "¿Trabajas con empresas que están en Venezuela?",
+    a: "Sí. El trabajo es remoto de principio a fin: reuniones por videollamada, seguimiento por WhatsApp y entrega en la nube. Ya tengo sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.",
   },
   {
-    q: "¿Pueden manejar una operación en dos países a la vez?",
+    q: "¿Puedes manejar una operación en dos países a la vez?",
     a: "Sí. En Camsmark cada país tiene su tienda con precio, moneda y stock propios, alimentados desde el ERP SAINT de cada sede, y se administran desde un solo panel. El cobro en línea y la escritura de pedidos en el ERP siguen pendientes de activación.",
   },
   {
     q: "¿Qué servicios aplican para una empresa venezolana?",
-    a: "Los mismos que ofrecemos en Panamá: páginas web, tiendas online, software a medida, chatbots de WhatsApp con IA, automatizaciones, paneles administrativos, gestión de Ads y auditorías de contenido y redes.",
+    a: "Los mismos que ofrezco en Panamá: páginas web, tiendas online, software a medida, chatbots de WhatsApp con IA, automatizaciones, paneles administrativos, gestión de Ads y auditorías de contenido y redes.",
   },
   {
     q: "¿Cómo empiezo?",
@@ -123,7 +123,7 @@ export default function VenezuelaPage() {
               <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Empresas en Venezuela", href: "/venezuela" }]} />
               <div className="mb-5 inline-flex rounded-full border border-lime-400/30 bg-lime-400/10 px-4 py-1.5 text-sm font-semibold text-lime-400">Venezuela · Trabajo 100% remoto</div>
               <h1 className="text-4xl font-bold leading-tight text-white md:text-6xl">Software, automatización e IA para empresas en <span className="text-lime-400">Venezuela</span></h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">Desarrollamos webs, tiendas online, software a medida y automatizaciones con inteligencia artificial para empresas venezolanas. Tenemos sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.</p>
+              <p className="mt-6 text-lg leading-8 text-gray-300">Desarrollo webs, tiendas online, software a medida y automatizaciones con inteligencia artificial para empresas venezolanas. Tengo sistemas en producción que operan con Venezuela y Panamá al mismo tiempo.</p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-8 py-3 font-bold text-gray-950 shadow-lg shadow-lime-400/20 transition hover:-translate-y-0.5 hover:bg-lime-400/85"><WhatsAppIcon className="h-5 w-5" />Conversemos por WhatsApp</a>
                 <Link href="/servicios" className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400">Ver todas las soluciones</Link>
@@ -136,7 +136,7 @@ export default function VenezuelaPage() {
         <section className="border-t border-gray-900 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-7xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
-              Cómo trabajamos
+              Cómo trabajo
             </p>
             <h2 className="text-3xl font-bold text-white">
               La distancia no es el problema, la operación sí
@@ -159,7 +159,7 @@ export default function VenezuelaPage() {
               Casos multi-país
             </p>
             <h2 className="text-3xl font-bold text-white">
-              Sistemas nuestros que ya operan con Venezuela
+              Sistemas que ya operan con Venezuela
             </h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {casos.map((caso) => (
@@ -183,9 +183,9 @@ export default function VenezuelaPage() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Soluciones
             </p>
-            <h2 className="text-3xl font-bold text-white">Qué podemos construir para tu empresa</h2>
+            <h2 className="text-3xl font-bold text-white">Qué puedo construir para tu empresa</h2>
             <p className="mt-4 max-w-3xl leading-7 text-gray-400">
-              Todo nuestro catálogo aplica igual para una empresa venezolana. Estas son las
+              Todo mi catálogo aplica igual para una empresa venezolana. Estas son las
               soluciones disponibles.
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -232,9 +232,9 @@ export default function VenezuelaPage() {
 
         <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-4xl font-bold text-gray-950">¿Empezamos con tu empresa?</h2>
+            <h2 className="text-4xl font-bold text-gray-950">¿Revisamos el proceso de tu empresa?</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">
-              Cuéntanos cómo operas hoy y te proponemos una ruta concreta. El diagnóstico inicial no
+              Cuéntame cómo operas hoy y te propongo una ruta concreta. El diagnóstico inicial no
               tiene costo.
             </p>
             <a

@@ -22,6 +22,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "Every available car should have its ad, and no sold car should keep one.",
     lead:
       "A used-car dealership's inventory changes every week. I connected that inventory to ad catalogs, content, measurement and sales follow-up, so the ads talk about what is actually on the lot and sales go back to the platforms as a signal.",
+    summary: "I connected a dealership inventory to advertising catalogs and sales measurement. The Meta catalog and classifieds feed are in production. Remarketing for the exact vehicle viewed remains pending because event and catalog identifiers do not yet match.",
+    updatedAt: "2026-11-15",
     need: [
       "The dealership advertises on Meta, Google, TikTok and classifieds portals, and receives contacts through forms and WhatsApp. Reviewing the setup I found three leaks: the Meta catalog kept showing sold cars and missed available ones, sales never went back to the platforms (so bidding optimized for conversations, not buyers), and the WhatsApp button dropped the click identifier.",
       "The need was not “more ads” but a single source of truth: the inventory published on the website, with its source, interest and outcome connected.",
@@ -111,6 +113,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "A long form loses people. A well-built conversation guides them.",
     lead:
       "The financing chat replaces a credit form with a guided conversation: it only asks what applies to the profile, estimates an approximate payment, suggests cars that fit, books the visit and hands the full case to the salesperson so nobody repeats questions.",
+    summary: "I turned a financing form into a guided conversation with indicative guidance and context for the salesperson. The website chat serves real customers and the ZoDesk copy is live for demos. WhatsApp pre-qualification is tested but its assistant is off; the product’s own rules engine is pending.",
+    updatedAt: "2026-11-15",
     need: [
       "People asking about financing want to know quickly whether they have an option and roughly what they would pay. A long form loses them, and when a lead does arrive the salesperson gets loose data without knowing which car they were looking at or which credit route makes sense.",
       "The business also needed to know which question makes people leave, so it could be simplified.",
@@ -196,6 +200,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "A mass email about money needs a person to validate it before it goes out.",
     lead:
       "My email work sits closer to sales operations than to newsletters: follow-up segments for people who didn't buy, collections campaigns with human validation, operational notices and a single template measured by delivery events. Here I separate what is built from what has been sent.",
+    summary: "I built segmented follow-up, collections campaigns with human validation and operational emails. Resend is connected with delivery events. Follow-up is not scheduled and no document confirms real collections rounds in production.",
+    updatedAt: "2026-11-15",
     need: [
       "People who request a quote and don't buy, who offer their car and aren't closed, and customers with outstanding balances get lost if someone has to remember to write.",
       "At the same time, a badly run mass send damages the domain's reputation and can say wrong things about money. It needed precise segments and brakes.",
@@ -276,6 +282,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "I write the script after looking at what people ask and what they are looking at.",
     lead:
       "A dealership's content can be decided by taste or by evidence. I set up a loop that turns content metrics, customer questions and interest signals into concrete scripts, and that clearly separates a hypothesis, a test in progress and a proven result.",
+    summary: "I built a loop from metrics and customer questions to hypotheses and scripts. Daily content reports and video ideas are scheduled in production. There is no evidence yet proving an effect on lead quality.",
+    updatedAt: "2026-11-15",
     need: [
       "Videos and posts were decided without data, while WhatsApp conversations kept repeating the same questions and friction points.",
       "Salespeople also record content, but had no guidance on which car to show or which hook to use.",
@@ -352,6 +360,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "A useful dashboard ends in an action, not a chart.",
     lead:
       "I am building ZoDesk dashboards that answer what is happening with opportunities and what to do about it: where they come from, whether anyone attends them, where they drop and whether they end in a sale. Every rule has a threshold, an action and a record of what the team decided.",
+    summary: "I am building ZoDesk dashboards to show where opportunities stall and suggest actions. The chat funnel and lead journey are built and tested. The rules-based monitor is still in development and unpublished; read-only Meta Ads and Google Ads spend connections are pending.",
+    updatedAt: "2026-11-15",
     need: [
       "With several intake channels (forms, WhatsApp, portals, social), it was impossible to know which leads were left untouched, which channel went cold, or whether advertising produced buyers or just conversations.",
       "The opposite risk existed too: dashboards full of metrics nobody turns into decisions.",
@@ -428,6 +438,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "Every report answers one specific person's question, in their own words.",
     lead:
       "Instead of a dashboard someone has to open, I designed reports and alerts that arrive by email at the useful moment: calculated live, with declared sources, without contradictory figures and with an action at the end. The golden rule for alerts is to stay quiet when everything is fine.",
+    summary: "I designed email reports and alerts for leadership, sales and operations. Ad, ROI, closes and demand reports and health alerts are scheduled on the dealership server. The ZoDesk collections summary is tested without confirmation of real rounds; store health alerts await recipients and an external monitor.",
+    updatedAt: "2026-11-15",
     need: [
       "Leadership wanted certainty, not metrics; marketing needed to know which cars the ad budget went to; sales needed to know which leads were waiting for a person; and nobody noticed when an integration stopped working.",
       "Platform numbers weren't reliable on their own either: they had to be checked against the forms actually received.",
@@ -505,6 +517,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "Connect a local ERP to the web without exposing it, and without writing to it until authorized.",
     lead:
       "Camsmark sells electrical and industrial supplies with one store for Panama and another for Venezuela. Each site runs SAINT on a local Windows machine with SQL Server. We built an agent that reads each site's inventory and publishes it online through an outbound connection, with retries, a local queue and duplicate protection.",
+    summary: "We built a Go agent that reads SAINT at Camsmark’s sites and publishes price and stock over outbound connections. ERP reads and catalog publishing are in production. Order intake is tested but not live, and inventory postings await configuration and written authorization; nothing has been written to SAINT.",
+    updatedAt: "2026-11-15",
     need: [
       "Without an integration, website prices and stock depended on manual uploads. The two sites run different SAINT editions, price lists ordered differently and different currencies.",
       "In Venezuela the link is satellite and behind shared network address translation: no port can be opened and there is no public IP to rely on. The website should never reach into the client's network.",
@@ -592,6 +606,8 @@ export const casesEn: PortfolioCase[] = [
     headline: "A business connected end to end, starting where context gets lost.",
     lead:
       "ZoDesk came from watching an opportunity lose context as it moves from marketing to sales and from sales to operations. It is the platform I created for car dealerships: it receives leads, assigns them, generates contracts, tracks collections and cash, and measures the journey. It has a variant for workshops.",
+    summary: "I created ZoDesk to preserve context across dealership acquisition, sales and operations, with a workshop variant. CRM, assignment, contracts and operations are in use with the first client. The WhatsApp assistant is off, Meta conversions await configuration, and invoicing and online payments are not part of the product.",
+    updatedAt: "2026-11-15",
     need: [
       "At a dealership, the lead arrives on one channel, the conversation continues on another, the quote lives in a document and the payment in a spreadsheet. Every jump loses information and ownership.",
       "Generic tools covered separate parts (CRM, spreadsheets, automations), but not the whole journey of a car business.",

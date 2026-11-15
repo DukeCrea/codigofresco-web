@@ -28,10 +28,7 @@ export default function BlogIndexPage() {
         author: { "@id": personId },
         publisher: { "@id": organizationId },
         blogPost: posts.map((post) => ({
-          "@type": "BlogPosting",
-          headline: post.title,
-          url: `${siteConfig.url}/blog/${post.slug}`,
-          datePublished: post.publishedAt,
+          "@id": `${siteConfig.url}/blog/${post.slug}#articulo`,
         })),
       },
       breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Blog", path: "/blog" }]),
@@ -48,7 +45,10 @@ export default function BlogIndexPage() {
             Lo que voy creando, contado desde adentro
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-300">
-            Estrategias, herramientas y soluciones para conectar marketing, CRM, automatización y ventas. Con sus límites a la vista.
+            Estrategias, herramientas y soluciones para conectar marketing, CRM, automatización y ventas. Con sus límites a la vista. Aquí cuento cómo nace una idea, qué problema intento resolver y cómo la convierto en una herramienta. Cada artículo distingue las decisiones de diseño, las demostraciones y lo que todavía necesita comprobarse.
+          </p>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-gray-300">
+            Puedes empezar por la metáfora visual del recorrido de una oportunidad: del primer contacto al seguimiento comercial. Para revisar implementaciones y estados de producción, visita los <Link href="/casos" className="text-lime-400 underline underline-offset-4">casos del portafolio</Link>. Si necesitas criterios para elegir plataforma o evaluar una automatización, las <Link href="/recursos" className="text-lime-400 underline underline-offset-4">guías de Recursos</Link> responden esas preguntas.
           </p>
         </div>
       </section>

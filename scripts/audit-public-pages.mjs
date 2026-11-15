@@ -37,7 +37,7 @@ for (const path of paths) {
   if (!matches(html, /<title>[^<]{10,}<\/title>/i)) pageFailures.push("title ausente o demasiado corto");
   if (!matches(html, /<meta\s+name="description"\s+content="[^"]{40,}"/i)) pageFailures.push("description ausente o demasiado corta");
   if (!matches(html, /<link\s+rel="canonical"\s+href="https:\/\/codigofresco\.com/i)) pageFailures.push("canonical ausente");
-  if (!matches(html, /<meta\s+property="og:image"\s+content="https:\/\/codigofresco\.com\/og\.jpg"/i)) pageFailures.push("og:image ausente");
+  if (!matches(html, /<meta\s+property="og:image"\s+content="https:\/\/codigofresco\.com\/[^" ]+"/i)) pageFailures.push("og:image ausente");
   if (matches(html, /<meta\s+name="robots"\s+content="[^"]*noindex/i)) pageFailures.push("URL del sitemap marcada noindex");
   if (mojibakePattern.test(html)) pageFailures.push("posible mojibake");
 

@@ -27,6 +27,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Que cada auto disponible tenga su anuncio, y que ningún auto vendido lo siga teniendo.",
     lead:
       "En un concesionario de usados el inventario cambia cada semana. Conecté ese inventario con los catálogos publicitarios, el contenido, la medición y el seguimiento comercial para que la pauta hable de lo que realmente hay en el patio y para que las ventas vuelvan a las plataformas como señal.",
+    summary: "Conecté el inventario de un concesionario con sus catálogos publicitarios y la medición comercial. El catálogo de Meta y el feed de clasificados están en producción. El remarketing por vehículo visto sigue pendiente porque los identificadores del evento y del catálogo todavía no coinciden.",
+    updatedAt: "2026-11-15",
     need: [
       "El concesionario invierte en Meta, Google, TikTok y portales de clasificados, y recibe contactos por formularios y WhatsApp. Al revisar la cuenta encontré tres fugas: el catálogo de Meta seguía mostrando autos vendidos y omitía autos disponibles, las ventas no volvían a las plataformas (así que las pujas optimizaban hacia conversaciones y no hacia compradores) y el botón de WhatsApp perdía el identificador del clic.",
       "La necesidad no era “más anuncios”, sino una sola fuente de verdad: el inventario publicado en la web, con su origen, su interés y su resultado conectados.",
@@ -116,6 +118,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Un formulario largo pierde gente. Una conversación bien hecha la orienta.",
     lead:
       "El chat de financiamiento cambia un formulario de crédito por una conversación guiada: pregunta solo lo necesario según el perfil, estima una letra aproximada, propone autos que encajan, agenda la visita y entrega al asesor el caso completo para no repetir preguntas.",
+    summary: "Convertí un formulario de financiamiento en una conversación guiada con orientación y contexto para el asesor. El chat de la web atiende clientes reales y la copia de ZoDesk está publicada para demostraciones. La precalificación por WhatsApp está probada, pero el asistente sigue apagado; el motor de reglas propio está pendiente.",
+    updatedAt: "2026-11-15",
     need: [
       "Las personas que preguntan por financiamiento quieren saber pronto si tienen opción y cuánto pagarían. Un formulario largo las pierde por el camino y, cuando llega, el asesor recibe datos sueltos sin saber qué carro miraba ni qué camino de crédito es razonable.",
       "Además, el negocio necesitaba saber en qué pregunta se va la gente para poder simplificarla.",
@@ -201,6 +205,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "El correo masivo que habla de dinero necesita una persona que valide antes de enviar.",
     lead:
       "Mi trabajo con correo está más cerca de la operación comercial que del boletín: segmentos de seguimiento sobre clientes que no compraron, campañas de cobro con validación humana, avisos operativos y una plantilla única medida por eventos de entrega. Aquí separo lo construido de lo enviado.",
+    summary: "Construí seguimiento por segmentos, campañas de cobro con validación humana y correos operativos. Resend está conectado con eventos de entrega. El seguimiento no está programado y no hay confirmación documentada de rondas reales de cobro en producción.",
+    updatedAt: "2026-11-15",
     need: [
       "Los contactos que cotizan y no compran, los que ofrecen su carro y no se cierran y los clientes con saldos pendientes se pierden si dependen de que alguien se acuerde de escribir.",
       "Al mismo tiempo, un envío masivo mal hecho daña la reputación del dominio y puede decir cosas falsas sobre dinero. Hacían falta segmentos precisos y frenos.",
@@ -283,6 +289,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Escribo el guion después de mirar qué pregunta la gente y qué está mirando.",
     lead:
       "El contenido de un concesionario puede decidirse por gusto o por evidencia. Armé un circuito que lleva métricas de contenido, preguntas de clientes y señales de interés a guiones concretos, y que distingue con claridad lo que es una hipótesis, lo que está en prueba y lo que ya está demostrado.",
+    summary: "Armé un circuito que convierte métricas y preguntas de clientes en hipótesis y guiones. El reporte diario de contenido y las ideas de video están programados en producción. Todavía no hay evidencia que demuestre un efecto sobre la calidad de los leads.",
+    updatedAt: "2026-11-15",
     need: [
       "Los videos y publicaciones se decidían sin datos, mientras las conversaciones de WhatsApp repetían las mismas preguntas y fricciones.",
       "Los asesores también graban contenido, pero no tenían una guía sobre qué auto mostrar ni con qué gancho.",
@@ -359,6 +367,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Un panel útil termina en una acción, no en un gráfico.",
     lead:
       "Estoy construyendo en ZoDesk los paneles que responden qué está pasando con las oportunidades y qué hacer al respecto: de dónde llegan, si alguien las atiende, dónde se caen y si terminan en venta. Cada regla tiene un umbral, una acción y un registro de lo que decidió el equipo.",
+    summary: "Estoy construyendo paneles de ZoDesk para detectar dónde se detienen las oportunidades y proponer acciones. El embudo del chat y el recorrido del lead están construidos y probados. El monitor con reglas sigue en desarrollo, sin publicar; falta conectar el gasto de Meta Ads y Google Ads en solo lectura.",
+    updatedAt: "2026-11-15",
     need: [
       "Con varios canales de entrada (formularios, WhatsApp, portales, redes) era imposible saber qué leads quedaban sin tocar, qué canal se enfriaba o si la publicidad producía compradores o solo conversaciones.",
       "El riesgo contrario también existía: paneles llenos de métricas que nadie convierte en decisiones.",
@@ -435,6 +445,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Cada reporte responde una pregunta de una persona concreta, en su idioma.",
     lead:
       "En lugar de un tablero que alguien debe abrir, diseñé reportes y alertas que llegan por correo en el momento útil: calculados en vivo, con fuentes declaradas, sin cifras que se contradigan y con una acción al final. La regla de oro de las alertas es callar cuando todo está bien.",
+    summary: "Diseñé reportes y alertas por correo para dirección, ventas y operación. Los reportes de pauta, ROI, cierres y demanda y las alertas de salud están programados en el servidor del concesionario. El resumen de cobranza de ZoDesk está probado sin confirmación de rondas reales, y las alertas del e-commerce siguen pendientes de destinatarios y monitor externo.",
+    updatedAt: "2026-11-15",
     need: [
       "La dirección quería certeza, no métricas; mercadeo necesitaba saber en qué autos se gastaba la pauta; ventas necesitaba saber qué leads esperaban a una persona; y nadie se enteraba cuando una integración dejaba de funcionar.",
       "Los números de las plataformas tampoco eran confiables por sí solos: había que contrastarlos con los formularios realmente recibidos.",
@@ -512,6 +524,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Conectar un ERP local con la web sin exponerlo, y sin escribir en él hasta tener autorización.",
     lead:
       "Camsmark vende material eléctrico e industrial con una tienda para Panamá y otra para Venezuela. Cada sede usa SAINT en un equipo Windows local con SQL Server. Construimos un agente que lee el inventario de cada sede y lo publica en la web por una conexión saliente, con reintentos, cola local y protecciones contra duplicados.",
+    summary: "Construimos un agente en Go que lee SAINT en las sedes de Camsmark y publica precio y stock por conexiones salientes. La lectura y publicación del catálogo están en producción. La recepción de pedidos está probada pero no operativa, y la escritura de descargos sigue pendiente de configuración y autorización escrita; no se ha escrito nada en SAINT.",
+    updatedAt: "2026-11-15",
     need: [
       "Sin integración, el precio y el stock de la web dependían de cargas manuales. Las dos sedes tienen ediciones distintas de SAINT, listas de precio ordenadas de forma diferente y monedas distintas.",
       "En Venezuela la conexión es satelital y está detrás de una red compartida: no se puede abrir un puerto ni depender de una IP pública. La web no debía entrar a la red del cliente.",
@@ -599,6 +613,8 @@ export const casesEs: PortfolioCase[] = [
     headline: "Un negocio conectado de punta a punta, empezando por donde se pierde el contexto.",
     lead:
       "ZoDesk nació de ver cómo una oportunidad pierde contexto al pasar de marketing a ventas y de ventas a la operación. Es la plataforma que creé para concesionarios: recibe los leads, los reparte, genera contratos, controla cobros y caja, y mide el recorrido. Tiene una variante para talleres.",
+    summary: "Creé ZoDesk para conservar el contexto entre captación, ventas y operación de un concesionario, con una variante para talleres. El CRM, el reparto, los contratos y la operación están en uso con el primer cliente. El asistente de WhatsApp está apagado, las conversiones hacia Meta esperan configuración y la facturación y los pagos en línea no forman parte del producto.",
+    updatedAt: "2026-11-15",
     need: [
       "En un concesionario, el lead entra por un canal, la conversación sigue en otro, la cotización vive en un documento y el cobro en una hoja. Cada salto pierde información y responsables.",
       "Las herramientas genéricas cubrían partes sueltas (CRM, hojas, automatizaciones), pero no el recorrido completo de un negocio de autos.",

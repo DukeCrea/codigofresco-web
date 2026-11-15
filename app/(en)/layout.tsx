@@ -86,11 +86,11 @@ const jsonLd = {
     {
       // Mismo @id que el grafo español a propósito: es la MISMA empresa. Dos
       // identificadores distintos le dirían a Google que son dos negocios.
-      "@type": ["ProfessionalService", "Organization"],
+      "@type": "Organization",
       "@id": organizationId,
       name: siteConfig.name,
-      url: `${siteConfig.url}/en`,
-      logo: `${siteConfig.url}/icon.svg`,
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo-codigofresco.png`, width: 512, height: 512 },
       image: `${siteConfig.url}/og.jpg`,
       email: siteConfig.email,
       telephone: `+${siteConfig.whatsappNumber}`,

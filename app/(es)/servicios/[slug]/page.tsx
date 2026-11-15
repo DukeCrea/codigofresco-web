@@ -196,7 +196,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               Proceso
             </p>
-            <h2 className="text-center text-3xl font-bold text-white">Cómo lo implementamos</h2>
+            <h2 className="text-center text-3xl font-bold text-white">Cómo lo implemento</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-5">
               {service.process.map((step, index) => (
                 <div key={step} className="rounded-xl border border-gray-800 bg-gray-950 p-5 text-center">
@@ -276,7 +276,7 @@ export default async function ServicePage({ params }: Props) {
             <div>
               <h2 className="text-lg font-bold text-white">¿Tu empresa está en Venezuela?</h2>
               <p className="mt-2 text-sm leading-6 text-gray-400">
-                Trabajamos en remoto con empresas venezolanas y tenemos sistemas en producción que
+                Trabajo en remoto con empresas venezolanas y tengo sistemas en producción que
                 operan con Venezuela y Panamá a la vez.
               </p>
             </div>
@@ -291,9 +291,9 @@ export default async function ServicePage({ params }: Props) {
 
         <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-4xl font-bold text-gray-950">¿Lo implementamos para tu negocio?</h2>
+            <h2 className="text-4xl font-bold text-gray-950">¿Lo implemento para tu negocio?</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">
-              Cuéntanos tu caso y te proponemos una ruta concreta para empezar con esta solución.
+              Cuéntame tu caso y te propongo una ruta concreta para empezar con esta solución.
             </p>
             <a
               href={whatsappUrl}

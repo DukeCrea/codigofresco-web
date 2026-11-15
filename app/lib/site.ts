@@ -64,21 +64,21 @@ export const serviceCategories: Array<{
     label: "Dev",
     headline: "Infraestructura web, commerce y sistemas que venden y operan",
     description:
-      "Construimos presencia digital en Next.js, WordPress o Shopify, tiendas online, plataformas internas y paneles para que el negocio funcione con menos fricción.",
+      "Construyo presencia digital en Next.js, WordPress o Shopify, tiendas online, plataformas internas y paneles para que el negocio funcione con menos fricción.",
   },
   {
     id: "automation",
     label: "Automatizaciones",
     headline: "Flujos inteligentes para atender y vender sin esperar",
     description:
-      "Conectamos WhatsApp, redes, CRM y herramientas internas para reducir tareas manuales y responder más rápido.",
+      "Conecto WhatsApp, redes, CRM y herramientas internas para reducir tareas manuales y responder más rápido.",
   },
   {
     id: "marketing",
     label: "Consulta de marketing",
     headline: "Estrategia, contenido, Ads y medición para crecer con foco",
     description:
-      "Auditamos tu contenido, inversión publicitaria y procesos de publicación para mejorar decisiones y retorno.",
+      "Audito tu contenido, inversión publicitaria y procesos de publicación para mejorar decisiones y retorno.",
   },
 ];
 
@@ -99,7 +99,7 @@ export const services: Service[] = [
     summary:
       "Sitios institucionales rápidos, claros y preparados para Google, WhatsApp, campañas, WordPress, Shopify o desarrollo a medida.",
     description:
-      "Creamos páginas corporativas para empresas que necesitan transmitir confianza, explicar su oferta y convertir visitas en conversaciones comerciales, usando Next.js, WordPress o Shopify según el objetivo del proyecto.",
+      "Creo páginas corporativas para empresas que necesitan transmitir confianza, explicar su oferta y convertir visitas en conversaciones comerciales, usando Next.js, WordPress o Shopify según el objetivo del proyecto.",
     outcomes: [
       "Tu empresa se ve profesional desde el primer contacto.",
       "Los clientes entienden rápido qué vendes y cómo contactarte.",
@@ -122,11 +122,11 @@ export const services: Service[] = [
       },
       {
         q: "¿Puedo pedir cambios luego del lanzamiento?",
-        a: "Sí. Podemos dejar una fase de ajustes y luego un plan de mantenimiento mensual.",
+        a: "Sí. Puedo dejar una fase de ajustes y luego un plan de mantenimiento mensual.",
       },
       {
         q: "¿Trabajan con WordPress o Shopify?",
-        a: "Sí. Podemos desarrollar, optimizar o migrar sitios en WordPress y Shopify cuando conviene tener una base administrable o una tienda con operación rápida.",
+        a: "Sí. Puedo desarrollar, optimizar o migrar sitios en WordPress y Shopify cuando conviene tener una base administrable o una tienda con operación rápida.",
       },
     ],
     related: ["landing-pages", "seo-y-geo", "gestion-control-ads"],
@@ -140,13 +140,13 @@ export const services: Service[] = [
     shortTitle: "E-commerce",
     metaTitle: "Tiendas online y e-commerce en Panamá",
     metaDescription:
-      "Creamos tu tienda online en Panamá con Shopify o a medida: catálogo, carrito, pagos, inventario y panel administrativo para vender por internet.",
+      "Creo tu tienda online en Panamá con Shopify o a medida: catálogo, carrito, pagos, inventario y panel administrativo para vender por internet.",
     eyebrow: "Venta online",
     heroTitle: "Una tienda online lista para vender y administrar",
     summary:
       "E-commerce en Shopify o a medida, con catálogo, inventario, proceso de pago y panel para operar sin depender de hojas de cálculo.",
     description:
-      "Desarrollamos tiendas online para negocios que quieren vender con control real sobre productos, precios, inventario, pedidos y clientes. Podemos trabajar sobre Shopify o crear una solución a medida cuando la operación necesita más control.",
+      "Desarrollo tiendas online para negocios que quieren vender con control real sobre productos, precios, inventario, pedidos y clientes. Puedo trabajar sobre Shopify o crear una solución a medida cuando la operación necesita más control.",
     outcomes: [
       "Centralizas ventas e inventario en un solo sistema.",
       "Puedes vender en más de un mercado o moneda si lo necesitas.",
@@ -165,7 +165,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Puede manejar varios países?",
-        a: "Sí. Podemos separar moneda, precio, inventario y proceso de pago por país cuando el negocio lo requiere.",
+        a: "Sí. Puedo separar moneda, precio, inventario y proceso de pago por país cuando el negocio lo requiere.",
       },
       {
         q: "¿Incluye panel administrativo?",
@@ -191,9 +191,9 @@ export const services: Service[] = [
     eyebrow: "WordPress administrable",
     heroTitle: "WordPress a medida para publicar con autonomía y crecer sin desorden",
     summary:
-      "Creamos, rediseñamos y optimizamos sitios WordPress con estructura propia, buen rendimiento y una administración clara para el equipo.",
+      "Creo, rediseño y optimizo sitios WordPress con estructura propia, buen rendimiento y una administración clara para el equipo.",
     description:
-      "Trabajamos con empresas que necesitan lanzar o mejorar una web en WordPress sin quedar atadas a plantillas pesadas. Diseñamos la arquitectura, el tema, los campos editables, las integraciones y el mantenimiento según el uso real del sitio.",
+      "Trabajo con empresas que necesitan lanzar o mejorar una web en WordPress sin quedar atadas a plantillas pesadas. Diseño la arquitectura, el tema, los campos editables, las integraciones y el mantenimiento según el uso real del sitio.",
     outcomes: [
       "El equipo puede actualizar contenido sin depender del desarrollador.",
       "La web conserva una estructura consistente al crecer.",
@@ -212,15 +212,15 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Trabajan sobre una web WordPress existente?",
-        a: "Sí. Primero auditamos tema, plugins, hosting, contenido y rendimiento para decidir qué conviene conservar, corregir o reconstruir.",
+        a: "Sí. Primero audito tema, plugins, hosting, contenido y rendimiento para decidir qué conviene conservar, corregir o reconstruir.",
       },
       {
         q: "¿Usan plantillas prediseñadas?",
-        a: "Podemos partir de una base probada si el presupuesto lo requiere, pero evitamos acumular componentes innecesarios. Para proyectos con identidad y operación propias preferimos un tema a medida.",
+        a: "Puedo partir de una base probada si el presupuesto lo requiere, pero evito acumular componentes innecesarios. Para proyectos con identidad y operación propias prefiero un tema a medida.",
       },
       {
         q: "¿Incluyen mantenimiento?",
-        a: "Podemos incluir actualizaciones, copias de seguridad, monitoreo y mejoras continuas después del lanzamiento.",
+        a: "Puedo incluir actualizaciones, copias de seguridad, monitoreo y mejoras continuas después del lanzamiento.",
       },
     ],
     related: ["paginas-web-corporativas", "e-commerce", "seo-y-geo"],
@@ -238,9 +238,9 @@ export const services: Service[] = [
     eyebrow: "Comercio sobre Shopify",
     heroTitle: "Una tienda Shopify preparada para vender, medir y administrar",
     summary:
-      "Configuramos y personalizamos Shopify para que catálogo, pagos, contenido, automatizaciones y medición funcionen como un sistema.",
+      "Configuro y personalizo Shopify para que catálogo, pagos, contenido, automatizaciones y medición funcionen como un sistema.",
     description:
-      "Desarrollamos tiendas Shopify para marcas que necesitan salir con rapidez sin renunciar a una experiencia cuidada. Revisamos tema, navegación, fichas de producto, checkout, aplicaciones, analítica y operación diaria.",
+      "Desarrollo tiendas Shopify para marcas que necesitan salir con rapidez sin renunciar a una experiencia cuidada. Reviso tema, navegación, fichas de producto, checkout, aplicaciones, analítica y operación diaria.",
     outcomes: [
       "La tienda queda lista para administrar catálogo y pedidos.",
       "El recorrido de compra reduce fricción en móvil.",
@@ -259,15 +259,15 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Pueden mejorar una tienda Shopify que ya existe?",
-        a: "Sí. Auditamos navegación, tema, aplicaciones, velocidad, catálogo, medición y conversión antes de priorizar cambios.",
+        a: "Sí. Audito navegación, tema, aplicaciones, velocidad, catálogo, medición y conversión antes de priorizar cambios.",
       },
       {
         q: "¿Shopify sirve para vender en varios países?",
-        a: "Sí, dependiendo de pagos, moneda, catálogo y logística. Definimos qué puede resolverse con Shopify Markets y qué requiere una integración adicional.",
+        a: "Sí, dependiendo de pagos, moneda, catálogo y logística. Defino qué puede resolverse con Shopify Markets y qué requiere una integración adicional.",
       },
       {
         q: "¿Cuándo no conviene Shopify?",
-        a: "Cuando la operación depende de reglas muy particulares, flujos internos complejos o integraciones que harían la tienda difícil de mantener. En esos casos comparamos una solución a medida.",
+        a: "Cuando la operación depende de reglas muy particulares, flujos internos complejos o integraciones que harían la tienda difícil de mantener. En esos casos comparo una solución a medida.",
       },
     ],
     related: ["e-commerce", "gestion-control-ads", "calculo-roi-publicitario"],
@@ -287,7 +287,7 @@ export const services: Service[] = [
     summary:
       "Páginas de campaña con mensaje claro, CTA fuerte y estructura pensada para Google Ads, Meta Ads y WhatsApp.",
     description:
-      "Creamos landing pages para validar ofertas, lanzar soluciones, captar leads y medir mejor el retorno de tus campañas.",
+      "Creo landing pages para validar ofertas, lanzar soluciones, captar leads y medir mejor el retorno de tus campañas.",
     outcomes: [
       "Reducen distracciones y enfocan al usuario en una acción.",
       "Mejoran la calidad de leads de campañas pagas.",
@@ -309,7 +309,7 @@ export const services: Service[] = [
       },
       {
         q: "¿Puede tener varias versiones?",
-        a: "Sí. Podemos crear variantes para diferentes públicos, ciudades, soluciones o anuncios.",
+        a: "Sí. Puedo crear variantes para diferentes públicos, ciudades, soluciones o anuncios.",
       },
     ],
     related: ["gestion-control-ads", "calculo-roi-publicitario", "paginas-web-corporativas"],
@@ -327,9 +327,9 @@ export const services: Service[] = [
     eyebrow: "Sistemas a medida",
     heroTitle: "Software hecho para la forma real en que trabaja tu negocio",
     summary:
-      "Diseñamos sistemas internos, SaaS y plataformas operativas para reemplazar procesos manuales y herramientas sueltas.",
+      "Diseño sistemas internos, SaaS y plataformas operativas para reemplazar procesos manuales y herramientas sueltas.",
     description:
-      "Construimos soluciones a medida cuando una plantilla ya no alcanza: paneles, flujos de aprobación, reportes, roles, integraciones y automatizaciones.",
+      "Construyo soluciones a medida cuando una plantilla ya no alcanza: paneles, flujos de aprobación, reportes, roles, integraciones y automatizaciones.",
     outcomes: [
       "Reducir errores manuales y tareas repetidas.",
       "Ordenar datos y procesos en una plataforma única.",
@@ -347,11 +347,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Primero hacen un producto mínimo viable?",
-        a: "Sí. Recomendamos empezar por el flujo con más impacto y luego ampliar módulos.",
+        a: "Sí. Recomiendo empezar por el flujo con más impacto y luego ampliar módulos.",
       },
       {
         q: "¿Se puede integrar con sistemas existentes?",
-        a: "Sí. Revisamos APIs, archivos, CRM, Drive, WhatsApp u otros sistemas para conectar lo que ya usas.",
+        a: "Sí. Reviso APIs, archivos, CRM, Drive, WhatsApp u otros sistemas para conectar lo que ya usas.",
       },
     ],
     related: ["panel-monitor-administrativo-inteligente", "control-gestion-atencion-leads", "software-automatizado-publicaciones-redes-sociales"],
@@ -369,9 +369,9 @@ export const services: Service[] = [
     eyebrow: "Visibilidad orgánica",
     heroTitle: "SEO y GEO para que tu oferta sea encontrable y entendible",
     summary:
-      "Optimizamos estructura, metadata, contenido, intención de búsqueda y datos estructurados para buscadores y asistentes de IA.",
+      "Optimizo estructura, metadata, contenido, intención de búsqueda y datos estructurados para buscadores y asistentes de IA.",
     description:
-      "Trabajamos SEO tradicional y GEO para que tus soluciones sean claras para personas, Google y motores generativos que resumen respuestas.",
+      "Trabajo SEO tradicional y GEO para que tus soluciones sean claras para personas, Google y motores generativos que resumen respuestas.",
     outcomes: [
       "Mejor estructura para indexación y rastreo.",
       "Contenido con respuestas claras a intención comercial.",
@@ -393,7 +393,7 @@ export const services: Service[] = [
       },
       {
         q: "¿Prometen primera posición?",
-        a: "No prometemos rankings artificiales. Mejoramos fundamentos técnicos, contenido e intención para competir mejor.",
+        a: "No prometo rankings artificiales. Mejoro fundamentos técnicos, contenido e intención para competir mejor.",
       },
     ],
     related: ["paginas-web-corporativas", "landing-pages", "evaluacion-contenido-empresa"],
@@ -411,9 +411,9 @@ export const services: Service[] = [
     eyebrow: "Publicidad con medición",
     heroTitle: "Campañas de Ads con control, seguimiento y decisiones claras",
     summary:
-      "Configuramos y acompañamos campañas para que sepas qué funciona, cuánto cuesta cada lead y dónde conviene invertir.",
+      "Configuro y acompaño campañas para que sepas qué funciona, cuánto cuesta cada lead y dónde conviene invertir.",
     description:
-      "Ordenamos campañas, creatividades, audiencias y medición para que la inversión publicitaria tenga lectura de negocio.",
+      "Ordeno campañas, creatividades, audiencias y medición para que la inversión publicitaria tenga lectura de negocio.",
     outcomes: [
       "Mayor claridad sobre costo por lead y costo por venta.",
       "Mejor conexión entre anuncios, landing y WhatsApp.",
@@ -431,11 +431,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Manejan Google y Meta?",
-        a: "Sí. Podemos trabajar con Google Ads, Meta Ads o ambos según el tipo de oferta y audiencia.",
+        a: "Sí. Puedo trabajar con Google Ads, Meta Ads o ambos según el tipo de oferta y audiencia.",
       },
       {
         q: "¿Incluye diseño de anuncios?",
-        a: "Podemos coordinar piezas y textos comerciales, o integrarlo con la solución de creación de contenido y video.",
+        a: "Puedo coordinar piezas y textos comerciales, o integrarlo con la solución de creación de contenido y video.",
       },
     ],
     related: ["landing-pages", "evaluacion-inversion-ads", "calculo-roi-publicitario"],
@@ -455,7 +455,7 @@ export const services: Service[] = [
     summary:
       "Paneles para ver métricas críticas, detectar cuellos de botella y tomar decisiones con menos intuición y más datos.",
     description:
-      "Creamos paneles administrativos que conectan fuentes de datos y muestran indicadores útiles para ventas, operación, Ads, leads e inventario.",
+      "Creo paneles administrativos que conectan fuentes de datos y muestran indicadores útiles para ventas, operación, Ads, leads e inventario.",
     outcomes: [
       "Visibilidad real del negocio sin revisar archivos sueltos.",
       "Alertas y métricas para actuar más rápido.",
@@ -473,7 +473,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Puede conectarse a mi sistema actual?",
-        a: "Sí, si existe API, base de datos exportable o archivos periódicos, podemos diseñar la integración.",
+        a: "Sí, si existe API, base de datos exportable o archivos periódicos, puedo diseñar la integración.",
       },
       {
         q: "¿Es solo visual o también administra?",
@@ -497,7 +497,7 @@ export const services: Service[] = [
     summary:
       "Automatiza respuestas frecuentes, calificación de clientes y derivación a tu equipo desde WhatsApp o redes.",
     description:
-      "Diseñamos chatbots que entienden preguntas frecuentes, capturan datos, orientan al cliente y entregan conversaciones listas para seguimiento humano.",
+      "Diseño chatbots que entienden preguntas frecuentes, capturan datos, orientan al cliente y entregan conversaciones listas para seguimiento humano.",
     outcomes: [
       "Menos mensajes sin responder.",
       "Leads mejor calificados antes de hablar con ventas.",
@@ -519,7 +519,7 @@ export const services: Service[] = [
       },
       {
         q: "¿Puede usar información de mi empresa?",
-        a: "Sí. Creamos una base de conocimiento con soluciones, horarios, precios orientativos y reglas de atención.",
+        a: "Sí. Creo una base de conocimiento con soluciones, horarios, precios orientativos y reglas de atención.",
       },
     ],
     related: ["control-gestion-atencion-leads", "respuestas-automatizadas-comentarios-redes-sociales", "software-automatizado-publicaciones-redes-sociales"],
@@ -539,7 +539,7 @@ export const services: Service[] = [
     summary:
       "Centraliza leads, estados, responsables y próximos pasos para que ventas trabaje con orden.",
     description:
-      "Diseñamos flujos para capturar leads de distintos canales, asignarlos, dar seguimiento y medir la calidad de cada fuente.",
+      "Diseño flujos para capturar leads de distintos canales, asignarlos, dar seguimiento y medir la calidad de cada fuente.",
     outcomes: [
       "Menos oportunidades perdidas por falta de seguimiento.",
       "Mayor claridad de qué canal trae mejores leads.",
@@ -557,11 +557,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Puede integrarse con mi CRM?",
-        a: "Sí. Revisamos tu CRM actual y conectamos APIs o flujos intermedios cuando sea viable.",
+        a: "Sí. Reviso tu CRM actual y conecto APIs o flujos intermedios cuando sea viable.",
       },
       {
         q: "¿Sirve si solo uso WhatsApp?",
-        a: "Sí. Podemos empezar con WhatsApp y luego sumar formularios, Ads o redes.",
+        a: "Sí. Puedo empezar con WhatsApp y luego sumar formularios, Ads o redes.",
       },
     ],
     related: ["chatbot-whatsapp-redes-sociales-ia", "gestion-control-ads", "panel-monitor-administrativo-inteligente"],
@@ -575,13 +575,13 @@ export const services: Service[] = [
     shortTitle: "Auto-respuestas en redes",
     metaTitle: "Respuestas automáticas en redes para Panamá",
     metaDescription:
-      "Automatizamos las respuestas a comentarios en redes sociales para empresas en Panamá: atención más rápida y más leads sin sumar personal.",
+      "Automatizo las respuestas a comentarios en redes sociales para empresas en Panamá: atención más rápida y más leads sin sumar personal.",
     eyebrow: "Atención social",
     heroTitle: "Convierte comentarios en conversaciones atendidas a tiempo",
     summary:
       "Automatiza respuestas frecuentes en redes sociales y deriva oportunidades hacia WhatsApp o tu equipo.",
     description:
-      "Creamos flujos para responder comentarios, detectar intención, mantener tono de marca y mover conversaciones hacia canales de venta.",
+      "Creo flujos para responder comentarios, detectar intención, mantener tono de marca y mover conversaciones hacia canales de venta.",
     outcomes: [
       "Respuesta más rápida en publicaciones activas.",
       "Mayor aprovechamiento de campañas y contenido viral.",
@@ -599,7 +599,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿La respuesta puede sonar humana?",
-        a: "Sí. Definimos tono, límites y variaciones para que no se sienta repetitiva.",
+        a: "Sí. Defino tono, límites y variaciones para que no se sienta repetitiva.",
       },
       {
         q: "¿Puede mandar al usuario a WhatsApp?",
@@ -617,13 +617,13 @@ export const services: Service[] = [
     shortTitle: "Evaluación de contenido",
     metaTitle: "Auditoría de contenido para empresas en Panamá",
     metaDescription:
-      "Auditoría de contenido para empresas en Panamá: revisamos mensaje, formatos, embudos y frecuencia para saber qué publicar y qué dejar de hacer.",
+      "Auditoría de contenido para empresas en Panamá: reviso mensaje, formatos, embudos y frecuencia para saber qué publicar y qué dejar de hacer.",
     eyebrow: "Auditoría de contenido",
     heroTitle: "Contenido con intención, no solo publicaciones sueltas",
     summary:
-      "Analizamos tu contenido actual para mejorar claridad, autoridad, conversión y consistencia.",
+      "Analizo tu contenido actual para mejorar claridad, autoridad, conversión y consistencia.",
     description:
-      "Revisamos cómo comunicas tu oferta, qué formatos usas, qué dudas respondes y qué contenido falta para convertir mejor.",
+      "Reviso cómo comunicas tu oferta, qué formatos usas, qué dudas respondes y qué contenido falta para convertir mejor.",
     outcomes: [
       "Mensaje más claro y alineado a ventas.",
       "Ideas de contenido con propósito comercial.",
@@ -641,7 +641,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Necesito tener mucho contenido publicado?",
-        a: "No. Podemos evaluar lo existente y proponer una línea editorial desde cero si hace falta.",
+        a: "No. Puedo evaluar lo existente y proponer una línea editorial desde cero si hace falta.",
       },
       {
         q: "¿Incluye calendario de publicaciones?",
@@ -663,9 +663,9 @@ export const services: Service[] = [
     eyebrow: "Video marketing",
     heroTitle: "Videos con guion, edición y objetivo comercial",
     summary:
-      "Creamos guiones y editamos videos para explicar, vender, educar y alimentar tus campañas.",
+      "Creo guiones y edito videos para explicar, vender, educar y alimentar tus campañas.",
     description:
-      "Transformamos ideas y material bruto en piezas de video claras, dinámicas y útiles para redes, Ads o páginas de venta.",
+      "Transformo ideas y material bruto en piezas de video claras, dinámicas y útiles para redes, Ads o páginas de venta.",
     outcomes: [
       "Contenido más profesional y consistente.",
       "Mejor retención y claridad del mensaje.",
@@ -682,12 +682,12 @@ export const services: Service[] = [
     stack: ["Guion", "Edición", "Videos cortos", "Ads", "Redes sociales"],
     faq: [
       {
-        q: "¿Pueden trabajar con videos grabados por mi equipo?",
-        a: "Sí. Podemos editar material existente y guiarte para grabar mejores tomas.",
+        q: "¿Puedes trabajar con videos grabados por mi equipo?",
+        a: "Sí. Puedo editar material existente y guiarte para grabar mejores tomas.",
       },
       {
         q: "¿Sirve para anuncios?",
-        a: "Sí. Podemos preparar versiones pensadas para retención, claridad y CTA publicitario.",
+        a: "Sí. Puedo preparar versiones pensadas para retención, claridad y CTA publicitario.",
       },
     ],
     related: ["evaluacion-contenido-empresa", "gestion-control-ads", "evaluacion-redes-sociales-estrategia-digital-publicidad"],
@@ -705,9 +705,9 @@ export const services: Service[] = [
     eyebrow: "Estrategia digital",
     heroTitle: "Una revisión completa de redes, oferta y publicidad",
     summary:
-      "Evaluamos presencia social, mensaje, pauta, contenido y ruta de conversión para encontrar mejoras de alto impacto.",
+      "Evalúo presencia social, mensaje, pauta, contenido y ruta de conversión para encontrar mejoras de alto impacto.",
     description:
-      "Revisamos redes sociales y publicidad como un sistema: qué atrae, qué convierte, dónde se pierden leads y qué ajustar.",
+      "Reviso redes sociales y publicidad como un sistema: qué atrae, qué convierte, dónde se pierden leads y qué ajustar.",
     outcomes: [
       "Prioridades claras para mejorar la estrategia.",
       "Mejor alineación entre contenido y campañas.",
@@ -724,12 +724,12 @@ export const services: Service[] = [
     stack: ["Instagram", "Meta Ads", "Google Ads", "Analítica", "Redacción comercial"],
     faq: [
       {
-        q: "¿Necesitan acceso a mis cuentas?",
-        a: "Podemos empezar con capturas y datos exportados; para análisis profundo, conviene acceso temporal y controlado.",
+        q: "¿Necesitas acceso a mis cuentas?",
+        a: "Puedo empezar con capturas y datos exportados; para análisis profundo, conviene acceso temporal y controlado.",
       },
       {
-        q: "¿También implementan las mejoras?",
-        a: "Sí. Podemos pasar de auditoría a ejecución con landing, Ads, automatización o contenido.",
+        q: "¿También implementas las mejoras?",
+        a: "Sí. Puedo pasar de auditoría a ejecución con landing, Ads, automatización o contenido.",
       },
     ],
     related: ["evaluacion-inversion-ads", "evaluacion-contenido-empresa", "landing-pages"],
@@ -743,13 +743,13 @@ export const services: Service[] = [
     shortTitle: "Inversión Ads",
     metaTitle: "Auditoría de inversión en Ads en Panamá",
     metaDescription:
-      "Evaluamos tu inversión en Google Ads y Meta Ads en Panamá para detectar fugas de presupuesto, oportunidades y decisiones de gasto.",
+      "Evalúo tu inversión en Google Ads y Meta Ads en Panamá para detectar fugas de presupuesto, oportunidades y decisiones de gasto.",
     eyebrow: "Presupuesto publicitario",
     heroTitle: "Descubre si tu inversión en Ads está trabajando a favor del negocio",
     summary:
-      "Analizamos presupuesto, campañas, leads, conversiones y retorno para optimizar la inversión.",
+      "Analizo presupuesto, campañas, leads, conversiones y retorno para optimizar la inversión.",
     description:
-      "Revisamos si tus campañas están atrayendo al público correcto, si la landing convierte y si el presupuesto tiene sentido frente al retorno.",
+      "Reviso si tus campañas están atrayendo al público correcto, si la landing convierte y si el presupuesto tiene sentido frente al retorno.",
     outcomes: [
       "Identificar campañas que consumen presupuesto sin retorno.",
       "Mejorar distribución por canal, audiencia u oferta.",
@@ -766,12 +766,12 @@ export const services: Service[] = [
     stack: ["Google Ads", "Meta Ads", "GA4", "CRM", "ROI"],
     faq: [
       {
-        q: "¿Necesitan acceso a Ads?",
-        a: "Para un diagnóstico profundo sí conviene acceso temporal, pero también podemos iniciar con reportes exportados.",
+        q: "¿Necesitas acceso a Ads?",
+        a: "Para un diagnóstico profundo sí conviene acceso temporal, pero también puedo iniciar con reportes exportados.",
       },
       {
         q: "¿Incluye cálculo de ROI?",
-        a: "Puede incluirlo, y si necesitas una herramienta continua tenemos la solución de cálculo de ROI publicitario.",
+        a: "Puede incluirlo, y si necesitas una herramienta continua tengo la solución de cálculo de ROI publicitario.",
       },
     ],
     related: ["calculo-roi-publicitario", "gestion-control-ads", "landing-pages"],
@@ -791,7 +791,7 @@ export const services: Service[] = [
     summary:
       "Conecta inversión, leads, ventas y margen para saber qué campañas realmente generan retorno.",
     description:
-      "Creamos modelos o paneles para calcular ROI publicitario según tu negocio, ticket, margen, canal y conversión real.",
+      "Creo modelos o paneles para calcular ROI publicitario según tu negocio, ticket, margen, canal y conversión real.",
     outcomes: [
       "Entender qué canal produce ventas rentables.",
       "Detectar campañas que generan leads pero no margen.",
@@ -809,11 +809,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Qué datos necesito?",
-        a: "Inversión, leads, ventas, ticket promedio, margen y fuente. Si no están ordenados, también te ayudamos a estructurarlos.",
+        a: "Inversión, leads, ventas, ticket promedio, margen y fuente. Si no están ordenados, también te ayudo a estructurarlos.",
       },
       {
         q: "¿Puede ser automático?",
-        a: "Sí. Podemos convertirlo en panel conectado a fuentes de datos para reducir carga manual.",
+        a: "Sí. Puedo convertirlo en panel conectado a fuentes de datos para reducir carga manual.",
       },
     ],
     related: ["panel-monitor-administrativo-inteligente", "evaluacion-inversion-ads", "gestion-control-ads"],
@@ -833,7 +833,7 @@ export const services: Service[] = [
     summary:
       "Planifica contenido, estados, responsables y publicaciones para que tu estrategia no dependa de memoria o improvisación.",
     description:
-      "Creamos herramientas para ordenar calendarios, piezas, guiones, aprobaciones y publicación automatizada o semi-automatizada en redes.",
+      "Creo herramientas para ordenar calendarios, piezas, guiones, aprobaciones y publicación automatizada o semi-automatizada en redes.",
     outcomes: [
       "Más consistencia en publicaciones.",
       "Menos caos entre ideas, edición, aprobación y publicación.",
@@ -851,11 +851,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "¿Publica automáticamente?",
-        a: "Puede hacerlo cuando la API del canal lo permite. También podemos diseñarlo como sistema de aprobación y recordatorios.",
+        a: "Puede hacerlo cuando la API del canal lo permite. También puedo diseñarlo como sistema de aprobación y recordatorios.",
       },
       {
         q: "¿Puede usar IA para ideas?",
-        a: "Sí. Podemos incluir generación asistida de ideas, guiones o textos para publicaciones con revisión humana.",
+        a: "Sí. Puedo incluir generación asistida de ideas, guiones o textos para publicaciones con revisión humana.",
       },
     ],
     related: ["evaluacion-contenido-empresa", "creacion-edicion-videos", "respuestas-automatizadas-comentarios-redes-sociales"],
@@ -874,7 +874,7 @@ export function getServiceBySlug(slug: string) {
 export const navLinks = [
   { href: "/servicios", label: "Soluciones" },
   { href: "/casos", label: "Casos" },
-  { href: "/nosotros", label: "Equipo" },
+  { href: "/nosotros", label: "Sobre mí" },
   { href: "/#planes", label: "Planes" },
   { href: "/#faq", label: "FAQ" },
 ];
@@ -983,7 +983,7 @@ export const cases = [
   {
     client: "BARETEC Panamá",
     sector: "Comercio internacional",
-    desc: "Web corporativa para una comercializadora de baterías usadas entre América Latina y Corea del Sur. Tema WordPress a medida con todos los textos e imágenes editables desde el panel, sin depender de nosotros para actualizar.",
+    desc: "Web corporativa para una comercializadora de baterías usadas entre América Latina y Corea del Sur. Tema WordPress a medida con todos los textos e imágenes editables desde el panel, con autonomía para actualizar.",
     tags: ["WordPress", "PHP", "Tema a medida"],
   },
   {
@@ -1038,27 +1038,27 @@ export const processSteps = [
   {
     step: 1,
     title: "Diagnóstico",
-    desc: "Entendemos tu negocio y detectamos qué procesos te quitan más tiempo.",
+    desc: "Entiendo tu negocio y detecto qué procesos te quitan más tiempo.",
   },
   {
     step: 2,
     title: "Propuesta",
-    desc: "Te presentamos la solución, el alcance y el presupuesto claro.",
+    desc: "Te presento la solución, el alcance y el presupuesto claro.",
   },
   {
     step: 3,
     title: "Desarrollo",
-    desc: "Construimos con entregas parciales para que la solución se vea crecer.",
+    desc: "Construyo con entregas parciales para que la solución se vea crecer.",
   },
   {
     step: 4,
     title: "Puesta en marcha",
-    desc: "Instalamos, migramos datos y capacitamos a tu equipo.",
+    desc: "Instalo, migro datos y capacito a tu equipo.",
   },
   {
     step: 5,
     title: "Soporte",
-    desc: "Acompañamos con mantenimiento y mejoras continuas.",
+    desc: "Acompaño con mantenimiento y mejoras continuas.",
   },
 ];
 
@@ -1088,8 +1088,8 @@ export const plans = [
 
 export const faqs = [
   {
-    q: "¿Trabajan con negocios pequeños o solo grandes empresas?",
-    a: "Trabajamos con PYMEs de todos los tamaños. Empezamos con lo que más impacto te dé y crecemos desde ahí.",
+    q: "¿Trabajas con negocios pequeños o solo grandes empresas?",
+    a: "Trabajo con PYMEs de todos los tamaños. Empiezo con lo que más impacto te dé y crezco desde ahí.",
   },
   {
     q: "¿Cuánto cuesta digitalizar mi negocio?",
@@ -1101,11 +1101,11 @@ export const faqs = [
   },
   {
     q: "¿Puedo seguir usando mi WhatsApp e Instagram?",
-    a: "Sí. Conectamos tus herramientas actuales con los nuevos sistemas para que trabajen juntas.",
+    a: "Sí. Conecto tus herramientas actuales con los nuevos sistemas para que trabajen juntas.",
   },
   {
-    q: "¿Ofrecen soporte después del lanzamiento?",
-    a: "Sí. Tenemos planes de mantenimiento y mejoras continuas para que la solución evolucione con tu negocio.",
+    q: "¿Ofreces soporte después del lanzamiento?",
+    a: "Sí. Tengo planes de mantenimiento y mejoras continuas para que la solución evolucione con tu negocio.",
   },
 ];
 

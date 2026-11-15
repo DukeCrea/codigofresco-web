@@ -133,7 +133,7 @@ export default async function IndustriaPage({ params }: Props) {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-lime-400">
               La solución
             </p>
-            <h2 className="text-3xl font-bold text-white">Qué construimos</h2>
+            <h2 className="text-3xl font-bold text-white">Qué construyo</h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {industria.construimos.map((item) => (
                 <div key={item.title} className="rounded-xl border border-gray-800 bg-gray-950 p-6">
@@ -213,9 +213,9 @@ export default async function IndustriaPage({ params }: Props) {
 
         <section className="bg-gradient-to-r from-lime-400 to-lime-400 px-6 py-20 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-4xl font-bold text-gray-950">¿Lo montamos para tu empresa?</h2>
+            <h2 className="text-4xl font-bold text-gray-950">¿Lo implemento para tu empresa?</h2>
             <p className="mt-5 text-xl leading-8 text-gray-900">
-              Cuéntanos cómo operas hoy y te proponemos una ruta concreta. El diagnóstico inicial no
+              Cuéntame cómo operas hoy y te propongo una ruta concreta. El diagnóstico inicial no
               tiene costo.
             </p>
             <a

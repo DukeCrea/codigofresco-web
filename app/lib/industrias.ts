@@ -31,10 +31,10 @@ export const industrias: Industria[] = [
     eyebrow: "Automoción",
     metaTitle: "Software para concesionarios de autos",
     metaDescription:
-      "Automatizamos contratos, cotizaciones y seguimiento de saldos para concesionarios de autos, con lectura de documentos por OCR e integración con CRM.",
+      "Automatizo contratos, cotizaciones y seguimiento de saldos para concesionarios de autos, con lectura de documentos por OCR e integración con CRM.",
     heroTitle: "Software y automatización para concesionarios de autos",
     intro:
-      "Un concesionario pierde horas en tareas que no venden un carro: redactar contratos, copiar datos de una cédula a un formulario, rehacer cotizaciones y perseguir saldos pendientes. Construimos sistemas que hacen ese trabajo solos y dejan al vendedor vendiendo.",
+      "Un concesionario pierde horas en tareas que no venden un carro: redactar contratos, copiar datos de una cédula a un formulario, rehacer cotizaciones y perseguir saldos pendientes. Construyo sistemas que hacen ese trabajo solos y dejan al vendedor vendiendo.",
     problemas: [
       "Contratos y cotizaciones que se redactan a mano, uno por uno, con riesgo de errores en cifras y datos del cliente.",
       "Datos del comprador que se transcriben desde la cédula y se vuelven a escribir en cada documento.",
@@ -85,7 +85,7 @@ export const industrias: Industria[] = [
       },
       {
         q: "¿Puede adaptarse a mis formatos de contrato?",
-        a: "Sí. Los documentos se generan a partir de tus propias plantillas, con tus cláusulas y tu formato. No trabajamos con un contrato genérico.",
+        a: "Sí. Los documentos se generan a partir de tus propias plantillas, con tus cláusulas y tu formato. No trabajo con un contrato genérico.",
       },
       {
         q: "¿Cuánto toma implementarlo?",
@@ -108,7 +108,7 @@ export const industrias: Industria[] = [
       "Una sola tienda online para vender en varios países, con precio, moneda, inventario y proceso de pago separados por mercado y una única administración.",
     heroTitle: "E-commerce para vender en varios países sin duplicar la operación",
     intro:
-      "Cuando una marca vende en dos países, lo normal es terminar con dos tiendas, dos inventarios y dos formas de cobrar. Nosotros construimos una sola plataforma que separa lo que debe ir separado (precio, moneda, stock y pago) y unifica lo que debe ir junto (catálogo, pedidos y administración).",
+      "Cuando una marca vende en dos países, lo normal es terminar con dos tiendas, dos inventarios y dos formas de cobrar. Construyo una sola plataforma que separa lo que debe ir separado (precio, moneda, stock y pago) y unifica lo que debe ir junto (catálogo, pedidos y administración).",
     problemas: [
       "Dos tiendas distintas que hay que actualizar por separado cada vez que cambia un producto.",
       "Precios y monedas que no pueden ser iguales en ambos mercados, pero que hoy se manejan a mano.",

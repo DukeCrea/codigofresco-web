@@ -1,3 +1,4 @@
+import { pageDates } from "../../../../lib/content-dates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,7 +8,7 @@ import { caseSlugMapReverse } from "../../../../lib/i18n/config";
 import { enCaseStudies, getEnCaseStudy } from "../../../../lib/i18n/en/content";
 import { getEnServiceBySlug } from "../../../../lib/i18n/en/services";
 import { getPages } from "../../../../lib/i18n/pages";
-import { breadcrumbJsonLd, buildMetadata, organizationId, serializeJsonLd } from "../../../../lib/seo";
+import { breadcrumbJsonLd, buildMetadata, organizationId, personId, serializeJsonLd } from "../../../../lib/seo";
 import { siteConfig } from "../../../../lib/site";
 
 const t = getPages("en");
@@ -19,13 +20,16 @@ export function legacyMetadata(slug: string): Metadata {
   const item = getEnCaseStudy(slug);
   if (!item) return { title: t.caseDetail.notFound, robots: { index: false, follow: false } };
 
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: item.metaTitle,
     description: item.metaDescription,
     path: `/en/cases/${item.slug}`,
     lang: "en",
     esPath: `/casos/${caseSlugMapReverse[item.slug]}`,
   });
+  if (metadata.openGraph) delete metadata.openGraph.images;
+  if (metadata.twitter) delete metadata.twitter.images;
+  return metadata;
 }
 
 export function LegacyCase({ slug }: { slug: string }) {
@@ -46,8 +50,12 @@ export function LegacyCase({ slug }: { slug: string }) {
         headline: item.metaTitle,
         description: item.metaDescription,
         url: `${siteConfig.url}${path}`,
+        datePublished: pageDates(path).published,
+        dateModified: pageDates(path).modified,
+        image: `${siteConfig.url}/og.jpg`,
+        mainEntityOfPage: `${siteConfig.url}${path}`,
         inLanguage: "en",
-        author: { "@id": organizationId },
+        author: { "@id": personId },
         publisher: { "@id": organizationId },
       },
       breadcrumbJsonLd([
@@ -75,6 +83,13 @@ export function LegacyCase({ slug }: { slug: string }) {
             />
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">{item.sector}</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{item.client}</h1>
+          </div>
+        </section>
+
+        <section aria-labelledby="resumen" className="border-b border-white/10 px-6 py-10 md:px-8">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-lime-400/30 bg-lime-400/[0.04] p-6">
+            <h2 id="resumen" className="font-bold text-lime-400">At a glance</h2>
+            <p className="mt-3 leading-7 text-gray-200">{item.challenge} {item.solution} {item.result}</p>
           </div>
         </section>
 

@@ -20,7 +20,7 @@ export const solutionHubs: SolutionHub[] = [
     metaDescription:
       "Desarrollo web, WordPress, Shopify, e-commerce, software a medida y paneles para empresas en Panamá y Venezuela.",
     answer:
-      "CodigoFresco diseña y desarrolla sitios corporativos, tiendas, landing pages, sistemas internos y paneles. Elegimos Next.js, WordPress, Shopify o una arquitectura a medida según la operación, el tiempo de salida y el nivel de control que necesita la empresa.",
+      "Diseño y desarrollo sitios corporativos, tiendas, landing pages, sistemas internos y paneles. Elijo Next.js, WordPress, Shopify o una arquitectura a medida según la operación, el tiempo de salida y el nivel de control que necesita la empresa.",
     problems: [
       "La web no genera oportunidades ni explica bien la oferta.",
       "La operación depende de hojas de cálculo y tareas repetitivas.",
@@ -42,7 +42,7 @@ export const solutionHubs: SolutionHub[] = [
     metaDescription:
       "Automatización de WhatsApp, redes sociales, CRM, formularios y atención de leads con IA para reducir trabajo manual.",
     answer:
-      "Conectamos formularios, WhatsApp, redes sociales, CRM, correo, hojas de cálculo y bases de datos para que cada lead quede registrado, reciba una respuesta útil y tenga un siguiente paso visible para el equipo.",
+      "Conecto formularios, WhatsApp, redes sociales, CRM, correo, hojas de cálculo y bases de datos para que cada lead quede registrado, reciba una respuesta útil y tenga un siguiente paso visible para el equipo.",
     problems: [
       "Los mensajes se atienden tarde o se pierden entre canales.",
       "El equipo copia datos manualmente entre herramientas.",
@@ -64,7 +64,7 @@ export const solutionHubs: SolutionHub[] = [
     metaDescription:
       "Auditoría de contenido, redes sociales, Google Ads, Meta Ads, video y ROI para empresas que necesitan crecer con medición.",
     answer:
-      "Evaluamos oferta, contenido, campañas, rutas de conversión y datos para priorizar acciones que puedan medirse. El objetivo es conectar inversión publicitaria, leads, ventas y margen, no producir actividad sin lectura comercial.",
+      "Evalúo oferta, contenido, campañas, rutas de conversión y datos para priorizar acciones que puedan medirse. El objetivo es conectar inversión publicitaria, leads, ventas y margen, no producir actividad sin lectura comercial.",
     problems: [
       "Hay publicaciones y campañas, pero no una estrategia conectada.",
       "No se conoce el costo real por oportunidad o por venta.",
@@ -172,7 +172,7 @@ export const resourceArticles: ResourceArticle[] = [
     answer:
       "WordPress suele convenir para sitios de contenido administrable; Shopify, para comercio electrónico que necesita salir rápido; y un desarrollo a medida, cuando existen reglas, integraciones o procesos que una plataforma estándar no resuelve bien.",
     publishedAt: "2026-08-17",
-    updatedAt: "2026-08-17",
+    updatedAt: "2026-11-15",
     readingTime: "7 min",
     sections: [
       {
@@ -221,7 +221,7 @@ export const resourceArticles: ResourceArticle[] = [
     answer:
       "El ROI publicitario se calcula restando el costo de la inversión al beneficio atribuible a la campaña y dividiendo el resultado entre ese costo. Para que la cifra sea útil, debe usar ventas confirmadas y margen, no solo formularios enviados.",
     publishedAt: "2026-08-17",
-    updatedAt: "2026-08-17",
+    updatedAt: "2026-11-15",
     readingTime: "6 min",
     sections: [
       {
@@ -267,7 +267,7 @@ export const resourceArticles: ResourceArticle[] = [
     answer:
       "Un flujo de leads confiable registra la fuente y la necesidad, guarda el contacto en una base o CRM, envía una respuesta inmediata, asigna responsable y crea recordatorios. La automatización debe permitir intervención humana y registrar cada cambio de estado.",
     publishedAt: "2026-08-17",
-    updatedAt: "2026-08-17",
+    updatedAt: "2026-11-15",
     readingTime: "7 min",
     sections: [
       {
@@ -299,7 +299,7 @@ export const resourceArticles: ResourceArticle[] = [
     ],
     faq: [
       { q: "¿Un chatbot debe responder todo?", a: "No. Debe resolver consultas previsibles y entregar a una persona cuando detecta intención de compra, una excepción o baja confianza." },
-      { q: "¿Hace falta cambiar de CRM?", a: "No siempre. Primero revisamos las APIs y posibilidades del sistema actual; muchas veces conviene integrar antes que reemplazar." },
+      { q: "¿Hace falta cambiar de CRM?", a: "No siempre. Primero reviso las APIs y posibilidades del sistema actual; muchas veces conviene integrar antes que reemplazar." },
     ],
     relatedServices: ["control-gestion-atencion-leads", "chatbot-whatsapp-redes-sociales-ia", "desarrollo-de-software"],
   },
