@@ -4,6 +4,7 @@ import { caseStudies, resourceArticles } from "../lib/content";
 import { caseHref, getCases, getWorkshopVariant } from "../lib/portfolio";
 import { getPortfolioUi } from "../lib/portfolio/ui";
 import { services, siteConfig } from "../lib/site";
+import { personalProfiles } from "../lib/seo";
 
 export const dynamic = "force-static";
 
@@ -14,6 +15,7 @@ export function GET() {
   const parts = ["# Código Fresco · Antonio Duque", `Sitio: ${siteConfig.url}`, "## Sobre mí", ...aboutParagraphs.es,
     section("Cómo decido", aboutPrinciples.es.map(([title, text]) => `${title}: ${text}`)),
     section("Datos rápidos", aboutFacts.es.map(([title, text]) => `${title}: ${text}`)),
+    section("Perfiles de Antonio", personalProfiles.map(({ label, url }) => `${label}: ${url}`)),
     section("Herramientas", [aboutTools.join(", ")]),
     ...aboutFaq.es.map(({ q, a }) => section(q, [a])),
   ];

@@ -153,7 +153,7 @@
   },
   "app/(es)/servicios/[slug]/page.tsx": {
     "published": "2026-07-02",
-    "modified": "2026-11-15"
+    "modified": "2026-11-16"
   },
   "app/(es)/servicios/page.tsx": {
     "published": "2026-08-17",
@@ -237,7 +237,7 @@
   },
   "app/components/portfolio/pages.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-15"
+    "modified": "2026-11-16"
   },
   "app/components/portfolio/zoom-image.tsx": {
     "published": "2026-11-14",
@@ -297,7 +297,7 @@
   },
   "app/lib/i18n/form.ts": {
     "published": "2026-09-19",
-    "modified": "2026-11-14"
+    "modified": "2026-11-16"
   },
   "app/lib/i18n/index.ts": {
     "published": "2026-09-19",
@@ -361,7 +361,7 @@
   },
   "app/lib/seo.ts": {
     "published": "2026-08-17",
-    "modified": "2026-11-15"
+    "modified": "2026-11-16"
   },
   "app/lib/site.ts": {
     "published": "2026-07-02",
