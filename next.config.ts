@@ -139,6 +139,11 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      ...[
+        ["/robots.txt", "text/plain; charset=utf-8"],
+        ["/sitemap.xml", "application/xml; charset=utf-8"],
+        ["/manifest.webmanifest", "application/manifest+json; charset=utf-8"],
+      ].map(([source, value]) => ({ source, headers: [{ key: "Content-Type", value }] })),
     ];
   },
 };

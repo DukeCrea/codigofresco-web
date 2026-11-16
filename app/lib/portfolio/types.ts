@@ -59,6 +59,8 @@ export type PortfolioCase = {
   /** Titular editorial del caso. */
   headline: string;
   lead: string;
+  summary: string;
+  updatedAt: string;
   need: string[];
   responsibility: string[];
   strategy: string[];

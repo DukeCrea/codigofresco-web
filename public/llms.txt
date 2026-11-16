@@ -33,6 +33,10 @@ Cada caso del portafolio separa lo que está en producción, lo construido, lo p
 - [Sistemas para concesionarios y talleres](https://codigofresco.com/servicios/sistemas-concesionarios-talleres)
 - [Todos los servicios](https://codigofresco.com/servicios)
 
+## Texto completo
+
+- [Contenido completo en Markdown](https://codigofresco.com/llms-full.txt): casos, servicios, guías, blog y Sobre mí, generado desde los datos del sitio.
+
 ## Más
 
 - [Sobre mí](https://codigofresco.com/nosotros)
