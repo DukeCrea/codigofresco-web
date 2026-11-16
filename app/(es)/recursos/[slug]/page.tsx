@@ -1,3 +1,4 @@
+import { pageDates } from "../../../lib/content-dates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,7 +6,7 @@ import { notFound } from "next/navigation";
 import { CheckIcon } from "../../../icons";
 import { Breadcrumbs, MarketingHeader, SiteFooter } from "../../../marketing-layout";
 import { getResourceArticle, resourceArticles } from "../../../lib/content";
-import { breadcrumbJsonLd, buildMetadata, organizationId, serializeJsonLd } from "../../../lib/seo";
+import { breadcrumbJsonLd, buildMetadata, organizationId, personId, serializeJsonLd } from "../../../lib/seo";
 import { getServiceBySlug, siteConfig } from "../../../lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -35,11 +36,11 @@ export default async function ResourcePage({ params }: Props) {
         "@id": `${siteConfig.url}${path}#article`,
         headline: article.title,
         description: article.metaDescription,
-        datePublished: article.publishedAt,
-        dateModified: article.updatedAt,
+        datePublished: pageDates(path).published,
+        dateModified: pageDates(path).modified,
         inLanguage: "es",
         image: `${siteConfig.url}/og.jpg`,
-        author: { "@id": organizationId },
+        author: { "@id": personId },
         publisher: { "@id": organizationId },
         mainEntityOfPage: `${siteConfig.url}${path}`,
       },
@@ -73,7 +74,7 @@ export default async function ResourcePage({ params }: Props) {
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">{article.title}</h1>
               <p className="mt-6 text-lg leading-8 text-gray-300">{article.excerpt}</p>
               <p className="mt-5 text-sm text-gray-300">
-                Publicado y revisado el <time dateTime={article.updatedAt}>17 de agosto de 2026</time> por el equipo de CodigoFresco.
+                Por <Link href="/nosotros" className="underline underline-offset-4">Antonio Duque</Link>. Publicado el <time dateTime={article.publishedAt}>{article.publishedAt}</time>; actualizado el <time dateTime={pageDates(path).modified}>{pageDates(path).modified}</time>.
               </p>
             </div>
           </header>

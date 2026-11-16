@@ -76,7 +76,7 @@ export default async function SolutionHubPage({ params }: Props) {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Señales de prioridad</p>
-              <h2 className="mt-3 text-3xl font-bold">Problemas que resolvemos</h2>
+              <h2 className="mt-3 text-3xl font-bold">Problemas que resuelvo</h2>
               <ul className="mt-7 space-y-4">
                 {hub.problems.map((problem) => (
                   <li key={problem} className="flex gap-3 rounded-lg border border-gray-800 bg-gray-950 p-5 text-gray-300">
@@ -87,7 +87,7 @@ export default async function SolutionHubPage({ params }: Props) {
             </div>
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Método</p>
-              <h2 className="mt-3 text-3xl font-bold">Cómo lo abordamos</h2>
+              <h2 className="mt-3 text-3xl font-bold">Cómo lo abordo</h2>
               <ol className="mt-7 space-y-4">
                 {hub.method.map((step, index) => (
                   <li key={step} className="flex gap-4 rounded-lg border border-gray-800 bg-gray-950 p-5 text-gray-300">

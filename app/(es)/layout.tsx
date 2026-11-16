@@ -82,11 +82,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["ProfessionalService", "Organization"],
+      "@type": "Organization",
       "@id": organizationId,
       name: siteConfig.name,
       url: siteConfig.url,
-      logo: `${siteConfig.url}/icon.svg`,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo-codigofresco.png`, width: 512, height: 512 },
       image: `${siteConfig.url}/og.jpg`,
       email: siteConfig.email,
       telephone: `+${siteConfig.whatsappNumber}`,

@@ -39,7 +39,10 @@ export default function ResourcesPage() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-lime-400">Decisiones con contexto</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">Guías para elegir, implementar y medir mejor</h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">
-              Respuestas directas y criterios prácticos para equipos que necesitan invertir en tecnología y crecimiento sin depender de promesas vagas.
+              Respuestas directas y criterios prácticos para equipos que necesitan invertir en tecnología y crecimiento sin depender de promesas vagas. Reúno estas guías para ayudarte a formular las preguntas del proyecto antes de elegir una herramienta: qué proceso debe mejorar, qué datos existen y cómo comprobar el resultado.
+            </p>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-gray-300">
+              Si estás eligiendo una web o una tienda, empieza por la comparación de plataformas. Si el problema está en las campañas, revisa los criterios de ROI; si los contactos se pierden entre canales, la guía de automatización de leads. Cada guía incluye una respuesta directa y preguntas frecuentes. Puedes contrastar estos criterios con los <Link href="/casos" className="text-lime-400 underline underline-offset-4">casos documentados</Link> o leer cómo voy construyendo herramientas en el <Link href="/blog" className="text-lime-400 underline underline-offset-4">blog</Link>.
             </p>
           </div>
         </section>

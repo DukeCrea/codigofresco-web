@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "audit:seo": "node scripts/audit-public-pages.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "prebuild": "node scripts/content-dates.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.0",

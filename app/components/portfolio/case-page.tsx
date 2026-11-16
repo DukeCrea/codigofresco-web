@@ -1,3 +1,5 @@
+import { pageDates } from "../../lib/content-dates";
+import { zodeskJsonLd, zodeskId } from "../../lib/entities";
 import type { Metadata } from "next";
 
 import type { Locale } from "../../lib/i18n/config";
@@ -20,10 +22,12 @@ export function portfolioCaseMetadata(lang: Locale, slug: string): Metadata | nu
     lang,
     esPath: lang === "en" ? caseAlternate("en", item.id) ?? undefined : undefined,
   });
+  if (meta.openGraph) delete meta.openGraph.images;
+  if (meta.twitter) delete meta.twitter.images;
   return {
     ...meta,
     authors: [{ name: "Antonio Duque", url: `${siteConfig.url}${lang === "es" ? "/nosotros" : "/en/about"}` }],
-    openGraph: { ...meta.openGraph, type: "article", modifiedTime: item.reviewed, authors: ["Antonio Duque"] },
+    openGraph: { ...meta.openGraph, type: "article", modifiedTime: pageDates(path).modified, authors: ["Antonio Duque"] },
   };
 }
 
@@ -39,16 +43,18 @@ export function PortfolioCasePage({ item, lang }: { item: PortfolioCase; lang: L
         "@id": `${url}#article`,
         headline: item.metaTitle,
         description: item.metaDescription,
-        datePublished: "2026-11-14",
-        dateModified: item.reviewed,
+        datePublished: pageDates(path).published,
+        dateModified: pageDates(path).modified,
         inLanguage: lang,
         author: { "@type": "Person", "@id": personId, name: "Antonio Duque" },
         publisher: { "@id": organizationId },
         mainEntityOfPage: url,
         image: item.image ? `${siteConfig.url}${item.image.src}` : `${siteConfig.url}/og.jpg`,
+        ...(item.id === "zodesk" ? { mainEntity: { "@id": zodeskId } } : {}),
         about: item.tools.map((tool) => tool.name),
         keywords: item.disciplines.map((d) => t.disciplines[d]).join(", "),
       },
+      ...(item.id === "zodesk" ? [zodeskJsonLd()] : []),
       breadcrumbJsonLd([
         { name: t.breadcrumbHome, path: lang === "es" ? "/" : "/en" },
         { name: lang === "es" ? "Casos" : "Work", path: lang === "es" ? "/casos" : "/en/cases" },

@@ -117,7 +117,9 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     const message =
-      error instanceof Error
+      error instanceof SyntaxError
+        ? "El formulario debe enviarse como JSON válido."
+        : error instanceof Error
         ? error.message
         : "No pudimos registrar la solicitud. Inténtalo nuevamente.";
 

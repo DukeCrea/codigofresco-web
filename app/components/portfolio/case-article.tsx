@@ -101,6 +101,10 @@ export function CaseArticle({ item, lang }: { item: PortfolioCase; lang: Locale 
           </p>
           <h1 className="font-display mt-4 text-[2.6rem] leading-[1.02] text-white sm:text-6xl lg:text-7xl">{item.headline}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">{item.lead}</p>
+          <section aria-labelledby="resumen" className="mt-8 max-w-3xl rounded-2xl border border-lime-400/30 bg-lime-400/[0.04] p-5 sm:p-6">
+            <h2 id="resumen" className="text-sm font-semibold uppercase tracking-[0.16em] text-lime-400">{lang === "es" ? "En resumen" : "At a glance"}</h2>
+            <p className="mt-3 leading-7 text-gray-200">{item.summary}</p>
+          </section>
           <dl className="mt-8 grid gap-4 border-t border-white/10 pt-6 text-sm sm:grid-cols-3">
             <div><dt className="text-gray-500">{lang === "es" ? "Proyecto" : "Project"}</dt><dd className="mt-1 text-gray-100">{item.title}</dd></div>
             <div><dt className="text-gray-500">{lang === "es" ? "Contexto" : "Context"}</dt><dd className="mt-1 text-gray-100">{item.context}</dd></div>

@@ -4,10 +4,13 @@ import { alternatePaths } from "./i18n/config";
 import type { Locale } from "./i18n/config";
 import { siteConfig } from "./site";
 
-export const CONTENT_LAST_UPDATED = "2026-08-17";
 export const organizationId = `${siteConfig.url}/#organization`;
 export const websiteId = `${siteConfig.url}/#website`;
 export const personId = `${siteConfig.url}/nosotros#antonio-duque`;
+export const personalProfiles = [
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/duque629/" },
+  { label: "GitHub", url: "https://github.com/DukeCrea" },
+];
 
 /**
  * Entidad de Antonio Duque. Todo lo que dice debe estar visible en "Sobre mí":
@@ -18,7 +21,12 @@ export function personJsonLd(lang: Locale = "es") {
     "@type": "Person",
     "@id": personId,
     name: "Antonio Duque",
-    url: `${siteConfig.url}${lang === "es" ? "/nosotros" : "/en/about"}`,
+    url: `${siteConfig.url}/nosotros`,
+    sameAs: personalProfiles.map(({ url }) => url),
+    alternateName: ["Antonio Duque"],
+    image: `${siteConfig.url}/portafolio/antonio-duque-web-summit.jpg`,
+    hasOccupation: { "@type": "Occupation", name: "Estratega de marketing y creador de sistemas comerciales" },
+    subjectOf: { "@id": `${siteConfig.url}/#zodesk` },
     jobTitle:
       lang === "es"
         ? "Estratega de marketing y creador de sistemas comerciales"
@@ -39,7 +47,10 @@ export function personJsonLd(lang: Locale = "es") {
       "Paneles y reporting",
       "Marketing para concesionarios",
     ],
-    knowsLanguage: [{ "@type": "Language", name: "Spanish", alternateName: "es" }],
+    knowsLanguage: [
+      { "@type": "Language", name: "Español", alternateName: "es", description: "Nativo" },
+      { "@type": "Language", name: "Inglés", alternateName: "en", description: "B1" },
+    ],
   };
 }
 

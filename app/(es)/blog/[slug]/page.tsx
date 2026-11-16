@@ -1,3 +1,4 @@
+import { pageDates } from "../../../lib/content-dates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...base.openGraph,
       type: "article",
       publishedTime: post.publishedAt,
-      modifiedTime: post.updatedAt,
+      modifiedTime: pageDates(path).modified,
       authors: [post.author],
       tags: post.tags,
       images: [{ url: post.shareImage.src, width: post.shareImage.width, height: post.shareImage.height, alt: post.shareImage.alt }],
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
         headline: post.title,
         description: post.description,
         datePublished: post.publishedAt,
-        dateModified: post.updatedAt,
+        dateModified: pageDates(path).modified,
         inLanguage: "es",
         url,
         mainEntityOfPage: url,

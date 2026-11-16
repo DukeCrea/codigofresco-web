@@ -1,3 +1,4 @@
+import { pageDates } from "../../../lib/content-dates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,7 +6,7 @@ import { notFound } from "next/navigation";
 import { CheckIcon } from "../../../icons";
 import { Breadcrumbs, MarketingHeader, SiteFooter, SystemVisual } from "../../../marketing-layout";
 import { caseStudies, getCaseStudy } from "../../../lib/content";
-import { breadcrumbJsonLd, buildMetadata, organizationId, serializeJsonLd } from "../../../lib/seo";
+import { breadcrumbJsonLd, buildMetadata, organizationId, personId, serializeJsonLd } from "../../../lib/seo";
 import { getServiceBySlug, siteConfig } from "../../../lib/site";
 
 /**
@@ -18,7 +19,10 @@ export const legacySlugs = caseStudies.map((item) => item.slug);
 export function legacyMetadata(slug: string): Metadata {
   const item = getCaseStudy(slug);
   if (!item) return { title: "Caso no encontrado", robots: { index: false, follow: false } };
-  return buildMetadata({ title: item.metaTitle, description: item.metaDescription, path: `/casos/${item.slug}` });
+  const metadata = buildMetadata({ title: item.metaTitle, description: item.metaDescription, path: `/casos/${item.slug}` });
+  if (metadata.openGraph) delete metadata.openGraph.images;
+  if (metadata.twitter) delete metadata.twitter.images;
+  return metadata;
 }
 
 export function LegacyCase({ slug }: { slug: string }) {
@@ -34,10 +38,10 @@ export function LegacyCase({ slug }: { slug: string }) {
         "@id": `${siteConfig.url}${path}#article`,
         headline: item.metaTitle,
         description: item.metaDescription,
-        datePublished: "2026-08-17",
-        dateModified: "2026-08-17",
+        datePublished: pageDates(path).published,
+        dateModified: pageDates(path).modified,
         inLanguage: "es",
-        author: { "@id": organizationId },
+        author: { "@id": personId },
         publisher: { "@id": organizationId },
         mainEntityOfPage: `${siteConfig.url}${path}`,
         image: `${siteConfig.url}/og.jpg`,
@@ -68,6 +72,13 @@ export function LegacyCase({ slug }: { slug: string }) {
               <SystemVisual labels={item.capabilities.slice(0, 4)} />
             </div>
           </header>
+
+          <section aria-labelledby="resumen" className="border-b border-white/10 px-6 py-10 md:px-8">
+            <div className="mx-auto max-w-4xl rounded-2xl border border-lime-400/30 bg-lime-400/[0.04] p-6">
+              <h2 id="resumen" className="font-bold text-lime-400">En resumen</h2>
+              <p className="mt-3 leading-7 text-gray-200">{item.challenge} {item.solution} {item.result}</p>
+            </div>
+          </section>
 
           <section className="px-6 py-20 md:px-8">
             <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-3">

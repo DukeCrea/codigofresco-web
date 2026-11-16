@@ -1,3 +1,6 @@
+import { aboutParagraphs, aboutFaq, aboutPrinciples, aboutFacts, aboutTools as tools } from "../../lib/about";
+import { zodeskJsonLd } from "../../lib/entities";
+import { pageDates } from "../../lib/content-dates";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +10,7 @@ import type { Locale } from "../../lib/i18n/config";
 import { archiveGroupsOrder, getArchive } from "../../lib/portfolio/archive";
 import { caseHref, getCaseById, getCases } from "../../lib/portfolio";
 import { PORTFOLIO_REVIEWED, formatReviewDate, getPortfolioUi } from "../../lib/portfolio/ui";
-import { breadcrumbJsonLd, organizationId, personId, personJsonLd } from "../../lib/seo";
+import { breadcrumbJsonLd, organizationId, personId, personJsonLd, personalProfiles } from "../../lib/seo";
 import { getWhatsAppUrl, siteConfig } from "../../lib/site";
 import { Crumbs, PortfolioShell } from "./chrome";
 import { ArchiveBrowser, CaseGrid } from "./filters";
@@ -130,7 +133,7 @@ export function HomePageBody({ lang }: { lang: Locale }) {
         inLanguage: lang,
         about: { "@id": personId },
         isPartOf: { "@id": `${siteConfig.url}/#website${lang === "en" ? "-en" : ""}` },
-        dateModified: PORTFOLIO_REVIEWED,
+        dateModified: pageDates(path).modified,
       },
       personJsonLd(lang),
       {
@@ -165,7 +168,7 @@ export function CasesIndexBody({ lang }: { lang: Locale }) {
         name: lang === "es" ? "Casos de Antonio Duque" : "Antonio Duque case studies",
         inLanguage: lang,
         author: { "@id": personId },
-        dateModified: PORTFOLIO_REVIEWED,
+        dateModified: pageDates(path).modified,
         mainEntity: {
           "@type": "ItemList",
           itemListElement: cases.map((c, i) => ({ "@type": "ListItem", position: i + 1, url: abs(caseHref(lang, c)), name: c.title })),
@@ -242,7 +245,7 @@ export function ArchiveBody({ lang }: { lang: Locale }) {
         name: lang === "es" ? "Archivo de proyectos" : "Project archive",
         inLanguage: lang,
         author: { "@id": personId },
-        dateModified: PORTFOLIO_REVIEWED,
+        dateModified: pageDates(path).modified,
       },
       breadcrumbJsonLd([
         { name: t.breadcrumbHome, path: home },
@@ -279,67 +282,33 @@ export function ArchiveBody({ lang }: { lang: Locale }) {
 const aboutCopy = {
   es: {
     title: <>Marketing de origen. <em className="text-lime-400">Constructor</em> por necesidad.</>,
-    paragraphs: [
-      "Soy Antonio Duque. Trabajo en marketing y procesos comerciales desde 2016, sobre todo en Champion Motors, un concesionario de autos usados en Panamá. Ahí mi trabajo pasó de las campañas a preguntas más incómodas: cómo llega un cliente, quién lo atiende, qué pasa después y por qué una venta no se puede leer en el reporte de anuncios.",
-      "Aprendí que las oportunidades rara vez se pierden en el anuncio. Se pierden en los saltos: del formulario al vendedor, del vendedor al contrato, del contrato al cobro. De esa observación nació ZoDesk, la plataforma que creé para que el contexto viaje con la oportunidad.",
-      "Me gusta crear. Detecto una necesidad, entiendo el proceso, diseño la solución y la construyo. Construyo con agentes de IA bajo mi dirección: defino el problema, las reglas, los datos de prueba y los criterios de aceptación, y reviso cada entrega. Lo que no está verificado, no lo afirmo.",
-      "Código Fresco es la marca con la que trabajo junto a Noe Rivas, con quien he desarrollado proyectos como la integración de Camsmark con su ERP.",
-    ],
+    paragraphs: aboutParagraphs.es,
     principlesTitle: "Cómo decido",
-    principles: [
-      ["Calidad antes que volumen", "No confundo cantidad de contactos con oportunidades reales. Mido origen, atención y resultado."],
-      ["Una decisión por dato", "Cada indicador debe responder qué hacer distinto. Si no cambia una decisión, sobra."],
-      ["Fallos visibles", "Un sistema que falla en silencio es peor que uno que no existe. Por eso cada integración tiene alerta."],
-      ["Honestidad sobre el estado", "Separo hipótesis, pruebas y resultados, y digo qué está pendiente."],
-    ],
+    principles: aboutPrinciples.es,
     factsTitle: "Datos rápidos",
-    facts: [
-      ["Experiencia", "Marketing y procesos comerciales desde 2016"],
-      ["Producto propio", "ZoDesk, para concesionarios y talleres"],
-      ["Idiomas", "Español nativo · inglés B1"],
-      ["Forma de trabajo", "Remoto · empleo o proyectos"],
-      ["Mercados", "Panamá y Venezuela; España, con Ayamonte como base prevista"],
-    ],
+    facts: aboutFacts.es,
     toolsTitle: "Herramientas que aparecen en mi trabajo",
     toolsNote: "La profundidad varía según la herramienta; los casos explican el uso concreto de cada una.",
     cta: "Ver cómo contactarme",
   },
   en: {
     title: <>A marketer by background. A <em className="text-lime-400">builder</em> by necessity.</>,
-    paragraphs: [
-      "I'm Antonio Duque. I have worked in marketing and sales processes since 2016, mostly at Champion Motors, a used-car dealership in Panama. There my work moved from campaigns to harder questions: how a customer arrives, who attends them, what happens next, and why a sale can't be read in the ads report.",
-      "I learned that opportunities are rarely lost in the ad. They are lost in the hand-offs: from the form to the salesperson, from the salesperson to the contract, from the contract to payment. That observation led to ZoDesk, the platform I created so context travels with the opportunity.",
-      "I like to build. I spot a need, understand the process, design the solution and build it. I build with AI agents under my direction: I define the problem, the rules, the test data and the acceptance criteria, and I review every delivery. If something isn't verified, I don't claim it.",
-      "Código Fresco is the brand I work under together with Noe Rivas, with whom I have built projects such as Camsmark's ERP integration.",
-    ],
+    paragraphs: aboutParagraphs.en,
     principlesTitle: "How I decide",
-    principles: [
-      ["Quality over volume", "I don't confuse contact volume with real opportunities. I measure source, response and outcome."],
-      ["One decision per metric", "Every indicator should answer what to do differently. If it changes no decision, it goes."],
-      ["Visible failures", "A system that fails silently is worse than none. That's why every integration has an alert."],
-      ["Honest status", "I separate hypotheses, tests and results, and say what is still pending."],
-    ],
+    principles: aboutPrinciples.en,
     factsTitle: "Quick facts",
-    facts: [
-      ["Experience", "Marketing and sales processes since 2016"],
-      ["Own product", "ZoDesk, for dealerships and workshops"],
-      ["Languages", "Native Spanish · B1 English"],
-      ["How I work", "Remote · employment or projects"],
-      ["Markets", "Panama and Venezuela; Spain, with Ayamonte as the planned base"],
-    ],
+    facts: aboutFacts.en,
     toolsTitle: "Tools that show up in my work",
     toolsNote: "Depth varies by tool; the cases explain how each one is used.",
     cta: "See how to reach me",
   },
 };
 
-const tools = [
-  "Zoho CRM", "Meta Ads", "Google Ads", "GA4", "Search Console", "Pixel / Conversions API", "Resend", "Brevo",
-  "Laravel", "Filament", "Python", "FastAPI", "Go", "SQL Server", "SQLite", "Supabase", "Google Workspace", "WhatsApp Cloud API", "Claude Code",
-];
+
 
 export function AboutBody({ lang }: { lang: Locale }) {
   const c = aboutCopy[lang];
+  const faq = aboutFaq[lang];
   const t = getPortfolioUi(lang);
   const path = lang === "es" ? "/nosotros" : "/en/about";
   const home = lang === "es" ? "/" : "/en";
@@ -352,11 +321,17 @@ export function AboutBody({ lang }: { lang: Locale }) {
         "@id": `${abs(path)}#page`,
         url: abs(path),
         inLanguage: lang,
-        dateModified: PORTFOLIO_REVIEWED,
+        dateModified: pageDates(path).modified,
         mainEntity: { "@id": personId },
       },
-      // La foto solo se declara aquí, donde se ve: el schema debe coincidir con lo visible.
-      { ...personJsonLd(lang), image: webSummitPhotos.map((photo) => `${siteConfig.url}${photo.src}`) },
+      personJsonLd(lang),
+      zodeskJsonLd(),
+      {
+        "@type": "FAQPage",
+        "@id": `${abs(path)}#faq`,
+        inLanguage: lang,
+        mainEntity: faq.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+      },
       breadcrumbJsonLd([
         { name: t.breadcrumbHome, path: home },
         { name: lang === "es" ? "Sobre mí" : "About", path },
@@ -377,6 +352,11 @@ export function AboutBody({ lang }: { lang: Locale }) {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
           <div id="antonio-duque" className="space-y-5 text-[17px] leading-8 text-gray-300">
             {c.paragraphs.slice(1).map((p) => <p key={p}>{p}</p>)}
+            <nav aria-label={lang === "es" ? "Perfiles de Antonio" : "Antonio's profiles"} className="flex flex-wrap gap-x-6 gap-y-2">
+              {personalProfiles.map(({ label, url }) => (
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="text-lime-400 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400">{label}</a>
+              ))}
+            </nav>
             {zodesk ? (
               <p>
                 <Link href={caseHref(lang, zodesk)} className="text-lime-400 underline underline-offset-4">{zodesk.title}</Link>
@@ -405,6 +385,19 @@ export function AboutBody({ lang }: { lang: Locale }) {
                 <p className="font-semibold text-white">{title}</p>
                 <p className="mt-2 text-sm leading-6 text-gray-400">{body}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="preguntas-antonio" className="border-t border-white/10 px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 id="preguntas-antonio" className="font-display text-4xl text-white">{lang === "es" ? "Preguntas sobre mi trabajo" : "Questions about my work"}</h2>
+          <div className="mt-8 max-w-3xl space-y-3">
+            {faq.map(({ q, a }) => (
+              <details key={q} className="rounded-2xl border border-white/10 p-5">
+                <summary className="cursor-pointer font-semibold text-white">{q}</summary>
+                <p className="mt-3 leading-7 text-gray-300">{a}</p>
+              </details>
             ))}
           </div>
         </div>

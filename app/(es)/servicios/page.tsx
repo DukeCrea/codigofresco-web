@@ -46,7 +46,7 @@ export default function ServicesPage() {
                 Soluciones conectadas con la operación y el crecimiento
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-300">
-                Diseñamos infraestructura web, software, automatización y marketing medible. Puedes
+                Diseño infraestructura web, software, automatización y marketing medible. Puedes
                 empezar por una necesidad concreta y conectar nuevas capacidades a medida que el
                 negocio crece.
               </p>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
         <section className="border-t border-gray-900 bg-lime-400 px-6 py-16 text-gray-950 md:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold md:text-4xl">¿No sabes por dónde empezar?</h2>
-            <p className="mt-4 text-lg leading-8">Cuéntanos el cuello de botella y te ayudamos a priorizar una primera implementación medible.</p>
+            <p className="mt-4 text-lg leading-8">Cuéntame el cuello de botella y te ayudo a priorizar una primera implementación medible.</p>
             <Link href="/contacto" className="mt-7 inline-flex rounded-lg bg-gray-950 px-7 py-3 font-bold text-white hover:bg-gray-800">
               Solicitar diagnóstico
             </Link>
