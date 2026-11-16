@@ -7,6 +7,10 @@ import { siteConfig } from "./site";
 export const organizationId = `${siteConfig.url}/#organization`;
 export const websiteId = `${siteConfig.url}/#website`;
 export const personId = `${siteConfig.url}/nosotros#antonio-duque`;
+export const personalProfiles = [
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/duque629/" },
+  { label: "GitHub", url: "https://github.com/DukeCrea" },
+];
 
 /**
  * Entidad de Antonio Duque. Todo lo que dice debe estar visible en "Sobre mí":
@@ -18,6 +22,7 @@ export function personJsonLd(lang: Locale = "es") {
     "@id": personId,
     name: "Antonio Duque",
     url: `${siteConfig.url}/nosotros`,
+    sameAs: personalProfiles.map(({ url }) => url),
     alternateName: ["Antonio Duque"],
     image: `${siteConfig.url}/portafolio/antonio-duque-web-summit.jpg`,
     hasOccupation: { "@type": "Occupation", name: "Estratega de marketing y creador de sistemas comerciales" },

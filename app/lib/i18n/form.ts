@@ -56,15 +56,15 @@ export type FormDictionary = {
 export const form: Record<Locale, FormDictionary> = {
   es: {
     eyebrow: "Diagnóstico inicial",
-    title: "Cuéntanos tu proyecto",
+    title: "Cuéntame tu proyecto",
     subtitle:
-      "Responde unas preguntas rápidas y te decimos cómo convertir tu idea, operación o embudo comercial en infraestructura digital medible.",
+      "Responde unas preguntas rápidas para que pueda revisar tu proceso y proponerte una solución que puedas medir.",
     progressAria: "Progreso del formulario",
     progressText: (current, total) => `Paso ${current} de ${total}`,
     success: {
-      title: "Recibimos tu solicitud",
+      title: "Recibí tu solicitud",
       body:
-        "Tu oportunidad quedó registrada en el panel interno. Revisaremos tus respuestas y te contactaremos para darte una ruta clara de implementación.",
+        "Tu solicitud quedó registrada. Revisaré tus respuestas y te contactaré para definir los próximos pasos.",
       whatsapp: "Continuar por WhatsApp",
       again: "Registrar otro proyecto",
     },
@@ -75,12 +75,12 @@ export const form: Record<Locale, FormDictionary> = {
     },
     step2: {
       title: "¿Qué necesitas resolver primero",
-      hint: "Esto nos ayuda a estimar impacto, prioridad y ruta de implementación.",
+      hint: "Esto me ayuda a estimar impacto, prioridad y ruta de implementación.",
       back: "Volver al tipo de proyecto",
     },
     step3: {
       title: "Datos para preparar tu diagnóstico",
-      hint: "La solicitud llega al panel interno como una nueva oportunidad comercial.",
+      hint: "Comparte cómo contactarte y el contexto que debería conocer antes de revisar tu proyecto.",
       name: "Nombre completo",
       namePlaceholder: "Tu nombre",
       phone: "WhatsApp o teléfono",
@@ -92,7 +92,7 @@ export const form: Record<Locale, FormDictionary> = {
       budgetPlaceholder: "Seleccionar rango",
       timeline: "Tiempo ideal",
       timelinePlaceholder: "Seleccionar tiempo",
-      message: "Cuéntanos el contexto",
+      message: "Cuéntame el contexto",
       messagePlaceholder: "Qué tienes hoy, qué necesitas mejorar y qué resultado esperas.",
       privacyLead: "Acepto que CodigoFresco use estos datos para responder mi solicitud, de acuerdo",
       privacyLink: "política de privacidad",
@@ -102,8 +102,8 @@ export const form: Record<Locale, FormDictionary> = {
       submitting: "Registrando...",
     },
     emailPrompt: "¿Prefieres escribir directo?",
-    emailFallback: "Envíanos un email",
-    whatsappMessage: "Hola CodigoFresco, completé el formulario de la web y quiero avanzar con mi diagnóstico.",
+    emailFallback: "Envíame un correo",
+    whatsappMessage: "Hola Antonio, completé el formulario de la web y quiero avanzar con mi diagnóstico.",
     errors: {
       step1: "Selecciona el tipo de proyecto y la necesidad principal.",
       step3: "Indica tu nombre y WhatsApp para poder contactarte.",
@@ -181,31 +181,31 @@ export const form: Record<Locale, FormDictionary> = {
   },
   en: {
     eyebrow: "Initial assessment",
-    title: "Tell us about your project",
+    title: "Tell me about your project",
     subtitle:
-      "Answer a few quick questions and we'll tell you how to turn your idea, your operation or your sales funnel into digital infrastructure you can measure.",
+      "Answer a few quick questions so I can review your process and suggest a solution you can measure.",
     progressAria: "Form progress",
     progressText: (current, total) => `Step ${current} of ${total}`,
     success: {
-      title: "We got your request",
+      title: "I received your request",
       body:
-        "Your request is logged. We'll review your answers and get back to you with a clear implementation path.",
+        "Your request is saved. I'll review your answers and get back to you to discuss the next steps.",
       whatsapp: "Continue on WhatsApp",
       again: "Submit another project",
     },
     honeypotLabel: "Website",
     step1: {
       title: "What do you want to build or improve?",
-      hint: "Pick a starting point so we can aim the assessment.",
+      hint: "Pick a starting point so I can focus the assessment.",
     },
     step2: {
       title: "What needs solving first",
-      hint: "This helps us weigh impact, priority and the path to implementation.",
+      hint: "This helps me weigh impact, priority and the path to implementation.",
       back: "Back to project type",
     },
     step3: {
-      title: "Details so we can prepare your assessment",
-      hint: "Your request arrives as a new opportunity in our internal dashboard.",
+      title: "Details for your assessment",
+      hint: "Share how I can reach you and the context I should know before reviewing your project.",
       name: "Full name",
       namePlaceholder: "Your name",
       phone: "Phone or WhatsApp",
@@ -217,7 +217,7 @@ export const form: Record<Locale, FormDictionary> = {
       budgetPlaceholder: "Select a range",
       timeline: "Ideal timeline",
       timelinePlaceholder: "Select a timeline",
-      message: "Give us some context",
+      message: "Give me some context",
       messagePlaceholder: "What you have today, what needs improving and what result you expect.",
       privacyLead: "I agree that CodigoFresco may use this information to respond to my request, per the",
       privacyLink: "privacy policy",
@@ -227,11 +227,11 @@ export const form: Record<Locale, FormDictionary> = {
       submitting: "Sending...",
     },
     emailPrompt: "Prefer to write directly?",
-    emailFallback: "Send us an email",
-    whatsappMessage: "Hi CodigoFresco, I filled out the form on your site and I'd like to move forward.",
+    emailFallback: "Send me an email",
+    whatsappMessage: "Hi Antonio, I filled out the form on your site and I'd like to move forward.",
     errors: {
       step1: "Select the project type and the main need.",
-      step3: "Add your name and phone so we can reach you.",
+      step3: "Add your name and phone so I can reach you.",
       privacy: "You need to accept the privacy policy to send the request.",
       generic: "We couldn't register your request.",
       retry: "We couldn't register your request. Please try again.",
@@ -242,7 +242,7 @@ export const form: Record<Locale, FormDictionary> = {
       { id: "automation", label: "Process automation", shortLabel: "your automation", description: "Messaging, CRM, forms, notifications, APIs and repetitive tasks." },
       { id: "software", label: "Custom software or app", shortLabel: "your system", description: "Internal systems, SaaS, portals, dashboards and operational workflows." },
       { id: "data", label: "Data dashboard, ads or ROI", shortLabel: "your data", description: "Metrics, leads, campaigns, spend, dashboards and decision-making." },
-      { id: "audit", label: "Digital ecosystem audit", shortLabel: "your digital ecosystem", description: "We review site, social, content, paid media and where the gains are." },
+      { id: "audit", label: "Digital ecosystem audit", shortLabel: "your digital ecosystem", description: "I review your site, social media, content, ads and opportunities for improvement." },
     ],
     needs: {
       web: [

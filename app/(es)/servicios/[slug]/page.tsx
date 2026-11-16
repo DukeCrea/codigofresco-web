@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: Props) {
                   Solicitar diagnóstico
                 </a>
                 <Link
-                  href="/#servicios"
+                  href="/servicios"
                   className="rounded-lg border-2 border-gray-700 px-8 py-3 font-bold text-white transition hover:border-lime-400 hover:text-lime-400"
                 >
                   Ver todas las soluciones

@@ -10,7 +10,7 @@ import type { Locale } from "../../lib/i18n/config";
 import { archiveGroupsOrder, getArchive } from "../../lib/portfolio/archive";
 import { caseHref, getCaseById, getCases } from "../../lib/portfolio";
 import { PORTFOLIO_REVIEWED, formatReviewDate, getPortfolioUi } from "../../lib/portfolio/ui";
-import { breadcrumbJsonLd, organizationId, personId, personJsonLd } from "../../lib/seo";
+import { breadcrumbJsonLd, organizationId, personId, personJsonLd, personalProfiles } from "../../lib/seo";
 import { getWhatsAppUrl, siteConfig } from "../../lib/site";
 import { Crumbs, PortfolioShell } from "./chrome";
 import { ArchiveBrowser, CaseGrid } from "./filters";
@@ -352,6 +352,11 @@ export function AboutBody({ lang }: { lang: Locale }) {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
           <div id="antonio-duque" className="space-y-5 text-[17px] leading-8 text-gray-300">
             {c.paragraphs.slice(1).map((p) => <p key={p}>{p}</p>)}
+            <nav aria-label={lang === "es" ? "Perfiles de Antonio" : "Antonio's profiles"} className="flex flex-wrap gap-x-6 gap-y-2">
+              {personalProfiles.map(({ label, url }) => (
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="text-lime-400 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-400">{label}</a>
+              ))}
+            </nav>
             {zodesk ? (
               <p>
                 <Link href={caseHref(lang, zodesk)} className="text-lime-400 underline underline-offset-4">{zodesk.title}</Link>
