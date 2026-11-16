@@ -2,7 +2,7 @@
 
 Fecha inicial: 15 de noviembre de 2026. Actualización: 16 de noviembre de 2026. Base: `origin/main` en `5ff1a05`. Rama: `codex/seo-geo`. Worktree: `../codigofresco-seo-geo`.
 
-La propuesta de consolidación de URLs está pendiente de decisión. No se han aplicado nuevas redirecciones, eliminaciones ni etiquetas `noindex`. Tampoco se ha fusionado con `principal` o `main` ni se ha desplegado a producción.
+La propuesta de consolidación de URLs está pendiente de decisión. No se han aplicado nuevas redirecciones, eliminaciones ni etiquetas `noindex`. La publicación autorizada sigue el flujo `codex/seo-geo` → `principal` → `main`; su resultado se comprueba en Vercel y contra el dominio público.
 
 ## Seguimiento del 16 de noviembre
 
@@ -11,10 +11,11 @@ La propuesta de consolidación de URLs está pendiente de decisión. No se han a
 - Textos del formulario ES/EN ajustados a primera persona y eliminadas referencias internas al panel. Una petición con JSON mal formado devuelve ahora un mensaje de validación en español, HTTP 400 y charset UTF-8.
 - Repetidos `npm ci`, lint, build y auditoría de dependencias: correctos; siete vulnerabilidades moderadas de desarrollo, ninguna alta o crítica. El build genera 105 rutas y completa TypeScript.
 - Repetido el smoke sobre el build local en el puerto 3116: 88 páginas, 8 recursos y 176 bloques JSON-LD. Se prueban rechazos del formulario y honeypot sin crear contactos ni enviar correos.
-- La revisión de navegador de la entrega original figura abajo. La repetición tras los cambios del día 16 está pendiente: el host de navegador responde `The browser access host is unavailable`; los clics nativos fallan con `noWindowsAvailable` o cambios de ventana ajenos. No se presenta una captura blanca de Safari como evidencia de funcionamiento ni de fallo de la web.
+- Revisión de navegador del día 16 completada con Playwright y Chromium aislados, autorizados expresamente por el usuario: 88 páginas a 390 y 1440 px, sin desbordamientos, errores JavaScript, recursos locales fallidos ni mojibake. Revisión de capturas de Home, servicios, Sobre mí y contacto; navegación móvil, destino corregido de servicios, CTA de WhatsApp, perfiles y FAQ comprobados. Formulario ES/EN en ambos tamaños: campos obligatorios y consentimiento bloquean el envío; confirmación comprobada con respuesta simulada de la API, sin contactos ni correos reales. Evidencias en `output/seo-geo/qa-2026-11-16/`.
+- Fallos de la herramienta resueltos: faltaba el ejecutable de Chromium requerido por Playwright y se instaló; un selector de FAQ elegía el menú móvil oculto en escritorio, y se corrigió para apuntar a `main details`. La comprobación específica de navegación y FAQ pasó después de corregir los selectores. Los errores anteriores de Chrome (`noWindowsAvailable`, cambios de ventana y host no disponible) siguen limitando el acceso a las consolas autenticadas.
 - Search Console y Bing siguen sin verificación de propiedad confirmada ni envío de sitemap confirmado. No se obtuvo el token de Google. El registro CNAME indicado por Bing no se ha añadido. El envío anterior de 88 URLs a IndexNow fue aceptado con HTTP 200; hay que repetirlo después de publicar estos cambios. Aceptación no equivale a indexación.
 - PageSpeed Insights rechazó las solicitudes móvil y escritorio con HTTP 429 por cuota diaria; no hay puntuación nueva de rendimiento.
-- El usuario autorizó continuar con la publicación. La integración y el despliegue siguen pendientes mientras se completa la revisión visual requerida.
+- El usuario autorizó continuar con la publicación y la revisión visual requerida ya está completada. La verificación de Google/Bing sigue siendo una tarea distinta del despliegue y de la aceptación de IndexNow.
 
 ## Implementación P0–P2
 
@@ -161,4 +162,3 @@ Las evidencias locales quedan en `output/seo-geo/` (ignorado por Git): `verifica
 Por un error inicial de directorio, `npm ci` se inició en la carpeta principal y fue interrumpido. No se modificaron sus archivos rastreados ni se mezcló su trabajo en esta rama, pero quedó incompleto su `node_modules`. Se restauró con `npm ci` usando su propio lockfile y se comprobó la carga de Next.js 16.2.9. Su estado Git conserva los mismos archivos de trabajo observados al inicio.
 
 Esa restauración reportó **8 vulnerabilidades altas y 1 crítica**, además de 8 moderadas, en las dependencias de la carpeta principal. Es un árbol distinto del worktree SEO (Next.js 16.4.6, sin altas ni críticas). No se cambió su lockfile ni se intentaron arreglos sobre el trabajo ajeno. Esa rama requiere una revisión de dependencias separada por su responsable.
-

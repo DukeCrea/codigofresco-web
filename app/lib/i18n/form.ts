@@ -117,7 +117,7 @@ export const form: Record<Locale, FormDictionary> = {
       { id: "automation", label: "Automatización de procesos", shortLabel: "tu automatización", description: "WhatsApp, CRM, formularios, notificaciones, APIs y tareas repetitivas." },
       { id: "software", label: "Software o app a medida", shortLabel: "tu sistema", description: "Sistemas internos, SaaS, portales, paneles y flujos operativos." },
       { id: "data", label: "Panel de datos, Ads o ROI", shortLabel: "tus datos", description: "Métricas, leads, campañas, inversión, dashboards y toma de decisiones." },
-      { id: "audit", label: "Auditoría de ecosistema digital", shortLabel: "tu ecosistema digital", description: "Evaluamos web, redes, contenido, pauta y oportunidades de mejora." },
+      { id: "audit", label: "Auditoría de ecosistema digital", shortLabel: "tu ecosistema digital", description: "Evalúo web, redes, contenido, pauta y oportunidades de mejora." },
     ],
     needs: {
       web: [
