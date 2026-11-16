@@ -1,8 +1,20 @@
 # Optimización SEO y GEO de Código Fresco
 
-Fecha: 15 de noviembre de 2026. Base: `origin/main` en `5ff1a05`. Rama: `codex/seo-geo`. Worktree: `../codigofresco-seo-geo`.
+Fecha inicial: 15 de noviembre de 2026. Actualización: 16 de noviembre de 2026. Base: `origin/main` en `5ff1a05`. Rama: `codex/seo-geo`. Worktree: `../codigofresco-seo-geo`.
 
 La propuesta de consolidación de URLs está pendiente de decisión. No se han aplicado nuevas redirecciones, eliminaciones ni etiquetas `noindex`. Tampoco se ha fusionado con `principal` o `main` ni se ha desplegado a producción.
+
+## Seguimiento del 16 de noviembre
+
+- Corregido el enlace a `/#servicios`, cuyo destino no existía, en las 22 páginas españolas de servicio: ahora lleva a `/servicios`.
+- Verificados LinkedIn (`https://www.linkedin.com/in/duque629/`, desde el enlace del perfil autenticado de Antonio) y GitHub (`https://github.com/DukeCrea`, desde la cuenta autenticada de GitHub). Se añaden a `Person.sameAs`, a Sobre mí en ambos idiomas y a `llms-full.txt` desde una misma lista. Instagram personal sigue sin URL verificada.
+- Textos del formulario ES/EN ajustados a primera persona y eliminadas referencias internas al panel. Una petición con JSON mal formado devuelve ahora un mensaje de validación en español, HTTP 400 y charset UTF-8.
+- Repetidos `npm ci`, lint, build y auditoría de dependencias: correctos; siete vulnerabilidades moderadas de desarrollo, ninguna alta o crítica. El build genera 105 rutas y completa TypeScript.
+- Repetido el smoke sobre el build local en el puerto 3116: 88 páginas, 8 recursos y 176 bloques JSON-LD. Se prueban rechazos del formulario y honeypot sin crear contactos ni enviar correos.
+- La revisión de navegador de la entrega original figura abajo. La repetición tras los cambios del día 16 está pendiente: el host de navegador responde `The browser access host is unavailable`; los clics nativos fallan con `noWindowsAvailable` o cambios de ventana ajenos. No se presenta una captura blanca de Safari como evidencia de funcionamiento ni de fallo de la web.
+- Search Console y Bing siguen sin verificación de propiedad confirmada ni envío de sitemap confirmado. No se obtuvo el token de Google. El registro CNAME indicado por Bing no se ha añadido. El envío anterior de 88 URLs a IndexNow fue aceptado con HTTP 200; hay que repetirlo después de publicar estos cambios. Aceptación no equivale a indexación.
+- PageSpeed Insights rechazó las solicitudes móvil y escritorio con HTTP 429 por cuota diaria; no hay puntuación nueva de rendimiento.
+- El usuario autorizó continuar con la publicación. La integración y el despliegue siguen pendientes mientras se completa la revisión visual requerida.
 
 ## Implementación P0–P2
 
@@ -81,7 +93,7 @@ No propongo una migración por tener hoy solo tres guías y un artículo. La can
 1. Revisar si `codigofresco.com` ya tiene propiedad en Google Search Console. Si no, crear propiedad de dominio y verificar mediante el registro DNS exacto que indique Google. Mantener la verificación existente si ya funciona. No asumir titularidad por la presencia de analítica. [Guía de verificación de Google](https://support.google.com/webmasters/answer/9008080).
 2. Enviar `https://codigofresco.com/sitemap.xml` en Sitemaps y revisar que se procese. Inspeccionar Home ES/EN, Sobre mí y un caso; comprobar canonical elegido, indexabilidad y última lectura. Exportar rendimiento por página y consulta antes de aprobar fusiones. [Introducción a Search Console](https://support.google.com/webmasters/answer/10267942).
 3. En Bing Webmaster Tools, revisar el sitio existente; si falta, añadirlo y completar la verificación o la importación que ofrezca Bing. Enviar el mismo sitemap y revisar los informes de rastreo. [Ayuda oficial de Bing](https://www.bing.com/webmasters/help/webmaster-support-24ab5ebf).
-4. Una vez publicado y comprobado el build de producción, ejecutar `node scripts/indexnow.mjs` desde este repositorio. El script envía las URLs del sitemap publicado y espera HTTP 200 o 202. La aceptación no garantiza indexación. No se ejecutó durante esta tarea, porque avisaría de cambios que todavía no están en producción.
+4. Una vez publicado y comprobado el build de producción, repetir `node scripts/indexnow.mjs` desde este repositorio. El script envía las URLs del sitemap publicado y espera HTTP 200 o 202. La aceptación no garantiza indexación. El envío anterior corresponde a la versión publicada, no a los cambios todavía pendientes de despliegue.
 5. Repetir el smoke test contra producción: `AUDIT_BASE_URL=https://codigofresco.com node scripts/verify-seo-geo.mjs`. Probar también las nuevas imágenes con las herramientas de vista previa de las redes usadas.
 
 ### Perfiles externos: completar sin inventar URLs
@@ -107,7 +119,7 @@ No se creó ninguna cuenta ni se publicó ninguna bio.
 
 ## Pendientes y límites
 
-- Faltan las URLs personales y las nuevas URLs de marca: el encargo contiene `[PEGAR URL]`. No se añadieron a `sameAs` ni se dedujeron de nombres de usuario.
+- LinkedIn y GitHub personales ya están verificados y añadidos. Faltan la URL personal de Instagram y nuevas URLs de marca; no se deducen de nombres de usuario.
 - Se usó una foto real existente. No hace falta una nueva foto para esta entrega.
 - No se añadió `Duke Crea` como alias de Person: no hay confirmación suficiente de ese nombre como alias público de Antonio en los datos de este portafolio. Sí se conserva `Antonio Duque`, solicitado expresamente.
 - No se añadió `homeLocation`: mercados atendidos y Ayamonte como base prevista no acreditan el país de residencia actual.
