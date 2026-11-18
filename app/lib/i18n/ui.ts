@@ -81,6 +81,7 @@ export const ui: Record<Locale, UiDictionary> = {
         { label: "Privacidad", href: "/privacidad" },
         { label: "Cookies", href: "/cookies" },
         { label: "Términos", href: "/terminos" },
+        { label: "Eliminación de datos", href: "/eliminacion-de-datos" },
       ],
       rights: "CodigoFresco. Software y crecimiento digital con trazabilidad.",
     },

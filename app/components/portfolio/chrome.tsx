@@ -115,6 +115,7 @@ export function PortfolioFooter({ lang }: { lang: Locale }) {
           { label: "Privacidad", href: "/privacidad" },
           { label: "Cookies", href: "/cookies" },
           { label: "Términos", href: "/terminos" },
+          { label: "Eliminación de datos", href: "/eliminacion-de-datos" },
         ]
       : [
           { label: "Privacy", href: "/en/privacy" },

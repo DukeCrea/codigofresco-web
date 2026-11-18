@@ -9,11 +9,14 @@ export function LegalPage({
   intro,
   children,
   lang = "es",
+  updated,
 }: {
   title: string;
   intro: string;
   children: ReactNode;
   lang?: Locale;
+  /** Texto de fecha de la última actualización; si se omite se usa la fecha general. */
+  updated?: string;
 }) {
   const ui = getUi(lang);
 
@@ -27,7 +30,9 @@ export function LegalPage({
             <h1 className="text-4xl font-bold md:text-5xl">{title}</h1>
             <p className="mt-5 text-lg leading-8 text-gray-300">{intro}</p>
             <p className="mt-4 text-sm text-gray-300">
-              {lang === "en" ? "Last updated: August 17, 2026." : "Última actualización: 17 de agosto de 2026."}
+              {lang === "en"
+                ? `Last updated: ${updated ?? "August 17, 2026"}.`
+                : `Última actualización: ${updated ?? "17 de agosto de 2026"}.`}
             </p>
           </div>
         </header>
