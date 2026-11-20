@@ -80,4 +80,3 @@ export const products: Product[] = [
     "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
   }
 ];
-
