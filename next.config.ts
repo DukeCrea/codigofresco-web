@@ -136,6 +136,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/demo/camsmark/propuesta.pdf",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+          { key: "Content-Disposition", value: 'inline; filename="Propuesta-Freedom-Ads-Camsmark-Latam.pdf"' },
+        ],
+      },
+      {
         source: "/:path*",
         headers: securityHeaders,
       },
