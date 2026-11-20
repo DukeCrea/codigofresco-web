@@ -1,4 +1,24 @@
 {
+  "app/(demo)/demo/camsmark/mockups.tsx": {
+    "published": "2026-11-20",
+    "modified": "2026-11-20"
+  },
+  "app/(demo)/demo/camsmark/opengraph-image.tsx": {
+    "published": "2026-11-20",
+    "modified": "2026-11-20"
+  },
+  "app/(demo)/demo/camsmark/page.tsx": {
+    "published": "2026-11-20",
+    "modified": "2026-11-20"
+  },
+  "app/(demo)/demo/camsmark/products.ts": {
+    "published": "2026-11-20",
+    "modified": "2026-11-20"
+  },
+  "app/(demo)/layout.tsx": {
+    "published": "2026-11-20",
+    "modified": "2026-11-20"
+  },
   "app/(en)/en/about/page.tsx": {
     "published": "2026-09-19",
     "modified": "2026-11-14"
