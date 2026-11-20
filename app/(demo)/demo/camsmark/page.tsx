@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   keywords: ["Camsmark Latam", "Freedom + Ads", "Código Fresco"],
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   alternates: { canonical: url },
-  openGraph: { title, description, url, siteName: "Código Fresco", locale: "es_PA", type: "website", images: [{ url: "https://codigofresco.com/demo/camsmark/opengraph-image", width: 1200, height: 630, alt: "Freedom + Ads para Camsmark Latam — Código Fresco" }] },
-  twitter: { card: "summary_large_image", title, description, images: ["https://codigofresco.com/demo/camsmark/opengraph-image"] },
+  openGraph: { title, description, url, siteName: "Código Fresco", locale: "es_PA", type: "website" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const metrics = [
