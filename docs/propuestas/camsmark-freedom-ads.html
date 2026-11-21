@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Propuesta Freedom + Ads para Camsmark Panamá</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0.55in 0.75in; }
+  :root { --ink:#0b0b0b; --lime:#ccf232; --muted:#5b5b5b; --line:#e2e2e2; --soft:#f1f1ec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Inter, sans-serif; font-size:10pt; line-height:1.6; color:var(--ink); background:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  h1,h2,h3,.sg { font-family:"Space Grotesk", sans-serif; }
+  b, strong { font-weight:600; }
+  a { color:inherit; }
+
+  .hero { background:var(--ink); color:#fff; border-radius:10px; padding:26px 28px 24px; }
+  .hero-top { display:flex; justify-content:space-between; align-items:center; font-size:10pt; }
+  .hero-top .brand { font-family:"Space Grotesk"; font-weight:700; }
+  .hero-top .brand span { color:#bdbdbd; font-weight:500; }
+  .pill { background:var(--lime); color:var(--ink); font-family:"Space Grotesk"; font-weight:700; font-size:7pt; letter-spacing:.08em; padding:4px 10px; border-radius:20px; }
+  .hero h1 { font-size:24pt; line-height:1.15; margin:22px 0 12px; font-weight:700; }
+  .hero h1 .l { color:var(--lime); }
+  .hero p { font-size:11pt; color:#e8e8e8; margin:0 0 18px; }
+  .meta { border-top:1px solid #333; padding-top:14px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  .meta small { display:block; font-size:7pt; letter-spacing:.1em; color:#a8a8a8; margin-bottom:4px; }
+  .meta div div { font-family:"Space Grotesk"; font-weight:700; font-size:10pt; }
+  .meta .price { color:var(--lime); }
+  .meta .price s { color:#9a9a9a; font-weight:500; }
+
+  h2 { font-size:16pt; margin:22px 0 10px; font-weight:700; line-height:1.25; }
+  .tag { display:flex; align-items:center; gap:8px; margin-top:22px; font-family:"Space Grotesk"; font-weight:700; font-size:7.5pt; letter-spacing:.1em; }
+  .tag span { background:var(--lime); padding:1px 7px; border-radius:3px; }
+  .tag + h2 { margin-top:8px; }
+  p { margin:0 0 10px; }
+
+  .duo { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
+  .dark { background:var(--ink); color:#eee; border-radius:8px; padding:14px 16px; font-size:9pt; }
+  .dark h3 { color:var(--lime); margin:0 0 6px; font-size:11pt; }
+  .box { border:1px solid var(--line); border-radius:8px; padding:14px 16px; font-size:9pt; }
+  .box h3 { margin:0 0 6px; font-size:10pt; }
+
+  table { width:100%; border-collapse:collapse; font-size:9pt; margin:10px 0; }
+  .fmt thead th { background:var(--ink); color:#fff; text-align:left; padding:9px 10px; font-weight:600; }
+  .fmt thead th:first-child { border-radius:6px 0 0 0; } .fmt thead th:last-child { border-radius:0 6px 0 0; }
+  .fmt td { padding:10px; border-bottom:1px solid var(--line); vertical-align:middle; }
+  .fmt td:first-child { font-weight:600; }
+  .note { font-size:8.5pt; color:var(--muted); }
+
+  .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:6px 0 8px; }
+  .stats div { background:var(--soft); border-radius:8px; padding:12px 14px; font-size:8.5pt; color:#444; }
+  .stats b { display:block; font-family:"Space Grotesk"; font-size:20pt; color:var(--ink); line-height:1.2; }
+
+  ul, ol { padding-left:18px; margin:6px 0 10px; }
+  li { margin-bottom:5px; }
+
+  .phase { border-left:3px solid var(--lime); background:var(--soft); padding:10px 14px; border-radius:0 8px 8px 0; margin:10px 0 12px; font-size:9.5pt; }
+
+  .inv th { text-align:left; padding:8px 0; border-bottom:1.5px solid var(--ink); font-weight:600; }
+  .inv th:last-child, .inv td:last-child { text-align:right; }
+  .inv td { padding:9px 0; border-bottom:1px solid var(--line); }
+  .total { background:var(--ink); color:#fff; border-radius:8px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; margin:12px 0; }
+  .total b { font-family:"Space Grotesk"; font-size:11pt; }
+  .total small { display:block; color:#9a9a9a; font-size:8pt; }
+  .total .amt { font-family:"Space Grotesk"; font-weight:700; font-size:18pt; color:var(--lime); }
+  .pauta { border:1.5px solid var(--ink); border-radius:8px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:16px; margin:12px 0; }
+  .pauta b { font-family:"Space Grotesk"; font-size:11pt; }
+  .pauta small { display:block; color:var(--muted); font-size:8.5pt; line-height:1.45; margin-top:2px; }
+  .pauta .amt { font-family:"Space Grotesk"; font-weight:700; font-size:16pt; white-space:nowrap; }
+  .sum { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:10px 0 12px; }
+  .sum div { background:var(--soft); border-radius:8px; padding:10px 14px; font-size:8.5pt; color:#444; }
+  .sum b { display:block; font-family:"Space Grotesk"; font-size:13pt; color:var(--ink); }
+  .sum .hl { background:var(--lime); color:var(--ink); }
+
+  .cta { display:flex; justify-content:space-between; align-items:center; background:var(--lime); border-radius:10px; padding:16px 20px; text-decoration:none; color:var(--ink); margin:16px 0 22px; }
+  .cta b { font-family:"Space Grotesk"; font-size:12pt; display:block; }
+  .cta small { font-size:8pt; }
+  .cta i { font-style:normal; font-size:16pt; }
+  footer { border-top:1px solid var(--line); padding-top:18px; display:flex; justify-content:space-between; font-size:8.5pt; color:#444; }
+  footer b { font-family:"Space Grotesk"; font-size:11pt; color:var(--ink); display:block; margin-bottom:4px; }
+  footer .r { text-align:right; line-height:1.9; }
+  .keep { break-inside:avoid; }
+  .pb { break-before:page; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-top"><div class="brand">Código Fresco <span>· Antonio Duque</span></div><div class="pill">PROPUESTA DE SERVICIOS</div></div>
+  <h1>Freedom <span class="l">+</span> Ads para<br><span class="l">Camsmark Panamá</span></h1>
+  <p>Dos motores en un solo servicio: tus redes publicando solas cada día, y tus campañas de Google trayendo clientes desde el primer mes.</p>
+  <div class="meta">
+    <div><small>PREPARADO PARA</small><div>Ricardo · Camsmark Panamá</div></div>
+    <div><small>FECHA</small><div>21 de noviembre de 2026</div></div>
+    <div><small>INVERSIÓN</small><div class="price">USD 250 / mes <s>300</s></div></div>
+  </div>
+</section>
+
+<h2>La decisión y la herramienta, juntas</h2>
+<p>Juntamos dos servicios en uno. <b>Freedom</b> publica solo el catálogo de Camsmark en Instagram y Facebook todos los días, y con <b>Ads</b> llevamos tus campañas publicitarias para conseguir clientes, <b>empezando por Google Ads</b>. La tarifa regular es de USD 300 al mes y para Camsmark Panamá la ajustamos a <b>USD 250 al mes</b>, con la puesta en marcha incluida.</p>
+<div class="duo">
+  <div class="dark"><h3>Freedom</h3>Contenido orgánico automático: posts, carruseles y 10 historias variadas del catálogo, cada día.</div>
+  <div class="dark"><h3>Ads</h3>Pauta en Google Ads desde el primer mes: montaje, seguimiento y optimización para vender. Meta Ads se suma después.</div>
+</div>
+<p>Es como tener un community manager y una agencia de publicidad trabajando juntos sobre tu cuenta, pero con la publicación automatizada. El perfil nunca se queda quieto y nadie de tu equipo tiene que subir fotos a mano.</p>
+
+<div class="duo keep">
+  <div class="box"><h3>Quiénes somos</h3>Creamos Freedom, el agente de publicación automática que hoy mueve el inventario de Champion Motors en Facebook, Instagram y Threads. Hacemos marketing digital, automatización y desarrollo desde 2016.</div>
+  <div class="box"><h3>Dónde está Camsmark hoy</h3>Un catálogo amplio en camsmark.com y unas redes que nacen ahora. La oportunidad es llenarlas desde el primer día con producto real y convertir ese tráfico en pedidos.</div>
+</div>
+
+<div class="tag"><span>01</span> FREEDOM · PUBLICACIÓN AUTOMÁTICA</div>
+<h2>Tu catálogo, publicado solo todos los días</h2>
+<p>Freedom toma las fotos y fichas de los productos de camsmark.com y las publica con texto, precio y enlace de compra. Es el mismo sistema que ya usamos en Champion Motors.</p>
+<table class="fmt keep">
+  <thead><tr><th>Formato</th><th>Frecuencia</th><th>Qué se publica</th></tr></thead>
+  <tbody>
+    <tr><td>Post de producto</td><td>2 al día</td><td>Un producto con foto, descripción, precio y enlace</td></tr>
+    <tr><td>Carrusel por segmento</td><td>1 cada 2 días</td><td>Todos los artículos de una línea del catálogo</td></tr>
+    <tr><td>Historias</td><td>10 al día, variadas</td><td>Una mezcla distinta cada día: productos, ofertas, líneas del catálogo y llamados a WhatsApp</td></tr>
+  </tbody>
+</table>
+<div class="box keep" style="margin:12px 0">
+  <h3>Cómo son las 10 historias del día</h3>
+  <p style="margin:0 0 6px">Las historias son lo que más se ve en Instagram y lo que mantiene a Camsmark presente todos los días. Para que no se vuelvan repetitivas, Freedom alterna formatos y nunca repite el mismo producto en la semana:</p>
+  <ul style="margin:0">
+    <li><b>Producto destacado</b> (4 al día): foto, nombre, precio y enlace directo a la ficha de compra.</li>
+    <li><b>Línea del catálogo</b> (2 al día): varios productos de una misma categoría, por ejemplo gabinetes o automatización.</li>
+    <li><b>Oferta o novedad</b> (1 al día): un artículo con precio especial o recién agregado a la tienda.</li>
+    <li><b>Uso y aplicación</b> (1 al día): para qué sirve un producto o en qué tipo de proyecto se instala.</li>
+    <li><b>Pregunta o encuesta</b> (1 al día): una interacción sencilla con stickers de Instagram para que el público responda.</li>
+    <li><b>Contacto por WhatsApp</b> (1 al día): un llamado directo a cotizar o hacer un pedido.</li>
+  </ul>
+</div>
+<p class="note">Todo se publica en Instagram y se replica en la Página de Facebook. Los carruseles rotan entre las seis líneas de la tienda: Indicación y Medición, Automatización y Control, Gabinetes Metálicos, Gabinetes y Cajas de Poliéster, Herramientas y Maniobra.</p>
+<div class="stats keep">
+  <div><b>60</b>posts de producto al mes</div>
+  <div><b>15</b>carruseles por segmento al mes</div>
+  <div><b>300</b>historias al mes (10 diarias)</div>
+</div>
+<p class="note">Por red, en un mes de 30 días. Entre Instagram y Facebook suman unas 150 publicaciones de feed al mes, más 300 historias.</p>
+
+<div class="tag"><span>02</span> ADS · CAMPAÑAS PUBLICITARIAS</div>
+<h2>Empezamos por Google Ads, optimizado para vender</h2>
+<p>Montamos, seguimos y optimizamos las campañas cada semana para que la inversión en publicidad traiga clientes. Arrancamos por <b>Google Ads</b>, que es donde ya está la gente que busca material eléctrico e industrial.</p>
+<div class="phase keep"><b>Pauta sugerida: USD 250 al mes en Google Ads.</b> Es el presupuesto con el que recomendamos arrancar en Panamá: alcanza para sostener búsqueda y Shopping todo el mes y tener datos reales para optimizar. Se ajusta según resultados.</div>
+<ul>
+  <li><b>Fase 1 · Google Ads:</b> búsqueda y Shopping / Performance Max con el catálogo, para quien ya busca material eléctrico o industrial en Panamá.</li>
+  <li><b>Fase 2 · Meta Ads:</b> cuando Google esté rindiendo, sumamos anuncios de catálogo dinámico, remarketing a quien visitó la web y campañas de mensajes a WhatsApp.</li>
+  <li><b>Medición:</b> etiquetas de Google y conversiones en camsmark.com desde el primer día (y píxel de Meta con API de conversiones en la fase 2), para saber qué anuncio trae cada venta.</li>
+  <li><b>Optimización continua:</b> pujas, palabras clave, anuncios y presupuesto según resultados.</li>
+</ul>
+
+<div class="tag"><span>03</span> GESTIÓN DE LA CUENTA</div>
+<h2>Tu perfil al máximo, y siempre a tu nombre</h2>
+<p>Llevamos el perfil completo; Camsmark Panamá sigue siendo dueña de todas las cuentas.</p>
+<ul>
+  <li><b>Configuración inicial:</b> Instagram y Página de Facebook completos, catálogo de Meta conectado a camsmark.com y tienda de Instagram activada.</li>
+  <li><b>Etiquetado de productos</b> en cada post y carrusel, para ir directo a la ficha de compra.</li>
+  <li><b>Verificación del catálogo:</b> precios, fotos, descripciones y disponibilidad coinciden con la web antes de publicar.</li>
+  <li><b>Control de la cuenta:</b> supervisión diaria de Freedom, seguridad de accesos y verificación del dominio y del negocio en Meta y Google.</li>
+  <li><b>Reporte mensual:</b> alcance, seguidores, clics a la web, mensajes de WhatsApp y resultados de las campañas.</li>
+</ul>
+
+<div class="tag"><span>04</span> INVERSIÓN</div>
+<h2>Una sola mensualidad, todo incluido</h2>
+<table class="inv">
+  <thead><tr><th>Servicio</th><th>Precio</th></tr></thead>
+  <tbody>
+    <tr><td>Freedom: publicación automática en Instagram y Facebook</td><td>Incluido</td></tr>
+    <tr><td>Ads: gestión de campañas en Google Ads (Meta Ads en la fase 2)</td><td>Incluido</td></tr>
+    <tr><td>Gestión de la cuenta, etiquetado, verificación y reporte</td><td>Incluido</td></tr>
+    <tr><td>Puesta en marcha</td><td>Incluido</td></tr>
+  </tbody>
+</table>
+<div class="total keep"><div><b>Servicio mensual Código Fresco</b><small>Tarifa regular <s>USD 300</s> · ajuste especial</small></div><div class="amt">USD 250</div></div>
+<div class="pauta keep"><div><b>Pauta sugerida en Google Ads</b><small>Se paga directo a Google con la tarjeta de Camsmark Panamá. No pasa por Código Fresco y se puede subir o bajar cuando quieras.</small></div><div class="amt">USD 250</div></div>
+<div class="sum keep">
+  <div><b>USD 250</b>servicio Código Fresco</div>
+  <div><b>USD 250</b>pauta en Google Ads</div>
+  <div class="hl"><b>USD 500</b>inversión mensual total sugerida</div>
+</div>
+<p><b>No incluye:</b> el presupuesto de pauta (lo paga Camsmark Panamá directamente en cada plataforma) ni sesiones de fotos o vídeo nuevas; Freedom usa las fotos del catálogo de la web.</p>
+<p><b>Forma de pago:</b> cobro mensual recurrente con tarjeta por Stripe, a nombre de Código Fresco. El servicio arranca al confirmarse el primer pago.</p>
+
+<div class="tag"><span>05</span> CÓMO ACTIVAR</div>
+<h2>Cinco pasos y arrancamos</h2>
+<ol>
+  <li><b>Aprueba la propuesta</b> por WhatsApp o correo.</li>
+  <li><b>Paga la suscripción</b> en el enlace de pago de abajo.</li>
+  <li><b>Danos acceso:</b> acceso de administrador a Google Ads (con la tarjeta de la pauta cargada) y control total del portfolio de Meta (Página e Instagram de Camsmark), para duque629@gmail.com.</li>
+  <li><b>Puesta en marcha:</b> montamos las campañas de Google Ads, configuramos el catálogo, el etiquetado y Freedom, y arrancan las publicaciones.</li>
+  <li><b>Primer reporte</b> al cerrar el primer mes.</li>
+</ol>
+
+<a class="cta keep" href="https://buy.stripe.com/bJecN4gud98gcxw8BJ8g000"><div><b>Activar Freedom + Ads · USD 250/mes</b><small>Pagar con Stripe</small></div><i>→</i></a>
+
+<footer class="keep">
+  <div><b>Código Fresco</b>Creo estrategias <i>y los sistemas</i> que las<br>hacen funcionar.</div>
+  <div class="r"><a href="https://codigofresco.com/">codigofresco.com</a><br><a href="mailto:hola@codigofresco.com">hola@codigofresco.com</a><br><a href="https://instagram.com/codigofresco">@codigofresco</a></div>
+</footer>
+</body>
+</html>

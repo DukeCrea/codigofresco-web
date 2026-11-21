@@ -4,15 +4,15 @@ import { Creative, InstagramFeed, ProductCarousel, ProductImage, Profile } from 
 import { products } from "./products";
 import styles from "./page.module.css";
 
-const title = "Freedom + Ads para Camsmark Latam | Código Fresco";
-const description = "Ricardo, así se verá tu catálogo convertido en publicaciones y campañas. Una demo ilustrativa de Freedom + Ads para Camsmark Latam.";
+const title = "Freedom + Ads para Camsmark Panamá | Código Fresco";
+const description = "Ricardo, así se verá tu catálogo convertido en publicaciones y campañas. Una demo ilustrativa de Freedom + Ads para Camsmark Panamá.";
 const url = "https://codigofresco.com/demo/camsmark";
 
 export const metadata: Metadata = {
   title: { absolute: title },
   applicationName: "Código Fresco",
   description,
-  keywords: ["Camsmark Latam", "Freedom + Ads", "Código Fresco"],
+  keywords: ["Camsmark Panamá", "Freedom + Ads", "Código Fresco"],
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   alternates: { canonical: url },
   openGraph: { title, description, url, siteName: "Código Fresco", locale: "es_PA", type: "website" },
@@ -48,7 +48,7 @@ export default function CamsmarkDemoPage() {
         <section className={styles.hero} aria-labelledby="demo-title">
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}><span className={styles.liveDot} /> TU CATÁLOGO. MUCHO MÁS LEJOS.</p>
-            <h1 id="demo-title">Así se verá <span>Freedom + Ads</span> en Camsmark Latam<span className={styles.lime}>.</span></h1>
+            <h1 id="demo-title">Así se verá <span>Freedom + Ads</span> en Camsmark Panamá<span className={styles.lime}>.</span></h1>
             <p className={styles.heroDescription}>Tu catálogo se convierte en publicaciones automáticas para Instagram y Facebook, acompañado de campañas para atraer clientes.</p>
             <div className={styles.personalNote}><span aria-hidden="true">↳</span><p><strong>Ricardo, esta demo es para ti.</strong><br />Mira cómo tus productos aparecerán en publicaciones, historias, carruseles y anuncios.</p></div>
             <a href="#formatos" className={styles.primaryButton}>Explorar la demo <span aria-hidden="true">↓</span></a>
@@ -113,7 +113,7 @@ export default function CamsmarkDemoPage() {
 
         <section id="reporte" className={styles.section}>
           <SectionTitle number="03" label="CLARIDAD CADA MES" title="Lo que pasa, en números claros." description="Un reporte para ver qué se publicó, cuántas personas llegaron y qué acciones generó la campaña." />
-          <div className={styles.report}><div className={styles.reportHeader}><div><span className={styles.liveDot} /><strong>Camsmark Latam</strong><span> / Resumen mensual</span></div><span className={styles.exampleBadge}>DATOS DE EJEMPLO</span></div><div className={styles.metrics}>{metrics.map(metric => <div key={metric.label}><span>{metric.label}</span><strong>{metric.value}</strong><small>{metric.detail}</small></div>)}</div><p>Período ilustrativo de 30 días. Cifras ficticias, no resultados reales ni una promesa de rendimiento. El reporte permite revisar qué contenidos generan visitas y consultas.</p></div>
+          <div className={styles.report}><div className={styles.reportHeader}><div><span className={styles.liveDot} /><strong>Camsmark Panamá</strong><span> / Resumen mensual</span></div><span className={styles.exampleBadge}>DATOS DE EJEMPLO</span></div><div className={styles.metrics}>{metrics.map(metric => <div key={metric.label}><span>{metric.label}</span><strong>{metric.value}</strong><small>{metric.detail}</small></div>)}</div><p>Período ilustrativo de 30 días. Cifras ficticias, no resultados reales ni una promesa de rendimiento. El reporte permite revisar qué contenidos generan visitas y consultas.</p></div>
         </section>
 
         <section className={styles.section}>
@@ -122,9 +122,9 @@ export default function CamsmarkDemoPage() {
         </section>
 
         <div className={styles.sources}><a href="/demo/camsmark/propuesta.pdf" target="_blank" rel="noopener noreferrer" className={styles.headerCta}>Abrir la propuesta en PDF ↗</a></div>
-        <details className={styles.sources}><summary>Sobre esta demo y sus productos</summary><p>Productos y precios del catálogo de Panamá, consultados el 20 de noviembre de 2026. Los precios y la disponibilidad pueden cambiar. Las fotografías cargan desde sus URL originales en camsmark.com; si una imagen no está disponible, aparece un marcador. Los textos de las publicaciones son ejemplos preparados para Camsmark Latam.</p><ul>{products.map(product => <li key={product.id}><a href={product.url} target="_blank" rel="noopener noreferrer">{product.sourceName} — USD {product.price} ↗</a></li>)}</ul><p>Esta página simula publicaciones, etiquetas y anuncios. No publica en redes ni activa campañas.</p></details>
+        <details className={styles.sources}><summary>Sobre esta demo y sus productos</summary><p>Productos y precios del catálogo de Panamá, consultados el 20 de noviembre de 2026. Los precios y la disponibilidad pueden cambiar. Las fotografías cargan desde sus URL originales en camsmark.com; si una imagen no está disponible, aparece un marcador. Los textos de las publicaciones son ejemplos preparados para Camsmark Panamá.</p><ul>{products.map(product => <li key={product.id}><a href={product.url} target="_blank" rel="noopener noreferrer">{product.sourceName} — USD {product.price} ↗</a></li>)}</ul><p>Esta página simula publicaciones, etiquetas y anuncios. No publica en redes ni activa campañas.</p></details>
       </main>
-      <footer className={styles.footer}><span className={styles.wordmark}>código fresco<span className={styles.wordmarkDot}>.</span></span><p>Preparado para Ricardo · CAMSCOL SAS / Camsmark Latam</p><small>Demo ilustrativa — publicaciones y métricas de ejemplo</small></footer>
+      <footer className={styles.footer}><span className={styles.wordmark}>código fresco<span className={styles.wordmarkDot}>.</span></span><p>Preparado para Ricardo · Camsmark Panamá</p><small>Demo ilustrativa — publicaciones y métricas de ejemplo</small></footer>
     </div>
   );
 }

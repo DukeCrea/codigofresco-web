@@ -22,7 +22,7 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/sirenas-tcz-220-ml20electron-110v-02-05-6afdee8eb14e7.jpg",
     "url": "https://camsmark.com/pa/producto/sirenas-tcz-220-ml20electron-110v-02-05",
     "benefit": "Señalización sonora para tu instalación. Consulta su compatibilidad con tu proyecto.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Automatizacion"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Automatizacion"
   },
   {
     "id": "EL-24",
@@ -33,7 +33,7 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/aisladores-tipo-el-24-24-kv-h210mm-01-06-a6728b4b-6afefc8cb1251.jpg",
     "url": "https://camsmark.com/pa/producto/aisladores-tipo-el-24-24-kv-h210mm-01-06-a6728b4b",
     "benefit": "Aislamiento eléctrico para tu proyecto de 24 kV. Revisa las especificaciones y elige con información.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Aisladores"
   },
   {
     "id": "EL-15",
@@ -44,7 +44,7 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/aisladores-tipo-el-15-15-kv-h142mm-01-05-6afdefebe9938.jpg",
     "url": "https://camsmark.com/pa/producto/aisladores-tipo-el-15-15-kv-h142mm-01-05",
     "benefit": "Encuentra el aislador de 15 kV que requiere tu instalación, con sus medidas a la vista.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Aisladores"
   },
   {
     "id": "EL-6M",
@@ -55,7 +55,7 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/aisladores-tipo-el-6m-6-kv-h-90mm-01-04-6afdf045554ae.jpg",
     "url": "https://camsmark.com/pa/producto/aisladores-tipo-el-6m-6-kv-h-90mm-01-04",
     "benefit": "Una opción de aislamiento de 6 kV en formato de 90 mm de altura.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Aisladores"
   },
   {
     "id": "SM-76",
@@ -66,7 +66,7 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/aisladores-sm-76-h76mm-01-03-6afb0526d23ac.jpg",
     "url": "https://camsmark.com/pa/producto/aisladores-sm-76-h76mm-01-03",
     "benefit": "Completa tu montaje eléctrico con un aislador de 600 V y 76 mm de altura.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Aisladores"
   },
   {
     "id": "SM-35",
@@ -77,6 +77,6 @@ export const products: Product[] = [
     "image": "https://camsmark.com/storage/products/featured/aisladores-sm-35-h35mm-01-01-6afb05d41f686.jpg",
     "url": "https://camsmark.com/pa/producto/aisladores-sm-35-h35mm-01-01",
     "benefit": "Aislamiento de 600 V en un formato de 35 mm de altura para tu montaje.",
-    "hashtags": "#CamsmarkLatam #MaterialElectrico #Panama #Aisladores"
+    "hashtags": "#CamsmarkPanama #MaterialElectrico #Panama #Aisladores"
   }
 ];

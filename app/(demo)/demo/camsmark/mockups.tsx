@@ -28,7 +28,7 @@ export function Avatar() {
 }
 
 export function Profile({ detail = "Publicación de ejemplo" }: { detail?: string }) {
-  return <div className={styles.profile}><Avatar /><div><strong>Camsmark Latam</strong><small>{detail}</small></div><span className={styles.more} aria-hidden="true">•••</span></div>;
+  return <div className={styles.profile}><Avatar /><div><strong>Camsmark Panamá</strong><small>{detail}</small></div><span className={styles.more} aria-hidden="true">•••</span></div>;
 }
 
 export function Creative({ product, priority = false }: { product: Product; priority?: boolean }) {
@@ -67,7 +67,7 @@ export function InstagramFeed() {
               <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7ZM11 13 22 2" /></svg>
               <svg className={styles.bookmark} viewBox="0 0 24 24"><path d="M5 3h14v19l-7-5-7 5V3Z" /></svg>
             </div>
-            <div className={styles.caption}><p><strong>Camsmark Latam</strong> {product.name} · <b>USD {product.price}</b></p><p>{product.benefit}</p><a href={product.url} target="_blank" rel="noopener noreferrer">Consulta los detalles en camsmark.com ↗</a><p className={styles.hashtags}>{product.hashtags}</p></div>
+            <div className={styles.caption}><p><strong>Camsmark Panamá</strong> {product.name} · <b>USD {product.price}</b></p><p>{product.benefit}</p><a href={product.url} target="_blank" rel="noopener noreferrer">Consulta los detalles en camsmark.com ↗</a><p className={styles.hashtags}>{product.hashtags}</p></div>
           </div>
         )}
         <div className={styles.phonePagination}>
@@ -113,7 +113,7 @@ export function ProductCarousel() {
         <div aria-label="Elegir lámina del carrusel">{products.map((item, index) => <button type="button" key={item.id} aria-label={`Lámina ${index + 1}: ${item.name}`} aria-pressed={index === slide} onClick={() => setSlide(index)}><span /></button>)}</div>
         <button type="button" aria-label="Producto siguiente del carrusel" onClick={() => move(1)}>→</button>
       </div>
-      <div className={styles.carouselCaption}><p><strong>Camsmark Latam</strong> Una selección para tu próximo proyecto. Seis productos de nuestro catálogo, desde <b>USD 2.11</b>. Desliza, compara y encuentra el que necesitas.</p><a href={product.url} target="_blank" rel="noopener noreferrer">Ver {product.name} en la tienda ↗</a><p className={styles.hashtags}>#CamsmarkLatam #MaterialElectrico #Panama</p></div>
+      <div className={styles.carouselCaption}><p><strong>Camsmark Panamá</strong> Una selección para tu próximo proyecto. Seis productos de nuestro catálogo, desde <b>USD 2.11</b>. Desliza, compara y encuentra el que necesitas.</p><a href={product.url} target="_blank" rel="noopener noreferrer">Ver {product.name} en la tienda ↗</a><p className={styles.hashtags}>#CamsmarkPanama #MaterialElectrico #Panama</p></div>
     </article>
   );
 }
