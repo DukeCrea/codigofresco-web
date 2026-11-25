@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PortfolioHeader } from "../../../components/portfolio/chrome";
 import { channels, creatives, money, processes, totalSpend } from "./data";
 import styles from "./page.module.css";
@@ -14,6 +15,16 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
+function CreativeVideo({ name, title }: { name: string; title: string }) {
+  return (
+    <video className={styles.creativeMedia} controls playsInline preload="metadata" width={720} height={1280} poster={`/para/empact/media/${name}-poster.jpg`} aria-label={title}>
+      <source src={`/para/empact/media/${name}.mp4`} type="video/mp4" />
+      <track src={`/para/empact/media/${name}.vtt`} kind="captions" srcLang="es" label="Español" />
+      Tu navegador no puede reproducir este vídeo. <a href={`/para/empact/media/${name}.mp4`}>Abrir vídeo</a>.
+    </video>
+  );
+}
+
 export default function EmpactPage() {
   return (
     <div className={styles.page}>
@@ -25,7 +36,7 @@ export default function EmpactPage() {
             <h1 id="titulo">Paid Media.<br />Y el sistema<br /><em>que lo sostiene.</em></h1>
             <p className={styles.intro}>Conecto la creatividad, la medición y lo que pasa después del clic. Para que el equipo pueda decidir con datos fiables y repetir lo que funciona.</p>
             <p className={styles.personal}>Javi, después de nuestra conversación, aquí tenéis una forma concreta de conocer mi trabajo. Xavi, soy Antonio: este es un caso real y cómo propongo llevar esa experiencia a vuestro equipo.</p>
-            <div className={styles.actions}><a className={styles.primary} href="#resultados">Ver los resultados <span aria-hidden="true">↓</span></a><a className={styles.textLink} href="#procesos">Cómo trabajo ↗</a></div>
+            <div className={styles.actions}><a className={styles.primary} href="#resultados">Ver piezas y resultados <span aria-hidden="true">↓</span></a><a className={styles.textLink} href="#procesos">Cómo trabajo ↗</a></div>
           </div>
           <aside className={styles.caseCover} aria-label="Resumen del caso">
             <div className={styles.coverTop}><span>CASO 01 / AUTOMOCIÓN</span><span>PANAMÁ ↗</span></div>
@@ -42,9 +53,48 @@ export default function EmpactPage() {
         </section>
 
         <section id="resultados" className={styles.section} aria-labelledby="resultados-titulo">
-          <div className={styles.sectionHeading}><p className={styles.eyebrow}>01 / RESULTADOS CON CONTEXTO</p><h2 id="resultados-titulo">La pieza importa.<br /><em>Lo que medimos, también.</em></h2><p>Un concesionario de seminuevos que vende por WhatsApp. Cada resultado tiene su periodo, su inversión y una definición concreta.</p></div>
-          <div className={styles.resultsGrid}>{creatives.map((creative, index) => <article className={styles.result} key={creative.name}><div className={styles.resultTop}><span>0{index + 1}</span><span>{creative.format}</span></div><h3>{creative.name}</h3><p className={styles.resultNumber}>{money(creative.spend / creative.results)} <span>USD</span></p><p className={styles.resultLabel}>por conversación ≥3 mensajes</p><dl><div><dt>Conversaciones</dt><dd>{creative.results.toLocaleString("es-ES")}</dd></div><div><dt>Inversión</dt><dd>{money(creative.spend)} USD</dd></div></dl><p className={styles.period}>{creative.since}</p></article>)}</div>
-          <p className={styles.footnote}>Fuente: acciones de Meta almacenadas por anuncio y día. La imagen del Picanto es una pieza concreta de septiembre, no la media de la campaña. No se atribuye una mejora causal a un formato.</p>
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>01 / RESULTADOS CON CONTEXTO</p><h2 id="resultados-titulo">La pieza importa.<br /><em>Lo que medimos, también.</em></h2><p>Estas son las piezas originales de Champion Motors: tres vídeos y una plantilla en dos formatos. Cada resultado tiene su periodo, su inversión y una definición concreta.</p></div>
+          <div className={styles.resultsGrid}>
+            {creatives.map((creative, index) => (
+              <article className={styles.result} key={creative.name}>
+                <div className={styles.resultTop}><span>0{index + 1}</span><span>{creative.format}</span></div>
+                <h3>{creative.name}</h3>
+                {creative.video ? <CreativeVideo name={creative.media} title={creative.name} /> : (
+                  <a className={styles.imageLink} href={`/para/empact/media/${creative.media}.webp`} target="_blank" rel="noopener noreferrer" aria-label="Ampliar creatividad original del Kia Picanto en formato vertical">
+                    <Image className={styles.creativeMedia} src={`/para/empact/media/${creative.media}.webp`} width={1080} height={1920} sizes="(max-width: 700px) 90vw, 30vw" alt="Anuncio original: Kia Picanto 2025, bono de 1.200 USD, abono de 2.680 USD y letra quincenal de 87,60 USD." />
+                  </a>
+                )}
+                <p className={styles.mediaHint}>{creative.video ? "Vídeo completo · activa CC para ver los subtítulos" : "Pieza original · pulsa la imagen para ampliarla"}</p>
+                <p className={styles.resultNumber}>{money(creative.spend / creative.results)} <span>USD</span></p>
+                <p className={styles.resultLabel}>por conversación ≥3 mensajes</p>
+                <dl><div><dt>Conversaciones</dt><dd>{creative.results.toLocaleString("es-ES")}</dd></div><div><dt>Inversión</dt><dd>{money(creative.spend)} USD</dd></div></dl>
+                <p className={styles.period}>{creative.since}</p>
+              </article>
+            ))}
+          </div>
+          <p className={styles.footnote}>Piezas recuperadas de los anuncios correspondientes en Meta. Los fotogramas de portada proceden de los vídeos originales. Conversaciones reportadas por Meta, no ventas ni contactos únicos verificados en CRM.</p>
+          <div className={styles.moreCreatives}>
+            <article className={styles.extendedCreative}>
+              <div className={styles.extendedVisual}><CreativeVideo name="captacion" title="Vídeo original de captación: compra de coches a particulares" /></div>
+              <div className={styles.extendedCopy}>
+                <p className={styles.eyebrow}>04 / CAPTACIÓN · 1 MIN 13 S</p>
+                <h3>Comprar coches.<br />Un objetivo distinto.</h3>
+                <p>Una pieza que explica la compra directa, la deuda pendiente y el cambio de coche. La llamada a la acción lleva a solicitar una valoración.</p>
+                <dl><div><dt>Inversión</dt><dd>8.216,84 USD</dd></div><div><dt>Leads agregados de Meta</dt><dd>1.290</dd></div><div><dt>Leads web reportados</dt><dd>1.262</dd></div><div><dt>Coste por lead agregado</dt><dd>6,37 USD</dd></div></dl>
+                <p className={styles.period}>30 jun – 29 sep 2026</p>
+                <p className={styles.footnote}>Los leads web forman parte del agregado; no se suman. No se presentan como formularios conciliados individualmente con el CRM.</p>
+              </div>
+            </article>
+            <article className={styles.adaptation}>
+              <p className={styles.eyebrow}>LA MISMA PLANTILLA · FORMATO 1:1</p>
+              <h3>Una oferta.<br />Dos composiciones.</h3>
+              <a className={styles.imageLink} href="/para/empact/media/picanto-cuadrado.webp" target="_blank" rel="noopener noreferrer" aria-label="Ampliar creatividad original del Kia Picanto en formato cuadrado">
+                <Image src="/para/empact/media/picanto-cuadrado.webp" width={1200} height={1200} sizes="(max-width: 700px) 90vw, 40vw" alt="Adaptación cuadrada del anuncio del Kia Picanto 2025 con la misma oferta de financiación." />
+              </a>
+              <p>La oferta, el abono y la letra mantienen su jerarquía al pasar del formato vertical al cuadrado.</p>
+              <p className={styles.footnote}>Ambas imágenes pertenecen al mismo anuncio de septiembre. Los 159 resultados y 144,72 USD son del anuncio completo, no de cada formato. Las condiciones que aparecen son las de la pieza histórica.</p>
+            </article>
+          </div>
           <div className={styles.campaign}><div><p className={styles.eyebrow}>LA CAMPAÑA COMPLETA</p><h3>Una pieza por coche.<br />Un criterio para renovar.</h3><p>La campaña de financiación por inventario permite comparar productos y sustituir las piezas con peor coste por conversación.</p></div><div className={styles.campaignFacts}><div><strong>3.315,43 <small>USD</small></strong><span>inversión</span></div><div><strong>3.521</strong><span>conversaciones iniciadas</span></div><div><strong>1.995</strong><span>conversaciones ≥3 mensajes</span></div></div><p className={styles.footnote}>20 sep – 24 nov 2026 · Selección por nombre de campaña. Las piezas publicadas antes en otra campaña quedan fuera de este total.</p></div>
         </section>
 
@@ -75,7 +125,7 @@ export default function EmpactPage() {
           ].map(([week, heading, text, delivery]) => <article key={week}><span className={styles.label}>{week}</span><h4>{heading}</h4><p>{text}</p><strong>{delivery}</strong></article>)}</div>
         </section>
 
-        <section id="fuentes" className={`${styles.section} ${styles.method}`} aria-labelledby="fuentes-titulo"><p className={styles.eyebrow}>05 / CÓMO LEER LOS DATOS</p><h2 id="fuentes-titulo">Cifras con alcance claro.</h2><details><summary>Fuentes, definiciones y límites <span aria-hidden="true">+</span></summary><div><p><strong>Comprobación:</strong> consulta de solo lectura del 25 de noviembre de 2026 sobre la base operativa del proyecto y revisión de auditorías documentadas del 19–20 de noviembre. Los resultados publicitarios cierran el 24 de noviembre.</p><p><strong>Inversión:</strong> suma del gasto diario a nivel de campaña. No se suma el nivel de anuncio a ese total. Meta dispone de datos desde el 12 de marzo; Google desde el 1 de mayo y TikTok desde el 8 de mayo. Moneda: USD.</p><p><strong>Conversaciones:</strong> acción de Meta de al menos tres mensajes, leída de sus datos originales. Es una métrica de plataforma; no está presentada como contactos únicos contrastados en CRM, ventas ni leads cualificados.</p><p><strong>Creatividades:</strong> agrupación por el nombre de cada pieza. Los periodos aparecen junto a cada resultado. El total de la campaña por coche utiliza el nombre de campaña del 20 de septiembre al 24 de noviembre.</p><p><strong>Conversiones offline:</strong> estado «enviado» en la cola y respuesta correcta registrada. El código vincula ese estado al éxito de la petición. Google usa acciones secundarias; estos envíos no demuestran un cambio de puja ni un aumento de ventas.</p><p><strong>Catálogo:</strong> coincidencia de referencias de producto, no de usuarios. La deduplicación individual de eventos y la atribución completa siguen siendo comprobaciones distintas.</p><p><strong>Confidencialidad:</strong> caso anonimizado. Se muestran agregados; no se publican nombres de clientes, conversaciones, datos personales ni accesos.</p></div></details></section>
+        <section id="fuentes" className={`${styles.section} ${styles.method}`} aria-labelledby="fuentes-titulo"><p className={styles.eyebrow}>05 / CÓMO LEER LOS DATOS</p><h2 id="fuentes-titulo">Cifras con alcance claro.</h2><details><summary>Fuentes, definiciones y límites <span aria-hidden="true">+</span></summary><div><p><strong>Comprobación:</strong> consulta de solo lectura del 25 de noviembre de 2026 sobre la base operativa del proyecto y revisión de auditorías documentadas del 19–20 de noviembre. Los resultados publicitarios cierran el 24 de noviembre.</p><p><strong>Inversión:</strong> suma del gasto diario a nivel de campaña. No se suma el nivel de anuncio a ese total. Meta dispone de datos desde el 12 de marzo; Google desde el 1 de mayo y TikTok desde el 8 de mayo. Moneda: USD.</p><p><strong>Conversaciones:</strong> acción de Meta de al menos tres mensajes, leída de sus datos originales. Es una métrica de plataforma; no está presentada como contactos únicos contrastados en CRM, ventas ni leads cualificados.</p><p><strong>Creatividades:</strong> agrupación por el nombre de cada pieza. Los periodos aparecen junto a cada resultado. El total de la campaña por coche utiliza el nombre de campaña del 20 de septiembre al 24 de noviembre.</p><p><strong>Conversiones offline:</strong> estado «enviado» en la cola y respuesta correcta registrada. El código vincula ese estado al éxito de la petición. Google usa acciones secundarias; estos envíos no demuestran un cambio de puja ni un aumento de ventas.</p><p><strong>Catálogo:</strong> coincidencia de referencias de producto, no de usuarios. La deduplicación individual de eventos y la atribución completa siguen siendo comprobaciones distintas.</p><p><strong>Piezas originales:</strong> las imágenes y vídeos se muestran con la marca por autorización de Antonio Duque. Los resultados son agregados; no se publican conversaciones de clientes, datos del CRM ni accesos.</p></div></details></section>
 
         <section className={styles.contact} aria-labelledby="contacto-titulo"><p className={styles.eyebrow}>EL SIGUIENTE PASO</p><h2 id="contacto-titulo">Lo vemos los tres.</h2><p>Una llamada corta para conocer dónde os vendría mejor esta forma de trabajar y elegir una primera cuenta. Como os resulte más cómodo.</p><a className={styles.primary} href="mailto:duque629@gmail.com?subject=Empact%20%C2%B7%20Hablemos%20de%20una%20primera%20cuenta">Hablar con Antonio <span aria-hidden="true">↗</span></a></section>
       </main>

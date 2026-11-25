@@ -2,7 +2,7 @@
 
 Página: https://codigofresco.com/para/empact
 
-Presentación de Antonio Duque para Javi y Xavi. El cliente final permanece anonimizado. La ruta usa el layout sin analítica del grupo `(demo)`, no se añade al sitemap y declara `noindex,nofollow`. Es una URL accesible con el enlace, no un recurso con autenticación.
+Presentación de Antonio Duque para Javi y Xavi. La marca del cliente aparece en las piezas originales con autorización expresa de Antonio (25/11/2026): «Sí, publica las piezas originales con la marca». Los datos de clientes y las conversaciones permanecen excluidos. La ruta usa el layout sin analítica del grupo `(demo)`, no se añade al sitemap y declara `noindex,nofollow`. Es una URL accesible con el enlace, no un recurso con autenticación.
 
 ## Fuente y corte
 
@@ -44,11 +44,11 @@ El servicio de conversiones marca `enviado` al recibir una respuesta HTTP satisf
 - La nota histórica del cliente describía Zoho como CRM; la auditoría reciente y el código operativo señalan ZoDesk. Se informó al usuario y no se editaron las notas de Claude.
 - No se reprodujeron con suficiente evidencia los valores históricos de 3,3×, 99,4 %, 590 envíos legítimos mensuales, descenso de 71 % corregido en 24 h, 64 % de inventario vendido, ni el escenario TikTok USD 2.749/204 formularios/0 compras. Se excluyen de la página, sin declarar que sean falsos.
 - No se presenta un modelo en U como conclusión general: se propone elegir el modelo por cuenta y evidencia.
-- No se incluyen originales de anuncios con marcas o datos que identifiquen al cliente. El caso visual utiliza datos y diagramas propios, sin hacer pasar recreaciones por capturas originales.
+- Primera versión: se omitieron las piezas originales para mantener el anonimato solicitado. El usuario pidió después imágenes y vídeos, y autorizó expresamente publicar los originales con la marca. La galería actual contiene los archivos reales, sin recreaciones.
 
 ## Alcance técnico
 
-Cambios nuevos únicamente en `app/(demo)/para/empact/` y esta documentación. Server Components y detalles HTML nativos; sin nuevas dependencias, formularios, almacenamiento ni scripts de terceros. Metadatos dedicados y vista previa Open Graph. La navegación y contacto funcionan con enlaces estándar.
+Cambios en `app/(demo)/para/empact/`, medios en `public/para/empact/media/`, manifiesto de fechas y esta documentación. Server Components y detalles HTML nativos; sin nuevas dependencias, formularios, almacenamiento ni scripts de terceros. Metadatos dedicados y vista previa Open Graph. La navegación y contacto funcionan con enlaces estándar.
 
 Verificación y publicación: se documentan al completar lint, build, audit, revisión visual y pruebas HTTP/browser.
 
@@ -74,3 +74,15 @@ La página reutiliza `PortfolioHeader` y el logo del portafolio. Se igualaron la
 El primer despliegue Git falló con `Historial incompleto para app/(demo)/para/empact/data.ts: generar fechas con un clon completo.` El prebuild local había corrido antes de que los archivos nuevos estuvieran versionados. Se regeneró `app/lib/generated/content-dates.json` desde el historial completo; incluye las tres fuentes nuevas y sus fechas verificadas del 25/11/2026. No se modificó el generador ni se inventaron fechas.
 
 Al repetir lint se detectaron imports require en el script local de QA (`@typescript-eslint/no-require-imports`); se convirtió a ESM. La aplicación no tenía errores de lint.
+
+## Creatividades originales añadidas el 25/11/2026
+
+- Se localizaron los anuncios por sus nombres exactos en la base de datos operativa, en una transacción de solo lectura. Se consultaron después sus creatividades mediante GET a la API de Meta, sin modificar campañas.
+- Los tres vídeos corresponden a financiación para asalariados, financiación para independientes y compra combinado. Los identificadores del anuncio resolvieron a los reels públicos de las mismas creatividades; se descargaron completos (53,8 s, 68,366 s y 72,84 s).
+- Las dos imágenes del Picanto de septiembre se recuperaron por los hashes incluidos en `asset_feed_spec`: vertical 2160 × 3840 y cuadrada 2880 × 2880. Comparten el rendimiento del anuncio; no se inventa un desglose por formato.
+- Versiones web: vídeo H.264/AAC a 720 px de ancho, metadatos eliminados y faststart; imágenes WebP a 1080/1200 px. Se conservan los originales en `output/empact/media-originales/`, excluidos de Git.
+- Portadas: fotogramas reales a los tres segundos. Subtítulos locales con Whisper, segmentados para legibilidad, en VTT español. No hay autoplay, embeds de Meta ni solicitudes a sus servidores desde la página; los reproductores nativos usan `preload="metadata"` para mostrar duración y controles listos antes de reproducir.
+- La autorización de marca sustituye la restricción anterior solo para estas piezas. No se publican datos de clientes, credenciales, exportaciones internas ni identificadores publicitarios.
+- Incidencias locales: `rg` no está instalado en el servidor (se usó grep/find); la documentación de Next instalada usa `.md`, no `.mdx`; el primer test de subtítulos devolvió 404 porque se generaron después de iniciar Next. Se reinició el servidor con todos los archivos presentes.
+
+Verificación de la galería: lint, build y audit correctos (cero vulnerabilidades); 20 grupos de comprobación, incluidos reproducción de los tres vídeos, VTT cargados, solicitudes HTTP Range 206 y dos imágenes ampliables. Revisión visual de escritorio y móvil.
