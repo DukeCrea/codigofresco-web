@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PortfolioHeader } from "../../../components/portfolio/chrome";
 import { channels, creatives, money, processes, totalSpend } from "./data";
 import styles from "./page.module.css";
 
@@ -17,12 +17,7 @@ export const metadata: Metadata = {
 export default function EmpactPage() {
   return (
     <div className={styles.page}>
-      <a className={styles.skip} href="#contenido">Ir al contenido</a>
-      <header className={styles.header}>
-        <Link href="/" className={styles.logo} aria-label="Código Fresco, inicio">[cƒ] <span>código fresco.</span></Link>
-        <span className={styles.for}>ANTONIO DUQUE <span>×</span> EMPACT</span>
-        <a className={styles.headerLink} href="#encaje">Cómo encajo <span aria-hidden="true">↗</span></a>
-      </header>
+      <PortfolioHeader lang="es" alternateHref={null} />
       <main id="contenido">
         <section className={styles.hero} aria-labelledby="titulo">
           <div>

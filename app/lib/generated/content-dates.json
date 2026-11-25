@@ -19,6 +19,18 @@
     "published": "2026-11-20",
     "modified": "2026-11-20"
   },
+  "app/(demo)/para/empact/data.ts": {
+    "published": "2026-11-25",
+    "modified": "2026-11-25"
+  },
+  "app/(demo)/para/empact/opengraph-image.tsx": {
+    "published": "2026-11-25",
+    "modified": "2026-11-25"
+  },
+  "app/(demo)/para/empact/page.tsx": {
+    "published": "2026-11-25",
+    "modified": "2026-11-25"
+  },
   "app/(en)/en/about/page.tsx": {
     "published": "2026-09-19",
     "modified": "2026-11-14"
