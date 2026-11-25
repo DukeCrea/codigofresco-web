@@ -7,9 +7,9 @@ export const totalSpend = channels.reduce((sum, channel) => sum + channel.spend,
 export const money = (value: number) => new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
 
 export const creatives = [
-  { name: "Financiación · asalariados", format: "Vídeo a WhatsApp", spend: 1573.73, results: 1362, since: "12 mar – 24 nov 2026", type: "Conversaciones ≥3 mensajes" },
-  { name: "Financiación · independientes", format: "Vídeo a WhatsApp", spend: 1574.99, results: 932, since: "12 mar – 24 nov 2026", type: "Conversaciones ≥3 mensajes" },
-  { name: "Kia Picanto 2025 · septiembre", format: "Imagen por coche", spend: 144.72, results: 159, since: "13 sep – 16 nov 2026", type: "Conversaciones ≥3 mensajes" },
+  { name: "Financiación · asalariados", format: "Vídeo a WhatsApp · 54 s", media: "asalariados", video: true, spend: 1573.73, results: 1362, since: "12 mar – 24 nov 2026", type: "Conversaciones ≥3 mensajes" },
+  { name: "Financiación · independientes", format: "Vídeo a WhatsApp · 1 min 08 s", media: "independientes", video: true, spend: 1574.99, results: 932, since: "12 mar – 24 nov 2026", type: "Conversaciones ≥3 mensajes" },
+  { name: "Kia Picanto 2025 · septiembre", format: "Imagen por coche · 9:16", media: "picanto-vertical", video: false, spend: 144.72, results: 159, since: "13 sep – 16 nov 2026", type: "Conversaciones ≥3 mensajes" },
 ];
 
 export const processes = [
