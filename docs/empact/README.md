@@ -61,8 +61,16 @@ Verificación y publicación: se documentan al completar lint, build, audit, rev
 - 18 grupos de comprobaciones Playwright aprobados: UTF-8, metadatos, cifras, anonimización, ausencia de scripts de medición, Open Graph, anclas, seis desplegables y teclado, metodología, responsive a 320/390/768/1440 px, exclusión del sitemap, robots y errores JavaScript.
 - Smoke test HTTP 200 de Home y las 22 páginas de servicio.
 - Revisión visual de la página Empact completa en escritorio y móvil; Home y servicio de CRM en ambos formatos: sin defectos introducidos por la nueva ruta.
-- Correo actualizado guardado en `output/empact/correo-empact.txt`, 250 palabras incluido asunto; no se ha enviado.
+- Correo actualizado guardado en `output/empact/correo-empact.txt`, 247 palabras incluido asunto; no se ha enviado.
 
 Una primera consulta de investigación falló con `SQLSTATE[42000] ... near 'rows from ad_insights'`: `rows` era un alias reservado. Se corrigió a `row_count` y la extracción terminó correctamente. No se escribió en la base del cliente.
 
 El conector Vercel devolvió `403: forbidden` para el equipo. La CLI autenticada confirmó el proyecto y sus dominios, permitiendo continuar en el mismo equipo sin cambiar permisos.
+
+## Ajuste solicitado y corrección de publicación
+
+La página reutiliza `PortfolioHeader` y el logo del portafolio. Se igualaron la tipografía de sistema en negrita, negro #050505, verde lime-400, tarjetas oscuras redondeadas y botones redondos. Se retiraron las serifas, la tarjeta clara inclinada y el verde oliva. El layout continúa sin cargar medición.
+
+El primer despliegue Git falló con `Historial incompleto para app/(demo)/para/empact/data.ts: generar fechas con un clon completo.` El prebuild local había corrido antes de que los archivos nuevos estuvieran versionados. Se regeneró `app/lib/generated/content-dates.json` desde el historial completo; incluye las tres fuentes nuevas y sus fechas verificadas del 25/11/2026. No se modificó el generador ni se inventaron fechas.
+
+Al repetir lint se detectaron imports require en el script local de QA (`@typescript-eslint/no-require-imports`); se convirtió a ESM. La aplicación no tenía errores de lint.
