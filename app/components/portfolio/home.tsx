@@ -359,11 +359,11 @@ export function PortfolioHome({ lang }: { lang: Locale }) {
         <MascotCue lang={lang} step="04">{c.cueMethod}</MascotCue>
         <div className={`mx-auto mt-8 max-w-7xl ${section}`}>
           <h2 id="metodologia-titulo" className="font-display text-4xl text-white sm:text-5xl">{c.methodTitle}</h2>
-          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {c.method.map(([title, body], i) => (
-              <li key={title} className="cf-card cf-reveal p-5">
+              <li key={title} className="cf-card cf-reveal min-w-0 p-5">
                 <span className="font-mono text-sm text-lime-400" aria-hidden="true">{`0${i + 1}`}</span>
-                <p className="font-display mt-3 text-xl text-white">{title}</p>
+                <p className="font-display mt-3 text-xl text-white xl:text-lg 2xl:text-xl">{title}</p>
                 <p className="mt-2 text-sm leading-6 text-gray-400">{body}</p>
               </li>
             ))}

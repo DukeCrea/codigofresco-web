@@ -142,7 +142,7 @@ export function Deck({ mercado }: { mercado: Mercado }) {
         </Lamina>
 
         <Lamina id="diagnostico" etapa={1} eyebrow="diagnóstico" title="¿Qué tan digitalizada está su empresa?" lead="Antes de proponer nada, ubicamos en qué nivel está hoy y cuál es el siguiente paso que más rinde.">
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <div className="grid gap-8">
             <ol className="grid grid-cols-2 items-end gap-3 sm:grid-cols-4">
               {[
                 ["Manual", "Papel, Excel y chats sueltos.", "sm:h-36"],
@@ -150,16 +150,16 @@ export function Deck({ mercado }: { mercado: Mercado }) {
                 ["Conectada", "Clientes, cobros e inventario en un sistema.", "sm:h-60"],
                 ["Automatizada", "Chatbots, cobros y reportes que trabajan solos.", "sm:h-72"],
               ].map(([t, b, h], i) => (
-                <li key={t} className={`flex flex-col justify-end rounded-2xl border p-4 ${h} ${i === 3 ? "border-lime-400 bg-lime-400 text-black" : "border-white/10 bg-[#0c0d0b]"}`}>
+                <li key={t} className={`flex min-w-0 flex-col justify-end rounded-2xl border p-4 ${h} ${i === 3 ? "border-lime-400 bg-lime-400 text-black" : "border-white/10 bg-[#0c0d0b]"}`}>
                   <span className={`font-mono text-xs ${i === 3 ? "text-black" : "text-lime-400"}`}>{`NIVEL ${i + 1}`}</span>
-                  <span className={`font-display mt-1 text-xl ${i === 3 ? "text-black" : "text-white"}`}>{t}</span>
+                  <span className={`font-display mt-1 text-lg sm:text-base md:text-xl ${i === 3 ? "text-black" : "text-white"}`}>{t}</span>
                   <span className={`mt-1 text-sm leading-5 ${i === 3 ? "text-black/80" : "text-gray-400"}`}>{b}</span>
                 </li>
               ))}
             </ol>
             <div className="cf-card p-6">
               <p className="font-display text-xl text-white">En el diagnóstico revisamos</p>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 <Check>Cómo llegan y cómo se atienden sus clientes</Check>
                 <Check>Cómo cobra, compra y controla gastos</Check>
                 <Check>Qué herramientas usa hoy su equipo</Check>
@@ -202,9 +202,9 @@ export function Deck({ mercado }: { mercado: Mercado }) {
                 <Check><strong className="text-white">Gastos e inventario:</strong> compras, caja menuda y existencias.</Check>
                 <Check><strong className="text-white">Panel gerencial:</strong> ventas, cobros y pendientes del día.</Check>
               </ul>
-              <ol className="mt-8 grid grid-cols-3 gap-2 text-sm font-semibold sm:grid-cols-6">
+              <ol className="mt-8 grid grid-cols-3 gap-2 text-sm font-semibold xl:grid-cols-6">
                 {["Solicitud", "Cotización", "Orden", "Ejecución", "Cobro", "Control"].map((s, i) => (
-                  <li key={s} className="rounded-lg border border-white/10 bg-[#0c0d0b] px-2 py-2 text-gray-200">
+                  <li key={s} className="min-w-0 rounded-lg border border-white/10 bg-[#0c0d0b] px-2 py-2 text-gray-200">
                     <span className="block font-mono text-[10px] text-lime-400">{`0${i + 1}`}</span>
                     {s}
                   </li>
@@ -344,14 +344,13 @@ export function Deck({ mercado }: { mercado: Mercado }) {
                 <p>
                   <span className="block font-semibold text-white">{name}</span>
                   <span className="block text-sm text-gray-500">{detail}</span>
+                  <span className="mt-0.5 block font-mono text-xs text-lime-400">{span === 1 ? `Semana ${start}` : `Semanas ${start} a ${start + span - 1}`}</span>
                 </p>
                 <div className="grid grid-cols-10 gap-1" role="img" aria-label={`Semanas ${start} a ${start + span - 1}`}>
                   <span
-                    className={`flex h-7 items-center rounded-md px-2 text-xs font-bold ${i % 2 ? "border border-white/15 bg-white/10 text-white" : "bg-lime-400 text-black"}`}
+                    className={`h-5 rounded-md ${i % 2 ? "border border-white/15 bg-white/10" : "bg-lime-400"}`}
                     style={{ gridColumn: `${start} / span ${span}` }}
-                  >
-                    {span === 1 ? `Sem ${start}` : `Sem ${start}–${start + span - 1}`}
-                  </span>
+                  />
                 </div>
               </li>
             ))}

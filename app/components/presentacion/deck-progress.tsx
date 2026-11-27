@@ -32,7 +32,6 @@ export function DeckProgress({ etapas, mercado }: { etapas: readonly string[]; m
           if (!entry.isIntersecting) continue;
           const el = entry.target as HTMLElement;
           const id = el.dataset.lamina || "";
-          setStage(Number(el.dataset.etapa || 0));
           if (seen.current.has(id)) continue;
           seen.current.add(id);
           const segundos = Math.round((Date.now() - started) / 1000);
@@ -50,6 +49,12 @@ export function DeckProgress({ etapas, mercado }: { etapas: readonly string[]; m
       frame = requestAnimationFrame(() => {
         const max = document.documentElement.scrollHeight - window.innerHeight;
         setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+        // La etapa activa es la de la lámina que ocupa la parte alta de la pantalla,
+        // para que la barra y lo que se está leyendo siempre coincidan.
+        const linea = window.innerHeight * 0.4;
+        let actual = laminas[0];
+        for (const el of laminas) if (el.getBoundingClientRect().top <= linea) actual = el;
+        setStage(Number(actual?.dataset.etapa || 0));
       });
     }
     onScroll();
@@ -63,6 +68,8 @@ export function DeckProgress({ etapas, mercado }: { etapas: readonly string[]; m
 
   // Un paso cada 2 % de avance: alterna la inclinación para que parezca caminar.
   const paso = Math.floor(progress * 50) % 2;
+  // La mascota avanza dentro de su etapa: así nunca queda en una etapa distinta de la marcada.
+  const tramo = 100 / etapas.length;
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#050505]/92 px-4 pb-2 pt-3 backdrop-blur sm:px-6 lg:px-8">
@@ -81,8 +88,8 @@ export function DeckProgress({ etapas, mercado }: { etapas: readonly string[]; m
             height={220}
             sizes="20px"
             aria-hidden="true"
-            className="absolute top-0 h-7 w-auto -translate-x-1/2 transition-[left] duration-200 ease-linear"
-            style={{ left: `${2 + progress * 96}%`, rotate: paso ? "5deg" : "-5deg" }}
+            className="absolute top-0 h-7 w-auto -translate-x-1/2 transition-[left] duration-300 ease-out [filter:drop-shadow(0_0_1px_#99fb2f)_drop-shadow(0_0_1px_#99fb2f)]"
+            style={{ left: `${stage * tramo + tramo * (0.15 + 0.7 * progress)}%`, rotate: paso ? "5deg" : "-5deg" }}
           />
           <ol className="flex gap-1.5" aria-label="Etapas de la presentación">
             {etapas.map((nombre, i) => (
