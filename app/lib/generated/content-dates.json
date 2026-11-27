@@ -171,6 +171,14 @@
     "published": "2026-08-06",
     "modified": "2026-11-14"
   },
+  "app/(es)/presentacion/page.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
+  "app/(es)/presentacion/venezuela/page.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
   "app/(es)/privacidad/page.tsx": {
     "published": "2026-08-17",
     "modified": "2026-11-18"
@@ -291,6 +299,14 @@
     "published": "2026-11-14",
     "modified": "2026-11-14"
   },
+  "app/components/presentacion/deck-progress.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
+  "app/components/presentacion/deck.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
   "app/fonts.ts": {
     "published": "2026-11-14",
     "modified": "2026-11-27"
@@ -410,6 +426,10 @@
   "app/lib/portfolio/ui.ts": {
     "published": "2026-11-14",
     "modified": "2026-11-14"
+  },
+  "app/lib/presentacion.ts": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
   },
   "app/lib/seo.ts": {
     "published": "2026-08-17",
