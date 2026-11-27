@@ -1,3 +1,4 @@
+import { sora } from "../fonts";
 import type { Metadata, Viewport } from "next";
 import { services, siteConfig } from "../lib/site";
 import { AnalyticsScripts } from "../analytics-scripts";
@@ -145,7 +146,7 @@ export default function RootLayout({
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className="h-full antialiased"
+      className={`${sora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script

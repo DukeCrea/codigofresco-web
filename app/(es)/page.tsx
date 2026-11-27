@@ -2,9 +2,9 @@ import { HomePageBody } from "../components/portfolio/pages";
 import { buildMetadata } from "../lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Antonio Duque: estrategias y sistemas comerciales",
+  title: "Código Fresco: desarrollo web, automatización, IA y CRM",
   description:
-    "Portafolio de Antonio Duque, creador de ZoDesk: estrategia de marketing, CRM, automatización e integraciones que conectan captación, ventas y operación.",
+    "Código fresco, ideas que funcionan: sitios web, automatización, inteligencia artificial, CRM e integraciones. El estudio de Antonio Duque, creador de ZoDesk.",
   path: "/",
 });
 

@@ -1,3 +1,4 @@
+import { sora } from "../fonts";
 import type { Metadata, Viewport } from "next";
 import { AnalyticsScripts } from "../analytics-scripts";
 import { enServices } from "../lib/i18n/en/services";
@@ -137,7 +138,7 @@ export default function EnglishRootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
+    <html lang="en" data-scroll-behavior="smooth" className={`${sora.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

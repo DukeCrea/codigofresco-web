@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import {
@@ -206,8 +207,12 @@ export function LeadIntakeSection({ lang = "es" }: { lang?: Locale }) {
 
           {status === "success" ? (
             <div className="py-6 text-center">
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-lime-400 text-gray-950">
-                <CheckIcon className="h-7 w-7" />
+              {/* Estado de éxito: la mascota celebra el envío. */}
+              <div className="relative mx-auto mb-5 h-28 w-28">
+                <Image src="/marca/mascota-icono.webp" alt="" width={256} height={256} sizes="112px" className="h-28 w-28 rounded-3xl" />
+                <span className="absolute -bottom-1 -right-1 flex h-9 w-9 items-center justify-center rounded-full bg-lime-400 text-gray-950 ring-4 ring-black">
+                  <CheckIcon className="h-5 w-5" />
+                </span>
               </div>
               <h3 className="text-2xl font-bold">{t.success.title}</h3>
               <p className="mx-auto mt-3 max-w-xl leading-7 text-gray-300">

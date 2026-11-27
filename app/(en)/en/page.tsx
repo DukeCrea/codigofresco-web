@@ -2,9 +2,9 @@ import { HomePageBody } from "../../components/portfolio/pages";
 import { buildMetadata } from "../../lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Antonio Duque: Strategy and Sales Systems",
+  title: "Código Fresco: Web Development, Automation, AI and CRM",
   description:
-    "Portfolio of Antonio Duque, creator of ZoDesk: marketing strategy, CRM, automation and integrations connecting lead generation, sales and operations.",
+    "Fresh code, ideas that work: websites, automation, AI assistants, CRM and integrations. The studio of Antonio Duque, creator of ZoDesk.",
   path: "/en",
   lang: "en",
   esPath: "/",

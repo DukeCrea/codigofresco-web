@@ -1,19 +1,47 @@
 @import "tailwindcss";
 
+/*
+ * Sistema de diseño de Código Fresco.
+ * Fuente de verdad de colores, tipografías y movimiento. Guía: docs/SISTEMA-DE-DISENO.md
+ * Brandbook: docs/marca/codigo-fresco-brandbook.jpg
+ */
+
 :root {
-  --background: #050505;
+  /* Marca */
+  --cf-green: #99fb2f; /* verde manzana, medido sobre el logo original */
+  --cf-black: #050505;
+  --cf-white: #ffffff;
+
+  /* Superficies y texto */
+  --background: var(--cf-black);
   --foreground: #ededed;
+  --cf-surface: #0c0d0b;
+  --cf-surface-2: #121410;
+  --cf-line: #262922;
+  --cf-muted: #a4aa9c;
+
+  /* Forma y movimiento */
+  --cf-pixel: 10px; /* lado del píxel decorativo */
+  --cf-radius: 1rem;
+  --cf-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --cf-fast: 180ms;
+  --cf-slow: 480ms;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-brand: var(--cf-green);
+  /* El sitio usa `lime-400` como único verde: se redefine aquí para que todas
+     las páginas adopten el verde de la marca sin tocar cada componente. */
+  --color-lime-400: var(--cf-green);
   --color-paper: #f2f1e8;
-  --color-ink: #050505;
-  --color-surface: #0c0d0b;
-  --color-line: #262922;
-  --color-muted: #a4aa9c;
+  --color-ink: var(--cf-black);
+  --color-surface: var(--cf-surface);
+  --color-line: var(--cf-line);
+  --color-muted: var(--cf-muted);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-sora), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
@@ -28,11 +56,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Titulares del portafolio: misma tipografía del sitio, en negrita y compacta. */
+/* Titulares: Sora en negrita y compacta, como el logotipo. */
 .font-display {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
 .font-display em,
@@ -47,8 +75,477 @@ h2 em {
 }
 
 :focus-visible {
-  outline: 2px solid #a3e635;
+  outline: 2px solid var(--cf-green);
   outline-offset: 4px;
+}
+
+::selection {
+  background: var(--cf-green);
+  color: var(--cf-black);
+}
+
+/* ---------- Componentes de marca ---------- */
+
+/* Etiqueta de sección con aire de código: `// servicios` */
+.cf-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--cf-green);
+}
+
+.cf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.75rem;
+  background: var(--cf-green);
+  color: var(--cf-black);
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  transition:
+    transform var(--cf-fast) var(--cf-ease),
+    box-shadow var(--cf-fast) var(--cf-ease);
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.14);
+}
+
+.cf-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.22);
+}
+
+.cf-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.cf-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--cf-white);
+  font-weight: 600;
+  padding: 0.85rem 1.4rem;
+  transition:
+    border-color var(--cf-fast) var(--cf-ease),
+    color var(--cf-fast) var(--cf-ease);
+}
+
+.cf-btn-ghost:hover {
+  border-color: var(--cf-green);
+  color: var(--cf-green);
+}
+
+/* Flecha de píxeles del logotipo: avanza al pasar el cursor. */
+.cf-arrow {
+  display: inline-block;
+  transition: transform var(--cf-fast) steps(3);
+}
+
+.cf-btn:hover .cf-arrow,
+.cf-btn-ghost:hover .cf-arrow,
+.cf-card:hover .cf-arrow {
+  transform: translateX(6px);
+}
+
+/* Tarjeta con esquina de píxeles que se enciende al pasar el cursor. */
+.cf-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--cf-radius);
+  background: var(--cf-surface);
+  transition:
+    border-color var(--cf-fast) var(--cf-ease),
+    transform var(--cf-fast) var(--cf-ease);
+}
+
+.cf-card::before,
+.cf-card::after {
+  content: "";
+  position: absolute;
+  width: var(--cf-pixel);
+  height: var(--cf-pixel);
+  background: var(--cf-green);
+  opacity: 0;
+  transition: opacity var(--cf-fast) steps(2);
+  pointer-events: none;
+}
+
+.cf-card::before {
+  top: -1px;
+  right: calc(var(--cf-pixel) - 1px);
+}
+
+.cf-card::after {
+  top: calc(var(--cf-pixel) - 1px);
+  right: -1px;
+}
+
+.cf-card:hover,
+.cf-card:focus-within {
+  border-color: color-mix(in srgb, var(--cf-green) 55%, transparent);
+  transform: translateY(-3px);
+}
+
+.cf-card:hover::before,
+.cf-card:hover::after,
+.cf-card:focus-within::before,
+.cf-card:focus-within::after {
+  opacity: 1;
+}
+
+/* Trama de puntos del brandbook, para fondos de sección. */
+.cf-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Píxel decorativo. El parpadeo va a saltos, sin fundidos: es pixel art. */
+.cf-px {
+  position: absolute;
+  width: var(--cf-pixel);
+  height: var(--cf-pixel);
+  background: var(--cf-green);
+  animation: cf-blink 3.2s steps(1) infinite;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes cf-blink {
+  0%,
+  62% {
+    opacity: 1;
+  }
+  63%,
+  78% {
+    opacity: 0.15;
+  }
+  79%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* La mascota flota despacio; al pasar el cursor "infla el chicle". */
+.cf-mascot {
+  animation: cf-float 6s ease-in-out infinite;
+  transition: transform var(--cf-slow) var(--cf-ease);
+  mix-blend-mode: lighten; /* el negro de la ilustración se funde con el fondo */
+}
+
+.cf-mascot-wrap:hover .cf-mascot {
+  transform: scale(1.045) rotate(-2deg);
+}
+
+.cf-mascot-wrap:hover .cf-px {
+  animation-duration: 0.9s;
+}
+
+@keyframes cf-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+/* ---------- Cambio de mascota: el chicle se infla y explota ---------- */
+
+.cf-swap {
+  transition: opacity 160ms steps(2);
+}
+
+/* Globo de chicle dibujado con CSS, del mismo verde y con el brillo del original. */
+.cf-bubble {
+  position: absolute;
+  width: 34%;
+  aspect-ratio: 1;
+  margin: -17% 0 0 -17%;
+  border-radius: 50%;
+  border: 4px solid #000;
+  background:
+    radial-gradient(circle at 68% 26%, rgba(255, 255, 255, 0.95) 0 7%, transparent 8%),
+    radial-gradient(circle at 60% 34%, rgba(255, 255, 255, 0.35) 0 22%, transparent 23%),
+    var(--cf-green);
+  animation: cf-inflate 950ms ease-in-out both;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes cf-inflate {
+  0% {
+    transform: scale(0.25);
+  }
+  18% {
+    transform: scale(0.8, 0.74);
+  }
+  28% {
+    transform: scale(0.7, 0.76);
+  }
+  46% {
+    transform: scale(1.6, 1.5);
+  }
+  56% {
+    transform: scale(1.45, 1.52);
+  }
+  74% {
+    transform: scale(2.5, 2.38);
+  }
+  82% {
+    transform: scale(2.34, 2.44);
+  }
+  93% {
+    transform: scale(3.05, 2.95);
+  }
+  97% {
+    transform: scale(2.9, 3.05);
+  }
+  100% {
+    transform: scale(3.3);
+  }
+}
+
+/* Estallido: destello, anillo, píxeles y onomatopeya. */
+.cf-burst {
+  position: absolute;
+  background: var(--cf-green);
+  animation: cf-burst 900ms cubic-bezier(0.1, 0.7, 0.2, 1) both;
+}
+
+@keyframes cf-burst {
+  from {
+    translate: 0 0;
+    scale: 1.4;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    translate: var(--dx) var(--dy);
+    scale: 0.5;
+    opacity: 0;
+  }
+}
+
+.cf-pop-flash {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  margin: -210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 18%, var(--cf-green) 19% 46%, transparent 47%);
+  animation: cf-pop-flash 320ms steps(4) both;
+}
+
+@keyframes cf-pop-flash {
+  from {
+    scale: 0.7;
+    opacity: 1;
+  }
+  to {
+    scale: 1.25;
+    opacity: 0;
+  }
+}
+
+.cf-pop-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin: -100px;
+  border-radius: 50%;
+  border: 10px solid var(--cf-green);
+  animation: cf-pop-ring 700ms cubic-bezier(0.1, 0.7, 0.2, 1) both;
+}
+
+@keyframes cf-pop-ring {
+  from {
+    scale: 0.6;
+    opacity: 1;
+  }
+  to {
+    scale: 3.4;
+    border-width: 1px;
+    opacity: 0;
+  }
+}
+
+/* Trozos de chicle: el eje X avanza parejo y el Y sube y luego cae, como un tiro parabólico. */
+.cf-gum-x {
+  position: absolute;
+  animation: cf-gum-x 1300ms cubic-bezier(0.15, 0.6, 0.4, 1) both;
+}
+
+@keyframes cf-gum-x {
+  to {
+    translate: var(--dx) 0;
+  }
+}
+
+.cf-gum-y {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background:
+    radial-gradient(circle at 66% 28%, rgba(255, 255, 255, 0.95) 0 9%, transparent 10%),
+    var(--cf-green);
+  animation: cf-gum-y 1300ms both;
+}
+
+@keyframes cf-gum-y {
+  0% {
+    translate: 0 0;
+    scale: 0.4;
+    animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1);
+  }
+  12% {
+    scale: 1.25 0.8;
+  }
+  38% {
+    translate: 0 var(--dy);
+    scale: 1;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5);
+  }
+  70% {
+    scale: 0.85 1.3;
+    opacity: 1;
+  }
+  100% {
+    translate: 0 calc(var(--dy) + var(--fall));
+    scale: 0.6 1.5;
+    opacity: 0;
+  }
+}
+
+/* Pegotes: aparecen aplastados, se quedan un instante y escurren. */
+.cf-splat {
+  position: absolute;
+  border: 3px solid #000;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0 8%, transparent 9%),
+    var(--cf-green);
+  transform-origin: 50% 0;
+  animation: cf-splat 1300ms both;
+}
+
+@keyframes cf-splat {
+  0% {
+    scale: 0;
+    opacity: 1;
+  }
+  10% {
+    scale: 1.3 1.1;
+  }
+  18% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.95 1.25;
+    translate: 0 6px;
+  }
+  80% {
+    scale: 0.8 1.9;
+    translate: 0 18px;
+    opacity: 1;
+  }
+  100% {
+    scale: 0.6 2.4;
+    translate: 0 34px;
+    opacity: 0;
+  }
+}
+
+.cf-pop-word {
+  position: absolute;
+  translate: -50% -50%;
+  rotate: -8deg;
+  padding: 0.1em 0.45em;
+  border-radius: 0.5rem;
+  background: var(--cf-black);
+  color: var(--cf-green);
+  border: 3px solid var(--cf-green);
+  font-size: 2.6rem;
+  white-space: nowrap;
+  animation: cf-pop-word 1100ms steps(12) both;
+}
+
+@keyframes cf-pop-word {
+  from {
+    scale: 0.3;
+    opacity: 1;
+  }
+  25% {
+    scale: 1.15;
+  }
+  75% {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
+    scale: 1;
+    opacity: 0;
+  }
+}
+
+/* La mascota corporativa masca antes de inflar el chicle. */
+.cf-chew {
+  transform-origin: 50% 40%;
+  animation: cf-chew 650ms steps(6);
+}
+
+@keyframes cf-chew {
+  0%,
+  100% {
+    transform: none;
+  }
+  25%,
+  75% {
+    transform: scaleY(0.985) translateY(3px) rotate(-1deg);
+  }
+  50% {
+    transform: scaleY(1.01) translateY(-2px) rotate(1deg);
+  }
+}
+
+/* Cursor de terminal para detalles de código. */
+.cf-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 0.15em;
+  vertical-align: text-bottom;
+  background: var(--cf-green);
+  animation: cf-caret 1.1s steps(1) infinite;
+}
+
+@keyframes cf-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Aparición al entrar en pantalla, solo con CSS y solo donde el navegador lo admite. */
+@supports (animation-timeline: view()) {
+  .cf-reveal {
+    animation: cf-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 38%;
+  }
+}
+
+/* Solo desplazamiento: el contenido nunca queda oculto si la animación no corre. */
+@keyframes cf-reveal {
+  from {
+    transform: translateY(26px);
+  }
+  to {
+    transform: none;
+  }
 }
 
 @keyframes fadeIn {
@@ -74,5 +571,10 @@ h2 em {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .cf-reveal {
+    animation: none !important;
+    transform: none !important;
   }
 }

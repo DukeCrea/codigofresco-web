@@ -129,7 +129,7 @@ export function HomePageBody({ lang }: { lang: Locale }) {
         "@type": "WebPage",
         "@id": `${abs(path)}#webpage`,
         url: abs(path),
-        name: lang === "es" ? "Antonio Duque: estrategias y sistemas" : "Antonio Duque: strategies and systems",
+        name: lang === "es" ? "Código Fresco: desarrollo web, automatización, IA y CRM" : "Código Fresco: web development, automation, AI and CRM",
         inLanguage: lang,
         about: { "@id": personId },
         isPartOf: { "@id": `${siteConfig.url}/#website${lang === "en" ? "-en" : ""}` },

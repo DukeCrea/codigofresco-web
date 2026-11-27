@@ -3,7 +3,8 @@ import Link from "next/link";
 import type { Locale } from "../../lib/i18n/config";
 import { getPortfolioUi } from "../../lib/portfolio/ui";
 import { siteConfig } from "../../lib/site";
-import { Logo } from "../../logo";
+import { Mascot } from "../brand/mascot";
+import { BrandLockup } from "../brand/pixels";
 import { LangLink } from "./lang-link";
 
 /**
@@ -30,12 +31,8 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
       </a>
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#050505]/90 px-4 backdrop-blur supports-[backdrop-filter]:bg-[#050505]/75 sm:px-6 lg:px-8">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
-          <Link href={homeHref} className="flex items-center gap-2.5" aria-label={t.home}>
-            <Logo className="h-7 w-7 rounded-md" />
-            <span className="text-[15px] font-semibold tracking-tight text-white">
-              Código Fresco
-              <span className="hidden font-normal text-gray-400 sm:inline"> · Antonio Duque</span>
-            </span>
+          <Link href={homeHref} className="flex items-center" aria-label={t.home}>
+            <BrandLockup lang={lang} />
           </Link>
 
           <nav aria-label={t.mainNav} className="hidden items-center gap-7 text-sm md:flex">
@@ -64,7 +61,7 @@ export function PortfolioHeader({ lang, alternateHref }: { lang: Locale; alterna
             )}
             <Link
               href={t.contact.href}
-              className="rounded-full bg-lime-400 px-4 py-2 font-semibold text-black transition hover:bg-lime-400/85"
+              className="rounded-lg bg-lime-400 px-4 py-2 font-semibold text-black transition hover:-translate-y-0.5"
             >
               {t.contact.label}
             </Link>
@@ -134,8 +131,12 @@ export function PortfolioFooter({ lang }: { lang: Locale }) {
     <footer className="border-t border-white/10 bg-[#050505] px-4 py-14 text-sm text-gray-400 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <p className="font-display text-3xl text-white">Código Fresco</p>
-          <p className="mt-3 max-w-sm leading-6">
+          <Mascot variant="icono" lang={lang} decorative sizes="72px" className="w-[72px] rounded-2xl" />
+          <p className="font-display mt-4 text-3xl leading-none text-white">
+            Código <span className="text-lime-400">Fresco</span>
+          </p>
+          <p className="cf-eyebrow mt-2">{lang === "es" ? "Ideas frescas que funcionan." : "Fresh ideas that work."}</p>
+          <p className="mt-4 max-w-sm leading-6">
             {lang === "es"
               ? "Estrategias y sistemas que conectan marketing, ventas y operación. Trabajo remoto con Panamá, Venezuela y España."
               : "Strategies and systems that connect marketing, sales and operations. Remote work with Panama, Venezuela and Spain."}
