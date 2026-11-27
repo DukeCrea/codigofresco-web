@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description,
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   alternates: { canonical: "/presentacion/venezuela" },
-  openGraph: { title, description, url: "/presentacion/venezuela", siteName: "Código Fresco", locale: "es_VE", type: "website" },
+  openGraph: { title, description, url: "/presentacion/venezuela", siteName: "Código Fresco", locale: "es_VE", type: "website", images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Código Fresco: ideas frescas que funcionan" }] },
+  twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
 };
 
 export default function Page() {
