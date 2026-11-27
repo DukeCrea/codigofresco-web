@@ -17,7 +17,7 @@
   },
   "app/(demo)/layout.tsx": {
     "published": "2026-11-20",
-    "modified": "2026-11-20"
+    "modified": "2026-11-27"
   },
   "app/(demo)/para/empact/data.ts": {
     "published": "2026-11-25",
@@ -61,7 +61,7 @@
   },
   "app/(en)/en/page.tsx": {
     "published": "2026-09-19",
-    "modified": "2026-11-14"
+    "modified": "2026-11-27"
   },
   "app/(en)/en/privacy/page.tsx": {
     "published": "2026-09-19",
@@ -85,7 +85,7 @@
   },
   "app/(en)/layout.tsx": {
     "published": "2026-09-19",
-    "modified": "2026-11-15"
+    "modified": "2026-11-27"
   },
   "app/(es)/blog/[slug]/page.tsx": {
     "published": "2026-11-14",
@@ -129,7 +129,7 @@
   },
   "app/(es)/layout.tsx": {
     "published": "2026-06-29",
-    "modified": "2026-11-15"
+    "modified": "2026-11-27"
   },
   "app/(es)/nosotros/page.tsx": {
     "published": "2026-08-17",
@@ -137,7 +137,7 @@
   },
   "app/(es)/page.tsx": {
     "published": "2026-06-29",
-    "modified": "2026-11-14"
+    "modified": "2026-11-27"
   },
   "app/(es)/panel/actions.ts": {
     "published": "2026-07-02",
@@ -223,6 +223,18 @@
     "published": "2026-11-14",
     "modified": "2026-11-14"
   },
+  "app/components/brand/mascot-switch.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
+  "app/components/brand/mascot.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
+  "app/components/brand/pixels.tsx": {
+    "published": "2026-11-27",
+    "modified": "2026-11-27"
+  },
   "app/components/portfolio/blocks.tsx": {
     "published": "2026-11-14",
     "modified": "2026-11-14"
@@ -241,7 +253,7 @@
   },
   "app/components/portfolio/chrome.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-18"
+    "modified": "2026-11-27"
   },
   "app/components/portfolio/demos/chatform-demo.tsx": {
     "published": "2026-11-14",
@@ -265,7 +277,7 @@
   },
   "app/components/portfolio/home.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-14"
+    "modified": "2026-11-27"
   },
   "app/components/portfolio/lang-link.tsx": {
     "published": "2026-11-14",
@@ -273,11 +285,15 @@
   },
   "app/components/portfolio/pages.tsx": {
     "published": "2026-11-14",
-    "modified": "2026-11-16"
+    "modified": "2026-11-27"
   },
   "app/components/portfolio/zoom-image.tsx": {
     "published": "2026-11-14",
     "modified": "2026-11-14"
+  },
+  "app/fonts.ts": {
+    "published": "2026-11-14",
+    "modified": "2026-11-27"
   },
   "app/icons.tsx": {
     "published": "2026-07-01",
@@ -285,7 +301,7 @@
   },
   "app/lead-intake-section.tsx": {
     "published": "2026-07-02",
-    "modified": "2026-11-14"
+    "modified": "2026-11-27"
   },
   "app/legal-page.tsx": {
     "published": "2026-08-17",
